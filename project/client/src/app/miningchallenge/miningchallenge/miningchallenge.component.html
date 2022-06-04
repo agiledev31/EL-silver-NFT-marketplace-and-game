@@ -1,0 +1,13 @@
+ <div class="flexbox-container" style="display:flex;">
+        <div class="sidebar" style="flex:1">
+         <h2 class="text-center" *ngFor="let item of miningchallenge;let i = index" ><a href="/miningchallenge/{{i}}" > {{item?.name}}</a></h2>
+        </div>
+        <div class="main" style="flex:5;">
+          <h1 class="text-center heading mb-2 animated">Ranking for <span style="color:#FF9933">{{this.miningchallenge[this.id]?.name}}</span></h1>
+          <h3 class="text-center heading mb-5 animated">{{this.miningchallenge[this.id]?.startDate | date: 'mediumDate'}} - {{this.miningchallenge[this.id]?.endDate | date: 'mediumDate'}}</h3>
+          <div class="text-center heading" *ngIf="checkStarted()">Contest Starts in {{remainingStartTime}} hours</div>
+          <div class="text-center heading" *ngIf="checkRunning()">Contest Ends in {{remainingEndTime}} hours</div>
+          <div class="text-center heading" *ngIf="checkEnded()">Contest Ended </div>
+          <app-challengeleaderboard [data]="data"></app-challengeleaderboard>
+        </div>
+</div>

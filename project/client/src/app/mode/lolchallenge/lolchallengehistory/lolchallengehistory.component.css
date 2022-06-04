@@ -1,0 +1,75 @@
+.custom-table .head {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+  color: rgba(255, 255, 255, 0.87);
+  background:#2E2E2E;
+}
+
+.custom-table .body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+  background: #1D1D1D;
+}
+
+.final{
+  color: #28A5FF;
+}
+
+.defeat{
+  color: #FF9933;
+}
+
+.custom-table .custom-td {
+  padding: 0 1rem;
+}
+
+.custom-table .body .custom-td {
+  padding: .5rem 1rem;
+}
+
+.custom-table .custom-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+  padding: 15px !important;
+  border-radius: 8px;
+  margin: 7px;
+}
+
+.challenge_links li{
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 50px 10px 15px;
+  margin-right: 15px;
+  border-radius: 8px;
+  background: rgb(29,29,29);
+}
+
+.challenge_links li span{
+  display: block;
+}
+
+.challenge_links li strong{
+  display: block;
+}
+.history__not__Found-msg {
+  text-align: center;
+  font-size: 18px;
+  color: #28A5FF !important;
+}

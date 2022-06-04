@@ -1,0 +1,147 @@
+<div class="accordion_area mb-5">
+  <div class="container pxx-0" *ngIf="leaderBoardData">
+    <div class="custom-table">
+      <div class="head mobile" mdbTable>
+        <div class="row r-mobile">
+        <div class="col-1 mobile-h"><span>RANK</span></div>
+        <div class="col-2 mobile-h">SUMMONERS</div>
+        <div class="col-2 mobile-h">LAPLATA MINED</div>
+        <div class=" col-1 mobile-h" >GAMES PLAYED</div>
+        <div class=" col-1 mobile-h" >VICTORIES</div>
+        <div class=" col-2  mobile-h" >DEFEATS</div>
+        <div class="col-2  mobile-h" >WIN RATIO</div>
+        </div>
+      </div>
+      <div class="head destop" mdbTable>
+        <div class="custom-td w-10"><span>RANK</span></div>
+        <div class="custom-td w-15">SUMMONERS</div>
+        <div class="custom-td" style="width: 16%; padding-left: 3%">LAPLATA MINED</div>
+        <div class="custom-td" style="width: 15%">GAMES PLAYED</div>
+        <div class="custom-td" style="width: 13%">VICTORIES</div>
+        <div class="custom-td" style="width: 11%">DEFEATS</div>
+        <div class="custom-td" style="width: 17%">WIN RATIO</div>
+      </div>
+      <ngb-accordion [closeOthers]="true">
+        <ngb-panel
+          *ngFor="let player of leaderBoardData; let playerIndex = index"
+          id="static-{{ playerIndex }}"
+          [disabled]="true"
+        >
+          <ng-template ngbPanelTitle>
+            <div class="body mobile-body">
+              <div class="custom-td w-10">
+                <span>{{ page==1?(playerIndex + 1): (100*(page-1)+(playerIndex + 1)) }}</span>
+              </div>
+              <div class="custom-td w-20 mobile-Uname">
+                <div class="d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <img
+                      width="36px"
+                      class="
+                        mr-3
+                        d-md-inline-block d-none
+                        player-img
+                        rounded-circle
+                      "
+                      alt=""
+                      [src]="
+                        player.image
+                          ? player.image
+                          : 'assets/images/profile_img.png'
+                      "
+                    />
+                    <span>{{
+                      player.username
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="custom-td" style="width: 9%">
+                <span>{{ player.totalLaplataEarned.toFixed(4) }}</span>
+              </div>
+              <div class="custom-td" style="width: 17%">
+                <span>{{
+                  player.statistics ? player.statistics.totalGames : "0"
+                }}</span>
+              </div>
+              <div class="custom-td" style="width: 13%">
+                <span>{{
+                  player.statistics ? player.statistics.totalVictories : "0"
+                }}</span>
+              </div>
+              <div class="custom-td" style="width: 11%">
+                {{ player.statistics ? player.statistics.totalDefeats : "0" }}
+              </div>
+              <div class="custom-td" style="width: 20%">
+                <div
+                  class="
+                    progress_area
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <div class="progress">
+                    <div
+                      class="progress-bar progress-bar-success low_progress"
+                      role="progressbar"
+                      [ngStyle]="{
+                        width: player.statistics
+                          ? player.statistics.winRatio.toFixed(0) + '%'
+                          : '0%'
+                      }"
+                    >
+                      <span>win</span>
+                    </div>
+                    <div
+                      class="progress-bar progress-bar-warning high_progress"
+                      role="progressbar"
+                      [ngStyle]="{
+                        width: player.statistics
+                          ? (100 - player.statistics.winRatio).toFixed(0) + '%'
+                          : '100%'
+                      }"
+                    >
+                      <span>lose</span>
+                    </div>
+                  </div>
+                  <span style="padding-left: 5%">{{
+                    player.statistics
+                      ? player.statistics.winRatio.toFixed(0) + "%"
+                      : "0%"
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+</div>
+<!-- <div class="load-more-button">
+  <button
+    class="btn btn-primary"
+    type="button"
+    (click)="onLoadMore()"
+    *ngIf="limit <= 100"
+  >
+    Load More
+  </button>
+</div> -->
+<div class="row mx-auto">
+  <div class="col-md-12">
+    <ngb-pagination class="d-flex justify-content-center"
+                    style="margin-top: 1rem"
+                    [maxSize]="7"
+                    [rotate]="true"
+                    [ellipses]="false"
+                    [boundaryLinks]="true"
+                    [collectionSize]="totalDocs"
+                    [pageSize]="limit"
+                    [(page)]="page"
+                    (pageChange)="onPageChange($event, page)"
+                    >
+    </ngb-pagination>
+  </div>
+</div>

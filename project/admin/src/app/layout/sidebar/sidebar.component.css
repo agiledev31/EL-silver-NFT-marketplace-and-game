@@ -1,0 +1,34 @@
+.sidebar {
+  height: 100%;
+    flex: 0 0 auto;
+
+}
+.sidebar-dark{
+  background: #273237 !important;
+}
+
+::ng-deep button.btn.btn-link {
+  /* padding: 12px 20px; */
+  /*background-color: #273237;*/
+  /*color: #FFFFFF;*/
+}
+
+::ng-deep div#ngb-panel-0-header {
+  padding: 0;
+}
+
+.lolIcon {
+  margin-right: 20px;
+}
+
+.allChallenges-Div, .withdrawal-div {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.lolChallenge-tabs {
+  color: #FFFFFF;
+}
+.lolChallenge-tabs:active {
+  color: #09a1ce;
+}

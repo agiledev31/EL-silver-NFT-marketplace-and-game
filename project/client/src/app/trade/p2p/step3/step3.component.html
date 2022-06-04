@@ -1,0 +1,191 @@
+<div class="row">
+  <div class="col-md-10">
+    <div class="card mb-4">
+      <div class="card_alert">
+        <div class="d-flex align-items-center">
+          <img class="mr-4" src="assets/images/green-tick.svg" alt="">
+          <div class="w-75 text-grey">
+            Your trade with Abhipaundet has been opened! Make sure to make the payment within the stipulated payment
+            window.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card mb-4">
+      <div class="card_trade">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="heading">Trade #0192748</div>
+            <ul class="left_ul">
+              <li>
+                <div class="p1">Seller</div>
+                <div class="p2">@abhipaundet</div>
+              </li>
+              <li>
+                <div class="p1">Opened on</div>
+                <div class="p2">12th December, 2020</div>
+              </li>
+              <li>
+                <div class="p1">Payment method</div>
+                <div class="p2">National Bank Transfer</div>
+              </li>
+              <li>
+                <div class="p1">Status</div>
+                <div class="p2"><span class="text-gold">Payment incomplete</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="right_ul">
+              <li>
+                <div class="p1">Trade amount</div>
+                <div class="p2">50 silver</div>
+              </li>
+              <li>
+                <div class="p1">Price</div>
+                <div class="p2">512, 600 krw</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center mt-3">
+          <div class="col-md-7">
+            <div class="p3">Payment window</div>
+          </div>
+          <div class="col-md-5">
+            <div class="top_content">
+              <div class="p1">2h 10m 34s left</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success green_progress" role="progressbar" style="width:70%">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card_step1">
+        <div class="w-75 mx-auto text-center">
+          <img class="mb-2" src="assets/images/Trade icon.svg" alt="">
+          <div class="text-blue text-uppercase mb-2">step 1</div>
+          <div class="text-blue text-uppercase font-weight-600 f-18 mb-2">
+
+             <span *ngIf="p2pType === 1"  > complete payment</span>
+             <span  *ngIf="p2pType !== 1" [routerLink]="['/trade/p2p/sell/4']">buyer completes payment</span>
+
+          </div>
+          <div class="text-gray mb-4">
+            {{
+              p2pType == 1 ?
+              'Chat with the buyer in the Trade Chat panel to sort out any difficulties. When the payment is completed, click on ‘Payment completed’.'
+              : 'The buyer will complete the payment soon. Chat with them in the Trade Chat panel to sort out any difficulties.'
+            }}
+
+          </div>
+          <div *ngIf="p2pType === 1" class="d-flex justify-content-center w-75 mx-auto">
+            <input class="styled-checkbox" id="styled-checkbox-1" checked type="checkbox" value="value1">
+            <label for="styled-checkbox-1" class="check-label-1"></label>
+            <label class="check-label-1 text-grey" for="">I have accepted the seller’s terms of
+               the trade and completed the payment.</label>
+          </div>
+          <div *ngIf="p2pType === 1" class="w-50 mx-auto my-4">
+            <a [routerLink]="['/trade/p2p/buy/4']"  href="javascript:void(o)" class="btn primary-btn w-100">I have paid!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card_step2">
+        <div class="w-75 mx-auto text-center">
+          <img class="mb-2" src="assets/images/eva_clock-fill.svg" alt="">
+          <div class="text-gray1 text-uppercase font-weight-600 f-18 mb-2">
+            {{p2pType === 1 ? 'seller confirms the payment' : 'confirm the payment'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card_step3">
+        <div class="w-75 mx-auto text-center">
+          <img class="mb-2" src="assets/images/fa-solid_handshake.svg" alt="">
+          <div class="text-gray1 text-uppercase font-weight-600 f-18 mb-2">Silver released and added to wallet</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <div class="card_aside">
+        <div class="p1">Terms of trade <span><img src="assets/images/eva_question-mark-circle-fill.svg" alt=""></span></div>
+        <div class="p2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem sagittis, odio quis aliquet elit porttitor
+            massa rhoncus ultrices. In nunc sit amet enim ullamcorper faucibus et sit. Porta eget velit et quis rhoncus,
+            odio ut dapibus dolor. In tempor donec malesuada vitae donec. Sed eget dictum risus lectus mi. Mi quam orci. Mi quam orci.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card_chat">
+        <div class="chat_header">
+          <div class="p1">Chat with the seller</div>
+          <div class="d-flex align-items-center p2">
+            <div class="user_img mr-3">
+              <img src="assets/images/Ellipse 24.png" alt="">
+            </div>
+            <div class="user_info">
+              <div class="d-flex align-items-center text-grey font-weight-normal">@abhipaundet <div class="green_dot mx-2"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="chat_box">
+          <div class="chat">
+            <div class="message-row">
+              <div class="message message-recieved">
+                <div class="message-bubble">
+                  <div class="date">Dec 12th, 16:40 PM</div>
+                  Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                </div>
+              </div>
+            </div>
+            <div class="message-row">
+              <div class="message message-sent">
+                <div class="message-bubble">
+                  <div class="date">Dec 12th, 16:40 PM</div>
+                  Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                </div>
+              </div>
+            </div>
+            <div class="message-row">
+              <div class="message message-recieved">
+                <div class="message-bubble">
+                  <div class="date">Dec 12th, 16:40 PM</div>
+                  Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                </div>
+              </div>
+            </div>
+            <div class="message-row">
+              <div class="message message-sent">
+                <div class="message-bubble">
+                  <div class="date">Dec 12th, 16:40 PM</div>
+                  Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sent-button">
+            <div class="form-group">
+              <div class="Input_with_icon">
+                <input type="text" placeholder="Type your message here" class="form-control">
+                <i><img src="assets/images/ic_baseline-attach-file.svg" alt=""></i>
+                <div class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

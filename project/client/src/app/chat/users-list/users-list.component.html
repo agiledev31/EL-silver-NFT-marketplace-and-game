@@ -1,0 +1,31 @@
+<div class="inbox_people" *ngIf="!isLoading">
+  <div class="headind_srch">
+    <div class="recent_heading">
+      <h4>Recent</h4>
+    </div>
+    <div class="srch_bar">
+      <div class="stylish-input-group">
+        <input type="text" class="search-bar"  placeholder="Search" >
+        <span class="input-group-addon">
+        <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+        </span> </div>
+    </div>
+  </div>
+  <div class="inbox_chat">
+    <div class="chat_list" [ngClass]="{'active_chat': friend._id === selectedUserId}" (click)="onFriendClick(friend)" *ngFor="let friend of friends">
+      <div class="chat_people">
+        <div class="chat_img"> <img [src]="friend.image| image" [alt]="friend.fullName"> </div>
+        <div class="chat_ib">
+
+          <h5>{{friend.fullName}} <span *ngIf="friend.messages.length > 0">{{friend.messages.length}}</span>
+          <span *ngIf="friend.online" class="chat_date">Dec 25</span>
+          <span *ngIf="friend.online"><i class="fas fa-dot-circle text-green"></i></span>
+          </h5>
+          <!-- chow offline time or green dot e is online -->
+          <p>@{{friend.username}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

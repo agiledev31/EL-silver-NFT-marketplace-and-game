@@ -1,0 +1,101 @@
+<!-- Detail Tournament-->
+<div>
+
+  <div class="featured_img">
+    <img width="100%" [src]="tournament?.coverImage | image :'1'" alt="Delhi Metro">
+
+    <div class="featured_content">
+      <div class="container">
+        <h5> {{tournament?.name}} </h5>
+        <span>Organized by Riot Games</span>
+        <p> {{tournament?.startDate | date:"MMM dd"}}th - Dec 1st, 2020</p>
+
+        <ul class="teams_badges d-flex">
+          <li><span class="badge badge-secondary"> {{tournament?.maxTeams}} Teams</span></li>
+          <li><span class="badge badge-secondary"> {{tournament?.matches?.length}} Matches</span></li>
+          <li><span class="badge badge-secondary">4 Prizes</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="tournament_click">
+    <div class="container">
+      <div class="row align-items-center m-0">
+        <div class="col-lg-3 play_now">
+
+          <ul ngbNav #nav="ngbNav" class="profile_nav_tab">
+            <li ngbNavItem>
+              <a ngbNavLink>Matches</a>
+              <ng-template ngbNavContent>
+                <app-matches></app-matches>
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink>Teams</a>
+              <ng-template ngbNavContent>
+                <app-teams [isMeAlreadyJoined]="isMeAlreadyJoined" [teams]="teams" (joinClick) ="onJoinClick()" ></app-teams>
+              </ng-template>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-9 align-items-center text-align-right">
+          <div class="row align-items-center ">
+            <div class="col-lg-5 text-md-right mb-lg-0 mb-4">
+              <span *ngIf="tournament?.maxTeams -tournament?.teams?.length > 0; else noSeat"  class="text-uppercase"> {{tournament?.maxTeams -tournament?.teams?.length }} Teams spot Left
+                !</span>
+                <ng-template #noSeat>
+                  <span class="text-uppercase">   No Spot yet</span>
+                </ng-template>
+
+            </div>
+            <div class="col-lg-5 mb-lg-0 mb-4">
+
+
+
+              <div *ngIf="tournament.status  === 2" class="form-group m-0">
+                <div class="Input_with_icon mb-lg-0 mb-4">
+
+                  <input type="text" placeholder="Lobby code or link" class="form-control">
+                  <i class="fas fa-link"></i>
+                  <button (click)="onPlayClick(3)" class="btn join_btn">Join Now!</button>
+                </div>
+              </div>
+              <div *ngIf="tournament.status  === 1" class="form-group pt-3">
+                 <p>Tournament will begin at   {{tournament.startDate | date: 'medium'}}</p>
+              </div>
+            </div>
+            <div *ngIf="tournament?.maxTeams -tournament?.teams?.length > 0"  class="col-lg-2 text-right p-0">
+              <button *ngIf="!isMeAlreadyJoined"  class="btn primary-btn w-100"
+              (click)="join.open()"
+                style="background-color: #FF9933 !important;padding: 8px 16px !important; " type="submit">Enroll Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="matches_tab_content">
+    <div class="container">
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<app-loader *ngIf="isLoader"></app-loader>
+
+
+<!-- end-->
+
+<app-initiated #initiate [tournament]="tournament" ></app-initiated>
+
+<app-join [tournament]="tournament" (success)="onSuccess()" #join></app-join>
+<app-join-success #joinSuccess></app-join-success>

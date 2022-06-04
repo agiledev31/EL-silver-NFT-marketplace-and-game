@@ -1,0 +1,118 @@
+<!-- Main sidebar -->
+<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
+
+  <!-- Sidebar mobile toggler -->
+  <div class="sidebar-mobile-toggler text-center">
+    <a (click)="sidebarSmCollapse()" href="javascript:void(0)" class="sidebar-mobile-main-toggle">
+      <i class="icon-arrow-left8"></i> Navigation
+    </a>
+
+  </div>
+  <!-- sidebar mobile toggler -->
+
+
+  <!-- Sidebar content -->
+  <div class="sidebar-content">
+
+    <!-- Main navigation -->
+    <div class="card card-sidebar-mobile">
+      <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active"
+            routerLinkActive="active">
+            <i class="icon-home4"></i>
+            <span>
+              Home
+            </span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a [routerLink]="['/game-control']" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-gamepad"></i>
+            <span>GAME CONTROL</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/users']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-users"></i> <span>USERS</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/transaction']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-money-bill"></i>
+            <span>TRANSACTIONS</span>
+
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/control/tournament/']" routerLinkActive="active" href="javascript:void(0)"
+            class="nav-link">
+            <i class="fas fa-trophy"></i> <span>TOURNAMENTS</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/control/level/']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-level-up-alt"></i> <span>PLAYER LEVELS</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/control/setting']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-cogs"></i> <span>SETTINGS</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/voucher']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-money-check-alt"></i> <span>VOUCHERS</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/levels']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="icon-tree5"></i> <span>VERIFICATION LEVELS</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/p2p']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-user-friends"></i> <span>P2P MANAGEMENT</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/mining-challenge']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-dollar-sign"></i> <span>MINING CHALLENGE</span></a>
+        </li>
+        <li class="nav-item">
+          <ngb-accordion>
+            <ngb-panel>
+              <ng-template ngbPanelTitle>
+                <i class="fas fa-gamepad lolIcon"></i><span>LOL CHALLENGE</span>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div class="allChallenges-Div">
+                  <a class="lolChallenge-tabs" [routerLink]="['/lolchallenge']">All Challenges</a>
+                </div>
+                <div class="withdrawal-div">
+                  <a class="lolChallenge-tabs" [routerLink]="['lolchallenge/withdrawals']">Withdrawals</a>
+                </div>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+          <!--          <a [routerLink]="['/lolchallenge']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">-->
+          <!--            <i class="fas fa-gamepad"></i><span>LOL CHALLENGE</span></a>-->
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/announcement']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-bullhorn"></i> <span>ANNOUNCEMENT</span></a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/nft']" routerLinkActive="active" href="javascript:void(0)" class="nav-link">
+            <i class="fas fa-bullhorn"></i> <span>NFT</span></a>
+        </li>
+        <!-- /main -->
+
+      </ul>
+
+    </div>
+    <!-- /main navigation -->
+
+  </div>
+  <!-- /sidebar content -->
+
+</div>
+<!-- /main sidebar -->

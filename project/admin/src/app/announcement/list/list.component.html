@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center my-2">
+            <h3 class="card-title text-blue-400">Announcement List</h3>
+            <hr class="hr-blue">
+        </div>
+    </div>
+
+
+    <div class="row mt-2">
+        <div class="col-lg-12">
+            <div class="card">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="datatable-header">
+                        <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                            <a href="javascript:void(0)" class="btn btn-primary"
+                                [routerLink]="['/announcement/generate']">Generate</a>
+                        </div>
+
+
+                        <div class="dataTables_length" id="DataTables_Table_0_length"><label><span>Show:</span>
+                                <select [(ngModel)]="limit" name="DataTables_Table_0_length"
+                                    aria-controls="DataTables_Table_0" class="select2-hidden-accessible"
+                                    data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                    <option [value]="10" data-select2-id="3">10</option>
+                                    <option [value]="25">25</option>
+                                    <option [value]="50">50</option>
+                                    <option [value]="100">100</option>
+                                </select>
+                                <span class="select2 select2-container select2-container--default" dir="ltr"
+                                    data-select2-id="2" style="width: auto;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-disabled="false"
+                                            aria-labelledby="select2-DataTables_Table_0_length-ks-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-DataTables_Table_0_length-ks-container" role="textbox"
+                                                aria-readonly="true" title="10">10</span><span
+                                                class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span></label></div>
+                    </div>
+                    <div *ngIf="!isLoader &&  result " class="datatable-scroll-wrap">
+                        <div class="table-responsive ">
+                            <table class="table custom-padding">
+                                <thead>
+                                    <tr class="table-border-solid">
+                                        <th>Title</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let announcement of result.docs; let i = index;">
+                                        <td>{{announcement.title}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="p-0">
+                                            <a href="javascript:void(0)" class="px-1" *ngIf="announcement.description"
+                                                (click)="OnViewClick(announcement.description,content)"><i
+                                                    class="fas fa-eye"></i></a>
+                                            <a href="javascript:void(0)"
+                                                [routerLink]="['/announcement',announcement._id]" class="px-1"><i
+                                                    class="fas fa-pencil-alt"></i></a>
+                                            <a href="javascript:void(0)" (click)="onDeleteClick(announcement._id)"
+                                                class="px-1"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div *ngIf="!isLoader &&  result " class="datatable-footer">
+                        <ngb-pagination class="d-flex justify-content-center" [(page)]="result.page"
+                            [pageSize]="result.limit" [collectionSize]="result.totalDocs"
+                            (pageChange)="onPageChange($event)"></ngb-pagination>
+                    </div>
+                    <app-loader *ngIf="isLoader"></app-loader>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4>Description</h4>
+    </div>
+    <div class="modal-body">
+        <div class="Input_with_icon" style="word-wrap: break-word;">
+            <p>{{description}}</p>
+        </div>
+    </div>
+</ng-template>

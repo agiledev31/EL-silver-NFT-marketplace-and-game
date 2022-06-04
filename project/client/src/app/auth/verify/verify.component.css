@@ -1,0 +1,104 @@
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login_card{
+width: 600px;
+background: rgba(255, 255, 255, 0.05);
+box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.16);
+border-radius: 8px;
+padding: 30px 50px;
+}
+.login_card h3{
+font-weight: bold;
+text-align: center;
+margin-bottom: 20px;
+text-transform: capitalize;
+}
+.login_card p{
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  font-size: 13px;
+}
+.login_card a{
+  text-align: center;
+  font-size: 13px;
+  color: #FF9933;
+  display: block;
+  margin-bottom: 30px;
+}
+
+
+.form-group{
+  margin-bottom: 1.3rem;
+}
+.form-group label{
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 13px;
+}
+.Input_with_icon{
+  position: relative;
+}
+.Input_with_icon .form-control {
+  padding-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #28A5FF;
+}
+::ng-deep .otp-input {
+  color: rgba(255, 255, 255, 0.6) !important;
+  background: transparent !important;
+  border: 1px solid #28A5FF !important;
+  border-radius: 7px !important;
+
+
+}
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+.show_btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+  font-size: 13px;
+  cursor: pointer;
+}
+.Input_with_icon i {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+
+}
+.btn{
+  font-weight: 500;
+}
+.primary_btn_outline{
+  color: rgba(255, 255, 255, 0.87);
+border: 1px solid #28A5FF;
+box-sizing: border-box;
+padding: .6rem 3rem;
+border-radius: 8px;
+}
+.primary_btn_outline:hover{
+  color: black;
+background: #28A5FF;
+}
+.disabled-link {
+  pointer-events: none;
+  color: #0056b3!important;
+}

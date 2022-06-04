@@ -1,0 +1,238 @@
+.card-cs {
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+  }
+  .img-size {
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+  }
+  .btn-buy {
+    background: #28a5ff;
+    color: white;
+    padding: 10px 70px;
+    border-radius: 16px;
+  }
+  .f-12 {
+    font-size: 16px;
+  }
+  .f-15 {
+    font-size: 24px;
+  }
+  .btn-down {
+    color: white;
+    background: transparent;
+    border: none;
+  }
+  .right {
+    justify-content: flex-end;
+    display: flex;
+  }
+  .center {
+    justify-content: center;
+    display: flex;
+    border-top: 1px solid #ffffff4f;
+  }
+  .centers {
+    justify-content: center;
+    display: flex;
+  }
+  .btn-buys {
+    background: transparent;
+    border: 2px solid;
+    border-radius: 16px;
+    color: white;
+  }
+  .f-11 {
+    font-size: 11px;
+  }
+  .img-sizes {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+  }
+  .f-13 {
+    font-size: 13px;
+  }
+  .modal {
+    background: rgba(16, 16, 16, 0.3);
+    backdrop-filter: blur(20px);
+  }
+  
+  .main-model {
+    background: #1b1b1b;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+  }
+  .btn-cross {
+    background: none;
+    border: none;
+    color: white;
+  }
+  .bg-one {
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 30px 30px 0px 0px;
+  }
+  .img-sixe2 {
+    height: 100px;
+    width: 100%;
+  }
+  .p-btn {
+    border: 1px solid;
+    border-radius: 50px;
+  }
+  .btn-checkout {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 16px;
+  }
+  .img-sizes2 {
+    width: 100%;
+    border-radius: 5px;
+  }
+  .f-s {
+    font-size: 12px;
+  }
+  
+  .modal{
+    z-index: 1 !important;
+  }
+  .sa {
+    padding: 0;
+  }
+  .selectedItem {
+    background: #28a5ff;
+    border-radius: 50px;
+  }
+  
+  .buy-count-input {
+    border: none;
+    border-radius: 19px;
+    width: 100%;
+    text-indent: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 20%;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader_overlap{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      z-index: 10000;
+      background-color: rgba(255,255,255,0.50);
+      left: 0;
+      top: 0;
+  }
+
+  .right {
+    justify-content: flex-end;
+    display: flex;
+  }
+  .search {
+    width: 100%;
+    height: 40px;
+    border-radius: 28px;
+    padding: 2px 12px;
+  }
+  .bg-main {
+    background: #262626;
+  }
+  .btn-view {
+    color: white;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 5px 30px;
+  }
+  .img-size {
+    /* height: 300px; */
+    width: 100%;
+    border-radius: 8px;
+  }
+  .b-r {
+    border-radius: 8px;
+    border: none;
+    background: #262626;
+  }
+  .f-12 {
+    font-size: 12px;
+  }
+  .border-line {
+    border-bottom: 1px solid #ffffff4f;
+  }
+  .f-15 {
+    font-size: 15px;
+  }
+  .b-r:hover {
+    -webkit-box-shadow: 10px 11px 56px -26px rgba(255, 255, 255, 0.77);
+    -moz-box-shadow: 10px 11px 56px -26px rgba(255, 255, 255, 0.77);
+    box-shadow: 10px 11px 56px -26px rgba(255, 255, 255, 0.77);
+  }
+  
+  .lineheight-38{
+    line-height: 38px;
+  }
+  
+  .color-black{
+    color: black !important;
+  }
+  
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 20%;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader_overlap{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      z-index: 10000;
+      background-color: rgba(255,255,255,0.50);
+      left: 0;
+      top: 0;
+  }
+
+  .from-input, .to-input{
+    color: #e2e2e2 !important;
+    background: rgba(0,0,0,0);
+    border: none;
+    padding-left: 0;
+  }
+
+  .line-height-38{
+    line-height: 38px;
+  }
+
+  .cursor-pointer{
+    cursor: pointer;
+  }

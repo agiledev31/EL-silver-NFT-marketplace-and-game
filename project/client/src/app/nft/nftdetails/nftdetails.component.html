@@ -1,0 +1,532 @@
+<div class="container mt-5">
+  <div class="card p-4 card-cs">
+    <div class="row">
+      <div class="col-md-8 pl-4">
+        <div class="row">
+          <h3>{{ shopItem.name }}</h3>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <p>
+              {{ shopItem.description }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-12">
+            <p class="mt-1">
+              {{ shopItem.maxCount - shopItem.curCount }} mintable tokens
+            </p>
+            <p>{{ shopItem.curCount }} minted tokens</p>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <svg
+            viewBox="0 0 16 16"
+            width="16px"
+            color="text"
+            xmlns="http://www.w3.org/2000/svg"
+            class="sc-bdnxRM iTcRLV"
+          >
+            <circle cx="8" cy="8" r="8" fill="#F0B90B"></circle>
+            <path
+              d="M5.01656 8.00006L3.79256 9.23256L2.56006 8.00006L3.79256 6.76756L5.01656 8.00006ZM8.00006 5.01656L10.1081 7.12456L11.3406 5.89206L9.23256 3.79256L8.00006 2.56006L6.76756 3.79256L4.66806 5.89206L5.90056 7.12456L8.00006 5.01656ZM12.2076 6.76756L10.9836 8.00006L12.2161 9.23256L13.4401 8.00006L12.2076 6.76756ZM8.00006 10.9836L5.89206 8.87556L4.66806 10.1081L6.77606 12.2161L8.00006 13.4401L9.23256 12.2076L11.3406 10.0996L10.1081 8.87556L8.00006 10.9836ZM8.00006 9.23256L9.23256 8.00006L8.00006 6.76756L6.76756 8.00006L8.00006 9.23256Z"
+              fill="#FFFDFA"
+            ></path>
+          </svg>
+          <p class="p-0 m-0 f-15">
+            <span class="ml-2">{{
+              web3Service.getPrice(shopItem.currency, shopItem.mrPrice)
+            }}</span>
+          </p>
+        </div>
+
+        <div class="row mt-3">
+          <button class="btn btn-buy" (click)="mintItemModal(shopItem)">
+            Mint
+          </button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="{{ shopItem.imageURI }}" class="img-size" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      
+      <div class="card card-cs mb-2">
+        <div class="row p-4">
+          <div class="col-8">
+            <h5>
+              <span class="mr-3"
+                ><i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+              Manage Yours
+            </h5>
+          </div>
+          <div class="col-4 right">
+            <button class="btn btn-down" (click)="show1()">
+              <i
+                *ngIf="!manageYours"
+                class="fa fa-chevron-down"
+                aria-hidden="true"
+              ></i>
+              <i
+                *ngIf="manageYours"
+                class="fa fa-chevron-up"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+        </div>
+        <div class="row m-1 p-3 center" *ngIf="manageYours">
+          <div class="col-md-12">
+            {{
+              myOwned
+                ? "You have already this NFT item"
+                : "You have no this NFT item"
+            }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd one  -->
+      <div class="card card-cs mb-2">
+        <div class="row p-4">
+          <div class="col-8">
+            <h5>
+              <span class="mr-3"
+                ><i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+              Properties
+            </h5>
+          </div>
+          <div class="col-4 right">
+            <button class="btn btn-down" (click)="show5()">
+              <i
+                *ngIf="!details"
+                class="fa fa-chevron-down"
+                aria-hidden="true"
+              ></i>
+              <i
+                *ngIf="details"
+                class="fa fa-chevron-up"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+        </div>
+        <div class="row center m-1 p-3" *ngIf="property">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6">
+                <p>Minig Rate</p>
+              </div>
+              <div class="col-6 text-right">
+                <p>{{ shopItem.rate }}%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-cs">
+        <div class="row p-4">
+          <div class="col-8">
+            <h5>
+              <span class="mr-3"
+                ><i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+              Details
+            </h5>
+          </div>
+          <div class="col-4 right">
+            <button class="btn btn-down" (click)="show3()">
+              <i
+                *ngIf="!details"
+                class="fa fa-chevron-down"
+                aria-hidden="true"
+              ></i>
+              <i
+                *ngIf="details"
+                class="fa fa-chevron-up"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+        </div>
+        <div class="row center m-1 p-3" *ngIf="details">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6">
+                <p>Contract Address</p>
+              </div>
+              <div class="col-6">
+                <a target="_blank" href="{{ bsscanURI + contractAddress }}">{{
+                  displayAddress(contractAddress)
+                }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6">
+                <p>IPFS JSON</p>
+              </div>
+              <div class="col-6 right">
+                <a target="_blank" href="{{ ipfsJSON }}">
+                  {{ ipfsJSON.substr(0, 30) }}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6">
+                <p>Supply Count</p>
+              </div>
+              <div class="col-6 right">
+                <p>{{ supplyCount }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 mt-2">
+      <div class="card card-cs">
+        <div class="row p-4">
+          <div class="col-6">
+            <h5>
+              <span class="mr-3"
+                ><i class="fa fa-shopping-basket" aria-hidden="true"></i
+              ></span>
+              For Sale
+            </h5>
+          </div>
+          <div class="col-6 right">
+            <span
+              ><i class="fa fa-users mr-2"></i>{{ sellerCount }} owners</span
+            >
+            <span class="ml-2"
+              ><i class="fa fa-bars mr-2 ml-2"></i
+              >{{ totalSellingTokens }} total</span
+            >
+          </div>
+        </div>
+        <!-- 2nd row -->
+        <div class="row center m-1 p-1">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-4">
+                <p>
+                  PRICE
+                  <span class="ml-3"
+                    ><i
+                      class="fa {{
+                        sort_dir ? 'fa-arrow-up' : 'fa-arrow-down'
+                      }} cursor-pointer"
+                      aria-hidden="true"
+                      (click)="changeSort()"
+                    ></i
+                  ></span>
+                </p>
+              </div>
+              <div class="col-4">
+                <p>OWNER</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3rd one  -->
+
+        <div class="row center m-1 p-3" *ngFor="let item of showNftItems">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-4">
+                <p class="p-0 m-0">
+                  <span class="mr-2">
+                    <svg
+                      viewBox="0 0 16 16"
+                      width="16px"
+                      color="text"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="sc-bdnxRM iTcRLV"
+                    >
+                      <circle cx="8" cy="8" r="8" fill="#F0B90B"></circle>
+                      <path
+                        d="M5.01656 8.00006L3.79256 9.23256L2.56006 8.00006L3.79256 6.76756L5.01656 8.00006ZM8.00006 5.01656L10.1081 7.12456L11.3406 5.89206L9.23256 3.79256L8.00006 2.56006L6.76756 3.79256L4.66806 5.89206L5.90056 7.12456L8.00006 5.01656ZM12.2076 6.76756L10.9836 8.00006L12.2161 9.23256L13.4401 8.00006L12.2076 6.76756ZM8.00006 10.9836L5.89206 8.87556L4.66806 10.1081L6.77606 12.2161L8.00006 13.4401L9.23256 12.2076L11.3406 10.0996L10.1081 8.87556L8.00006 10.9836ZM8.00006 9.23256L9.23256 8.00006L8.00006 6.76756L6.76756 8.00006L8.00006 9.23256Z"
+                        fill="#FFFDFA"
+                      ></path>
+                    </svg>
+                  </span>
+                  {{ web3Service.getPrice(1, item.price) }}
+                </p>
+              </div>
+              <div class="col-4">
+                <p class="p-0 m-0">{{ displayAddress(item.owner) }}</p>
+              </div>
+              <div class="col-4 right">
+                <button class="btn btn-buys" (click)="buyNFTItem(item)">
+                  Buy
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <span class="ml-3">
+              <i
+                class="fa fa-arrow-left cursor-pointer"
+                aria-hidden="true"
+                (click)="changePage(-1)"
+              ></i>
+              <span class="page-number"
+                >{{ now_page }} of {{ total_page }}</span
+              >
+              <i
+                class="fa fa-arrow-right cursor-pointer"
+                aria-hidden="true"
+                (click)="changePage(1)"
+              ></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{ display: mintDisplay }"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content main-model">
+      <div class="modal-body px-3 sa">
+        <div class="row bg-one p-4">
+          <div class="col-6">
+            <h5>Review</h5>
+          </div>
+          <div class="col-6 right">
+            <button class="btn btn-cross" (click)="onCloseMintHandled()">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 2nd row  -->
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-4">
+                <img src="{{ shopItem.imageURI }}" class="img-sizes2" alt="" />
+              </div>
+              <div class="col-8">
+                <h4>{{ shopItem.name }}</h4>
+                <p>Mining Rate : {{ shopItem.rate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3rd part  -->
+        <div class="row centers mt-2">
+          <div class="col-10">
+            <div class="card p-4 card-cs">
+              <div class="row">
+                <div class="col-4">
+                  <p>Count</p>
+                </div>
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input
+                        type="text"
+                        class="buy-count-input"
+                        (keyup)="
+                          getBuyPrice(
+                            shopItem.currency,
+                            shopItem.mrPrice,
+                            buyItemCount
+                          )
+                        "
+                        [value]="buyItemCount"
+                        (input)="buyItemCount = $event.target.value"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <p>Payment</p>
+                </div>
+                <div class="col-8 right">
+                  <p class="p-0 m-0">
+                    <span class="mr-2">
+                      <svg
+                        viewBox="0 0 16 16"
+                        width="16px"
+                        color="text"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="sc-bdnxRM iTcRLV"
+                      >
+                        <circle cx="8" cy="8" r="8" fill="#F0B90B"></circle>
+                        <path
+                          d="M5.01656 8.00006L3.79256 9.23256L2.56006 8.00006L3.79256 6.76756L5.01656 8.00006ZM8.00006 5.01656L10.1081 7.12456L11.3406 5.89206L9.23256 3.79256L8.00006 2.56006L6.76756 3.79256L4.66806 5.89206L5.90056 7.12456L8.00006 5.01656ZM12.2076 6.76756L10.9836 8.00006L12.2161 9.23256L13.4401 8.00006L12.2076 6.76756ZM8.00006 10.9836L5.89206 8.87556L4.66806 10.1081L6.77606 12.2161L8.00006 13.4401L9.23256 12.2076L11.3406 10.0996L10.1081 8.87556L8.00006 10.9836ZM8.00006 9.23256L9.23256 8.00006L8.00006 6.76756L6.76756 8.00006L8.00006 9.23256Z"
+                          fill="#FFFDFA"
+                        ></path>
+                      </svg> </span
+                    >{{ this.totalPrice }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <p>Balance in wallet</p>
+                </div>
+                <div class="col-8 right">
+                  <p class="p-0 m-0">
+                    <span class="mr-2">
+                      <svg
+                        viewBox="0 0 16 16"
+                        width="16px"
+                        color="text"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="sc-bdnxRM iTcRLV"
+                      >
+                        <circle cx="8" cy="8" r="8" fill="#F0B90B"></circle>
+                        <path
+                          d="M5.01656 8.00006L3.79256 9.23256L2.56006 8.00006L3.79256 6.76756L5.01656 8.00006ZM8.00006 5.01656L10.1081 7.12456L11.3406 5.89206L9.23256 3.79256L8.00006 2.56006L6.76756 3.79256L4.66806 5.89206L5.90056 7.12456L8.00006 5.01656ZM12.2076 6.76756L10.9836 8.00006L12.2161 9.23256L13.4401 8.00006L12.2076 6.76756ZM8.00006 10.9836L5.89206 8.87556L4.66806 10.1081L6.77606 12.2161L8.00006 13.4401L9.23256 12.2076L11.3406 10.0996L10.1081 8.87556L8.00006 10.9836ZM8.00006 9.23256L9.23256 8.00006L8.00006 6.76756L6.76756 8.00006L8.00006 9.23256Z"
+                          fill="#FFFDFA"
+                        ></path>
+                      </svg> </span
+                    >{{ ballanceInWallet }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4th part  -->
+        <!-- <div class="row mt-5">
+           <p class="px-4">Convert between BNB and WBNB for free:
+            Convert</p>
+         </div> -->
+        <!-- 5th part  -->
+        <div class="row mt-1 center p-3">
+          <div class="col-10 mt-3">
+            <button
+              class="btn btn-primary form-control"
+              (click)="clickPurchaseItem()"
+            >
+              Purchase
+            </button>
+
+            <div class="row mt-1 center">
+              <a href="/exchange" target="_blank">Get BNB or LPLT</a>
+            </div>
+          </div>
+          <!-- <div class="col-10 mt-3">
+             <button class="btn btn-checkout">Get BNB or WBNB</button>
+           </div> -->
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ist model  -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: display }">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content main-model">
+      <div class="modal-body px-3 sa pb-5">
+        <div class="row bg-one p-4">
+          <div class="col-6">
+            <h5>Review</h5>
+          </div>
+          <div class="col-6 right">
+            <button class="btn btn-cross" (click)="onCloseHandled()">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 2nd row  -->
+        <div class="row mt-5">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-4">
+                <img src="{{ selItem.imageURI }}" class="img-sizes2" alt="" />
+              </div>
+              <div class="col-8">
+                <h5>{{ selItem.name }}</h5>
+                <p class="f-s">
+                  Token ID : <span class="ml-3">{{ selItem.tokenId }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3rd part  -->
+        <div class="row centers">
+          <div class="card p-4 card-cs col-10">
+            <div class="row">
+              <div class="col-4">
+                <p>Payment</p>
+              </div>
+              <div class="col-8 right">
+                <p class="p-0 m-0">
+                  <span class="mr-2">
+                    <svg
+                      viewBox="0 0 16 16"
+                      width="16px"
+                      color="text"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="sc-bdnxRM iTcRLV"
+                    >
+                      <circle cx="8" cy="8" r="8" fill="#F0B90B"></circle>
+                      <path
+                        d="M5.01656 8.00006L3.79256 9.23256L2.56006 8.00006L3.79256 6.76756L5.01656 8.00006ZM8.00006 5.01656L10.1081 7.12456L11.3406 5.89206L9.23256 3.79256L8.00006 2.56006L6.76756 3.79256L4.66806 5.89206L5.90056 7.12456L8.00006 5.01656ZM12.2076 6.76756L10.9836 8.00006L12.2161 9.23256L13.4401 8.00006L12.2076 6.76756ZM8.00006 10.9836L5.89206 8.87556L4.66806 10.1081L6.77606 12.2161L8.00006 13.4401L9.23256 12.2076L11.3406 10.0996L10.1081 8.87556L8.00006 10.9836ZM8.00006 9.23256L9.23256 8.00006L8.00006 6.76756L6.76756 8.00006L8.00006 9.23256Z"
+                        fill="#FFFDFA"
+                      ></path>
+                    </svg>
+                  </span>
+                  {{ web3Service.getPrice(1, selItem.price) }}
+                </p>
+              </div>
+            </div>
+
+            <div class="row p-5">
+              <div class="col-12">
+                <button
+                  class="btn btn-buy form-control"
+                  (click)="processNFTItem()"
+                >
+                  Connect Wallet
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader_overlap" *ngIf="isLoader">
+  <div class="loader"></div>
+</div>

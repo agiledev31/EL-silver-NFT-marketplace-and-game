@@ -1,0 +1,287 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center my-2">
+      <h3 class="card-title text-blue-400">NFT Admin</h3>
+      <hr class="hr-blue" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-right">
+      <button class="btn btn-primary" (click)="createNewItem()">Create New Item</button>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Name:</label>
+    </div>
+    <div class="col-md-9">
+      <input
+        class="form-control"
+        [value]="nftname"
+        (input)="nftname = $event.target.value"
+      />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Rate:</label>
+    </div>
+    <div class="col-md-9">
+      <input
+        class="form-control"
+        [value]="nftrate"
+        (input)="nftrate = $event.target.value"
+      />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Price:</label>
+    </div>
+    <div class="col-md-9">
+      <input
+        class="form-control"
+        [value]="nftprice"
+        (input)="nftprice = $event.target.value"
+      />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>MetaData URI:</label>
+    </div>
+    <div class="col-md-9">
+      <input
+        class="form-control"
+        [value]="nftmetadatauri"
+        (input)="nftmetadatauri = $event.target.value"
+      />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Count:</label>
+    </div>
+    <div class="col-md-9">
+      <input
+        class="form-control"
+        [value]="nftcount"
+        (input)="nftcount = $event.target.value"
+      />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Currency:</label>
+    </div>
+    <div class="col-md-9">
+      <select class="form-control" [value]="nftcurrency" (input)="nftcurrency=$event.target.value">
+        <option value="1">BNB</option>
+        <option value="2">LPLT</option>
+      </select>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row mt-2">
+    <div class="col-md-3">
+      Select Shop Item
+    </div>
+    <div class="col-md-9">
+      <select class="form-control" (change)="selectShopItem($event.target.value )">
+        <option *ngFor="let item of shopItems" [value]="item.mrId">{{item.name}}</option>
+      </select>
+    </div>
+  </div>
+  <!-- <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Name:</label>
+    </div>
+    <div class="col-md-7">
+      <input
+        class="form-control"
+        [value]="sel_shopname"
+        (input)="sel_shopname = $event.target.value"
+      />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="updateShop(1)" />
+    </div>
+  </div> -->
+
+  <!-- <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Rate:</label>
+    </div>
+    <div class="col-md-7">
+      <input
+        class="form-control"
+        [value]="sel_shoprate"
+        (input)="sel_shoprate = $event.target.value"
+      />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="updateShop(2)" />
+    </div>
+  </div> -->
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Price:</label>
+    </div>
+    <div class="col-md-7">
+      <input
+        class="form-control"
+        [value]="sel_shopprice"
+        (input)="sel_shopprice = $event.target.value"
+      />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="updateShop(3)" />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>MetaData URI:</label>
+    </div>
+    <div class="col-md-7">
+      <input
+        class="form-control"
+        [value]="sel_shopmetadatauri"
+        (input)="sel_shopmetadatauri = $event.target.value"
+      />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="updateShop(4)" />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Count:</label>
+    </div>
+    <div class="col-md-7">
+      <input
+        class="form-control"
+        [value]="sel_shopcount"
+        (input)="sel_shopcount = $event.target.value"
+      />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="updateShop(5)" />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Currency:</label>
+    </div>
+    <div class="col-md-7">
+      <select class="form-control" [value]="sel_shopcurrency" (input)="sel_shopcurrency=$event.target.value">
+        <option value="1">BNB</option>
+        <option value="2">LPLT</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="updateShop(6)" />
+    </div>
+  </div>
+
+  <hr>
+  <h3>Meta Data Base URI</h3>
+  <div class="row mt-2">
+    <div class="col-md-8">
+      <input class="form-control" [value]="metadata_baseuri" (input)="metadata_baseuri=$event.target.value">
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Get" (click)="getMetaDataBaseURI()" />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="setMetaDataBaseURI()" />
+    </div>
+  </div>
+  
+  <hr>
+  <h3>LPLT Dex Rate</h3>
+  <div class="row met-2">
+    <div class="col-md-3">
+      <label>Buy Dex Rate</label>
+    </div>
+    <div class="col-md-5">
+      <input type="text" class="form-control" [value]="buy_dex_rate" (input)="buy_dex_rate=$event.target.value"/>
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Get" (click)="getBuyDexRate()" />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="setBuyDexRate()" />
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label>Sell Dex Rate</label>
+    </div>
+    <div class="col-md-5">
+      <input type="text" class="form-control" [value]="sell_dex_rate" (input)="sell_dex_rate=$event.target.value"/>
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Get" (click)="getSellDexRate()" />
+    </div>
+    <div class="col-md-2">
+      <input class="form-control btn btn-primary" type="button" value="Set" (click)="setSellDexRate()" />
+    </div>
+  </div>
+
+  <hr>
+  <h3>BEP20 Balance</h3>
+  <div class="row mt-2">
+    <div class="col-md-10">
+      <label>{{totalBNBBalance }}</label>
+    </div>
+    <div class="col-md-2">
+      <input type="button" class="form-control btn btn-primary" type="button" value="Get" (click)="getTotalBNBBalance(20)"/>
+    </div>
+  </div>
+  <h3>BEP20 Withdraw</h3>
+  <div class="row mt-2">
+    <div class="col-md-10">
+      <input class="form-control" [value]="withdrawBalance" (input)="withdrawBalance=$event.target.value" />
+    </div>
+    <div class="col-md-2">
+      <input type="button" class="form-control btn btn-primary" type="button" value="Withdraw" (click)="runWithdrawBalance(20)"/>
+    </div>
+  </div>
+
+  
+  <hr>
+  <h3>BEP721 Balance</h3>
+  <div class="row mt-2">
+    <div class="col-md-10">
+      <label>{{totalBNBBalance721 }}</label>
+    </div>
+    <div class="col-md-2">
+      <input type="button" class="form-control btn btn-primary" type="button" value="Get" (click)="getTotalBNBBalance(721)"/>
+    </div>
+  </div>
+  <h3>BEP721 Withdraw</h3>
+  <div class="row mt-2">
+    <div class="col-md-10">
+      <input class="form-control" [value]="withdrawBalance721" (input)="withdrawBalance721=$event.target.value" />
+    </div>
+    <div class="col-md-2">
+      <input type="button" class="form-control btn btn-primary" type="button" value="Withdraw" (click)="runWithdrawBalance(721)"/>
+    </div>
+  </div>
+
+</div>
+
+<div class="loader_overlap" *ngIf="isLoader">
+  <div class="loader"></div>
+</div>

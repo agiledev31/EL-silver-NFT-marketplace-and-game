@@ -1,0 +1,163 @@
+.post .p1{
+  font-size: 24px;
+  font-weight: 600;
+}
+.btn_primary{
+  background: #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 30px;
+}
+.btn_outline_primary{
+  border: 1px solid #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+}
+.Input_with_icon{
+  position: relative;
+}
+.Input_with_icon .form-control {
+  padding-left: 3.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  height: calc(1.5em + .75rem + 10px);
+}
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.Input_with_icon i {
+  position: absolute;
+  top: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+
+}
+
+
+.card {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+}
+
+.heading {
+  font-size: 19px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.search_able .teams ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.search_able .teams li {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 46%;
+  float: left;
+  margin: 1rem;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 3px 12px;
+  cursor: pointer;
+}
+.search_able .teams .checked {
+  background: rgba(255, 255, 255, 0.09) !important;
+}
+.check_box{
+  display: none;
+}
+.checked .check_box{
+  display: block;
+}
+
+.search_able .teams .friends_img,.selected .teams .friends_img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.search_able .teams .friends_img img,.selected .teams .friends_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.search_able .teams .friends_name,.selected .teams .friends_name {
+  color: white;
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.search_able .teams .online_status,.selected .teams .online_status {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  font-size: 14px;
+}
+
+.friends_info {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+label{
+  margin-bottom: 0;
+}
+.styled-checkbox:checked+label:after {
+  top: 8px;
+
+}
+
+.selected{
+  height: 400px;
+  overflow-y: auto;
+}
+.selected .teams ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.selected .teams li {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 3px 12px;
+}
+.selected::-webkit-scrollbar-track
+{
+  background-color: transparent;
+}
+
+.selected::-webkit-scrollbar
+{
+	width: 5px;
+	background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+
+.selected::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}

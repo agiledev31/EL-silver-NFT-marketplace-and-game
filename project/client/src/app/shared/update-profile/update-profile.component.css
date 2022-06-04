@@ -1,0 +1,115 @@
+.form-group{
+    margin-bottom: 1.3rem;
+  }
+  .form-group label{
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .Input_with_icon{
+    position: relative;
+  }
+  ::ng-deep .modal-content{
+    background: radial-gradient(50% 128% at 0% 0%, rgba(17, 17, 17, 0.87) 0%, #111111 100%);    
+  }
+  .Input_with_icon .form-control {
+    padding-left: 2.75rem;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    border: 0;
+  }
+  .Input_with_icon .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+  }
+  .show_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: .875rem;
+    padding-right: .875rem;
+    line-height: calc(1.5385em + .875rem + 2px);
+    min-width: 1rem;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .Input_with_icon i {
+    position: absolute;
+    top: 0;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: .875rem;
+    padding-right: .875rem;
+    line-height: calc(1.5385em + .875rem + 2px);
+    min-width: 1rem;
+  
+  }
+  .btn{
+    font-weight: 500;
+  }
+  .primary_btn_outline{
+    color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #28A5FF;
+  box-sizing: border-box;
+  padding: .6rem 3rem;
+  border-radius: 8px;
+  }
+  .primary_btn_outline:hover{
+    color: black;
+  background: #28A5FF;
+  }
+  
+  button img{
+    margin-right: 10px!important;  
+  }
+
+  .profile-img{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto; 
+    position: relative; 
+  }
+  .profile-img:hover .hover_img{
+    opacity: 1;
+    transition: all 1s;
+  }
+  .profile-img:hover .hover_img i{
+    opacity: 1;
+    transition: all 1s;
+  }
+
+  .profile-img .hover_img{
+    transition: all 1s;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;   
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.87);
+    color: black;
+  
+  }
+  
+  .profile-img .hover_img i{
+    transition: all 1s;
+    opacity: 0;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    font-size: 25px;
+    transform: translate(-50%, -50%);
+  }
+
+  .profile-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;  
+    border-radius: 100%;
+  }
+  .profile-img a{
+    position: absolute;
+    bottom: 18px;
+    right: 10px;   
+  }

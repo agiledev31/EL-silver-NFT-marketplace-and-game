@@ -1,0 +1,133 @@
+.profile{
+    background-color: #28A5FF;
+}
+.profile_line{
+    padding:5px 0;
+}
+.profile_line img{
+    float: left;
+}
+
+.profile_links li{
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 50px;
+}
+.profile_links li span{
+    display: block;
+}
+.profile_links li strong{
+    display: block;
+}
+.profile_page{
+    margin: 100px 0 0;
+}
+
+.profile_nav_tab{
+    background-color: inherit;
+    border: none;
+    margin: 0 0 30px;
+}
+
+.profile_nav_tab li:first-child{
+    padding-left: 0;
+}
+
+.profile_nav_tab li{
+    padding: 10px 50px;
+}
+
+.profile_nav_tab li a{
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+.profile_nav_tab li a:hover{
+    color: #FF9933;
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid #FF9933;
+}
+.profile_nav_tab .nav-link.active {
+  color: #FF9933;
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid #FF9933;
+}
+
+
+
+.profile-img{
+  padding: 0;
+  border-radius: 100%;
+  /* display: inline-block; */
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  position: relative;
+  border: 3px solid black;
+  background-color: aliceblue;
+}
+.profile-img:hover .hover_img{
+  opacity: 1;
+  transition: all 1s;
+}
+.profile-img:hover .hover_img i{
+  opacity: 1;
+  transition: all 1s;
+}
+.profile-img .hover_img{
+  transition: all 1s;
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 125px;
+  width: 125px;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.87);
+  color: black;
+
+}
+
+.profile-img .hover_img i{
+  transition: all 1s;
+  opacity: 0;
+  position: relative;
+    left: 42px;
+    top: 45px;
+    font-size: 35px;
+}
+
+.profile-img img{
+  height: 100%;
+  border-radius: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.profile-content{
+  display: flex;
+  margin-bottom: -55px;
+}
+.profile_name p{
+  font-size: 26px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.87);
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.profile_name strong{
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.87);
+}
+.profile_links li strong{
+  font-family: "RIFT";
+  font-size: 26px;
+  font-weight: 600 !important;
+
+}
+.profile_links li{
+  color: rgba(255, 255, 255, 0.87);
+}

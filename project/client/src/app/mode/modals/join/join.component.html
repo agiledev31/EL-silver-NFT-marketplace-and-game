@@ -1,0 +1,99 @@
+<ng-template class="w-500" #content let-modal>
+  <div class="modal-body">
+    <div class="card">
+      <div class="card_header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-times mr-3 f-20 text-gray cancel" (click)="close()"></i>
+          <h3 class="mb-0 font-weight-600"> Sign up for tournament</h3>
+        </div>
+      </div>
+        <div>
+          <div class="card-body pt-0">
+            <div class="text-blue f-20 font-weight-500 mb-2">
+              {{tournament.name}}
+            </div>
+            <div class="text-gold f-15 font-weight-500 mb-2">Starts {{startsIn}}</div>
+           <div class="row">
+             <div class="col-md-2">
+               <div class="text-uppercase text-gray f-13 mb-1">mode</div>
+               <div class="f-18">5v5</div>
+             </div>
+             <div class="col-md-4">
+              <div class="text-uppercase text-gray f-13 mb-1">Entry fee</div>
+              <div class="f-18">{{tournament.entryFee | silverPrice: 1}}gm/player</div>
+             </div>
+             <div class="col-md-3">
+              <div class="text-uppercase text-gray f-13 mb-1">Region</div>
+              <div class="f-18">{{tournament.region | region}}</div>
+             </div>
+             <div class="col-md-3">
+              <div class="text-uppercase text-gray f-13 mb-1">Prize</div>
+              <div class="f-18">{{tournament.prize | silverPrice: 1}}gm</div>
+             </div>
+           </div>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <h5 class="mb-2 text-gray">team name</h5>
+          <div class="Input_with_icon">
+            <input type="text" placeholder="Enter your team name" [(ngModel)]="teamName" class="form-control">
+          </div>
+        </div>
+
+        <div class="card-body">
+        <h5 class="mb-2 text-gray">add team members</h5>
+        <div class="Input_with_icon">
+          <ng-select [searchable]="false"  [multiple]="true" [items]="friends" [placeholder]="'Search Friends'"
+          [(ngModel)]="selectedFriends">
+          <ng-template ng-label-tmp let-item="item">
+            @{{item.username}}
+        </ng-template>
+          <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+            <div class="friends_info">
+              <div class="d-flex align-items-center">
+                <div class="user">
+                  <img [src]="item.image | image" alt="">
+                </div>
+                <span class="friends_name">{{item.fullName}}</span>
+
+              </div>
+            </div>
+        </ng-template>
+        </ng-select>
+        </div>
+        <div class="search_able height pt-2">
+          <div class="teams">
+            <ul>
+
+              <li *ngFor="let friend of selectedFriends">
+                <div class="friends_info">
+                  <div class="d-flex align-items-center">
+                    <div class="user">
+                      <img [src]="friend.image | image" alt="">
+                    </div>
+                    <span class="friends_name d-block">{{friend.fullName}}</span>
+
+                  </div>
+                  <div class="ml-auto">
+                    <img (click)="onRemoveSelected(friend)" src="assets/images/Cancel.png" class="cancel" alt="">
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-body py-0 text-center">
+          <div class="text-green" *ngIf="currentUser.silver >= tournament.entryFee">Available silver balance: 140g</div>
+          <div class="text-gray" *ngIf="currentUser.silver < tournament.entryFee"><a href="javascript:void(0)" class="text-blue">Buy 20g more silver</a> or <a href="javascript:void(0)" class="text-blue">Request friends</a>   to send you some.</div>
+        </div>
+
+      </div>
+      <div class="bottom_btn">
+        <button [disabled]="teamName === '' || selectedFriends.length <5" (click)="onTournamentSignUp()" class="btn primary-btn">pay {{tournament.entryFee | silverPrice: 1}}gm Silver and Sign Up</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

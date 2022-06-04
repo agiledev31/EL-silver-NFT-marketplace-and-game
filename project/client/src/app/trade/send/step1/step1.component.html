@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-md-12 mb-4">
+    <div class="d-flex align-items-center">
+      <div class="post">
+        <div class="text-gray text-uppercase font-weight-normal small">step 1/2</div>
+        <div class="p1">Select friends</div>
+      </div>
+      <div class="ml-auto">
+
+        <button [disabled]="selectedFriends.length === 0" (click)="onNextClick()" href="javascript:void(0)" class="btn btn_primary">Next <img src="assets/images/Right arrow.svg"
+            alt=""></button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7 mb-4">
+    <div class="form-group">
+      <div class="Input_with_icon">
+        <input type="text" placeholder="Search by name, username or email address" [(ngModel)]="query" class="form-control" >
+        <i><img src="assets/images/search_icon.png" alt=""></i>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="friends_list">
+      <div class="container">
+        <div class="search_able">
+          <p class="heading">Friends</p>
+          <div class="teams">
+              <ul *ngIf="!isLoader && filteredFriends.length > 0">
+                <li *ngFor="let friend of filteredFriends; let i = index" [ngClass]="{'checked': friend.isSelected}" (click)="onFriendSelect(friend)">
+                  <div class="friends_img">
+                <rounded-image [src]="friend?.image | image"></rounded-image>
+
+                  </div>
+                  <div class="friends_info">
+                    <div>
+                      <span class="friends_name">{{friend.fullName}}</span>
+                      <span class="online_status">@{{friend.username}} </span>
+                    </div>
+                    <div class="ml-auto check_box">
+                      <div class="d-flex">
+                        <input class="styled-checkbox" id="selected{{friend._id}}" (change)="onFriendSelect(friend)" [checked]="friend.isSelected" type="checkbox" value="value1">
+                        <label for="selected{{friend._id}}" class="check-label-1"></label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+              <div *ngIf="!isLoader && filteredFriends.length == 0" class="f-5 text-center">
+                <p>No Friends Here</p>
+              </div>
+              <app-loader *ngIf="isLoader"></app-loader>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <p class="heading">Selected</p>
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="selected">
+          <div class="teams">
+              <ul *ngIf="selectedFriends.length > 0; else noFriendsSelected">
+                <li *ngFor="let f of selectedFriends">
+                  <div class="friends_img">
+                <rounded-image [src]="f?.image | image"></rounded-image>
+
+                  </div>
+                  <div class="friends_info">
+                    <div>
+                      <span class="friends_name">{{f.fullName}}</span>
+                      <span class="online_status">@{{f.username}}</span>
+                    </div>
+                    <div class="ml-auto">
+                     <a href="javascript:void(0)" (click)="onFriendSelect(f)"> <i class="fa fa-times text-grey pointer"></i></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ng-template #noFriendsSelected>
+                <p class="py-5 text-center">No Friends Selected Yet </p>
+              </ng-template>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <div class="card">
+      <div class="card_header">
+        <div class="d-flex align-items-center">
+          <i *ngIf="modalType === 2" class="fas fa-times pointer mr-3 f-20 text-gray" (click)="close()"></i>
+          <h2 class="mb-0" *ngIf="modalType === 1"> Create Lobby</h2>
+          <h2 class="mb-0" *ngIf="modalType === 2"> Invite Players</h2>
+          <div class="text-blue ml-auto"><img src="assets/images/Link Icon.svg" alt=""> Copy Link</div>
+        </div>
+      </div>
+
+
+      <div class="height">
+        <div *ngIf="modalType === 1">
+          <div class="toggle_heading mb-1">
+            <div>Select a Map</div>
+          </div>
+          <div class="card-body">
+            <ul class="selectmap">
+              <li class="pointer" (click)="onMapChange(1)"  [ngClass]="{'active': map === 1}">
+                <span class="selectmap_img"><img src="assets/images/map_summoners.png" alt=""></span>
+                <span class="selectmap_name">Summoner’s Rift</span>
+              </li>
+              <li class="pointer" (click)="onMapChange(2)"  [ngClass]="{'active': map === 2}">
+                <span class="selectmap_img"><img src="assets/images/map_summoners.png" alt=""></span>
+                <span class="selectmap_name">Howling Abyss</span>
+              </li>
+            </ul>
+          </div>
+          <div class="toggle_heading mb-1">
+            <div>choose your position</div>
+          </div>
+          <div class="card-body">
+            <div class="liquid">
+              <ul>
+                <li class="pointer" (click)="onChangePosition(1)" [ngClass]="{'active': position === 1}"  class="active">
+                  <div class="header_img">
+                    <img class="icons" src="assets/images/top_position.png" alt="">
+                    <div class="img_name">TOP</div>
+                  </div>
+                </li>
+                <li class="pointer" (click)="onChangePosition(2)" [ngClass]="{'active': position === 2}" >
+                  <div class="header_img">
+                    <img class="icons" src="assets/images/support_icon.png" alt="">
+                    <div class="img_name">SUPPORT</div>
+                  </div>
+                </li>
+                <li class="pointer" (click)="onChangePosition(3)" [ngClass]="{'active': position === 3}" >
+                  <div class="header_img">
+                    <img class="icons" src="assets/images/mid_icon.png" alt="">
+                    <div class="img_name">MID</div>
+                  </div>
+                </li>
+                <li class="pointer" (click)="onChangePosition(4)" [ngClass]="{'active': position === 4}" >
+                  <div class="header_img">
+                    <img class="icons" src="assets/images/adc_icon.png" alt="">
+                    <div class="img_name">AD CARRY</div>
+                  </div>
+                </li>
+                <li class="pointer" (click)="onChangePosition(5)" [ngClass]="{'active': position === 5}" >
+                  <div class="header_img">
+                    <img class="icons" src="assets/images/jungle.png" alt="">
+                    <div class="img_name">JUNGLE</div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+
+
+</div>
+
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input id="password" type="text" placeholder="Search by name, ID or email address" class="form-control">
+            <i><img src="assets/images/search_icon.png" alt=""></i>
+          </div>
+          <div class="d-flex my-3 align-items-center">
+            <div class="online"></div> <span class="text-grey f-18">Online friends</span>
+          </div>
+        </div>
+        <div class="toggle_heading d-flex mb-1" (click)="closeTeam()">
+          <div>team</div>
+          <div class="ml-auto text-grey"><i class="fas fa-chevron-down"></i></div>
+        </div>
+
+        <div class="search_able" [ngbCollapse]="isMenuCollapsed">
+          <div class="teams">
+            <ul>
+              <li *ngFor="let friend of friends; let i =index" [ngClass]="{'checked': friend.isSelected}" (click)="onFriendSelect(i)">
+                <!-- <div class="friends_img"><img [src]="friend.image |image" alt=""></div> -->
+                <rounded-image [src]="friend.image" alt=""></rounded-image>
+                <div class="friends_info">
+                  <div>
+                    <span class="friends_name">{{friend.fullName}}</span>
+                    <span class="online_status">@{{friend.username}}</span>
+                  </div>
+                  <div class="ml-auto check_box">
+                    <div class="d-flex">
+                      <input class="styled-checkbox" id="styled-checkbox-2" [checked]="friend.isSelected"  type="checkbox" value="value1">
+                      <label for="styled-checkbox-2" class="check-label-1"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="toggle_heading d-flex" (click)="closeTeam1()">
+          <div>recently Played with </div>
+          <div class="ml-auto text-grey"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="search_able" [ngbCollapse]="isMenuCollapsed1">
+          <div class="teams">
+            <ul>
+              <li *ngFor="let user of users; let i =index" [ngClass]="{'checked': user.isSelected}" (click)="onUserSelect(i)">
+                <rounded-image [src]="user.image" alt=""></rounded-image>
+                <div class="friends_info">
+                  <div>
+                    <span class="friends_name">{{user.fullName}}</span>
+                    <span class="online_status">@{{user.username}}</span>
+                  </div>
+                  <div class="ml-auto check_box">
+                    <div class="d-flex">
+                      <input class="styled-checkbox" id="styled-checkbox-2" [checked]="user.isSelected"  type="checkbox" value="value1">
+                      <label for="styled-checkbox-2" class="check-label-1"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_btn">
+        <button [disabled]="map === -1 || position === -1 || selectedUsers.length < 4"
+          class="btn primary-btn" (click)="invite()">Invite {{selectedUsers.length > 0 ? selectedUsers.length: ''}} Friends</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,118 @@
+.tournament_area{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    margin: 50px 0;
+    background: rgba(255, 255, 255, 0.08);
+}
+.tournament_img{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: auto;
+    top: 0;
+}
+.tournament_area h4{
+    font-size: 48px;
+    line-height: 58px;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+}
+.tournament_area p{
+    width: 470px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+}
+.card{
+    background: transparent;
+}
+.slick_img_area{
+    position: relative;
+}
+.slick_img_area img{
+    border-radius: 16px 16px 0px 0px;
+}
+.slick_badges{
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    font-size: 12px;
+}
+.live_badge{
+    background-color: rgba(232, 49, 81, 1);
+    padding:5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.card_upcoming_tour {
+    flex: initial;
+    min-height: inherit;
+    padding: .5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 0 0px 10px 10px;
+    align-items: center;
+}
+.red_dot{
+    height: 10px;
+    width: 10px;
+    background: #E83151;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+.live_videos_area .d-flex p{
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+.featured_badge{
+    background-color: rgba(255, 255, 255, 0.38);;
+    padding:5px 10px;
+    border-radius: 5px;
+}
+.time_left{
+    display: flex;
+    align-items: center;
+}
+.time_left img{
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+}
+.time_left .time{
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+.social_icon{
+    height: 20px;
+    width: 20px;
+}
+.social_icon img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.white_dot{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background: white;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+.img-size {
+  width: 100%;
+}
+@media screen and (max-width:600px) {
+
+  .tournament_area h4{
+    font-size: 40px;
+}
+.tournament_area p{
+  width: inherit;
+}
+}

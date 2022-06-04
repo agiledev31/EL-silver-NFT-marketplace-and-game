@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div *ngIf="error == 1" class="alert alert-danger" role="alert">
+    E-mail or Password is invalid
+  </div>
+  <div *ngIf="error == 2" class="alert alert-danger" role="alert">
+    E-mail or Password is invalid
+  </div>
+  <div *ngIf="error == 3"  class="alert alert-danger">
+    Your account is not verified. Please verify via the email sent on your email.
+    Click <a (click)="resendLink()" class = "resend_link">here</a> to resend the link.
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <div class="Input_with_icon">
+      <input id="email" type="text" appNoSpace placeholder="someone@something.com" class="form-control"
+        formControlName="email" autocomplete="email" />
+      <i class="fas fa-user"></i>
+      <errors [control]="f.email" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <div class="Input_with_icon">
+      <input id="password" [type]="isPasswordShow ? 'text' : 'password'" appNoSpace placeholder="......"
+        class="form-control" formControlName="password" autocomplete="current-password" />
+      <i class="fas fa-user"></i>
+      <div class="show_btn" (click)="onPasswordShowHideClick()">
+        {{ isPasswordShow ? "Hide" : "Show" }}
+      </div>
+      <errors [control]="f.password" [isSubmit]="isSubmit"></errors>
+    </div>
+    <a href="javascript:void(0)" [routerLink]="['/auth/forgot-password']" class="forgot_password">Forgot Password</a>
+  </div>
+  <div>
+    <submit [isLoading]="isLoading" [label]="'Start Playing!'" classes="btn primary-btn w-100 mt-2"></submit>
+  </div>
+</form>
+
+<div class="my-2 text-center">or</div>
+<div>
+  <button class="btn primary_btn_outline w-100 mt-2" (click)="signInWithGoogle()">
+    <img class="mr-3" src="assets/images/google_icon.png" alt="" />Login With
+    Google
+  </button>
+</div>
+
+<ul class="navbar-nav justify-content-between">
+  <li class="nav-item">
+    <a class="nav-link text-center" href="javascript:void(0)">Don't have an account?</a>
+  </li>
+  <li class="nav-item">
+    <div>
+      <button class="btn primary_btn_outline w-100 mt-2" href="javascript:void(0)" routerLink="/auth/signup">
+        Sign Up
+      </button>
+    </div>
+  </li>
+</ul>

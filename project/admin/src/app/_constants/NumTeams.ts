@@ -1,0 +1,1 @@
+export const TOURNAMENT_TEAMS = [8, 16];

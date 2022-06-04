@@ -1,0 +1,265 @@
+<div class="investment_area">
+  <div class="container">
+    <div class="bread_crumb">
+      <span>Home > </span><span>Game Modes > </span><span class="final">All Tournaments </span>
+    </div>
+    <div class="row justify-content-center py-md-5">
+      <div class="col-md-12 text-center">
+        <h1 class="heading1 mt-lg-0 mt-3">Tournaments</h1>
+      </div>
+      <div (keyup.enter)='searchPage()' class="col-md-7">
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input [(ngModel)]='searchQuery' type="text" placeholder="Search tournament name" class="form-control">
+            <div (click)='searchPage()' class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- slider-->
+  <div class="live_videos_area mb-md-5 mb-2">
+    <div class="container">
+      <div class="d-flex align-items-center mb-3 mb-md-4">
+        <p>FEATURED</p>
+        <div class="icons ml-auto mr-md-4">
+          <img class="mr-3" src="assets/images/mode_icon_1.png" alt="">
+          <img src="assets/images/mode_icon_2.png" alt="">
+        </div>
+      </div>
+      <div class="slicks" slickContainer #slickController="slick" [slickConfig]="config">
+        <ng-container *ngIf="slickController.initialize">
+          <div class="card" slickItem>
+            <div style="width: 630px;">
+              <div class="slick_img_area">
+                <img class="w-100" src="assets/images/live_featured.png" alt="">
+                <div class="slick_badges">
+                  <span class="live_badge"><span class="white_dot"></span>Live</span>
+                  <span class="featured_badge">Featured</span>
+                </div>
+              </div>
+              <div class="card_upcoming_tour d-flex justify-content-between px-4">
+                <div class="">
+                  <a class="card-title m-0" href="javacript:void(0)" [routerLink]="['/mode/detail']">Esports
+                    tournament</a>
+
+                  <div class="d-flex time_watch">
+                    <div class="time_left">
+                      <img width="100%" src="assets/images/time_left.png" alt="">
+                      <div class="time">1d 4h 22m left</div>
+                    </div>
+                    <div class="time_left ml-3">
+                      <img width="100%" src="assets/images/watch_hour.png" alt="">
+                      <div class="time">1840 watching</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around m-0">
+                  <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                  <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" slickItem>
+            <div class="slick_img_area">
+              <img width="100%" src="assets/images/upcoming_tour.png" alt="">
+              <div class="slick_badges">
+                <span class="live_badge"><span class="white_dot"></span>Live</span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <div class="">
+                <a class="card-title m-0 f-16" href="javacript:void(0)" [routerLink]="['/mode/detail']">Esports
+                  tournament</a>
+              </div>
+              <div class="d-flex justify-content-around m-0">
+                <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" slickItem>
+            <div class="slick_img_area">
+              <img width="100%" src="assets/images/upcoming_tour.png" alt="">
+              <div class="slick_badges">
+                <span class="live_badge"><span class="white_dot"></span>Live</span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <div class="">
+                <a class="card-title m-0 f-16" href="javacript:void(0)" [routerLink]="['/mode/detail']">Esports
+                  tournament</a>
+              </div>
+              <div class="d-flex justify-content-around m-0">
+                <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" slickItem>
+            <div class="slick_img_area">
+              <img width="100%" src="assets/images/upcoming_tour.png" alt="">
+              <div class="slick_badges">
+                <span class="live_badge"><span class="white_dot"></span>Live</span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <div class="">
+                <a class="card-title m-0 f-16" href="javacript:void(0)" [routerLink]="['/mode/detail']">Esports
+                  tournament</a>
+              </div>
+              <div class="d-flex justify-content-around m-0">
+                <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" slickItem>
+            <div class="slick_img_area">
+              <img width="100%" src="assets/images/upcoming_tour.png" alt="">
+              <div class="slick_badges">
+                <span class="live_badge"><span class="white_dot"></span>Live</span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <div class="">
+                <a class="card-title m-0 f-16" href="javacript:void(0)" [routerLink]="['/mode/detail']">Esports
+                  tournament</a>
+              </div>
+              <div class="d-flex justify-content-around m-0">
+                <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" slickItem>
+            <div class="slick_img_area">
+              <img width="100%" src="assets/images/upcoming_tour.png" alt="">
+              <div class="slick_badges">
+                <span class="live_badge"><span class="white_dot"></span>Live</span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <div class="">
+                <a class="card-title m-0 f-16" href="javacript:void(0)" [routerLink]="['/mode/detail']">Esports
+                  tournament</a>
+              </div>
+              <div class="d-flex">
+                <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <!--New Slider-->
+  <div class="live_videos_area mb-md-5 mb-3">
+    <div class="container">
+      <div class="d-flex align-items-center mb-3 mb-md-4">
+        <p>ONGOING</p>
+        <div class="icons ml-auto mr-md-4">
+          <img class="mr-3" src="assets/images/mode_icon_1.png" alt="">
+          <img src="assets/images/mode_icon_2.png" alt="">
+        </div>
+      </div>
+      <div class="slicks" slickContainer #slickController="slick" [slickConfig]="config1">
+        <ng-container *ngIf="slickController.initialize">
+          <div *ngFor="let data of ongoing" class="card w-300" slickItem>
+            <div class="slick_img_area">
+              <img width="100%" [src]="data?.coverImage | image:'1' " alt="">
+              <div class="slick_badges">
+                <span class="live_badge"><span class="white_dot"></span>Live</span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <div class="">
+                <a class="card-title m-0 f-16" href="javacript:void(0)" (click)=detail(data?._id)> {{data?.name}}
+                </a>
+              </div>
+              <div class="d-flex justify-content-around m-0">
+                <div class="social_icon mr-2"><img alt="" src="assets/images/youtube_icon.png"></div>
+                <div class="social_icon"><img alt="" src="assets/images/chat_icon.png"></div>
+              </div>
+            </div>
+          </div>
+
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <!-- close -->
+
+  <!--New Slider-->
+  <div class="live_videos_area mb-md-5 mb-3">
+    <div class="container">
+      <div class="d-flex align-items-center mb-3 mb-md-4">
+        <p>UPCOMING</p>
+        <div class="icons ml-auto mr-md-4">
+          <img class="mr-3" src="assets/images/mode_icon_1.png" alt="">
+          <img src="assets/images/collapse_filter_icon.png" alt="">
+        </div>
+      </div>
+      <div class="d-flex flex-wrap">
+        <div *ngFor="let item of upcoming?.docs" class="card_width">
+          <div class="slick_img_area"><img [src]="item?.coverImage | image:'1' " alt="" class="w-100">
+            <div class="slick_badges"><span class="featured_badge small"> {{item?.startDate | date:'MMM dd'}} </span>
+            </div>
+          </div>
+          <div class="card_upcoming_tour d-flex justify-content-between px-3">
+            <a class="card-title m-0 f-16" href="javacript:void(0)" (click)=detail(item?._id)> {{item?.name}}
+            </a><button type="submit" class="btn secondary-btn px-3 py-1">Join</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Pagination -->
+    <div class="clearfix"></div>
+    <div class="row d-block text-center w-100 mb-3">
+      <div class="col-md-12">
+        <a href="javascript:void(0)" (click)='pageChange()'
+          *ngIf="!isLoader && ( upcoming?.totalDocs > this.page * this.limit )" class="see_more">See More</a>
+      </div>
+    </div>
+    <!-- Pagination / End -->
+  </div>
+  <!-- close -->
+
+
+  <!--  Past Slider-->
+  <div class="live_videos_area mb-md-5 mb-3">
+    <div class="container">
+      <div class="d-flex align-items-center mb-3 mb-md-4">
+        <p>PAST TOURNAMENTS</p>
+        <div class="icons ml-auto mr-md-4">
+          <img class="mr-3" src="assets/images/mode_icon_1.png" alt="">
+          <img src="assets/images/mode_icon_2.png" alt="">
+        </div>
+      </div>
+      <div class="slicks" slickContainer #slickController="slick" [slickConfig]="config1">
+        <ng-container *ngIf="slickController.initialize">
+          <div *ngFor="let data of past" class="card w-300" slickItem>
+            <div class="slick_img_area">
+              <img class="w-100" [src]="data?.coverImage | image:'1' " alt="">
+              <div class="slick_badges">
+                <span class="featured_badge small"> {{data?.startDate | date:'MMM dd'}} </span>
+              </div>
+            </div>
+            <div class="card_upcoming_tour d-flex justify-content-between px-3">
+              <a class="card-title m-0 f-16" href="javacript:void(0)" [routerLink]="['/mode/detail']"> {{data?.name}}
+              </a>
+              <!-- <button type="submit" class="btn secondary-btn px-3 py-1">Join</button> -->
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <!-- close -->
+
+</div>

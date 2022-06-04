@@ -1,0 +1,9 @@
+<div class="messaging mt-5">
+      <div *ngIf="!isNoFriends" class="inbox_msg">
+        <app-users-list (isNoFriends)="onNoFriends($event)" ></app-users-list>
+        <router-outlet></router-outlet>
+      </div>
+      <div *ngIf="isNoFriends" class="inbox_msg text-center py-5">
+        <p>No friends yet!</p>
+      </div>
+    </div>

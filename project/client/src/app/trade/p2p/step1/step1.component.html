@@ -1,0 +1,443 @@
+<!-- <h2 class="head_title_area">trade silver from person to person</h2> -->
+<div class="row">
+    <div class="col-lg-8">
+<div class="d-flex">
+    <div class="tab-buttons mr-3">
+      <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem>
+          <a ngbNavLink>Buy</a>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Sell</a>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Manage Buy</a>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Manage Sell</a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="form-inline person_form_filter" style="flex-flow: row;">
+
+        <div class="input-group input_area p-0 mr-3">
+          <div class="input-group-prepend">
+            <span class=""><img alt="" src="assets/images/dollar.png" /></span>
+          </div>
+          <input type="text" class="form-control px-0" placeholder="Enter Amount"
+            aria-label="Amount (to the nearest dollar)">
+        </div>
+
+        <button type="submit" class="btn">Search</button>
+
+      </form>
+
+</div>
+</div>
+
+<div class="col-lg-4 d-flex justify-content-end align-items-center post_trade">
+    <p class="mr-4 mb-0">Want to start trading your silver</p>
+    <button type="button" [routerLink]="['/trade/post/']"  class="btn btn_outline_primary" >Post a trade</button>
+</div>
+
+</div>
+    <!--Filters-->
+    <div class="row filters_area align-items-center">
+        <div class="col">
+          <div ngbDropdown class="d-flex align-items-center filter_by">
+            <span>Filter By</span>
+
+<!--Using ng-option and for loop-->
+<!-- <ng-select [searchable]="false" [(ngModel)]="selectedCar">
+  <ng-option *ngFor="let car of cars" [value]="car.id">{{car.name}}</ng-option>
+</ng-select> -->
+
+<!--Using items input-->
+<div class="selectors_area">
+<ng-select [searchable]="false" [items]="currency"
+          bindLabel="name"
+          bindValue="id"
+          [(ngModel)]="selectedcurrency">
+</ng-select>
+</div>
+<div class="selectors_area">
+<ng-select [searchable]="false" [items]="country"
+          bindLabel="name"
+          bindValue="id"
+          [(ngModel)]="selectedcountry">
+</ng-select>
+</div>
+<div class="selectors_area">
+<ng-select [searchable]="false" [items]="payment"
+          bindLabel="name"
+          bindValue="id"
+          [(ngModel)]="selectedpayment">
+</ng-select>
+</div>
+
+<span class="text-grey">Online Trade</span>
+
+<div class="toggle checkcross">
+  <input id="checkcross" type="checkbox">
+  <label class="toggle-item" for="checkcross">
+    <div class="check"></div>
+    <!-- <span class="switch-text"> Off</span> -->
+  </label>
+</div>
+
+          </div>
+        </div>
+
+        <div class="col-3 text-right">
+          <div ngbDropdown class="d-flex align-items-center justify-content-between sort_by">
+            <span>Sort by</span>
+            <div class="selectors_area_right">
+              <ng-select [searchable]="false" [items]="sorting"
+                        bindLabel="name"
+                        bindValue="id"
+                        [(ngModel)]="selectedorder">
+              </ng-select>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+
+      <div class="accordion_area mb-5">
+
+        <div class="container">
+
+
+                <div class="custom-table">
+                  <div class="head">
+                    <div style="width: 35%;padding-left: 65px;" class="custom-td">SELLER</div>
+                    <div style="width:25%" class="custom-td">PAYMENT METHOD</div>
+                    <div style="width:40%" class="custom-td"> PRICE / SILVER</div>
+                  </div>
+
+                  <div class="body-wrap">
+                    <div class="body">
+                      <div style="width:35%" class="custom-td text-left">
+                        <div class="d-flex align-items-center">
+                          <div class="d-flex align-items-center">
+                            <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                          <div class="seller_area">
+                              <div class="seller_name">
+                                  <span>Abhishek Padhee</span>
+                              </div>
+                          <div class="trade_score">
+                            <span class="mr-4">100+ trades</span>
+                            <span>99% feedback score</span>
+                          </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="width:25%" class="custom-td payment_area text-left">
+                          <div class="payment_method">
+                              <span>National Bank Transfer</span>
+                              <p>Korea, Republic of</p>
+                          </div>
+                      </div>
+                      <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                          <div class="price_content mr-5">
+                              <span>17,502,754.48 <em>KRW</em></span>
+                              <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                          </div>
+                          <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="body-wrap">
+                      <div class="body">
+                        <div style="width:35%" class="custom-td text-left">
+                          <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                              <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                            <div class="seller_area">
+                                <div class="seller_name">
+                                    <span>Abhishek Padhee</span>
+                                </div>
+                            <div class="trade_score">
+                              <span class="mr-4">100+ trades</span>
+                              <span>99% feedback score</span>
+                            </div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="width:25%" class="custom-td payment_area text-left">
+                            <div class="payment_method">
+                                <span>National Bank Transfer</span>
+                                <p>Korea, Republic of</p>
+                            </div>
+                        </div>
+                        <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                            <div class="price_content mr-5">
+                                <span>17,502,754.48 <em>KRW</em></span>
+                                <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                            </div>
+                            <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="body-wrap">
+                        <div class="body">
+                          <div style="width:35%" class="custom-td text-left">
+                            <div class="d-flex align-items-center">
+                              <div class="d-flex align-items-center">
+                                <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                              <div class="seller_area">
+                                  <div class="seller_name">
+                                      <span>Abhishek Padhee</span>
+                                  </div>
+                              <div class="trade_score">
+                                <span class="mr-4">100+ trades</span>
+                                <span>99% feedback score</span>
+                              </div>
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div style="width:25%" class="custom-td payment_area text-left">
+                              <div class="payment_method">
+                                  <span>National Bank Transfer</span>
+                                  <p>Korea, Republic of</p>
+                              </div>
+                          </div>
+                          <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                              <div class="price_content mr-5">
+                                  <span>17,502,754.48 <em>KRW</em></span>
+                                  <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                              </div>
+                              <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                          </div>
+                        </div>
+                        </div>
+
+                        <div class="body-wrap">
+                          <div class="body">
+                            <div style="width:35%" class="custom-td text-left">
+                              <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                  <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                                <div class="seller_area">
+                                    <div class="seller_name">
+                                        <span>Abhishek Padhee</span>
+                                    </div>
+                                <div class="trade_score">
+                                  <span class="mr-4">100+ trades</span>
+                                  <span>99% feedback score</span>
+                                </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="width:25%" class="custom-td payment_area text-left">
+                                <div class="payment_method">
+                                    <span>National Bank Transfer</span>
+                                    <p>Korea, Republic of</p>
+                                </div>
+                            </div>
+                            <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                                <div class="price_content mr-5">
+                                    <span>17,502,754.48 <em>KRW</em></span>
+                                    <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                                </div>
+                                <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                            </div>
+                          </div>
+                          </div>
+
+                          <div class="body-wrap">
+                            <div class="body">
+                              <div style="width:35%" class="custom-td text-left">
+                                <div class="d-flex align-items-center">
+                                  <div class="d-flex align-items-center">
+                                    <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                                  <div class="seller_area">
+                                      <div class="seller_name">
+                                          <span>Abhishek Padhee</span>
+                                      </div>
+                                  <div class="trade_score">
+                                    <span class="mr-4">100+ trades</span>
+                                    <span>99% feedback score</span>
+                                  </div>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div style="width:25%" class="custom-td payment_area text-left">
+                                  <div class="payment_method">
+                                      <span>National Bank Transfer</span>
+                                      <p>Korea, Republic of</p>
+                                  </div>
+                              </div>
+                              <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                                  <div class="price_content mr-5">
+                                      <span>17,502,754.48 <em>KRW</em></span>
+                                      <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                                  </div>
+                                  <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                              </div>
+                            </div>
+                            </div>
+
+                            <div class="body-wrap">
+                              <div class="body">
+                                <div style="width:35%" class="custom-td text-left">
+                                  <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
+                                      <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                                    <div class="seller_area">
+                                        <div class="seller_name">
+                                            <span>Abhishek Padhee</span>
+                                        </div>
+                                    <div class="trade_score">
+                                      <span class="mr-4">100+ trades</span>
+                                      <span>99% feedback score</span>
+                                    </div>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div style="width:25%" class="custom-td payment_area text-left">
+                                    <div class="payment_method">
+                                        <span>National Bank Transfer</span>
+                                        <p>Korea, Republic of</p>
+                                    </div>
+                                </div>
+                                <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                                    <div class="price_content mr-5">
+                                        <span>17,502,754.48 <em>KRW</em></span>
+                                        <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                                    </div>
+                                    <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                                </div>
+                              </div>
+                              </div>
+
+                              <div class="body-wrap">
+                                <div class="body">
+                                  <div style="width:35%" class="custom-td text-left">
+                                    <div class="d-flex align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                                      <div class="seller_area">
+                                          <div class="seller_name">
+                                              <span>Abhishek Padhee</span>
+                                          </div>
+                                      <div class="trade_score">
+                                        <span class="mr-4">100+ trades</span>
+                                        <span>99% feedback score</span>
+                                      </div>
+                                      </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div style="width:25%" class="custom-td payment_area text-left">
+                                      <div class="payment_method">
+                                          <span>National Bank Transfer</span>
+                                          <p>Korea, Republic of</p>
+                                      </div>
+                                  </div>
+                                  <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                                      <div class="price_content mr-5">
+                                          <span>17,502,754.48 <em>KRW</em></span>
+                                          <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                                      </div>
+                                      <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                                  </div>
+                                </div>
+                                </div>
+
+                                <div class="body-wrap">
+                                  <div class="body">
+                                    <div style="width:35%" class="custom-td text-left">
+                                      <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center">
+                                          <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                                        <div class="seller_area">
+                                            <div class="seller_name">
+                                                <span>Abhishek Padhee</span>
+                                            </div>
+                                        <div class="trade_score">
+                                          <span class="mr-4">100+ trades</span>
+                                          <span>99% feedback score</span>
+                                        </div>
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div style="width:25%" class="custom-td payment_area text-left">
+                                        <div class="payment_method">
+                                            <span>National Bank Transfer</span>
+                                            <p>Korea, Republic of</p>
+                                        </div>
+                                    </div>
+                                    <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                                        <div class="price_content mr-5">
+                                            <span>17,502,754.48 <em>KRW</em></span>
+                                            <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                                        </div>
+                                        <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                                    </div>
+                                  </div>
+                                  </div>
+
+                                  <div class="body-wrap">
+                                    <div class="body">
+                                      <div style="width:35%" class="custom-td text-left">
+                                        <div class="d-flex align-items-center">
+                                          <div class="d-flex align-items-center">
+                                            <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                                          <div class="seller_area">
+                                              <div class="seller_name">
+                                                  <span>Abhishek Padhee</span>
+                                              </div>
+                                          <div class="trade_score">
+                                            <span class="mr-4">100+ trades</span>
+                                            <span>99% feedback score</span>
+                                          </div>
+                                          </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div style="width:25%" class="custom-td payment_area text-left">
+                                          <div class="payment_method">
+                                              <span>National Bank Transfer</span>
+                                              <p>Korea, Republic of</p>
+                                          </div>
+                                      </div>
+                                      <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                                          <div class="price_content mr-5">
+                                              <span>17,502,754.48 <em>KRW</em></span>
+                                              <strong>Limits: 300,000 - 25,865,769 KRW</strong>
+                                          </div>
+                                          <button type="submit"  (click)="onStepClick()"  class="btn buy_btn">{{p2pType == 1 ? 'Buy': 'Sell'}}</button>
+                                      </div>
+                                    </div>
+                                    </div>
+
+
+                </div>
+
+
+    </div>
+        </div>
+  <div class="pagination_area">
+    <ngb-pagination [collectionSize]="60" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+</div>

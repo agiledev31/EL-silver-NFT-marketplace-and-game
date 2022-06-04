@@ -1,0 +1,169 @@
+<div class="buy_silver">
+  <div class="container">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/trade']">Silver Status / </span><span class="final"> Trade History </span>
+    </div>
+    <h2>Silver Trade History</h2>
+
+
+    <div class="row justify-content-start mb-4">
+      <div class="">
+        <div class="filters">
+          <span class="inner_filter" [ngClass]="{'active': filter.type === 0}" (click)="onTypeClick(0)">All</span>
+          <span class="inner_filter" [ngClass]="{'active': filter.type === 1}" (click)="onTypeClick(1)">Buy/Sell</span>
+          <span class="inner_filter" [ngClass]="{'active': filter.type === 2}" (click)="onTypeClick(2)">Person To
+            Person</span>
+          <span class="inner_filter" [ngClass]="{'active': filter.type === 3}" (click)="onTypeClick(3)">WON/LOST</span>
+          <span class="inner_filter" [ngClass]="{'active': filter.type === 4}"
+            (click)="onTypeClick(4)">SENT/RECEIVED</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="d-flex align-items-center justify-content-between my-2">
+
+      <div class="form-inline person_form_filter col-lg-5 p-0" style="flex-flow: row;">
+
+        <div class="ml-auto w-100 mr-4">
+          <div class="Input_with_icon">
+            <input type="text" [(ngModel)]="filter.query"  placeholder="Search by ID name or email"
+              class="form-control w-100">
+            <i><img src="assets/images/search_icon.png" alt=""> </i>
+          </div>
+        </div>
+
+        <button  type="submit" class="btn btn-primary px-4" (click)="onQuerySearch()">Search</button>
+
+      </div>
+
+      <p *ngIf="!isLoader && result && this.result?.docs?.length > 0" class="heading mb-0 text-gray">{{result.totalDocs}} trades</p>
+
+    </div>
+
+    <!--Filters-->
+    <div class="row filters_area align-items-center">
+      <div class="col">
+        <div ngbDropdown class="d-flex align-items-center filter_by">
+          <span>Filter By</span>
+
+          <div class="tab-buttons mr-3">
+            <ul class=" d-flex nav-tabs">
+              <li>
+                <a [ngClass]="{'active' : filter.subType == 0}" (click)="onSubTypeClick(0)">All</a>
+              </li>
+              <li>
+                <a [ngClass]="{'active' : filter.subType == 1}" (click)="onSubTypeClick(1)">Buy</a>
+              </li>
+              <li>
+                <a [ngClass]="{'active' : filter.subType == 2}" (click)="onSubTypeClick(2)">Sell</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="d-flex justify-content-end align-items-center sort_by">
+          <span>Sort by</span>
+          <div class="selectors_area_right">
+            <ng-select [searchable]="false" [items]="sorting" [(ngModel)]="filter.sort" (change)="get()"
+              bindLabel="name" bindValue="value">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+<div *ngIf="!isLoader && result && this.result?.docs?.length > 0">
+  <div class="accordion_area mb-5">
+      <!-- Table -->
+      <div class="accordion_area mb-5">
+        <div class="container">
+          <div class="custom-table">
+            <div class="head">
+              <div style="width: 10%" class="custom-td">Date</div>
+              <div style="width:15%" class="custom-td">Mode</div>
+              <div style="width:25%" class="custom-td"> Buyer/Seller</div>
+              <div style="width:25%" class="custom-td"> Silver amount and Price</div>
+              <div style="width:25%" class="custom-td"> Wallet Closing Balance</div>
+            </div>
+
+            <div *ngFor="let t of result.docs" class="body-wrap">
+              <div class="body">
+
+                <div style="width:10%" class="custom-td text-left">
+                  <div class="date_area">
+                    <span>{{t.createdAt | date : 'd MMM'}}</span>
+                    <span>{{t.createdAt | date : 'yyyy'}}</span>
+                  </div>
+                </div>
+
+                <div style="width:15%" class="custom-td text-left">
+                  <div class="mode_area">
+                    <span>{{getMode(t.type)}}</span>
+                    <span>{{getModeSubType(t.type, t.subType)}}</span>
+                  </div>
+                </div>
+
+                <div style="width:25%" class="custom-td text-left">
+                  <!-- For buy sell -->
+                  <div *ngIf="t.type === 1" class="seller_area">
+                    <span>{{t.silver.price | currency}}</span>
+                  </div>
+                  <!-- for p2p -->
+                  <div *ngIf="t.type === 2" class="seller_area">
+                    <span>{{t.tradeWith.fullName}}</span>
+                    <span class="text-gray">{{t.subType == 1 ? 'Seller' :'Buyer'}}</span>
+                  </div>
+                  <!-- for win loss -->
+                  <div *ngIf="t.type === 3" class="seller_area">
+                    <span>{{t.data.matchType}}</span>
+                    <span class="text-gray">{{t.data.matchPosition}}</span>
+                  </div>
+                  <!-- sent reviced -->
+                  <div *ngIf="t.type === 4" class="seller_area">
+                    <span>{{t.tradeWith.fullName}}</span>
+                    <span class="text-gray">@{{t.tradeWith.username}}</span>
+                  </div>
+                   <!-- Voucher -->
+                   <div *ngIf="t.type === 5" class="seller_area">
+                    <span class="text-gray">Reward {{t.data.reward |silverPrice : 1}}gm</span>
+                  </div>
+
+                </div>
+                <div style="width:25%" class="custom-td text-left">
+                  <div class="silver_amount_area">
+                    <span><i *ngIf="t.subType == 2" class="text-red">-</i><i *ngIf="t.subType == 1" class="text-green">+</i> {{t.silver.amount | silverPrice: 1}} <em class="text-gray">Silver</em></span>
+                    <span *ngIf="t.type === 1 || t.type === 2"><i *ngIf="t.subType == 1"  class="text-red">-</i><i *ngIf="t.subType == 2"  class="text-green">+</i> {{t.silver.price | currency}}</span>
+                  </div>
+                </div>
+                <div style="width:25%" class="custom-td text-left">
+                  <div class="wallet_closing mr-5">
+                    <span>{{t.closing.silver | silverPrice: 1}} <em class="text-gray">Silver</em></span>
+                    <span> {{t.closing.balance | currency}} </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+  </div>
+  <div *ngIf="result && result.totalDocs > filter.limit" class="pagination_area">
+    <ngb-pagination [collectionSize]="result.totalDocs" [pageSize]="filter.limit" [page]="filter.page" (pageChange)="onPageChange($event)"
+      aria-label="Default pagination"></ngb-pagination>
+  </div>
+</div>
+
+<div class="text-center py-5">
+  <p *ngIf="!isLoader && (!this.result ||  this.result?.docs?.length == 0)" class="heading font-weight-normal">No Transaction History Here</p>
+</div>
+
+<app-loader *ngIf="isLoader"></app-loader>
+</div>

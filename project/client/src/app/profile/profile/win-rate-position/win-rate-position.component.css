@@ -1,0 +1,90 @@
+.card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    height: 100%;
+}
+
+.card-body .row {
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+::ng-deep .card-header button {
+    width: 100%;
+}
+
+::ng-deep .accordion>.card {
+    background-color: inherit;
+}
+
+.card-body > div {
+    padding: 6px 0;
+}
+
+.card{
+    height: 270px;
+}
+
+.orange_text {
+    color: #FF9933 !important;
+}
+
+.tab-buttons .nav-tabs {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    border-bottom: 0;
+}
+
+.tab-buttons .nav-tabs li {
+    margin: 0;
+}
+
+.tab-buttons .nav-tabs li a {
+    padding: 7px 20px;
+    font-size: 14px;
+    border: 0;
+}
+
+.tab-buttons .nav-tabs li a:hover {
+    margin: 0;
+    border: 0;
+    padding: 7px 20px;
+    font-size: 14px;
+}
+
+.tab-buttons .nav-tabs li a.active {
+    background: rgba(255, 153, 51, 0.4);
+    border-radius: 8px;
+    border: 0;
+    color: white;
+}
+
+.high_progress {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.low_progress {
+    /*background: rgba(40, 165, 255, 1); <- background color that indicate process*/
+  background: rgba(255, 255, 255, 0.08)
+}
+
+.progress {
+    background: inherit;
+    height: 1.2rem;
+    width: 85%;
+}
+
+.low_progress span {
+    text-align: left;
+    margin-left: 5px;
+}
+
+.high_progress span {
+    text-align: right;
+    margin-right: 5px;
+}
+@media screen and (max-width:600px) {
+  .card{
+    height: fit-content !important;
+}
+}

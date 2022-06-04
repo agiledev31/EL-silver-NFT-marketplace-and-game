@@ -1,0 +1,297 @@
+.silver_txt {
+  text-align: left;
+}
+
+.final {
+  color: #28A5FF;
+}
+
+.buy_silver h2 {
+  font-size: 35px;
+  line-height: 40px;
+  margin: 30px 0 40px;
+  display: block;
+  font-family: Barlow;
+  font-weight: bold;
+}
+
+.buy_silver {
+  padding: 30px 0 80px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.silver_txt span {
+  display: block;
+  color: #28A5FF;
+  font-weight: bold;
+}
+
+.silver_txt strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.input_area input {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+a.swap-outline {
+  background-image: url(/assets/images/swap-outline.png);
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  margin: 0 10px;
+}
+
+.works_content p {
+  font-size: 15px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.wallet_txt {}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 0;
+}
+
+.wallet_txt span {
+  display: block;
+  color: #28A5FF;
+  font-weight: bold;
+}
+
+.wallet_txt strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.player_info h5 {
+  margin: 0 0 5px;
+  font-size: 20px;
+  line-height: 25px;
+  display: block;
+}
+
+.silver_area {
+  position: relative;
+}
+
+.silver_area:before {
+  position: absolute;
+  background: url('/assets/images/diamond_half.png');
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+.amount_area {
+  position: relative;
+}
+
+.amount_area:before {
+  position: absolute;
+  background: url('/assets/images/dollar.png');
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+.input_area {
+  height: calc(1.5em + .75rem + 12px);
+}
+
+.input_area input {
+  background: none;
+  border: none;
+  color: #fff;
+  height: calc(1.5em + .75rem + 12px);
+}
+
+.input-group-prepend {
+  padding: 12px 10px;
+}
+
+.amount_content {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.amount_content strong {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.amount_content span {
+  color: #28A5FF;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.current_rate {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.rate_value {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+
+.tab-buttons .nav-tabs {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border-bottom: 0;
+  display: flex;
+}
+
+.tab-buttons .nav-tabs li {
+  margin: 0;
+}
+
+.tab-buttons .nav-tabs li a {
+  padding: 7px 20px;
+  font-size: 14px;
+  border: 0;
+}
+
+.tab-buttons .nav-tabs li a:hover {
+  margin: 0;
+  border: 0;
+  padding: 7px 20px;
+  font-size: 14px;
+}
+
+.tab-buttons .nav-tabs li a.active {
+  padding: 7px 20px;
+  background: rgba(255, 153, 51, 0.4);
+  border-radius: 8px;
+  border: 0;
+  color: white;
+}
+
+
+/** Instant Model **/
+::ng-deep .modal-content {
+  border-radius: 8px;
+  border: 0;
+}
+
+.modal-body {
+  background: radial-gradient(50% 128% at 0% 0%, rgba(17, 17, 17, 0.87) 0%, #111111 100%);
+  padding: 0;
+  border-radius: 8px;
+}
+
+.player_info {
+  text-align: left;
+}
+
+.buy_transaction_area h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 30px;
+}
+
+.buy_transaction_area {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 50px 0;
+}
+
+.icon {
+  max-width: 50px;
+}
+
+.buy_transaction_area span {
+  display: block;
+  color: #28A5FF;
+  ;
+
+}
+
+.game_mode_points {
+  overflow: hidden;
+  margin: 0 0 25px;
+}
+
+.game_mode_area p .span {
+  display: inline-block;
+  color: #FF9933;
+}
+
+.modes_player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.modes_player span {
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 20px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.back_home {
+  padding: .6rem 3rem;
+}
+
+
+.trade_rate {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.trade_rate li {
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.heading1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.proceed.btn:disabled {
+    background: rgba(255, 255, 255, 0.38) !important;
+}
+.proceed {
+  margin: 30px 0 0;
+  width: 80% !important;
+  display: block;
+}

@@ -1,0 +1,21 @@
+.heading1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.trade_rate {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.trade_rate li {
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 0;
+}

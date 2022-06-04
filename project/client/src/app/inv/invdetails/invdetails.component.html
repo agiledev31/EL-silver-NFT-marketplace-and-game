@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="card p-4 card-cs">
+    <div class="row">
+      <div class="col-md-8 pl-4">
+        <div class="row">
+          <h3>item name</h3>
+        </div>
+        <div class="row mt-5">
+          <p>description</p>
+        </div>
+        <div class="row mt-5">
+          <p>token : </p>
+        </div>
+        <div class="row mt-5">
+          <p class="f-12">Price : </p>
+          <input
+                      type="text"
+                      class="buy-count-input"
+                      [value]="buyItemCount"
+                      (input)="buyItemCount = $event.target.value"
+                    />
+        </div>
+        <div class="row mt-3">
+          <button class="btn btn-buy" (click)="openModal()">Sell</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="{{ shopItem.imageURI }}" class="img-size" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader_overlap" *ngIf="isLoader">
+  <div class="loader"></div>
+</div>

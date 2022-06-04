@@ -1,0 +1,52 @@
+<!-- Main navbar -->
+<div class="navbar navbar-expand-md navbar-dark">
+  <div class="navbar-brand py-0">
+    <a href="javascript:void(0)" routerLink="/home" class="d-inline-block">
+      <img src="assets/images/logo_elsilver.png" alt="">
+    </a>
+  </div>
+
+  <div class="d-md-none">
+    <button class="navbar-toggler border-0" (click)="isTreeCollapsed = !isTreeCollapsed" [attr.aria-expanded]="!isTreeCollapsed"
+      type="button" data-toggle="collapse" data-target="#navbar-mobile">
+      <i class="icon-tree5"></i>
+    </button>
+    <button class="navbar-toggler sidebar-mobile-main-toggle border-0 " (click)="sidebarSmCollapse()"  type="button">
+      <i class="icon-paragraph-justify3"></i>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse" [ngbCollapse]="isTreeCollapsed" id="navbar-mobile">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a (click)="sidebarLgCollapse()" href="javascript:void(0)"
+          class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+          <i class="icon-paragraph-justify3"></i>
+        </a>
+      </li>
+    </ul>
+
+    <span class="ml-md-3 mr-md-auto">Admin Desk</span>
+
+    <ul class="navbar-nav">
+      <li ngbDropdown class="nav-item dropdown dropdown-user">
+        <a href="javascript:void(0)" ngbDropdownToggle id="dropdownBasic1"
+          class="navbar-nav-link d-flex align-items-center dropdown-toggle">
+          <img [src]="currentUser.image | image" *ngIf="currentUser.image"class="rounded-circle mr-2" height="34" alt="">
+          <span *ngIf="currentUser.fullName">{{currentUser.fullName}}</span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <a href="javascript:void(0)" ngbDropdownItem class="dropdown-item" routerLink='/profile'><i
+              class="icon-user-plus"></i> My profile</a>
+          <div class="dropdown-divider"></div>
+          <a href="javascript:void(0)" ngbDropdownItem class="dropdown-item" routerLink='/profile/setting'><i
+              class="icon-cog5"></i> Account settings</a>
+          <a href="javascript:void(0)" ngbDropdownItem class="dropdown-item" (click)="onLogoutClick()"><i
+              class="icon-switch2"></i> Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- /main navbar -->

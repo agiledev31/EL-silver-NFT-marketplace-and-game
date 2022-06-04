@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <span class="f-20">World Ranking</span>
+        <div class="ml-auto">
+          <div class="d-flex justify-content-center align-items-center">
+            <div>
+              <span class="text-gold pointer" routerLink="/leaderboard">View full leaderboard</span>
+              <img class="ml-3" src="assets/images/arrow_gold.png" alt="arrow">
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul ngbNav #nav="ngbNav" class="nav-tabs world_ranking_nav_tab mt-4">
+            <li ngbNavItem>
+              <a ngbNavLink>LOL Challenge</a>
+              <ng-template ngbNavContent>
+                <div class="t-body">
+                    <ngb-accordion class="accord" [closeOthers]="true">
+                        <ngb-panel [disabled]="true" id="static-h">
+                        <ng-template ngbPanelTitle>
+                            <div class="custom-table">
+                            <div class="head">
+                                <div style="width: 15%" class="custom-td"><span>RANK</span></div>
+                                <div style="width: 20%" class="custom-td">SUMMONERS</div>
+                                <div style="width: 25%" class="custom-td">TOTAL GAMES</div>
+                                <div style="width: 20%" class="custom-td">EARNED LAPLATA</div>
+                                <div style="width: 20%" class="custom-td">WIN RATIO</div>
+                            </div>
+                            </div>
+                        </ng-template>
+                        </ngb-panel>
+                      <ngb-panel [disabled]="true" *ngFor="let player of leaderboardData;let playerIndex = index" id="static-{{playerIndex}}">
+                        <ng-template ngbPanelTitle>
+                            <div class="custom-table">
+                            <div class="body">
+                                <div style="width:15%" class="custom-td"><span>{{playerIndex + 1}}</span></div>
+                                <div style="width:20%" class="custom-td">
+                                <div class="d-flex align-items-center">
+                                  <span class="text-left">{{ player.username }}</span>
+                                </div>
+                                </div>
+                                <div style="width: 25%" class="custom-td"><span>{{player.statistics ? player.statistics.totalGames ? player.statistics.totalGames: '0':'0'}}</span></div>
+                                <div style="width: 20%" class="custom-td"><span>{{ player.totalLaplataEarned?player.totalLaplataEarned.toFixed(4):0 }}</span></div>
+                                <div style="width:20%" class="custom-td">
+                                <span>{{player.statistics ? player.statistics.winRatio ? player.statistics.winRatio.toFixed(0) + '%': 'N/A':'N/A'}}</span>
+                                </div>
+                            </div>
+                            </div>
+                        </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                </div>
+              </ng-template>
+            </li>
+        </ul>
+      <div [ngbNavOutlet]="nav"></div>
+    </div>
+</div>

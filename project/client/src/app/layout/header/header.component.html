@@ -1,0 +1,138 @@
+<div [ngClass]="{'header': header}">
+  <div [ngClass]="{'header-grey': headerGrey}">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg justify-content-between">
+        <a class="hide nav-link secondary-btn conect-wallet-btn" href="javascript:void(0)" (click)="connectWallet()">{{connectedLabel}}</a>
+        <div class="col-lg-2">
+          <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+          </button>
+          <a class="navbar-brand"><img alt="" src="assets/images/logo_elsilver.png" routerLink="/" width="168px" /></a>
+        </div>
+        <div class="display-none">
+          <ul *ngIf="currentUser" class="navbar-nav justify-content-between align-items-center">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="javascript:void(0)"
+                [routerLink]="['/chat']"
+                routerLinkActive="active">
+
+               <i class="fas fa-envelope"></i>
+              </a>
+            </li>
+           <app-notification></app-notification>
+            <li ngbDropdown   class="nav-item">
+              <a class="nav-link"  href="javascript:void(0)" ngbDropdownToggle>
+                <div class="profile-img">
+                  <img [src]="currentUser.image | image" *ngIf="currentUser.image" />
+                </div>
+              </a>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right bg-dark ">
+                <button class="text-gray" ngbDropdownItem [routerLink]="['/profile']" > <i class="fas fa-user"></i> {{currentUser.fullName}}</button>
+                <!-- <button ngbDropdownItem [routerLink]="['/profile']" > <i class="fas fa-user"></i> Profile</button>
+                <button ngbDropdownItem [routerLink]="['/profile']"> <i class="fas fa-cogs"></i> Setting</button> -->
+                <button class="text-gray" ngbDropdownItem (click)="onLogoutClick()"> <i class="fas fa-sign-out-alt"></i> Logout</button>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-lg-10">
+          <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul  class="navbar-nav justify-content-between w-100">
+              <li class="nav-item active">
+                <!-- Step 4: Close the menu when a link is clicked. -->
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/trade">Trade Silver</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/miningchallenge">Mining Challenge</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/leaderboard">Leaderboards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/mode">Game Modes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/mode/lolchallenge">LOL Challenge</a>
+              </li>
+              <li *appShowAuthed="false" class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/auth/login">Log In</a>
+              </li>
+              <!--li *appShowAuthed="false" class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/auth/login">Log In</a>
+              </li-->
+              <li *appShowAuthed="false" class="nav-item hide" id="nav-link">
+                <a class="nav-link secondary-btn" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/auth/signup">Get
+                  Started</a>
+              </li>
+              <li class="nav-item" *ngIf="currentUser">
+                <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true" [routerLink]="['/profile']">Dashboard</a>
+              </li>
+
+            </ul>
+
+            <ul *ngIf="currentUser" class="navbar-nav justify-content-between align-items-center d-md-flex d-none">
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="javascript:void(0)"
+                  [routerLink]="['/chat']"
+                  routerLinkActive="active">
+
+                 <i class="fas fa-user-circle"></i>
+                </a>
+              </li>
+             <app-notification></app-notification>
+              <li ngbDropdown   class="nav-item">
+                <a class="nav-link"  href="javascript:void(0)" ngbDropdownToggle>
+                  <div class="profile-img">
+                    <img [src]="currentUser.image | image" *ngIf="currentUser.image" />
+                  </div>
+                </a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right bg-dark ">
+                  <!--<button class="text-gray" ngbDropdownItem [routerLink]="['/profile']" > <i class="fas fa-user"></i> {{currentUser.fullName}}</button>
+                   <button ngbDropdownItem [routerLink]="['/profile']" > <i class="fas fa-user"></i> Profile</button>-->
+                   <a href="/nft">
+                    <button class="text-gray" ngbDropdownItem> <i class="fas fa-gold"></i> NFT Marketplace</button>
+                  </a>
+                  <a href="/inv">
+                    <button class="text-gray" ngbDropdownItem> <i class="fas fa-gold"></i> Your NFTs</button>
+                  </a>
+                   <a href="/exchange">
+                    <button class="text-gray" ngbDropdownItem> <i class="fas fa-gold"></i> Exchange</button>
+                  </a>
+                  <button class="text-gray" ngbDropdownItem (click)="onLogoutClick()"> <i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div *appShowAuthed="false">
+           <!-- <div *ngIf="isLogin" [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+              <ul class="navbar-nav justify-content-between">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true">Don't have an account?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-outline" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/auth/signup">Sign Up</a>
+                </li>
+              </ul>
+            </div> -->
+            <!-- <div *ngIf="isSign" [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+              <ul class="navbar-nav justify-content-between">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)" (click)="isMenuCollapsed = true">Already have an account?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-outline" href="javascript:void(0)" (click)="isMenuCollapsed = true" routerLink="/auth/login">Log In</a>
+                </li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

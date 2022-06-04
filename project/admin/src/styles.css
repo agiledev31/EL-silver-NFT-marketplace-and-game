@@ -1,0 +1,350 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900";
+
+@import "./styles/icons/icomoon/styles.min.css";
+@import "./styles/icons/fontawesome/styles.min.css";
+@import "./styles/icons/material/styles.min.css";
+
+@import "./styles/bootstrap_limitless.css";
+@import "./styles/bootstrap_limitless.min.css";
+@import "./styles/bootstrap.min.css";
+@import "./styles/layout.css";
+@import "./styles/layout.min.css";
+@import "./styles/components.css";
+@import "./styles/colors.css";
+@import "./styles/colors.min.css";
+@import "./styles/extras/animate.min.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.swal2-popup.swal2-toast .swal2-icon.swal2-success [class^="swal2-success-line"][class$="tip"] {
+  height: 5px!important;
+}
+.main-div{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.card-img-actions img{
+height: 325px;
+width: 100%;
+}
+.text-blue-4000{
+color: #273237;
+}
+.custom-size{
+  font-size: 14px !important;
+}
+/* @media (min-width: 1700px){
+.card-img-actions img{
+  height: 400px !important;
+  width: 100%;
+}
+.container{
+  max-width: 1700px;
+}
+.card-body h6{
+  font-size: 1.5rem;
+}
+.card-body h5{
+  font-size: 1.8rem;
+}
+.card-body{
+  font-size: 1.1rem;
+}
+.card .action-blue{
+  font-size: 1.3rem;
+}
+} */
+@media only screen and (min-device-width: 1000px) and (max-device-width: 1400px){
+.card-img-actions img{
+  height: 275px;
+width: 100%;
+}
+}
+@media (max-width: 1200px){
+.card-img-actions img{
+  height: 175px !important;
+  width: 100%;
+}
+.card-body h6{
+  font-size: .8rem;
+}
+.card-body h5{
+  font-size: .9rem;
+}
+.card-body .bg-dark .btn{
+  padding: 6px ;
+  font-size: .7rem;
+}
+
+.col-lg-4, .col-lg-5, .col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.w-md-100{
+flex: 0 0 100%;
+  max-width: 100%;
+}
+h4{
+font-size: .9rem;
+}
+h5{
+font-size: .9rem;
+
+}
+.custom-size{
+font-size: 12px !important;
+}
+.mb-2{
+margin-bottom: 5px !important;
+}
+.ml-2{
+padding-left: 0;
+}
+.mx-md-3{
+padding-left: 6px !important;
+padding-right: 6px !important;
+}
+.d-md-flex{
+display: inline-block !important;
+}
+.w-20{
+width: 100% !important;
+}
+.d-md-flex li{
+margin-bottom: 15px !important;
+}
+.form-group [class*=col-lg-]:not([class*=col-form-label])+[class*=col-lg-] {
+margin-top: 0rem;
+}
+.form-group .col-lg-2{
+flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.text-center{
+text-align: center !important;
+}
+.navbar-expand-md .navbar-brand {
+min-width: 9.625rem;
+}
+.sidebar-dark .nav-sidebar .nav-link{
+color: rgba(255,255,255,.9);
+font-size: 11px;
+}
+.sidebar {
+flex: 0 0 auto;
+width: 9.375rem;
+}
+.nav-sidebar .nav-link i {
+margin-right: 1rem;
+font-size: 14px;
+}
+.p-mid-00{
+padding: 0 !important;
+}
+.m-md-00{
+margin: 0 !important;
+}
+.d-mid-none{
+display: none !important;
+}
+.d-mid-block{
+display: block !important;
+}
+}
+@media only screen and (max-width:767px){
+.card-img-actions img{
+  height: 100% !important;
+  width: 100%;
+}
+h3{
+  font-size: 1rem;
+}
+.card-body h6{
+font-size: .7rem !important;
+}
+.card-body h5{
+font-size: .8rem !important;
+}
+.w-md-50{
+width: 50%;
+}
+.form-group .col-lg-2{
+flex: 0 0 100%;
+  max-width: 100%;
+}
+.py-md-20{
+padding: 11px 5px;
+}
+.logo-fansafe img{
+height: 60px !important;
+}
+.shadow-sm-none{
+box-shadow: none !important;
+}
+.content {
+padding: 1rem .5rem;
+}
+.custom-size{
+font-size: 12px !important;
+}
+.col-lg-4, .col-lg-5, .col-lg-6 {
+flex: 0 0 100%;
+max-width: 100%;
+}
+.wizard > .actions {
+
+padding: 0rem !important;
+text-align: center !important;
+
+}
+.wizard > .actions ul li a {
+padding: 2px 4px !important;
+}
+.wizard > .actions ul li a .icon-arrow-right14 {
+margin-left: 2px !important;
+}
+.wizard > .actions ul li a .icon-arrow-left13 {
+margin-right: 2px !important;
+}
+.navbar-expand-md .navbar-brand {
+min-width: 15.625rem;
+}
+.sidebar-dark .nav-sidebar .nav-link{
+color: rgba(255,255,255,.9);
+font-size: inherit;
+}
+.sidebar {
+flex: 0 0 auto;
+width: 13.875rem;
+}
+.nav-sidebar .nav-link i {
+margin-right: 1.25rem;
+font-size: inherit;
+}
+.d-md-flex li{
+margin-bottom: 2px !important;
+}
+.border-sm-none{
+border: 0 !important;
+}
+.p-sm-00{
+padding: 0 !important;
+}
+.ml-xsm-auto{
+margin-left: auto !important;
+}
+/* .form-group-feedback-left .form-control {
+height: calc(0.5385em + .875rem + 2px) !important;
+} */
+}
+@media (max-width: 991.98px){
+.wizard > .steps > ul > li {
+  display: table-cell;
+  float: none
+}
+}
+
+.validation-invalid-label, .validation-valid-label {
+margin-top: 0.3rem !important;
+margin-bottom: 0rem !important;
+display: block !important;
+color: #f44336 !important;
+position: relative !important;
+padding-left: 1.4rem !important;
+font-size: 13px !important;
+}
+
+/* preloader */
+.preloader-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.main-circle {
+width: 150px;
+height: 150px;
+border:4px solid rgb(0, 0, 0);
+border-top: 4px solid transparent  ;
+  border-right:4px solid transparent;
+position:relative;
+border-radius:50%;
+display: flex;
+justify-content: center;
+align-items: center;
+animation: rotate 2s infinite;
+}
+.green-circle {
+  animation: rotate 2s infinite .4s;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 120px;
+height: 120px;
+border:4px solid rgb(0, 0, 0);
+  border-top:4px solid transparent;
+border-right:4px solid transparent;
+transform: rotate(-20deg);
+border-radius:50%;
+position:relative;
+}
+.brown-circle {
+    animation: rotate 2s infinite .6s;
+  width: 80px;
+height: 80px;
+border:4px solid rgb(0, 0, 0);
+  border-top:4px solid transparent;
+border-right:4px solid transparent;
+transform: rotate(-20deg);
+border-radius:50%;
+}
+@keyframes rotate {
+from {}
+to {
+  transform: rotate(360deg);
+}
+}
+
+.font-weight-normal{
+  font-weight: 300 !important;
+}
+.font-weight-semibold{
+  font-weight: 400 !important;
+}
+.font-weight-500{
+  font-weight: 500 !important;
+}
+.font-weight-600{
+  font-weight: 600 !important;
+}
+.font-weight-bold{
+  font-weight: 700 !important;
+}
+.row{
+  display: flex;
+}
+.card {
+  border-color: rgb(52,164,215);
+  background-color: rgb(245,245,245);
+  text-align: left;
+}
+.text-nowrap {
+  font-size: 17px;
+}
+
+.filter {
+  width: 100%;
+}
+
+#dateFilter{
+  margin-top: 2rem;
+}

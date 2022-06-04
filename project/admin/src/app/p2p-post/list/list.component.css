@@ -1,0 +1,44 @@
+::ng-deep .dateRangePicker-wrapper .dateRangePicker .form-inputs {
+  background-color: #09a1ce !important;
+}
+
+::ng-deep .dateRangePicker-wrapper .dateRangePicker:after {
+  border-bottom: 10px solid #09a1ce !important;
+}
+
+::ng-deep .dateRangePicker-wrapper .dateRangePicker:before {
+  border-bottom: 10px solid #09a1ce !important;
+}
+
+::ng-deep .calendar .table td:not(.disabled):not(.selected):hover {
+  background-color: #09a1ce !important;
+}
+
+::ng-deep .calendar .table td.selected,
+.calendar .table td.selected.in-selected-range {
+  background-color: #09a1ce !important;
+}
+
+::ng-deep .calendar .table td.different-month {
+  color: #273237 !important;
+}
+
+::ng-deep .btn-outline-secondary {
+  background-color: #273237 !important;
+  border-color: #273237 !important;
+  color: #fff !important;
+}
+
+
+.custom-padding th {
+  padding: 10px 8px !important;
+}
+
+.custom-padding td {
+  padding: 10px 8px !important;
+}
+
+.datatable-footer {
+  padding-bottom: 1.25rem;
+}
+

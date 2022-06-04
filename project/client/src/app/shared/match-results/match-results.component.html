@@ -1,0 +1,72 @@
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <div class="game_mode_area text-center">
+      <div class="container">
+        <h2 *ngIf="type == 1" >Victory!</h2>
+        <p  *ngIf="type == 1" class="modes_player">You defeated your opponent in 30m 48s!</p>
+        <h2 *ngIf="type == 2" >DEFEAT.</h2>
+        <p  *ngIf="type == 2" class="modes_player">Your opponent defeated your team in 30m 48s!</p>
+
+        <div class="row justify-content-center game_mode_points">
+          <div class="col-md-3">
+            <div class="modal_icon">
+              <img src="assets/images/diamond_half.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <div class="card-title">Your Earnings</div>
+              <span>10g Silver</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="modal_icon">
+              <img class="icon" src="assets/images/design_fire_icon.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <div class="card-title">Win Rate</div>
+              <span>56% (40/90)</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="modal_icon">
+              <img class="icon" src="assets/images/tally_icon.png" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <div class="card-title">Recent wins</div>
+              <span>56% (14/20)</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <p class="balance">Your silver balance: 464g</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <button (click)="onClickHome()" class="btn btn_outline_primary p-3 w-100" routerLink="/mode" (click)="close()" type="submit">Back To
+              Home</button>
+          </div>
+          <div class="col-md-4">
+            <button (click)="onClickPlayAgain()" class="btn primary-btn p-3 w-100" routerLink="/mode" (click)="close()" type="submit">Play
+              Again</button>
+          </div>
+        </div>
+        <!-- for tournament defeat buttons  -->
+        <!-- <div class="row justify-content-center align-items-center">
+          <div class="col-lg-3">
+            <button class="btn btn_outline_primary p-3 w-100" routerLink="/mode" (click)="close()" type="submit">Back To
+              Home</button>
+          </div>
+          <div class="col-md-2">
+            <div class="vertical_line"></div>
+          </div>
+          <div class="col-lg-3">
+            <p>Watch the rest of the tournament on</p>
+            <div class="images">
+              <img class="mr-4" src="assets/images/youtube_icon.png" alt="">
+              <img src="assets/images/chat_icon.png" alt="">
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,86 @@
+<div class="row mx-2">
+  <div class="col-md-12 my-4">
+    <div class="coming_soon">
+      <div>
+        <h4>COMIING SOON!</h4>
+        <p>Ranked Solo Mode is currently under construction. Check back here soon for updates. Til then, we recommend trying out the LOL Challenge to earn daily rewards! </p>
+      </div>
+      <button class="btn primary-btn">Go To LOL Challenge <img src="assets/images/right_arrow.png" alt="arrow"></button>
+    </div>
+    <div class="heading">
+      <div  *ngIf="matchType === 2 || matchType === 3" class="d-flex align-items-center">
+        <img class="mr-3" src="assets/images/party_icon.png" alt="">
+        <h2>Assemble your party</h2>
+      </div>
+
+      <div class="liquid_card">
+        <ul>
+          <li *ngFor="let player of team; let i = index" [ngClass]="{'random': !player}">
+            <div *ngIf="player" class="header_img">
+              <rounded-image [src]="player.player.image" alt=""></rounded-image>
+              <div class="img_name">@{{player.player.username}}</div>
+              <div class="text-blue text-uppercase small font-weight-600">Level 1</div>
+              <div class="d-flex justify-content-center">
+                <div *ngIf="(player.player.username === currentUser.username)" class="wrapper" >
+                  <span class="main-icon" >
+                    <span class="bottom_icon1" *ngIf="player.playerType === -1" (click)="onClickUserType1()">
+                      <i  class="fas fa-plus"></i>
+                    </span>
+                    <img  *ngIf="player.playerType !== -1" class="" height="40px" [src]="player.playerType | playerTypeIcon" (click)="onClickUserType1()"  alt="">
+                  </span>
+                  <span *ngIf="matchType === 1" class="main-icon ml-3">
+                    <span  *ngIf="currentUserType2 === -1"class="bottom_icon1" (click)="onClickUserType2()">
+                      <i class="fas fa-plus"></i>
+                      <div class="" [ngClass]="{'main-round': isUserCollapsed}">
+                        <div class="round">
+                          <div class="icon1"><img src="assets/images/top-position1.svg" alt="" (click)="onClickUser(1)"></div>
+                          <div class="icon2"><img src="assets/images/top-position2.svg" alt="" (click)="onClickUser(2)"></div>
+                          <div class="icon3"><img src="assets/images/top-position3.svg" alt="" (click)="onClickUser(3)"></div>
+                          <div class="icon4"><img src="assets/images/top-position4.svg" alt="" (click)="onClickUser(4)"></div>
+                          <div class="icon5"><img src="assets/images/top-position5.svg" alt="" (click)="onClickUser(5)"></div>
+                        </div>
+                        <app-overlay *ngIf="isUserCollapsed" (overlayClick)="onClickUserType1()"></app-overlay>
+                      </div>
+                    </span>
+                    <img class="" height="40px" *ngIf="currentUserType2 !== -1" [src]="currentUserType2 | playerTypeIcon" (click)="onClickUserType2()" alt="">
+
+                    <div [ngClass]="{'main-round1': isUserCollapsed1}">
+                      <div class="round">
+                        <div class="icon1"><img src="assets/images/top-position1.svg" alt="" (click)="onClickUser2(1)"></div>
+                        <div class="icon2"><img src="assets/images/top-position2.svg" alt="" (click)="onClickUser2(2)"></div>
+                        <div class="icon3"><img src="assets/images/top-position3.svg" alt="" (click)="onClickUser2(3)"></div>
+                        <div class="icon4"><img src="assets/images/top-position4.svg" alt="" (click)="onClickUser2(4)"></div>
+                        <div class="icon5"><img src="assets/images/top-position5.svg" alt="" (click)="onClickUser2(5)"></div>
+                      </div>
+                      <app-overlay *ngIf="isUserCollapsed1" (overlayClick)="onClickUserType2()"></app-overlay>
+                    </div>
+                  </span>
+                </div>
+                <span *ngIf="(player.playerType !== -1) && (player.player.username  !== currentUser.username)" class="bottom_icon">
+                  <img class="" height="40px" [src]="player.playerType | playerTypeIcon" alt="">
+                </span>
+              </div>
+            </div>
+            <div *ngIf="!player" (click)="invite()" class="d-flex flex-column align-items-center justify-content-center"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="matchType === 1" class="d-flex align-items-center justify-content-center mb-5">
+  <p class="mb-0">
+    <span class="mr-3"><span class="text-gray">Top </span><span class="text-gold">44%</span></span>
+    <span class="mr-3"><span class="text-gray">Mid </span><span class="text-gold">60%</span></span>
+    <span class="mr-3"><span class="text-gray">Ad Carry </span><span class="text-gold">26%</span></span>
+    <span class="mr-3"><span class="text-gray">Jungle </span><span class="text-gold">12%</span></span>
+    <span class="mr-3"><span class="text-gray">Support </span><span class="text-gold">7%</span></span>
+  </p>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-4 text-center">
+    <button [disabled]="isStartMatchButtonDisable" (click)="onClickStartMatching()" class="btn primary-btn w-100">Start Matching</button>
+  </div>
+</div>
+<app-match-modal (inviteUsers)="onInviteUsers($event)"></app-match-modal>
+<app-match-found (accept)="onAcceptClick($event)" (decline)="onClickStartMatching()"></app-match-found>

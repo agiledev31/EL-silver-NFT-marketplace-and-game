@@ -1,0 +1,93 @@
+<div class="accordion_area mb-5">
+    <div class="container pxx-0">
+
+            <div class="custom-table">
+              <div class="head">
+                <div class="custom-td w-10"><span>RANK</span></div>
+                <div class="custom-td w-30">SUMMONERS</div>
+                <div class="custom-td w-24">TOTAL LAPLATA EARNED</div>
+                <div class="custom-td w-35">WIN RATIO</div>
+              </div>
+      <ngb-accordion [closeOthers]="true">
+        <ngb-panel *ngFor="let player of leaderBoardData; let playerIndex = index;" id="static-{{playerIndex}}"  [disabled]="true">
+          <ng-template ngbPanelTitle>
+              <div class="body">
+                <div class="custom-td w-10"><span>{{ playerIndex + 1 }}</span></div>
+                <div class="custom-td w-30">
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                      <img width="36px" class="mr-3 d-md-inline-block d-none rounded-circle" alt="" [src]="player.image ? player.image : 'assets/images/profile_img.png'" />
+                      <span>{{ player.username }}</span>
+                    </div>
+                    <div class="ml-auto">
+                      <img alt="" src="assets/images/drop_down.png" />
+                    </div>
+                  </div>
+                </div>
+                <div class="custom-td w-24"><span>{{ player.totalLaplataEarned.toFixed(4) }}</span></div>
+                <div class="custom-td w-35">
+                  <div class="progress_area d-flex justify-content-between align-items-center">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success low_progress" role="progressbar"
+                           [ngStyle]="{width: player.statistics ? player.statistics.winRatio.toFixed(0) + '%' : '0%'}">
+                        <span>win</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning high_progress" role="progressbar"
+                           [ngStyle]="{width: player.statistics ? (100 - player.statistics.winRatio).toFixed(0) + '%' : '100%'}" >
+                        <span>lose</span>
+                      </div>
+                    </div>
+                    <span>{{ player.statistics ? player.statistics.winRatio.toFixed(0) + '%' : '0%'}}</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+            </div>
+
+      <!---<ngb-accordion [closeOthers]="true">
+        <ngb-panel id="static-lol">
+          <ng-template ngbPanelTitle>
+            <div class="custom-table">
+              <div class="body">
+                <div class="custom-td w-10"><span>4</span></div>
+                <div class="custom-td w-15">
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                      <img width="40px" class="mr-3 d-md-inline-block d-none" alt="" src="assets/images/profile_img.png" />
+                      <span>Player Five Name</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="custom-td w-10"><span>39</span></div>
+                <div class="custom-td w-10"><span>20</span></div>
+                <div class="custom-td w-10"><span>19</span></div>
+                <div class="custom-td w-10"><span>2.08</span><br><span>6 / 4 / 12</span></div>
+                <div class="custom-td w-10"><span>1360</span></div>
+                <div class="custom-td w-25">
+                  <div class="progress_area d-flex justify-content-between align-items-center">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success low_progress" role="progressbar"
+                        style="width:40%">
+                        <span>388</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning high_progress" role="progressbar"
+                        style="width:60%">
+                        <span>399</span>
+                      </div>
+                    </div>
+                    <span>40%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>-->
+
+
+    </div>
+
+</div>
+<div class="load-more-button"><button class="btn btn-primary" type="button" (click)="onLoadMore()" *ngIf="limit < 100">Load More</button></div>

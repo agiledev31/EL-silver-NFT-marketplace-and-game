@@ -1,0 +1,52 @@
+.community_area{
+    text-align: center;
+    background: #ffffff14;
+    padding: 40px 0;
+}
+.community_area h4{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+    margin: 64px 0 38px;
+}
+
+.community_area > p{
+    width: 75%;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+    margin: 0 auto;
+}
+
+.community_area > div{
+    width: 75%;
+    margin: 64px auto 80px;
+}
+
+.community_area span{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.blue_text{
+    color: #28A5FF;
+}
+
+.orange_text{
+    color: #FF9933;
+}
+@media screen and (max-width:720px) {
+.community_area div{
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+}

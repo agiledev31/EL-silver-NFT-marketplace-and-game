@@ -1,0 +1,65 @@
+<ng-template #content let-modal>
+
+
+  <div class="modal-body">
+
+    <div class="buy_transaction_area">
+      <div class="container">
+        <h2 class="p1">Update Profile</h2>
+
+        <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <upload-file (upload)="onUpload($event)" #uploader></upload-file>
+
+          <div class="profile-img" (click)="uploader.click()" >
+            <img alt="smiley" class="pointer" [src]="f.image.value | image " src="assets/images/profile_img.png" />
+            <div class="hover_img cursor"><i class="fas fa-camera"></i></div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <div class="Input_with_icon">
+              <input type="text" placeholder="john Doe"  class="form-control" formControlName="fullName">
+              <i class="fas fa-user"></i>
+              <errors [control]="f.fullName" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Username</label>
+            <div class="Input_with_icon">
+              <input type="text" placeholder="Username" appUsername appNoSpace class="form-control" formControlName="username">
+              <i class="fas fa-user"></i>
+              <errors [control]="f.username" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">email</label>
+            <div class="Input_with_icon">
+              <input type="text" placeholder="someone@something.com" appNoSpace class="form-control invalid" formControlName="email">
+              <i class="fas fa-envelope"></i>
+              <errors [control]="f.email" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <div>
+            <submit [isLoading]="isLoading"   [label]="'Update Profile'"  classes="btn primary-btn w-100 mt-2"></submit>
+          </div>
+
+        </form>
+        <app-loader *ngIf="!form"></app-loader>
+
+
+      </div>
+    </div>
+
+  </div>
+
+      <!-- image -->
+      <!-- fullname -->
+      <!--  username-->
+      <!-- email -->
+      <!-- phone -->
+
+</ng-template>

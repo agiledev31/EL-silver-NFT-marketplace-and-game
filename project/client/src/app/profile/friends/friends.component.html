@@ -1,0 +1,300 @@
+<!-- <div class="friends_list d-md-block d-none">
+  <div class="container">
+    <div class="d-flex align-items-center my-2">
+      <p class="heading mb-0">Teams</p>
+      <div class="ml-auto w-30">
+        <div class="Input_with_icon">
+          <input type="text" placeholder="Search by ID name or email" class="form-control">
+          <i><img src="assets/images/search_icon.png" alt=""> </i>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4" style="border-radius: 8px;">
+      <div class="card-body">
+        <p class="heading font-weight-normal">Team name 1</p>
+        <ul class="friends">
+          <li>
+            <span class="friends_img"> <img alt="" class="pointer" [src]="null | image" /></span>
+            <div class="friends_info">
+              <div>
+                <span class="friends_name">abisheikh padhee</span>
+                <span class="online_status">IN game</span>
+              </div>
+              <div class="ml-auto">
+                <a href="javascript:void(0)" class="btn primary-btn py-2 px-3 ml-auto">Add Friend</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"> <img alt="" class="pointer" [src]="null | image" /></span>
+            <div class="friends_info">
+              <div>
+                <span class="friends_name">abisheikh padhee</span>
+                <span class="online_status">Away</span>
+              </div>
+              <div class="ml-auto">
+                <a href="javascript:void(0)" class="btn primary-btn py-2 px-3 ml-auto">Add Friend</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"> <img alt="" class="pointer" [src]="null | image" /></span>
+            <div class="friends_info">
+              <div>
+                <span class="friends_name">abisheikh padhee</span>
+                <span class="online_status">In game</span>
+              </div>
+              <div class="ml-auto">
+                <a href="javascript:void(0)" class="btn primary-btn py-2 px-3 ml-auto">Add Friend</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"> <img alt="" class="pointer" [src]="null | image" /></span>
+            <div class="friends_info">
+              <div>
+                <span class="friends_name">abisheikh padhee</span>
+                <span class="online_status">Away</span>
+              </div>
+              <div class="ml-auto">
+                <a href="javascript:void(0)" class="btn primary-btn py-2 px-3 ml-auto">Add Friend</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+
+
+    <p class="heading">Add Friends</p>
+    <div class="teams">
+      <ul class="friends team">
+        <p *ngIf="this.suggestedFriends.length == 0" class="heading font-weight-normal">No Suggestions Right Now</p>
+
+        <li *ngFor="let u of this.suggestedFriends">
+          <span class="friends_img"> <img alt="" class="pointer" [src]="u?.image | image" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> {{u?.fullName}} </span>
+              <span class="online_status">IN game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" (click)='addFriend(u)' class="btn primary-btn py-2 px-3 ml-auto">Add
+                Friend</a>
+            </div>
+          </div>
+        </li>
+     </ul>
+
+    </div>
+
+    <p class="heading">Friends</p>
+    <div class="teams">
+      <ul class="friends team">
+        <p *ngIf="!this.result ||  this.result?.docs?.length == 0" class="heading font-weight-normal">No Friends</p>
+        <li *ngFor="let u of this.result?.docs">
+          <span class="friends_img"> <img alt="" class="pointer" [src]="u?.image | image" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> {{u?.fullName}} </span>
+              <span class="online_status">IN game</span>
+            </div>
+            <!-- <div class="ml-auto">
+              <a href="javascript:void(0)" (click)='addFriend(u?._id)' class="btn primary-btn py-2 px-3 ml-auto">Add
+                Friend</a>
+            </div> -->
+          <!-- </div>
+        </li>
+      </ul> -->
+
+
+
+
+      <!-- Pagination -->
+      <!-- <div class="clearfix"></div>
+      <div class="row d-block text-center w-100 mb-3">
+        <div class="col-md-12">
+          <!-- Pagination -->
+          <!-- <ngb-pagination *ngIf="result && result?.totalDocs > limit" [collectionSize]="result?.totalDocs"
+            [pageSize]="limit" [(page)]="page" (pageChange)="pageChange($event)">
+          </ngb-pagination> -->
+          <!-- <a  href="javascript:void(0)" (click)='pageChange()' *ngIf="!isLoader && ( result?.totalDocs > this.page * this.limit )"
+            class="see_more">See More</a>
+            <app-loader *ngIf="isLoader"></app-loader>
+        </div>
+      </div> -->
+      <!-- Pagination / End -->
+<!-- 
+    </div>
+  </div>
+
+</div>  -->
+
+
+<!-- <div class="d-block d-md-none">
+  <div class="toggle-heading mb-2">
+    <div class="team">TEAMS</div>
+    <div class="ml-auto" (click)="closeTeam()">
+      <i class="fas" [ngClass]="isMenuCollapsed ? 'fa-chevron-down': 'fa-chevron-up'"></i>
+    </div>
+  </div>
+  <div class="container">
+    <div class="teams" [ngClass]="isMenuCollapsed ? 'd-none': 'd-block' ">
+      <ul class="friends team">
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+  <div class="toggle-heading">
+    <div class="team">FRIENDS</div>
+    <div class="ml-auto" (click)="closeTeam1()">
+      <i class="fas" [ngClass]="isMenuCollapsed1 ? 'fa-chevron-down': 'fa-chevron-up'"></i>
+    </div>
+  </div>
+  <div class="container">
+    <div class="teams" [ngClass]="isMenuCollapsed1 ? 'd-none': 'd-block' ">
+      <ul class="friends team">
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="friends_img"> <img alt="" class="pointer" src="assets/images/user11.png" />
+          </span>
+          <div class="friends_info">
+            <div>
+              <span class="friends_name"> Abhishek Padhee </span>
+              <span class="online_status">In game</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="ml-auto"><img src="assets/images/add-user.png" alt=""></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>  -->

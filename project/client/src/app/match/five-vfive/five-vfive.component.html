@@ -1,0 +1,60 @@
+<div class="row mx-2">
+  <div class="col-md-12 my-4">
+    <div class="heading">
+
+
+
+      <div class="liquid_card">
+        <ul>
+
+          <li *ngFor="let player of  team" [ngClass]="{'random': !player}">
+            <div *ngIf="player" class="header_img">
+              <rounded-image [src]="player.player.image" alt=""></rounded-image>
+              <div class="img_name">@{{player.player.username}}</div>
+              <div class="text-blue text-uppercase small font-weight-600">Level 1</div>
+              <div class="d-flex justify-content-center">
+                <div  class="wrapper" >
+                  <span class="main-icon" >
+                    <span class="bottom_icon1" *ngIf="player.playerType === -1" >
+                      <i  class="fas fa-plus"></i>
+                    </span>
+                    <img  *ngIf="player.playerType !== -1" class="" height="40px" [src]="player.playerType | playerTypeIcon" (click)="onClickUserType1()"  alt="">
+
+                    <!-- <div class="" [ngClass]="{'main-round': isUserCollapsed}">
+                      <div class="round">
+                        <div class="icon1"><img src="assets/images/top-position1.svg" alt="" (click)="onClickUser(1)"></div>
+                        <div class="icon2"><img src="assets/images/top-position2.svg" alt="" (click)="onClickUser(2)"></div>
+                        <div class="icon3"><img src="assets/images/top-position3.svg" alt="" (click)="onClickUser(3)"></div>
+                        <div class="icon4"><img src="assets/images/top-position4.svg" alt="" (click)="onClickUser(4)"></div>
+                        <div class="icon5"><img src="assets/images/top-position5.svg" alt="" (click)="onClickUser(5)"></div>
+                      </div>
+                      <app-overlay *ngIf="isUserCollapsed" (overlayClick)="onClickUserType1()"></app-overlay>
+                    </div> -->
+
+
+                </span>
+
+                </div>
+
+              </div>
+          </div>
+          <div *ngIf="!player" (click)="invite()" class="d-flex flex-column align-items-center justify-content-center">
+            <div class="header_img">
+              <img height="60" src="assets/images/add-icon.png" alt="">
+            </div>
+          </div>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-4 text-center">
+    <button [disabled]="isStartMatchButtonDisable" (click)="onClickStartMatching()"  class="btn primary-btn w-100">Start Matching</button>
+  </div>
+</div>
+<app-match-modal (createLobby)="onCreateLobby($event)"  (inviteUsers)="onInviteUsers($event)"></app-match-modal>
+<app-match-found (accept)="onAcceptClick($event)" (decline)="onClickStartMatching()" ></app-match-found>

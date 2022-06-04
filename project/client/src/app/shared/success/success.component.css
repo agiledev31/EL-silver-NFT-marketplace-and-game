@@ -1,0 +1,44 @@
+::ng-deep .modal-content{
+  border-radius: 8px;
+  border: 0;
+}
+.modal-body{
+  background: radial-gradient(50% 128% at 0% 0%, rgba(17, 17, 17, 0.87) 0%, #111111 100%);
+  padding: 0;
+  border-radius: 8px;
+}
+.player_info{
+  text-align: left;
+}
+.buy_transaction_area .p1{
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 5px;
+}
+.buy_transaction_area{
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 50px 0;
+}
+.icon{
+    max-width:50px;
+}
+.buy_transaction_area span{
+    display: block;
+    color:#28A5FF;;
+
+}
+.back_home{
+  padding: .6rem 3rem;
+}
+.modes_player{
+  margin-bottom: 30px;
+
+}
+.card-1{
+  background: rgba(0, 0, 0, 0.19) !important;
+  border: none;
+  border-radius: 8px;
+}
+

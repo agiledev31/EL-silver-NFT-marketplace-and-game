@@ -1,0 +1,97 @@
+.secondary-btn{
+  border: 1px solid #28A5FF;
+}
+.header-grey{
+  background: rgba(255, 255, 255, 0.09);
+
+}
+.dropdown-toggle::after {
+  display:none;
+}
+.navbar-collapse{
+  justify-content: flex-end;
+}
+.header{
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+}
+.btn-outline{
+  border: 2px solid #28A5FF;
+  color: white;
+  border-radius: 8px;
+  padding: 7px 18px !important;
+}
+.btn-outline:hover{
+  background: rgba(40, 165, 255, 0.3);
+
+}
+.profile-img{
+
+  border-radius: 100%;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  margin-right: 5px;
+}
+
+.profile-img img{
+  height: 45px;
+  width: 45px;
+  object-fit: contain;
+  border-radius: 50%!important;
+}
+
+.nav-item{
+   transition: transform .2s;
+}
+
+.nav-item:hover{
+ color: #FF9933 ;
+ /* transform: scale(1.25); */
+}
+
+.display-none{
+  display: none !important;
+}
+@media (max-width:768px){
+  .navbar-toggler{
+    color: white;
+  }
+  .navbar-brand img{
+    height: 35px;
+  }
+  .navbar{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .display-none{
+    display: block!important;
+  }
+  .display-none .navbar-nav{
+    flex-direction: row;
+  }
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .header{
+    position: relative;
+  }
+}
+
+.conect-wallet-btn{
+  position: absolute;
+  left: 0px;
+  top: 73px;
+}
+
+.hide{
+  display: none;
+}
+a:hover{
+  text-decoration: none;
+}
+.dropdown-item:focus, .dropdown-item:hover{
+  background-color: rgba(0,0,0,0);
+  color: coral !important;
+}

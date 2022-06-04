@@ -1,0 +1,140 @@
+.friends_list .card {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.Input_with_icon {
+  position: relative;
+}
+
+.Input_with_icon .form-control {
+  padding-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  height: calc(1.5em + .75rem + 8px);
+}
+
+.Input_with_icon .form-control::placeholder {
+  color: white;
+  font-size: 13px;
+}
+
+.Input_with_icon i {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friends li {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 25rem;
+  float: left;
+  margin: 1rem 2rem;
+}
+
+.friends .friends_img {
+  display: inline-block;
+  height: 80px;
+  width: 100px;
+  margin-right: 20px;
+}
+
+.friends .friends_img img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 100%;
+}
+
+.friends .friends_name {
+  color: white;
+  display: block;
+  font-size: 17spx;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.friends .online_status {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  font-size: 14px;
+}
+
+.friends_info {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.team li {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 22rem;
+  float: left;
+  margin: 1rem;
+}
+
+.primary-btn {
+  padding: .5rem .6rem !important;
+}
+
+.toggle-heading{
+  display: flex;
+  align-items: center;
+  padding: 2px 20px;
+  background: rgba(255, 255, 255, 0.16);
+}
+.toggle-heading .ml-auto{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+@media (max-width: 768px){
+  .friends .friends_img {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+  }
+
+  .friends .friends_img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  .team li:first-child {
+    margin-top: 10px;
+  }
+  .team li {
+    width: 100%;
+    float: left;
+    margin: 0rem;
+    margin-bottom: 10px;
+  }
+}

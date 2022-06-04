@@ -1,0 +1,394 @@
+.layout{
+  height: 100vh;
+  width: 100%;
+}
+#header {
+  width: 100%;
+}
+
+#main {
+  float: left;
+  width: 75%;
+}
+
+#sidebar-right {
+  float: left;
+  width: 25%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+
+}
+
+#sidebar-right h5{
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.card-1{
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px 0px 0px 0px;
+}
+.icons-1 p{
+  margin-bottom: 0;
+  font-size: 35px !important;
+}
+
+#footer {
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2d2d2d;
+  padding: 10px 20px;
+}
+
+/* #sidebar-left, #main, #sidebar-right{
+  min-height: 600px
+} */
+
+.left_aside {
+  float: left;
+  width: 75%;
+  padding: 20px;
+}
+
+.right_aside {
+  float: left;
+  width: 25%;
+  background: rgba(255, 255, 255, 0.05);
+border-radius: 0px 0px 0px 16px;
+  padding: 20px;
+}
+
+.logo {
+  padding: 20px 25px;
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.heading h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.heading p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.light-btn {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  padding: 10px 25px;
+}
+.gold-btn {
+  border-radius: 8px;
+  padding: 10px 25px;
+  background: rgba(255, 153, 51, 0.3);
+  border: 1px solid rgba(255, 153, 51, 0.4);
+}
+
+.btns h6 {
+  color: #28A5FF;
+  margin-bottom: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.profile_info {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.profile_info h6 {
+  color: #FF9933;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.profile_info span {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.form-group {
+  margin-bottom: 0;
+  width: 100%;
+}
+.main-chat{
+  width: 22%;
+
+}
+
+.Input_with_icon {
+  position: relative;
+}
+
+.Input_with_icon .form-control {
+  padding: 1.3rem .75rem;
+  padding-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+}
+
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.show_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 6px);
+  min-width: 1rem;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.Input_with_icon i {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 10px);
+  min-width: 1rem;
+}
+
+.footer_button {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 5px 15px 10px 15px;
+}
+
+.friends {
+  margin-top: 30px;
+  margin-right: 5px;
+}
+
+.friends p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.friends li {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.friends .friends_img {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.friends .friends_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.friends .friends_name {
+  color: white;
+  display: block;
+  font-size: 17spx;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.friends .online_status {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  font-size: 14px;
+}
+
+.friends_info {
+  line-height: 1;
+}
+.online_dot{
+  height: 9px;
+  width: 9px;
+  background: #40F99B;
+  border-radius: 100%;
+  margin-right: 20px;
+  position: absolute;
+  bottom: 1px;
+  left: 30px;
+}
+.offline_dot{
+  height: 9px;
+  width: 9px;
+  background: #979797;
+  border-radius: 100%;
+  margin-right: 20px;
+  position: absolute;
+  bottom: 1px;
+  left: 30px;
+}
+/* chat box  */
+.chat_card{
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 8px;
+  width: 22%;
+  position: absolute;
+  bottom: 42px;
+}
+.chat_header{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px 8px 0px 0px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+}
+.chat_header .p1{
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+.green_dot{
+  height: 9px;
+  width: 9px;
+  border-radius: 100%;
+  background: #40F99B;
+}
+.user_img{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+.user_img img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.chat_box{
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 0px;
+}
+.chat{
+  padding: 15px 20px;
+}
+.message-row {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+}
+.message-recieved {
+  grid-column: 1/4;
+  justify-self: flex-start;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+.message-bubble {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  position: relative;
+  font-size: 14px;
+}
+.message-sent {
+  grid-column: 2/5;
+  justify-self: flex-end;
+  flex-direction: row-reverse;
+}
+.message-sent .message-bubble {
+  background-color:#28A5FF;;
+  color: #fff;
+  text-align: right;
+}
+.date{
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.chat_box::-webkit-scrollbar-track
+{
+  background-color: transparent;
+}
+
+.chat_box::-webkit-scrollbar
+{
+	width: 8px;
+	background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+
+.chat_box::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+/* .scroll-1{
+  height: 260px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 0px;
+}
+.scroll-1::-webkit-scrollbar-track
+{
+  background-color: transparent;
+}
+
+.scroll-1::-webkit-scrollbar
+{
+	width: 8px;
+	background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+
+.scroll-1::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+} */
+
+.sent-button .form-group{
+  width: 100%;
+}
+/* chat box end */
+
+.lol_nickname {
+  width: 174px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  border: none;
+  padding: 14px 16px;
+}
+
+.lol_nickname::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}

@@ -1,0 +1,82 @@
+.game_mode_area h2{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 48px;
+    color: #ffffff;
+}
+.game_mode_area{
+    overflow: hidden;
+    padding: 70px 0;
+}
+.icon{
+    max-width:50px;
+}
+.game_mode_area span{
+    width: 258px;
+    font-weight: 500;
+    font-size: 20px;
+    display: block;
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 auto;
+
+}
+.game_mode_points{
+    overflow: hidden;
+    margin: 0 0 25px;
+}
+@media screen and (max-width:987px) {
+ .game_mode_points div{
+margin:auto;
+justify-content: center;
+}
+
+}
+.game_mode_points > div{
+    width: 370px;
+    height: 425px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 8px;
+}
+.game_mode_points .img-container{
+    height: 50px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.game_mode_area p .span{
+    display: inline-block;
+    color: #FF9933;
+}
+.modes_player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.87);
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+.modes_player span{
+    font-size: 36px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.87);
+}
+.card-title{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+.card-body > button {
+    margin-top: 32px;
+    background: transparent !important;
+}
+.card-body{
+    padding-top: 21px;
+}
+

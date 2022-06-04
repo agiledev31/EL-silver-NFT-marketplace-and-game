@@ -1,0 +1,66 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <div class="Input_with_icon">
+      <input
+        type="text"
+        placeholder="john Doe"
+        class="form-control"
+        formControlName="fullName"
+      />
+      <i class="fas fa-user"></i>
+      <errors [control]="f.fullName" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div class="form-row mb-md-4 justify-content-center">
+    <div class="col-md-12 col-12">
+      <div class="form-group">
+        <ngx-intl-tel-input
+          [cssClass]="'custom'"
+          [preferredCountries]="preferredCountries"
+          [enableAutoCountrySelect]="true"
+          [enablePlaceholder]="true"
+          [searchCountryFlag]="true"
+          [searchCountryField]="[
+            SearchCountryField.Iso2,
+            SearchCountryField.Name
+          ]"
+          [selectFirstCountry]="false"
+          [selectedCountryISO]="CountryISO.SouthKorea"
+          [maxLength]="15"
+          [tooltipField]="TooltipLabel.Name"
+          [phoneValidation]="true"
+          [separateDialCode]="true"
+          [numberFormat]="PhoneNumberFormat.International"
+          name="phone"
+          formControlName="phone"
+        >
+        </ngx-intl-tel-input>
+        <errors [control]="f.phone" [isSubmit]="isSubmit"></errors>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <submit
+      [isLoading]="isLoading"
+      [label]="'Send Verification Code'"
+      classes="btn primary-btn w-100 mt-2"
+    ></submit>
+  </div>
+  <ul class="navbar-nav justify-content-between">
+    <li class="nav-item">
+      <a class="nav-link my-2 text-center" href="javascript:void(0)"
+        >Already have an account?</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link primary_btn_outline"
+        href="javascript:void(0)"
+        routerLink="/auth/login"
+        >Log In</a
+      >
+    </li>
+  </ul>
+</form>

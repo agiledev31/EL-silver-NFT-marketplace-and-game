@@ -1,0 +1,176 @@
+.buy_silver{
+  padding: 30px 0 80px;
+  overflow: hidden;
+  width: 100%;
+}
+h2.head_title_area{
+  margin-bottom: 10px!important;
+}
+/* .buy_silver h2{
+  font-size: 35px;
+  line-height: 40px;
+  margin: 30px 0 40px;
+  display: block;
+  font-family: Barlow;
+  font-weight: bold;
+} */
+.final{
+  color: #28A5FF;
+}
+.card{
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  border: 0;
+}
+.card_header{
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 8px 8px 0px 0px;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+.card_header p{
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+.card_content, .card_silver{
+  padding: 30px;
+}
+.card_content ul{
+  margin-bottom: 0;
+}
+.card_content ul li{
+  margin-bottom: 20px;
+}
+.card_content ul li:last-child{
+  margin-bottom: 0px;
+}
+.card_content ul li .p1{
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+.card_content ul li .p2{
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+}
+.user_img{
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+}
+.user_img img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.green_dot{
+  height: 9px;
+  width: 9px;
+  border-radius: 100%;
+  background: #40F99B;
+}
+.card_steps{
+  padding: 30px 20px;
+}
+.card_steps .step_img{
+  height: 30px;
+  width: 20px;
+  margin-right: 20px;
+}
+.card_steps ul li{
+  margin-bottom: 10px;
+}
+.card_steps ul li .p1{
+  color: white;
+  font-weight: 600;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+.card_steps ul li .p2{
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 300;
+  font-size: 15px;
+}
+.card_silver p{
+  color: white;
+  font-weight: 600;
+  margin: 0;
+  font-size: 20px;
+}
+.card_silver .p1{
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.card_silver textarea{
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+.card_silver .inner_card1{
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  height: 260px;
+  overflow-y: auto;
+}
+
+.card_silver .inner_card1::-webkit-scrollbar-track
+{
+  background: transparent;
+}
+
+.card_silver .inner_card1::-webkit-scrollbar
+{
+	width: 10px;
+	background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+  margin-right: 5px;
+}
+.card_silver .inner_card1 .p1{
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* buy/sell converter */
+.input_area input{
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+}
+a.swap-outline{
+    background-image: url(/assets/images/swap-outline.svg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    margin: 0 12px;
+}
+.input_area{
+  height: calc(1.5em + .75rem + 12px);
+}
+.input_area input{
+    background: none;
+    border: none;
+    color: #fff;
+    height: calc(1.5em + .75rem + 12px);
+}
+.input_area input::placeholder{
+   color: rgba(255, 255, 255, 0.6);
+   font-weight: 500;
+}
+.input-group-prepend{
+    padding: 10px 14px;
+}
+/* buy/sell converter end */
+.request-table tr {
+  border-bottom: 1pt solid black;
+}

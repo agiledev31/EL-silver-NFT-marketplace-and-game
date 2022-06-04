@@ -1,0 +1,55 @@
+::ng-deep app-leaderboards .leaderboards_section {
+  padding: 70px 0;
+  text-align: center;
+}
+.heading{
+    color:white;
+}
+.leaderboards_section h2 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  margin: 0 0 50px;
+  text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+}
+
+.leaderboards_section .container {
+  /* width: 850px; */
+  margin: 0 auto;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: left;
+  border-bottom: unset;
+  margin-bottom: 48px;
+}
+
+.nav-tabs li:last-child{
+  margin-left: 56px;
+}
+
+.nav-tabs .nav-link{
+  border: unset;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.87);
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  color: #28A5FF;
+  background-color: unset;
+  border-bottom: 2px solid #28A5FF;
+}
+.player-img{
+  border-radius: 20px;
+}
+@media screen and (max-width:600px) {
+  .nav-tabs {
+    padding-left: 4px;
+  }
+
+}

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center my-2">
+      <h3 class="card-title text-blue-400">Player Levels</h3>
+      <hr class="hr-blue">
+    </div>
+  </div>
+  <div class="content">
+    <div class="row">
+      <h2>Add Level</h2>
+      <div class="col-lg-12 w-md-100">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex justify-content-between align-items-center">
+
+          <!-- Level Name -->
+          <div class="form-group row text-left">
+            <label class="col-lg-5 col-form-label font-weight-semibold">Level name</label>
+            <div class="col-lg-7">
+              <input type="text" class="form-control" formControlName="name" placeholder="Enter level name">
+              <errors [control]="f.name" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <!-- Min Points -->
+          <div class="form-group row text-left">
+            <label class="col-lg-5 col-form-label font-weight-semibold">Min. points</label>
+            <div class="col-lg-7">
+              <input type="number" appNumericOnly class="form-control " formControlName="minPoints"
+                placeholder="Min. points for level">
+              <errors [control]="f.minPoints" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <!-- Commission Rate  -->
+          <div class="form-group row text-left">
+            <label class="col-lg-5 col-form-label font-weight-semibold">Commission Rate</label>
+            <div class="col-lg-7">
+              <input type="number" appNumericOnly class="form-control" formControlName="commissionRate"
+                placeholder="Commission rate">
+              <errors [control]="f.commissionRate" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <div class="form-group row text-left ">
+            <i (click)='onSubmit()' class="fa fa-plus mr-3" aria-hidden="true"></i>
+            <i (click)='cancel()' class="far fa-window-close"></i>
+          </div>
+
+        </form>
+
+      </div>
+      <hr class="col-lg-12 hr-blue">
+      <h2>Current Levels</h2>
+      <h4 *ngIf="levels &&  levels.length == 0">No Data</h4>
+
+      <table *ngIf="levels && levels.length > 0" class="table custom-padding">
+        <thead>
+          <tr class="table-border-solid">
+            <th>Level Name</th>
+            <th>Min. Points </th>
+            <th>Commission Rate(%age)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let level of levels; let i = index">
+          <td> {{level?.name}} </td>
+          <td> {{level?.minPoints}} </td>
+          <td> {{level?.commissionRate}}%</td>
+          <td>
+            <div class="form-group row text-left">
+              <i (click)='editLevel(i)' class="far fa-edit mr-3"></i>
+              <i (click)='deleteLevel(level?._id)' class="far fa-trash-alt"></i>
+            </div>
+          </td>
+        </tbody>
+      </table>
+      <app-loader *ngIf="isLoader"></app-loader>
+    </div>
+  </div>
+</div>

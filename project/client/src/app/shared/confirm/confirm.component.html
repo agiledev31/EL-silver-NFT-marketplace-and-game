@@ -1,0 +1,98 @@
+<ng-template #content let-modal>
+
+  <div class="modal-body">
+          <!-- Confirm  -->
+    <div *ngIf="status === 1" class="buy_transaction_area text-center">
+      <div class="container">
+        <h3 class="font-weight-600">confirm payment</h3>
+        <p class="modes_player text-gray">Entry fee: {{silver | silverPrice:1 }}</p>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="card card-1 mb-4">
+              <div class="card-body">
+                <div class="row align-items-center px-2">
+                  <div class="col-lg-12 player_info">
+                    <h5>your wallet</h5>
+                    <div class="row">
+                      <div class="col-lg-6 silver_txt">
+                        <span class="text-gray">Silver</span>
+                        <span [ngClass]="{'text-danger': silver > currentUser.silver}" class="font-weight-600 f-18">{{currentUser.silver | silverPrice:1 }}gm</span>
+                      </div>
+                      <div class="col-lg-6 wallet_txt">
+                        <span class="text-gray">Amount</span>
+                        <span class="font-weight-600 f-18">{{currentUser.balance | currency}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div *ngIf="silver > currentUser.silver" class="low-silver">
+              <p class="modes_player text-gray">Insufficient silver balance</p>
+              <a href="javascript:void(0)" [routerLink]="['/trade']"   class="font-weight-600 f-18 text-blue text-uppercase">Buy silver</a>
+              <!-- <p class="font-weight-600 f-18 text-blue text-uppercase">request silver from friends</p> -->
+
+            </div>
+
+          </div>
+        </div>
+        <div *ngIf="!(silver > currentUser.silver)" class="row justify-content-center">
+          <div class="col-md-9">
+            <button *ngIf="!isLoader" (click)="onConfirmClick()" class="btn primary-btn w-100">Confirm and Pay {{silver | silverPrice:1 }}gm Silver</button>
+            <button *ngIf="isLoader" class="btn primary-btn w-100" disabled> Processing... </button>
+            <p *ngIf="error"> {{error}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+          <!-- Confirm end  -->
+            <!-- Done -->
+
+    <div *ngIf="status === 2" class="buy_transaction_area text-center">
+      <div class="container">
+        <div class="modes_player text-gray">
+          <div class="mb-2"><img src="assets/images/done.png" alt=""></div>
+          <p class="font-weight-600 f-18 text-blue">Done!</p>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8">
+            <span class="text-gray f-18">Your entry fee was received. You can wait till the tournament starts at the team lobby!</span>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-9">
+            <p (click)="onTournamentClick()" class="font-weight-600 f-18 text-blue text-uppercase">go to tournament</p>
+          </div>
+        </div>
+      </div>
+    </div>
+           <!-- Done end -->
+
+           <!-- Warning -->
+    <!-- <div class="buy_transaction_area text-center  d-none">
+    <div class="container">
+      <div class="modes_player text-gray">
+        <div class="mb-3"><img src="assets/images/warning-info.png" alt=""></div>
+        <p class="font-weight-600 f-20 text-gold">You need at least 20g silver to start matching</p>
+      </div>
+
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8">
+          <span class="text-gray f-18">The entry fee for this match is 20g. Buy more silver or request some from friends to get matched!</span>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <p class="font-weight-600 f-18 text-blue text-uppercase">buy silver</p>
+          <p class="font-weight-600 f-18 text-blue text-uppercase">request silver from friends</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+           <!-- Warning end -->
+
+  </div>
+</ng-template>

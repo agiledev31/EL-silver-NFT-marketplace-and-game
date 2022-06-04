@@ -1,0 +1,13 @@
+ .rounded_img {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+}
+
+ .rounded_img img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 100%;
+}

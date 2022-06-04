@@ -1,0 +1,56 @@
+<!--- Modal Pr -->
+
+<ng-template #content let-modal>
+
+    <div class="modal-body">
+
+      <div class="buy_transaction_area text-center">
+        <div class="container">
+          <h2 class="p1">MATCH FOUND!</h2>
+          <p class="modes_player text-gray">Summoners’ Rift | 5v5 Party </p>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+
+                    <div class="mx-auto mb-5 mt-4">
+
+                      <circle-progress
+                      [percent]="progress"
+                      [radius]="60"
+                      [outerStrokeWidth]="10"
+                      [innerStrokeWidth]="10"
+                      [space]="-10"
+                      [outerStrokeColor]="'#4882c2'"
+                      [innerStrokeColor]="'#C4C4C4'"
+                      [titleColor]="'#ffff'"
+                      [showBackground]="false"
+                      [title]="progress*1000 | date : 'mm: ss'"
+                      [showUnits]= "false"
+                      [showSubtitle] = "false"
+                      [animateTitle]="false"
+                      [showUnits]="false"
+                      [animation]="false"
+                      [startFromZero]="false"
+                      [outerStrokeGradient]="true"
+                      [outerStrokeGradientStopColor]="'#53a9ff'"
+
+                    ></circle-progress>
+                    </div>
+
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <button class="btn btn-outline-info decline w-100" (click)="close()" type="submit">Decline</button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn primary-btn w-100" (click)="onAcceptClick()" type="submit">Accept</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </ng-template>
+      <!-- /** Instant Model **/ -->

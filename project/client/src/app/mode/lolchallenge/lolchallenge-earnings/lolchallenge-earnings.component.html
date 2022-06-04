@@ -1,0 +1,154 @@
+<div class="accordion_area mb-5">
+    <div>
+        <div class="challenge_line">
+          <ul class="d-flex mobile-li challenge_links mt-4 mb-4">
+            <li class="mobile-item">
+              <span class="text-gray">Total LAPLATA Mined</span>
+              <span>{{this.statistics?.totalLaplataEarned.toFixed(4)  ==null?0:this.statistics?.totalLaplataEarned.toFixed(4) }} LPLT</span>
+            </li>
+            <li class="mobile-item">
+              <span class="text-gray">Withdrawn</span>
+              <span>{{this.statistics?.withdrwan.toFixed(4)  ==null?0:this.statistics?.withdrwan.toFixed(4)}} LPLT</span>
+            </li>
+            <li class="mobile-item">
+              <span class="text-gray">Available For Withdrawal</span>
+              <span>{{this.statistics?.availableForWithdrawal.toFixed(4) ==null?0:this.statistics?.availableForWithdrawal.toFixed(4)  }} LPLT</span>
+            </li>
+            <li class="mobile-item">
+              <span class="text-gray">Mined this Month</span>
+              <span>{{this.statistics?.earnedLastMonth.toFixed(4) ==null?0:this.statistics?.earnedLastMonth.toFixed(4)}} LPLT</span>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div>
+        <button class="btn primary-btn mb-4" (click)="openLobbyCodePopup(content)" *ngIf="currentUser">Withdraw Laplata</button>
+        <button class="btn primary-btn mb-4" (click)="noUserToast()" *ngIf="!currentUser">Withdraw Laplata</button>
+        <p>Withdrawal History</p>
+        <ngb-accordion [closeOthers]="true" activeIds="static-0" *ngIf="withdrawalHistory?.length >= 1">
+            <ngb-panel disabled="true">
+                <ng-template ngbPanelTitle>
+                  <div class="custom-table">
+                    <div class="head">
+                      <div class="col-lg-2 custom-td"><span>Date</span></div>
+                      <div class="col-lg-2 custom-td">Time</div>
+                      <div class="col-lg-2 custom-td">Status</div>
+                      <div class="col-lg-2 custom-td">Amount (LAPLATA)</div>
+                      <div class="col-lg-2 custom-td">Address </div>
+                      <div class="col-lg-2 custom-td">Fee (LAPLATA)</div>
+                    </div>
+                            <div class="history__not__Found-msg my-5" *ngIf="!withdrawalHistory?.length">
+          <span *ngIf="currentUser" class="history__not__Found-msg">NO WITHDRAWAL HISTORY FOUND</span>
+          <button *ngIf="!currentUser" class="btn primary-btn mb-4 " routerLink="/auth/login">PLEASE LOGIN TO VIEW MORE DETAILS</button>
+        </div>
+                    <div class="body" *ngFor="let w of withdrawalHistory">
+                      <div class="col-lg-2 custom-td"><span>{{w.createdAt | date: 'longDate'}}</span></div>
+                      <div class="col-lg-2 custom-td"><span>{{w.createdAt | date: 'shortTime'}}</span></div>
+                      <div class="col-lg-2 custom-td">
+                      <span class="final" *ngIf="w.status == 'Pending';">{{w.status}}</span>
+                      <span class="complete" *ngIf="w.status == 'Complete';">{{w.status}}</span>
+                      <span class="complete" *ngIf="w.status == 'Refund';">{{w.status}}</span>
+                      <span class="cancelled" *ngIf="w.status == 'Cancelled';">{{w.status}}</span>
+                      </div>
+                      <div class="col-lg-2 custom-td"><span>{{w.amount}} LPLT</span></div>
+                      <div class="col-lg-2 custom-td"><span>{{w.address}} </span></div>
+                      <div class="col-lg-2 custom-td"><span>{{w.fee}} LPLT</span></div>
+                    </div>
+                  </div>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+        <div class="history__not__Found-msg my-5" *ngIf="!withdrawalHistory?.length">
+          <span *ngIf="currentUser" class="history__not__Found-msg">NO WITHDRAWAL HISTORY FOUND</span>
+          <button *ngIf="!currentUser" class="btn primary-btn mb-4 " routerLink="/auth/login">PLEASE LOGIN TO VIEW MORE DETAILS</button>
+        </div>
+
+    </div>
+  <div class="row mx-auto">
+    <div class="col-md-12">
+      <ngb-pagination class="d-flex justify-content-center" [collectionSize]="totalDocs" [pageSize]="limit" [(page)]="page"
+                      (pageChange)="onPageChange($event)">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header" >
+        <h4 *ngIf='currentStep == 1'>withdraw minings</h4>
+        <h4 *ngIf='currentStep == 2'>confirm withdrawal</h4>
+    </div>
+    <div class="modal-body">
+        <div id="step-1" *ngIf='currentStep == 1'>
+            <form [formGroup]="form">
+                <p class="gray-text">Enter the amount to withdraw and crypto wallet address where earnings should be withdrawn.</p>
+
+                <div class="form-group mobile-li d-flex align-items-center justify-content-between mb-0">
+                    <label class="orange-text" for="amount">Amount</label>
+                    <div>
+                        <div class="d-flex mobile-li align-items-center justify-content-between">
+                            <input
+                                type="number"
+                                id="amount"
+                                name="amount"
+                                formControlName="amount"
+                                class="form-control mr-3"
+                                placeholder="max. 5000"
+                                [(ngModel)]="amount"
+                            >
+                            <span class="f-16">LAPLATA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="w-75">
+                        <span class="f-14">Available for withdrawal: </span>
+                        <span class="text-blue f-14">{{this.statistics?.availableForWithdrawal.toFixed(4) }} LAPLATA</span>
+                    </div>
+                </div>
+
+                <div class="form-group mobile-li d-flex align-items-center justify-content-between mb-0 mt-4">
+                    <label class="orange-text" for="address">Address</label>
+                    <div>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            formControlName="address"
+                            class="form-control"
+                            placeholder="Enter your crypto wallet address"
+                            [(ngModel)]="address"
+                        >
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="custom-control custom-checkbox d-flex align-items-center w-75">
+                        <input type="checkbox" class="custom-control-input" id="save_address" (change)="termsChange($event)">
+                        <label class="custom-control-label f-14 save_address" for="save_address">Save this address for future use</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="step-2" *ngIf='currentStep == 2'>
+            <p class="gray-text">Confirm that your withdrawal amount and wallet address is correct. </p>
+
+            <div class="confirm_withdrawal">
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="f-16">AMOUNT</p>
+                    <p class="orange-text w-75">{{amount ? amount + ' LAPLATA' : ''}} </p>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="f-16 mb-0">ADDRESS</p>
+                    <p class="orange-text mb-0 w-75 address">{{address}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class='footer-stuff' >
+            <button class='btn back mr-2' (click)='stepBack()' *ngIf='currentStep == 2'><img class="mr-1" src="assets/images/left_arrow.png" alt="arrow"> Back</button>
+            <button class='btn next' (click)='validateWithdrawal()' *ngIf='currentStep == 1'>Next <img class="ml-1" src="assets/images/right_arrow.png" alt="arrow"></button>
+            <button class="btn done" *ngIf='currentStep == 2' (click)="createWithdrawal()">Withraw My Earnings</button>
+        </div>
+    </div>
+</ng-template>

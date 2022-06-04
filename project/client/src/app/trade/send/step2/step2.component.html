@@ -1,0 +1,168 @@
+<div class="row">
+  <div class="col-md-12 mb-4">
+    <div class="d-flex align-items-center">
+      <div class="post">
+        <div class="text-gray text-uppercase font-weight-normal small">step 2/2</div>
+        <div class="p1">Enter silver amount</div>
+      </div>
+      <div class="ml-auto">
+        <a [routerLink]="['/trade/send/1']"  href="javascript:void(0)" class="btn btn_outline_primary mr-3"><img
+            src="assets/images/Left arrow.svg" alt=""> Back</a>
+        <button [disabled]="isSendDisable" (click)="onClickSend()"  class="btn btn_primary">SEND SILVER <img src="assets/images/Right arrow.svg"
+            alt=""></button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="silver-box">
+          <div>
+            <img class="mr-4" src="assets/images/diamond_half.png" alt="">
+          </div>
+          <div>
+            <div class="text-uppercase text-blue" *ngIf="currentUser">{{currentUser.silver | silverPrice: 1}} silver</div>
+            <div class="text-grey font-weight-normal f-15">Balance</div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-6">
+        <div class="silver-box">
+          <div>
+            <img class="mr-4" src="assets/images/remove_icon.png" alt="">
+          </div>
+          <div>
+            <div class="text-uppercase text-blue">26 of 28.75215641 SILVER</div>
+            <div class="text-grey font-weight-normal f-15">Daily Transfer Limit <img src="assets/images/eva_question-mark-circle-fill.svg" alt=""></div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <!-- <div class="col-md-7 my-3">
+    <div class="d-flex">
+      <div class="tab-buttons">
+        <ul class="nav-tabs">
+          <li>
+            <a href="javascript:void(0)" class="active">Amount</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Price</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  </div> -->
+</div>
+<div *ngFor="let friend of selectedFriends" class="row align-items-center my-3">
+  <div class="col-md-7">
+    <div class="selected">
+      <div class="teams">
+          <div class="top">
+            <div class="mid">
+              <div class="friends_img">
+                <rounded-image [src]="friend?.image | image"></rounded-image>
+              </div>
+              <div class="friends_info">
+                <div class="w-75">
+                  <span class="friends_name">{{friend.fullName}}</span>
+                  <span class="online_status">@{{friend.username}}</span>
+                </div>
+                <div *ngIf="!isSameAmount" class="ml-auto">
+                  <div class="form-group">
+                    <div class="Input_with_icon">
+                      <input  [(ngModel)]="friend.silver" appDecimalOnly type="number" placeholder="Amount" class="form-control">
+                      <i><img src="assets/images/diamond_half.png" alt=""></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+    <!-- <div class="message_box">
+     <span class="text-blue d-none">Send a message</span>
+      <div class="form-group">
+        <div class="Input_with_icon d-flex align-items-center">
+          <input id="password" type="text" placeholder="Type your message here" class="form-control pl-3">
+          <div class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+          <div class="fas fa-times text-grey ml-3"></div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+<!-- <div class="row align-items-center mb-3">
+  <div class="col-md-7">
+    <div class="selected">
+      <div class="teams">
+          <div class="top">
+            <div class="mid">
+              <div class="friends_img"><img src="assets/images/player_name.png" alt=""></div>
+              <div class="friends_info">
+                <div class="w-75">
+                  <span class="friends_name">abisheikh padhee</span>
+                  <span class="online_status">@abhipaundet</span>
+                </div>
+                <div class="ml-auto">
+                  <div class="form-group">
+                    <div class="Input_with_icon">
+                      <input id="password" type="text" placeholder="Amount" class="form-control">
+                      <i><img src="assets/images/diamond_half.png" alt=""></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+    <div class="message_box">
+     <span class="text-blue">Send a message</span>
+      <div class="form-group d-none">
+        <div class="Input_with_icon d-flex align-items-center">
+          <input id="password" type="text" placeholder="Type your message here" class="form-control pl-3">
+          <div class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+          <div class="fas fa-times text-grey ml-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-7">
+    <div class="d-flex my-4 align-middle">
+      <div class="w-75">
+        <input class="styled-checkbox" id="styled-checkbox-1" (change)="onAllSameAmountClick($event)" type="checkbox" value="value1">
+        <label for="styled-checkbox-1" class="check-label-1"></label>
+        <label class="check-label-1 text-grey" for="styled-checkbox-1">Send the same amount to all friends</label>
+      </div>
+      <div class="ml-auto" *ngIf="isSameAmount">
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input  [(ngModel)]="sameAmount" appDecimalOnly type="number" placeholder="All Same Amount" class="form-control">
+            <i><img src="assets/images/diamond_half.png" alt=""></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="silver-box">
+      <div>
+        <div class="text-gray">Fee <img src="assets/images/eva_question-mark-circle-fill.svg" alt=""></div>
+        <div class="font-weight-600 f-18">Total</div>
+      </div>
+      <div class="ml-auto text-right">
+        <div class="text-uppercase text-gray"><span *ngIf="constant.system" class="text-grey">{{constant.system.sendSilverFee}}</span> silver</div>
+        <div class="text-uppercase font-weight-600 f-18"> {{total }} <span class="text-gray">silver</span></div>
+        <span class="text-danger" *ngIf="!isOwn"> You didn't Own {{total }} Silver in your Account. Buy Some!  </span>
+      </div>
+    </div>
+  </div>
+</div>
+<app-success #success></app-success>

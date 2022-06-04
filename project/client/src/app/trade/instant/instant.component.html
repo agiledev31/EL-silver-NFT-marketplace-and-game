@@ -1,0 +1,130 @@
+<div class="buy_silver">
+  <div class="container">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/trade']">Silver Status / </span><span class="final"> {{type == 1 ? 'Buy' :'Sell'}} Silver </span>
+    </div>
+    <h2> {{type == 1 ? 'Buy' :'Sell'}} Silver</h2>
+    <div class="row mb-4">
+       <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-8">
+               <app-silver-online></app-silver-online>
+              </div>
+              <div class="col-md-4">
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="graph_content_box">
+          <div class="d-flex justify-content-between">
+      </div>
+    </div>
+</div>
+</div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div *ngIf="currentUser; else elseUser" class="card">
+          <div class="card-body">
+            <div class="row align-items-center px-2">
+              <div class="col-lg-3">
+                <rounded-image [src]="currentUser.image" alt=""></rounded-image>
+
+              </div>
+              <div class="col-lg-8 player_info">
+                <h5>{{currentUser.fullName}}  </h5>
+                <div class="row">
+                  <div class="col-lg-6 silver_txt">
+                    <strong>Silver</strong>
+                    <span>{{currentUser.silver | silverPrice:1 }}gm</span>
+                  </div>
+                  <div class="col-lg-6 wallet_txt">
+                    <strong>Wallet</strong>
+                    <span>{{currentUser.balance | currency}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #elseUser>
+        <div class="card mb-4">
+        <div class="card-body">
+            <div class="row align-items-center px-5">
+          <button *ngIf="!currentUser" class="btn py-4 " style=" font-size:1rem ;color:white"routerLink="/auth/login"><span style="color: #FF9933;">LOGIN</span> TO MANAGE YOUR ACCOUNT</button>
+        </div>
+        </div>
+        </div>
+          </ng-template>
+      </div>
+      <div class="col-lg-7 mx-4">
+
+        <div class="d-flex mb-4">
+          <div class="">
+            <div class="tab-buttons">
+              <ul ngbNav [(activeId)]="type" class="nav-tabs">
+                <li [ngbNavItem]="1">
+                  <a ngbNavLink>Buy</a>
+                  <ng-template ngbNavContent>
+                    <div class="text-center">
+
+                    </div>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                  <a ngbNavLink>Sell</a>
+                  <ng-template ngbNavContent>
+                    <div class="text-center">
+                    </div>
+                  </ng-template>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="graph_content_box">
+          <div class="d-flex justify-content-between">
+            <div class="col-7 p-0">
+              <form [formGroup]="form" (ngSubmit)="onProceedClick()" class="form-inline mb-3" style="flex-flow: row;">
+                <div class="input-group input_area p-0">
+                  <div class="input-group-prepend">
+                    <span class=""><img alt="" src="assets/images/dollar.png" /></span>
+                  </div>
+                  <input type="text" (keyup)="onAmountKeyUp()" formControlName="amount" appNumericOnly appNoSpace class="form-control px-0" placeholder="Enter Amount"
+                    aria-label="Amount (to the nearest dollar)">
+                </div>
+                <a class="swap-outline" href="javascript:void(0)"></a>
+                <div class="input-group input_area p-0">
+                  <div class="input-group-prepend">
+                    <span class=""><img alt="" src="assets/images/diamond_half.png" /></span>
+                  </div>
+                  <input type="text" (keyup)="onSilverKeyUp()" formControlName="silver" appNumericOnly appNoSpace class="form-control px-0" placeholder="Enter Silver"
+                    aria-label="Amount (to the nearest dollar)">
+                </div>
+              </form>
+              <div class="amount_content">
+                <p  *ngIf="form.invalid">Enter amount or silver above to proceed.</p>
+                <!-- <p>You need to add <strong class="text-white">$279.55</strong> more to your wallet to proceed.</p>
+                <span>Add $279.55 to wallet now</span> -->
+                <button
+                [disabled]="!isProceedBtnDisable"
+                (click)="onProceedClick()"
+                  type="submit" class="btn primary-btn proceed">  Proceed to {{type == 1 ? 'Buy' :'Sell'}}</button>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<app-success #success></app-success>

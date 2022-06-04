@@ -1,0 +1,54 @@
+.profile-img {
+  height: 160px;
+  width: 160px;
+}
+
+.profile-img img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+.green-input:checked~.custom-control-label::before {
+  color: #27D258;
+  border-color: #27D258;
+  background-color: transparent;
+  box-shadow: none;
+}
+.custom-checkbox .green-input:checked~.custom-control-label::after {
+  background-image: url(../../../../assets/images/600px-Light_green_check.svg.png)
+}
+.custom-control-input:disabled~.custom-control-label:after, .custom-control-input:disabled~.custom-control-label:before {
+  opacity: 1;
+}
+.custom-control-input:disabled~.custom-control-label {
+  color: #324148 !important;
+  font-weight: 500;
+}
+::ng-deep .iti {
+  width: 100%;
+}
+::ng-deep .iti input, .iti input[type=tel] {
+  position: relative;
+  width: 100% !important;
+  height: calc(1.5385em + .875rem + 2px) !important;
+  border: 1px solid #ddd;
+    border-radius: .1875rem;
+    box-shadow: 0 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+::ng-deep .iti input, .iti input[type=tel]:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+::ng-deep .iti input::placeholder {
+  color: #acacac !important;
+}
+@media (max-width:1150px){
+  .w-md-100{
+    flex: 0 0 100%;
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+
+  }
+}

@@ -1,0 +1,98 @@
+<div class="d-none d-md-block">
+  <app-update-password #updatePassword></app-update-password>
+  <app-update-profile #updateProfile></app-update-profile>
+  <div class="profile_page">
+    <div class="">
+      <div class="container">
+        <div class="profile-content">
+          <div class="profile-img">
+            <img
+              *ngIf="currentUser"
+              alt=""
+              class="pointer"
+              [src]="currentUser.image | image"
+            />
+            <upload-file (upload)="onUpload($event)" #uploader></upload-file>
+            <div (click)="uploader.click()" class="hover_img cursor">
+              <i class="fas fa-camera"></i>
+            </div>
+          </div>
+          <div *ngIf="currentUser" class="profile_name">
+            <p>
+              {{ currentUser.fullName }}
+              <a href="javascript:void(0)" (click)="updatePassword.open()">
+                <i class="fa fa-user-cog"></i>
+              </a>
+            </p>
+            @{{ currentUser.username }}
+            <a href="javascript:void(0)" (click)="updateProfile.open()">
+              <i class="fa fa-pencil-alt" style="font-size: 1.2rem"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <div class="container">
+        <div class="profile_line">
+          <ul class="d-flex profile_links m-0">
+            <li></li>
+            <li>
+              <span>Level</span>
+              <strong *ngIf="currentUser">1</strong>
+            </li>
+            <li>
+              <span>Silver</span>
+              <strong *ngIf="currentUser"
+                >{{ currentUser ? currentUser.silver : 0 }}g</strong
+              >
+            </li>
+            <li>
+              <span>LAPLATA</span>
+              <strong>{{
+                totalLaplataEarned ? totalLaplataEarned.toFixed(4) : 0
+              }}</strong>
+            </li>
+            <li>
+              <span>Challenge Rank</span>
+              <strong>#{{ rank }}</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <ul ngbNav #nav="ngbNav" class="nav-tabs profile_nav_tab mt-4">
+        <li ngbNavItem>
+          <a ngbNavLink>Overview</a>
+          <ng-template ngbNavContent>
+            <app-profile></app-profile>
+          </ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Recent games</a>
+          <ng-template ngbNavContent>
+            <app-recent></app-recent>
+          </ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Team & Friends</a>
+          <ng-template ngbNavContent>
+            <app-friends></app-friends>
+          </ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Referrals</a>
+          <ng-template ngbNavContent>
+            <app-referrals></app-referrals>
+          </ng-template>
+        </li>
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-block d-md-none">
+  <app-mobile-profile></app-mobile-profile>
+</div>

@@ -1,0 +1,54 @@
+<h2 class="page-title">Game modes</h2>
+<p class="page-desc">Choose from three exciting game modes to play!</p>
+<div class="game_modes game_modes_mobile">
+  <div class="game_mode game_mode_mobile">
+    <h4>Ranked Solo</h4>
+    <div class="icon-img">
+      <img src="assets/images/sword_gray.png" alt="sword">
+    </div><br/><br/><br/><br/>
+    <!-- <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus blandit vel egestas.</p> -->
+    <button class="btn" *ngIf="currentUser" (click)="onPlayClick(1)" type="submit">Play Now</button>
+    <button class="btn" *ngIf="!currentUser" (click)="userSwal()" type="submit">Play Now</button>
+  </div>
+  <div class="game_mode game_mode_mobile">
+    <h4>5v5</h4>
+    <div class="icon-img">
+      <img src="assets/images/team_leader_gray.png" alt="team leader">
+    </div>
+    <br/><br/><br/><br/>
+
+    <div class="lobby">
+      <!--<p class="join-a-lobby" (click)="openLobbyCodePopup(content)">Join a lobby</p>-->
+      <button (click)="onPlayClick(2)"  *ngIf="currentUser" class="btn mb-2" type="submit">Join a lobby</button>
+      <button *ngIf="!currentUser" (click)="userSwal()" class="btn mb-2" type="submit">Join a lobby</button>
+      <p class="f-16">or</p>
+      <button  *ngIf="currentUser" (click)="onPlayClick(2)" class="btn" type="submit">Create a Lobby</button>
+      <button *ngIf="!currentUser" (click)="userSwal()" class="btn" type="submit">Create a Lobby</button>
+    </div>
+  </div>
+  <div class="game_mode game_mode_mobile">
+    <h4>Tournament</h4>
+    <div class="icon-img">
+      <img src="assets/images/trophy_icon_gray.png" alt="trophy">
+    </div><br/><br/><br/><br/><br/><br/><br/><br/>
+
+  <!-- <button class="btn"  *ngIf="currentUser" routerLink="/mode/tournament" type="submit">Explore Tournaments</button> -->
+  <button class="btn"  *ngIf="currentUser" (click)="onPlayClick(2)" type="submit">Explore Tournaments</button>
+    <button class="btn" *ngIf="!currentUser" (click)="userSwal()"  type="submit">Explore Tournaments</button>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4>Enter the lobby link/code</h4>
+  </div>
+  <div class="modal-body">
+    <div class="Input_with_icon">
+      <input type="text" placeholder="Type lobby code to join..." class="form-control">
+      <i class="fas fa-link"></i>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button (click)="onPlayClick(2)">Join!</button>
+  </div>
+</ng-template>

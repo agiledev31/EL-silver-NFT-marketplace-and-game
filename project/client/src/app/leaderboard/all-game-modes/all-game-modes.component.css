@@ -1,0 +1,24 @@
+@import '../leaderboard-table.css';
+.load-more-button{
+  display: flex;
+  align-items: center;
+  place-content: center;
+}
+.load-more-button button{
+  height: 6vh;
+  width: 30vw;
+}
+::ng-deep button.btn.btn-link.collapsed{
+  opacity: 1;
+}
+.sortc{
+margin-left: 94%;
+border-radius: 8px;
+  }
+  @media screen and (max-width:600px) {
+    .w-35{
+      display: block !important;
+      width: 0;
+  }
+
+  }

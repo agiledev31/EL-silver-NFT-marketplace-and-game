@@ -1,0 +1,19 @@
+.buy_silver{
+  padding: 30px 0 80px;
+  overflow: hidden;
+  width: 100%;
+}
+h2.head_title_area{
+  margin-bottom: 10px!important;
+}
+/* .buy_silver h2{
+  font-size: 35px;
+  line-height: 40px;
+  margin: 30px 0 40px;
+  display: block;
+  font-family: Barlow;
+  font-weight: bold;
+} */
+.final{
+  color: #28A5FF;
+}

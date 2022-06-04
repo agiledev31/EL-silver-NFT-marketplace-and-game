@@ -1,0 +1,152 @@
+.post .p1{
+  font-size: 24px;
+  font-weight: 600;
+}
+.btn_primary{
+  background: #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 30px;
+}
+.btn_outline_primary{
+  border: 1px solid #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+}
+.Input_with_icon{
+  position: relative;
+}
+.Input_with_icon .form-control {
+  padding-left: 3.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  height: calc(1.5em + .75rem + 10px);
+}
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+.show_btn{
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+  font-size: 13px;
+  cursor: pointer;
+}
+.Input_with_icon i {
+  position: absolute;
+  top: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+
+}
+.silver-box{
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  padding: 15px 30px;
+}
+
+.tab-buttons .nav-tabs {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border-bottom: 0;
+  padding: 10px 0;
+  display: flex;
+}
+
+.tab-buttons .nav-tabs li {
+  margin: 0;
+}
+
+.tab-buttons .nav-tabs li a {
+  padding: 10px 30px;
+  font-size: 14px;
+  border: 0;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.tab-buttons .nav-tabs li a:hover {
+  background: rgba(255, 255, 255, 0.09);
+  margin: 0;
+  border: 0;
+  padding: 13px 30px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.tab-buttons .nav-tabs li .active {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  border: 0;
+  padding: 13px 30px;
+  color: white;
+  font-size: 14px;
+
+}
+.form-group{
+  margin-bottom: 0;
+}
+.selected .teams .top {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.selected .teams  .mid{
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 3px 12px;
+}
+.selected .teams .friends_img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.selected .teams .friends_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.selected .teams .friends_name {
+  color: white;
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.selected .teams .online_status {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  font-size: 14px;
+}
+
+.friends_info {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}

@@ -1,0 +1,60 @@
+<div
+  *ngIf="this.currentUser?.referrercode; else other_content"
+  class="text-center"
+>
+  ** You were referred by <b>{{ this.currentUser?.referrercode }}</b> referral
+  code **
+</div>
+<ng-template #other_content>
+  <div class="d-flex align-items-center mt-5 mb-5 justify-content-center">
+    <div class="">Apply Referral Code for 30 LPLT Welcome Bonus:</div>
+    <div class="input-group input_area p-0" style="width: 25%">
+      <input
+        appNoSpace
+        (keyup.enter)="onReferrerSubmit()"
+        [(ngModel)]="ReferrerCode"
+        type="text"
+        class="form-control"
+        placeholder="Apply Referral Code"
+        aria-label="Referral Code"
+      />
+      <div class="input-group-prepend">
+        <a
+          *ngIf="!isLoader"
+          href="javascript:void(0)"
+          (click)="onReferrerSubmit()"
+          ><img alt="" src="assets/images/email_sign.png"
+        /></a>
+        <app-spinner *ngIf="isLoader"></app-spinner>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<hr style="background: aliceblue" />
+<div class="d-flex align-items-center mt-5 justify-content-center">
+  <img src="/assets/images/Silver.png" alt="" style="margin-right: 15px" />
+  <h1 style="display: inline-block">Refer & Earn Laplata</h1>
+</div>
+<p class="text-center">
+  Earn 3% of your Referral minings when they signup via your Referral Code!
+</p>
+<div style="width: 50%; margin: 0 auto; padding-top: 30px">
+  <!-- COPY INPUT -->
+
+  <div class="d-flex justify-content-center">
+    <input
+      class="shareUrl-input js-shareUrl"
+      type="text"
+      readonly="readonly"
+      [(ngModel)]="ReferralCode"
+    />
+    <button *ngIf="!this.ReferralCode" (click)="GenerateCode()">
+      Generate
+    </button>
+    <button *ngIf="this.ReferralCode" (click)="copyText()">
+      Click to Copy
+    </button>
+  </div>
+
+  <p class="shareUrl-subtext">Click above to copy the link.</p>
+</div>

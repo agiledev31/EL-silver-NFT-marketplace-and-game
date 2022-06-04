@@ -1,0 +1,173 @@
+<div class="buy_silver">
+  <div class="container">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/trade']">Silver Status / </span><span class="final">P2P
+        <span *ngIf="filter.type == 1">Buy</span>
+        <span *ngIf="filter.type == 2">Sell</span>
+        <span *ngIf="filter.type == 3">Manage Buy</span>
+        <span *ngIf="filter.type == 4">Manage Sell</span>
+      </span>
+    </div>
+    <h2 class="head_title_area"> TRADE SILVER FROM PERSON TO PERSON </h2>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="d-flex">
+          <div class="tab-buttons mr-3">
+            <ul ngbNav [activeId]="filter.type" (activeIdChange)="navChanged($event)" class="nav-tabs">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>Buy</a>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Sell</a>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>Manage Buy</a>
+              </li>
+              <li [ngbNavItem]="4">
+                <a ngbNavLink>Manage Sell</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-inline person_form_filter" style="flex-flow: row;">
+
+            <div class="input-group input_area p-0 mr-3">
+              <div class="input-group-prepend">
+                <span class=""><img alt="" src="assets/images/dollar.png" /></span>
+              </div>
+              <input type="text" [(ngModel)]="filter.query"  appNumericOnly class="form-control px-0" placeholder="Enter Amount"
+                aria-label="Amount (to the nearest dollar)">
+            </div>
+
+            <button type="submit" (click)="get()" class="btn">Search</button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 d-flex justify-content-end align-items-center post_trade">
+        <p class="mr-4 mb-0">Want to start trading your silver</p>
+        <button type="button" [routerLink]="['/trade/post/']" class="btn btn_outline_primary">Post a trade</button>
+      </div>
+
+    </div>
+
+
+    <!--Filters-->
+    <div class="row filters_area align-items-center">
+      <div class="col">
+        <div ngbDropdown class="d-flex align-items-center filter_by">
+          <span>Filter By</span>
+
+          <!--Using items input-->
+          <!-- <div class="selectors_area">
+<ng-select [searchable]="false" [items]="currency"
+    bindLabel="name"
+    bindValue="id"
+    [(ngModel)]="selectedcurrency">
+</ng-select>
+</div> -->
+          <div class="selectors_area">
+            <ng-select [searchable]="false" (change)="get()" [items]="constant.countries" [placeholder]="'Country'" bindLabel="name" bindValue="id"
+              [(ngModel)]="filter.country">
+            </ng-select>
+          </div>
+          <div class="selectors_area">
+            <ng-select [searchable]="false" (change)="get()" [items]="constant.paymentMethods" [placeholder]="'Payment Method'" bindLabel="name" bindValue="id"
+              [(ngModel)]="filter.paymentMethod">
+            </ng-select>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-3 text-right">
+        <div ngbDropdown class="d-flex align-items-center justify-content-between sort_by">
+          <span>Sort by</span>
+          <div class="selectors_area_right">
+            <ng-select [searchable]="false" (change)="get()" [items]="sorting" bindLabel="name" bindValue="value" [(ngModel)]="filter.sort">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+<div *ngIf="!isLoader && result && result.docs && result.docs.length > 0 ">
+  <div class="accordion_area mb-5">
+
+    <div class="container">
+
+
+            <div class="custom-table">
+              <div class="head">
+                <div *ngIf="filter.type <= 2" style="width: 35%;padding-left: 65px;" class="custom-td">{{filter.type == 1 ? 'BUYER' :'SELLER' }}</div>
+                <div style="width:15%" *ngIf="filter.type > 2" class="custom-td">Index</div>
+                <div style="width:20%" *ngIf="filter.type > 2" class="custom-td">No of Requests</div>
+                <div style="width:25%" class="custom-td">PAYMENT METHOD</div>
+                <div style="width:40%" class="custom-td"> PRICE / SILVER</div>
+
+              </div>
+
+              <div *ngFor="let trade of result.docs; let i = index" class="body-wrap">
+                <div class="body">
+                  <div style="width:15%" *ngIf="filter.type >  2" class="custom-td text-left">
+                    {{i + 1 + ((filter.page -1) * filter.limit)}}
+                  </div>
+                  <div style="width:20%" *ngIf="filter.type >  2"  class="custom-td d-flex price_silver justify-content-between text-left">
+                    <span *ngIf="trade.requests.length > 0"> {{trade.requests.length}} Requests</span>
+                    <span *ngIf="trade.requests.length == 0"> No Requests yet</span>
+               </div>
+                  <div style="width:35%" *ngIf="filter.type <= 2" class="custom-td text-left">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center">
+                        <img width="" class="mr-3" alt="" src="assets/images/seller_img.png" />
+
+                      <div class="seller_area">
+                          <div class="seller_name">
+                              <span>{{trade.user.fullName}}</span>
+                          </div>
+                      <div class="trade_score">
+                        <span class="mr-4">100+ trades</span>
+                        <span>99% feedback score</span>
+                      </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="width:25%" class="custom-td payment_area text-left">
+                      <div class="payment_method">
+                          <span>National Bank Transfer</span>
+                          <p>Korea, Republic of</p>
+                      </div>
+                  </div>
+                  <div style="width:40%" class="custom-td d-flex price_silver justify-content-between text-left">
+                      <div class="price_content mr-5">
+                          <span> {{trade.silver | silverPrice : 1}} <em>gm</em></span>
+                          <strong>Margin {{trade.margin}}%</strong>
+                      </div>
+                      <button *ngIf="filter.type <= 2" [routerLink]="['/trade/p2p/', trade._id]"  class="btn buy_btn">{{filter.type == 1 ? 'Buy': 'Sell'}}</button>
+                      <button *ngIf="filter.type > 2" [routerLink]="['/trade/p2p/', trade._id]"  class="btn buy_btn">Manage</button>
+                  </div>
+
+
+                </div>
+                </div>
+
+
+
+            </div>
+
+
+  </div>
+    </div>
+  <div class="pagination_area">
+  <ngb-pagination *ngIf="filter.limit < result.totalDocs" [collectionSize]="result.totalDocs" [(page)]="filter.page" aria-label="Default pagination"></ngb-pagination>
+  </div>
+</div>
+<div *ngIf="!isLoader && ((result && result.docs && result.docs.length == 0) || !result)" class="py-5 text-center">There is No Trading Yet</div>
+<app-loader *ngIf="isLoader"></app-loader>
+
+
+  </div>
+</div>

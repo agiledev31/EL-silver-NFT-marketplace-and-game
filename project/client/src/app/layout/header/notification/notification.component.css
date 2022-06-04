@@ -1,0 +1,102 @@
+.head {
+  display: flex;
+  padding: 0.5rem;
+  color: #fff;
+  background: #171717;
+  /* position: fixed;
+  width: 20rem; */
+}
+.foot {
+  background: #171717;
+
+}
+.read{
+  background: #3d3d3d;
+}
+.read:hover{
+  background-color: #3d3d3d !important;
+}
+.read .media p{
+
+  color: #ff9933 !important;
+}
+.head span {
+  font-family: "RIFT";
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+.head a {
+  margin-left: auto;
+  display: flex;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 12px;
+}
+.dropdown-menu {
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 20rem;
+  height: 300px;
+  background-color: #2a2a2a!important;
+
+}
+.media {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  padding-bottom: .8rem;
+}
+
+.dropdown-toggle::after {
+  display:none;
+}
+.media p{
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.dropdown-item{
+  padding: 0.5rem;
+  white-space: pre-wrap;
+  cursor: pointer;
+}
+.dropdown-item:hover{
+  background-color: #2a2a2a;
+}
+.w-17{
+  width: 20rem;
+  background-color: #2a2a2a!important;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  overflow-y: auto;
+
+}
+.user-image{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+.user-image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+.unreadCount {
+  font-size: 14px;
+  background: #FF9933;
+  border-radius: 50%;
+  padding: 4px;
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  line-height: 8px;
+  font-size: 12px;
+  text-align: center;
+  top: 0;
+  right: 0;
+}
+@media (max-width:768px){
+  .dropdown-menu {
+    position: absolute;
+    width: 16rem;
+    height: 270px;
+}
+}

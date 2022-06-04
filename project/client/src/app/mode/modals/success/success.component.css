@@ -1,0 +1,35 @@
+::ng-deep .modal-content{
+  border-radius: 8px;
+  border: 0;
+}
+.modal-body{
+  background: #292929;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.buy_transaction_area .p1{
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+.buy_transaction_area{
+    overflow: hidden;
+    background: #292929;
+    padding: 30px 15px;
+    border-radius: 8px;
+}
+
+.link-copy{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  display: flex;
+  padding: 4px 10px;
+}
+.link-copy img{
+  cursor: pointer;
+}
+

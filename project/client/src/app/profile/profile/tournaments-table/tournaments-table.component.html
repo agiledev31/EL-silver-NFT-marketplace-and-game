@@ -1,0 +1,888 @@
+<div>
+    <div class="d-flex not-flex justify-content-between align-items-center">
+        <p class="f-20 mobile-h">Tournaments</p>
+        <ul ngbNav #nav="ngbNav" class="nav-tabs tournaments_nav_tab mt-4">
+          <li ngbNavItem class="mobile-li">
+            <a ngbNavLink>All</a>
+            <ng-template ngbNavContent>
+                <div *ngIf="tournaments.length > 0">
+                    <ngb-accordion [closeOthers]="true" activeIds="static-0" class="tournaments_accordion">
+
+                        <ngb-panel id="static-1">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;"><span class="status_badge finished">Finished</span></th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%" class="teams_ranked">
+                                    <strong>5th</strong>
+                                    <span>out of 36 teams</span>
+                                  </th>
+                                  <th scope="col" style="width:10%" class="date_held">
+                                    <strong>12th Dec</strong>
+                                    <span>Date Held</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>Top</strong>
+                                    <span>Position</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>1241g</strong>
+                                    <span>Silver Earned</span>
+                                  </th>
+                                  <th scope="col" style="width:5%"><img width="10px" alt="" src="assets/images/drop_down.png" /></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <div class="">
+                              <img alt="" src="assets/images/tree_img.png" />
+                            </div>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-2">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;"><span class="status_badge finished">Finished</span></th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%" class="teams_ranked">
+                                    <strong>5th</strong>
+                                    <span>out of 36 teams</span>
+                                  </th>
+                                  <th scope="col" style="width:10%" class="date_held">
+                                    <strong>12th Dec</strong>
+                                    <span>Date Held</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>Top</strong>
+                                    <span>Position</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>1241g</strong>
+                                    <span>Silver Earned</span>
+                                  </th>
+                                  <th scope="col" style="width:5%"><img width="10px" alt="" src="assets/images/drop_down.png" /></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-3">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;">
+                                    <span class="status_badge upcoming">Upcoming</span>
+                                    <span class="text-gray">Starts in <span class="orange_text d-inline-block">1d 23h 50m</span></span>
+                                  </th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%">
+                                    <strong>12th Dec</strong>
+                                    <span>Tournament date</span>
+                                  </th>
+
+                                  <th scope="col" style="width: 17.5555%;">
+                                    <strong>20/30</strong>
+                                    <span class="blue_text">10 teams slot open</span>
+                                  </th>
+                                  <th scope="col" style="width: 17.555%;"><button class="primary-btn enroll_now">Enroll</button></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-4">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;">
+                                    <span class="status_badge upcoming">Upcoming</span>
+                                    <span class="text-gray">Starts in <span class="orange_text d-inline-block">1d 23h 50m</span></span>
+                                  </th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%">
+                                    <strong>12th Dec</strong>
+                                    <span>Tournament date</span>
+                                  </th>
+
+                                  <th scope="col" style="width: 17.5555%;">
+                                    <strong>20/30</strong>
+                                    <span class="blue_text">10 teams slot open</span>
+                                  </th>
+                                  <th scope="col" style="width: 17.555%;"><button class="primary-btn enroll_now">Enroll</button></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                    </ngb-accordion>
+                </div>
+              <div *ngIf="tournaments.length === 0" class="no-record-found">No Record Found</div>
+            </ng-template>
+          </li>
+          <li ngbNavItem class="mobile-li">
+            <a ngbNavLink>Finished</a>
+            <ng-template ngbNavContent>
+                <div *ngIf="tournaments.length > 0">
+                    <ngb-accordion [closeOthers]="true" activeIds="static-0" class="tournaments_accordion">
+
+                        <ngb-panel id="static-1">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;"><span class="status_badge finished">Finished</span></th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%" class="teams_ranked">
+                                    <strong>5th</strong>
+                                    <span>out of 36 teams</span>
+                                  </th>
+                                  <th scope="col" style="width:10%" class="date_held">
+                                    <strong>12th Dec</strong>
+                                    <span>Date Held</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>Top</strong>
+                                    <span>Position</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>1241g</strong>
+                                    <span>Silver Earned</span>
+                                  </th>
+                                  <th scope="col" style="width:5%"><img width="10px" alt="" src="assets/images/drop_down.png" /></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <div class="">
+                              <img alt="" src="assets/images/tree_img.png" />
+                            </div>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-2">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;"><span class="status_badge finished">Finished</span></th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%" class="teams_ranked">
+                                    <strong>5th</strong>
+                                    <span>out of 36 teams</span>
+                                  </th>
+                                  <th scope="col" style="width:10%" class="date_held">
+                                    <strong>12th Dec</strong>
+                                    <span>Date Held</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>Top</strong>
+                                    <span>Position</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>1241g</strong>
+                                    <span>Silver Earned</span>
+                                  </th>
+                                  <th scope="col" style="width:5%"><img width="10px" alt="" src="assets/images/drop_down.png" /></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-3">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;">
+                                    <span class="status_badge upcoming">Upcoming</span>
+                                    <span class="text-gray">Starts in <span class="orange_text d-inline-block">1d 23h 50m</span></span>
+                                  </th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%">
+                                    <strong>12th Dec</strong>
+                                    <span>Tournament date</span>
+                                  </th>
+
+                                  <th scope="col" style="width: 17.5555%;">
+                                    <strong>20/30</strong>
+                                    <span class="blue_text">10 teams slot open</span>
+                                  </th>
+                                  <th scope="col" style="width: 17.555%;"><button class="primary-btn enroll_now">Enroll</button></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-4">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;">
+                                    <span class="status_badge upcoming">Upcoming</span>
+                                    <span class="text-gray">Starts in <span class="orange_text d-inline-block">1d 23h 50m</span></span>
+                                  </th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%">
+                                    <strong>12th Dec</strong>
+                                    <span>Tournament date</span>
+                                  </th>
+
+                                  <th scope="col" style="width: 17.5555%;">
+                                    <strong>20/30</strong>
+                                    <span class="blue_text">10 teams slot open</span>
+                                  </th>
+                                  <th scope="col" style="width: 17.555%;"><button class="primary-btn enroll_now">Enroll</button></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                    </ngb-accordion>
+                </div>
+              <div *ngIf="tournaments.length === 0" class="no-record-found">No Record Found</div>
+            </ng-template>
+          </li>
+          <li ngbNavItem class="mobile-li">
+            <a ngbNavLink>Upcoming</a>
+            <ng-template ngbNavContent>
+                <div *ngIf="tournaments.length > 0">
+                    <ngb-accordion [closeOthers]="true" activeIds="static-0" class="tournaments_accordion">
+
+                        <ngb-panel id="static-1">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;"><span class="status_badge finished">Finished</span></th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%" class="teams_ranked">
+                                    <strong>5th</strong>
+                                    <span>out of 36 teams</span>
+                                  </th>
+                                  <th scope="col" style="width:10%" class="date_held">
+                                    <strong>12th Dec</strong>
+                                    <span>Date Held</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>Top</strong>
+                                    <span>Position</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>1241g</strong>
+                                    <span>Silver Earned</span>
+                                  </th>
+                                  <th scope="col" style="width:5%"><img width="10px" alt="" src="assets/images/drop_down.png" /></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <div class="">
+                              <img alt="" src="assets/images/tree_img.png" />
+                            </div>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-2">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;"><span class="status_badge finished">Finished</span></th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%" class="teams_ranked">
+                                    <strong>5th</strong>
+                                    <span>out of 36 teams</span>
+                                  </th>
+                                  <th scope="col" style="width:10%" class="date_held">
+                                    <strong>12th Dec</strong>
+                                    <span>Date Held</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>Top</strong>
+                                    <span>Position</span>
+                                  </th>
+                                  <th scope="col" style="width:10%">
+                                    <strong>1241g</strong>
+                                    <span>Silver Earned</span>
+                                  </th>
+                                  <th scope="col" style="width:5%"><img width="10px" alt="" src="assets/images/drop_down.png" /></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-3">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;">
+                                    <span class="status_badge upcoming">Upcoming</span>
+                                    <span class="text-gray">Starts in <span class="orange_text d-inline-block">1d 23h 50m</span></span>
+                                  </th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%">
+                                    <strong>12th Dec</strong>
+                                    <span>Tournament date</span>
+                                  </th>
+
+                                  <th scope="col" style="width: 17.5555%;">
+                                    <strong>20/30</strong>
+                                    <span class="blue_text">10 teams slot open</span>
+                                  </th>
+                                  <th scope="col" style="width: 17.555%;"><button class="primary-btn enroll_now">Enroll</button></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                        <ngb-panel id="static-4">
+                          <ng-template ngbPanelTitle>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width:5%"><img width="50px" alt="" src="assets/images/profile_img.png" />
+                                  </th>
+
+                                  <th scope="col" style="width:15%">
+                                    <div class="tour_col">
+                                      <strong>Tournament Name</strong>
+                                      <span>Organized By</span>
+                                    </div>
+                                  </th>
+
+                                  <th scope="col" style="width:12%;vertical-align: baseline;">
+                                    <span class="status_badge upcoming">Upcoming</span>
+                                    <span class="text-gray">Starts in <span class="orange_text d-inline-block">1d 23h 50m</span></span>
+                                  </th>
+                                  <th scope="col" style="width:20%"><img alt="" src="assets/images/team_members.png" /></th>
+                                  <th scope="col" style="width:15%">
+                                    <strong>12th Dec</strong>
+                                    <span>Tournament date</span>
+                                  </th>
+
+                                  <th scope="col" style="width: 17.5555%;">
+                                    <strong>20/30</strong>
+                                    <span class="blue_text">10 teams slot open</span>
+                                  </th>
+                                  <th scope="col" style="width: 17.555%;"><button class="primary-btn enroll_now">Enroll</button></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+
+                            <ul class="p-0">
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                              <li class="d-flex mb-3">
+                                <a class="navbar-brand"><img alt="" src="assets/icons/profile_img.png" /></a>
+                                <div class="">
+                                  <h6>Jane Cooper</h6>
+                                  <ngb-rating currentRate=8></ngb-rating>
+                                </div>
+                              </li>
+                            </ul>
+
+                          </ng-template>
+                        </ngb-panel>
+
+                    </ngb-accordion>
+                </div>
+              <div *ngIf="tournaments.length === 0" class="no-record-found">No Record Found</div>
+            </ng-template>
+          </li>
+        </ul>
+    </div>
+    <div [ngbNavOutlet]="nav"></div>
+</div>
+

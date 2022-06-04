@@ -1,0 +1,399 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 text-left my-2">
+      <h3 class="card-title font-weight-500">LOL Challenge</h3>
+      <span class="text-gray font-italic font-weight-400">Log of LOL Challenges tracking place daily, weekly, monthly
+        etc.</span>
+    </div>
+    <div class="col-lg-3">
+      <div class="ml-auto form-group form-group-feedback form-group-feedback-right">
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="searchText"
+               (keyup)="searchKeyPress($event)"
+               placeholder="Search by username,level..." />
+        <div (click)="search()"
+             class="form-control-feedback form-control-feedback-lg">
+          <i class="icon-search4 text-muted"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="challenge_line">
+      <ul class="challenge_links mt-4 mb-4">
+        <li>
+          <span class="text-gray">Total Challenges Played</span>
+          <span>{{
+            statistics.totalChallenges ? statistics.totalChallenges : 0
+            }}</span>
+        </li>
+        <li>
+          <span class="text-gray">Total Games Played </span>
+          <span>{{
+            statistics.totalGamesPlayed ? statistics.totalGamesPlayed : 0
+            }}</span>
+        </li>
+        <li>
+          <span class="text-gray">Total Released LAPLATA </span>
+          <span>{{
+            statistics.releasedLaplata
+            ? statistics.releasedLaplata.toFixed(4)
+            : 0
+            }}</span>
+        </li>
+        <li>
+          <span class="text-gray">Laplata Per Game </span>
+
+          <div ngbDropdown
+               container="body"
+               class="d-inline-block">
+            <span>{{ laplataSettings.perDayDistribution }}
+              <a href="javascript:void(0)"
+                 ngbDropdownToggle>
+                <i class="ml-4 text-blue-400 icon-database-edit2">Edit</i>
+              </a>
+
+              <div ngbDropdownMenu
+                   aria-labelledby="dropdownBasic1">
+                <input type="text"
+                       class="form-control ml-2"
+                       placeholder="Enter LAPLATA per GAME"
+                       (input)="perDayDistributionInput = $event.target.value" />
+                <button (click)="editDailyLaplata()"
+                        ngbDropdownItem>
+                  Save
+                </button>
+                <button ngbDropdownItem>Cancel</button>
+              </div>
+            </span>
+          </div>
+        </li>
+        <li>
+          <span class="text-gray">Hard Cap </span>
+
+          <div ngbDropdown
+               container="body"
+               class="d-inline-block">
+            <span>{{ laplataSettings.hardCap }}
+              <a href="javascript:void(0)"
+                 ngbDropdownToggle>
+                <i class="ml-4 text-blue-400 icon-database-edit2">Edit</i>
+              </a>
+
+              <div ngbDropdownMenu
+                   aria-labelledby="dropdownBasic1">
+                <input type="text"
+                       class="form-control ml-2"
+                       placeholder="Enter HardCap Value"
+                       (input)="hardCapInput = $event.target.value" />
+                <button (click)="editHardCap()"
+                        ngbDropdownItem>Save</button>
+                <button ngbDropdownItem>Cancel</button>
+              </div>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="challenge_line">
+      <ul class="challenge_links mt-0 mb-5">
+        <li>
+          <span class="text-gray">Challenges Played Today</span>
+          <span>{{
+            statistics.totalDailyChallenges
+            ? statistics.totalDailyChallenges
+            : 0
+            }}</span>
+        </li>
+        <li>
+          <span class="text-gray">Games Played Today</span>
+          <span>{{
+            statistics.totalDailyGamesPlayed
+            ? statistics.totalDailyGamesPlayed
+            : 0
+            }}</span>
+        </li>
+        <li>
+          <span class="text-gray">Ongoing Challenges Sessions </span>
+          <span>{{
+            statistics.ongoingChallenges ? statistics.ongoingChallenges : 0
+            }}</span>
+        </li>
+        <li>
+          <span class="text-gray">Change Winning Incentive </span>
+
+          <div ngbDropdown
+               container="body"
+               class="d-inline-block">
+            <span>{{ laplataSettings.incentive }}
+              <a href="javascript:void(0)"
+                 ngbDropdownToggle>
+                <i class="ml-4 text-blue-400 icon-database-edit2">Edit</i>
+              </a>
+
+              <div ngbDropdownMenu
+                   aria-labelledby="dropdownBasic1">
+                <input type="text"
+                       class="form-control ml-2"
+                       placeholder="Enter Incentive %"
+                       (input)="incentiveInput = $event.target.value" />
+                <button (click)="editIncentive()"
+                        ngbDropdownItem>Save</button>
+                <button ngbDropdownItem>Cancel</button>
+              </div>
+            </span>
+          </div>
+        </li>
+        <li>
+          <span class="text-gray">Minimum Withdrawal </span>
+
+          <div ngbDropdown
+               container="body"
+               class="d-inline-block">
+            <span>{{ laplataSettings.minwithdrawal }}
+              <a href="javascript:void(0)"
+                 ngbDropdownToggle>
+                <i class="ml-2 text-blue-400 icon-database-edit2">Edit</i>
+              </a>
+
+              <div ngbDropdownMenu
+                   aria-labelledby="dropdownBasic1">
+                <input type="text"
+                       class="form-control ml-2"
+                       placeholder="Enter Min Withdrawal"
+                       (input)="minwithdrawInput = $event.target.value" />
+                <button (click)="editWithdraw()"
+                        ngbDropdownItem>Save</button>
+                <button ngbDropdownItem>Cancel</button>
+              </div>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+<div class="col-lg-2">
+      <label class="text-blue-400 font-weight-bold" for="">Time Interval</label>
+      <ng-select
+        [items]="statuses"
+        bindLabel="name"
+        bindValue="id"
+        [searchable]="false"
+        [clearable]="false"
+        [(ngModel)]="query.status"
+        (change)="onFilterChange()"
+      >
+      </ng-select>
+    </div>
+
+    <div class="col-lg-2">
+      <label class="text-blue-400 font-weight-bold"
+             for="">Sort</label>
+      <ng-select [searchable]="false"
+                 bindLabel="name"
+                 bindValue="id"
+                 [items]="sortstatus"
+                 [(ngModel)]="query.sortstatus"
+                 (change)="onFilterChange()"
+                 [clearable]="false"
+                 placeholder="Select Status">
+      </ng-select>
+    </div>
+    <div class="col-lg-8 text-right">
+      <span class="total-record f-14">{{ challenges.totalDocs }} Total challenges</span>
+    </div>
+  </div>
+
+  <div class="accordion_area mt-3">
+    <div class="container">
+      <div class="custom-table">
+        <div class="head py-3">
+          <div class="col-lg-2 custom-td"><span>Date & Time</span></div>
+          <div class="col-lg-2 custom-td">User</div>
+          <div class="col-lg-1 custom-td">Region</div>
+          <div class="col-lg-1 custom-td">Duration</div>
+          <div class="col-lg-1 custom-td">Avg. KDA</div>
+          <div class="col-lg-2 custom-td">Total games</div>
+          <div class="col-lg-1 custom-td">Victories</div>
+          <div class="col-lg-1 custom-td">Defeats</div>
+          <div class="col-lg-1 custom-td">LAPLATA</div>
+        </div>
+        <div class="history__not__Found-msg my-5"
+             *ngIf="!this.challenges?.docs">
+          <span class="history__not__Found-msg">No HISTORY</span>
+        </div>
+      </div>
+      <ngb-accordion [closeOthers]="true"
+                     class="w-100">
+        <ngb-panel *ngFor="let challenge of challenges.docs; let i = index"
+                   [id]="'challenge-' + i">
+          <ng-template ngbPanelTitle>
+            <div class="custom-table">
+              <div class="body">
+                <div class="col-lg-2 custom-td">
+                  <span>{{ challenge.createdAt | date: "medium" }}</span>
+                </div>
+
+                <div class="col-lg-2 custom-td">
+                  <span>{{ challenge.user.fullName }}</span><br /><span class="text-gray">{{
+                    challenge.user.userName
+                    }}</span>
+                </div>
+                <div class="col-lg-1 custom-td">
+                  <span class="text-gray">{{ challenge.region }}</span>
+                </div>
+                <div class="col-lg-1 custom-td">
+                  <span *ngIf="!challenge.isFinished && challenge.Duration!='overtime'" class="final">{{challenge.Duration ? challenge.Duration : "0"}}</span>
+                  <span *ngIf="!challenge.isFinished && challenge.Duration=='overtime'" class="warning">{{challenge.Duration ? challenge.Duration : "0"}}</span>
+                  <span *ngIf="challenge.isFinished">{{challenge.Duration ? challenge.Duration : "0"}}</span>
+                </div>
+                <div class="col-lg-1 custom-td">
+                  <span class="align-items-center text-gray font-weight-500 ml-2">
+                    {{
+                    challenge.gameStatistics.averageKDA
+                    ? challenge.gameStatistics.averageKDA.toFixed(2)
+                    : "0"
+                    }}
+                  </span>
+                </div>
+                <div class="col-lg-2 custom-td">
+                  <span>{{
+                    challenge.gameStatistics.total
+                    ? challenge.gameStatistics.total
+                    : "0"
+                    }}</span>
+                </div>
+                <div class="col-lg-1 custom-td">
+                  <span>{{
+                    challenge.gameStatistics.victories
+                    ? challenge.gameStatistics.victories
+                    : "0"
+                    }}</span>
+                </div>
+                <div class="col-lg-1 custom-td">
+                  <span>{{
+                    challenge.gameStatistics.defeats
+                    ? challenge.gameStatistics.defeats
+                    : "0"
+                    }}</span>
+                </div>
+                <div class="col-lg-1 custom-td">
+                  <div class="d-flex">
+                    <div class="d-flex ml-auto align-items-center">
+                      <span>{{ challenge.rewardedLaplata }}</span>
+                    </div>
+                    <div class="ml-auto svg-dropdown">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 24 24">
+                        <g data-name="Layer 2">
+                          <g data-name="arrow-ios-downward">
+                            <rect width="24"
+                                  height="24"
+                                  opacity="0" />
+                            <path
+                                  d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z" />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="custom-table"
+                 *ngIf="challenge.games?.length >= 1">
+              <div class="custom-body"
+                   *ngFor="let userStatistics of challenge.games">
+                <div class="col-lg-2 custom-td">
+                  <div class="align-items-center">
+                    <span class="font-weight-500">{{
+                      userStatistics.gameType ? userStatistics.gameType : "N/A"
+                      }}</span>
+                  </div>
+                </div>
+                <div class="col-lg-2 custom-td">
+                  <span class="text-gray font-weight-500 ml-2">
+                    {{
+                    userStatistics.gameDuration
+                    ? userStatistics.gameDuration
+                    : "N/A"
+                    }}
+                  </span>
+                </div>
+                <div class="col-lg-2 custom-td">
+                  <span class="align-items-center defeat">{{
+                    userStatistics.result ? userStatistics.result : "N/A"
+                    }}</span>
+                </div>
+
+                <div class="col-lg-2 custom-td">
+                  <span class="align-items-center text-gray font-weight-normal">
+                    KDA
+                  </span>
+                  <br />
+                  <span class="align-items-center text-gray font-weight-bold">
+                    {{ userStatistics.KDA ? userStatistics.KDA : "N/A" }}
+                  </span>
+                </div>
+
+                <div class="col-lg-2 custom-td">
+                  <span class="align-items-center text-gray font-weight-normal">
+                    Champion
+                  </span>
+                  <br />
+                  <span>{{
+                    userStatistics.champion ? userStatistics.champion : "N/A"
+                    }}</span>
+                </div>
+
+                <div class="col-lg-2 custom-td">
+                  <span class="align-items-center text-gray font-weight-normal">
+                    Time
+                  </span>
+                  <br />
+                  <span class="align-items-center">{{
+                    userStatistics.gameTimeStamp
+                    ? formatTime(userStatistics.gameTimeStamp)
+                    : "N/A"
+                    }}</span>
+                </div>
+              </div>
+
+              <div class="custom-footer final font-weight-500 f-14">
+                <div class="d-flex justify-content-end pr-3"
+                     (click)="viewChallengeHistory(challenge._id)">
+                  VIEW FULL CHALLENGE HISTORY
+                </div>
+              </div>
+            </div>
+            <div class="history__not__Found-msg"
+                 *ngIf="!challenge?.games?.length">
+              <span> No Challenge History Found </span>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+  <div class="row mx-auto mt-3">
+    <div class="col-md-12">
+      <ngb-pagination class="d-flex justify-content-center"
+                      [collectionSize]="challenges.totalDocs"
+                      [pageSize]="limit"
+                      [(page)]="page"
+                      (pageChange)="onPageChange($event, page)">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>
+
+<!-- <app-lolchallengehistory
+  *ngIf="isChallengeHistoryVisible"
+  [userId]="userId"
+></app-lolchallengehistory> -->

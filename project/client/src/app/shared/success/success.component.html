@@ -1,0 +1,54 @@
+<!--- Modal Pr -->
+
+<ng-template #content let-modal>
+
+  <div class="modal-body">
+
+    <div class="buy_transaction_area text-center">
+      <div class="container">
+        <p class="p1">{{title}}</p>
+        <p class="modes_player"> {{text}}</p>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="card card-1 mb-5">
+              <div class="card-body">
+                <div class="row align-items-center px-2">
+                  <div class="col-lg-3">
+                    <rounded-image [src]="currentUser.image" alt=""></rounded-image>
+                  </div>
+                  <div class="col-lg-8 player_info">
+                    <h5>{{currentUser.fullName}}</h5>
+                    <div class="row">
+                      <div class="col-lg-6 silver_txt">
+                        <span class="text-gray">Silver</span>
+                        <span class="font-weight-600">{{currentUser.silver | silverPrice:1 }}gm</span>
+                      </div>
+                      <div class="col-lg-6 wallet_txt">
+                        <span class="text-gray">Wallet</span>
+                        <span class="font-weight-600">{{currentUser.balance | currency}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <button class="btn btn-outline-info back_home w-100"  (click)="onClickSubmit('/trade')"  >View Silver
+              Status</button>
+          </div>
+          <div class="col-md-4">
+            <button class="btn primary-btn w-100" (click)="onClickSubmit('/mode')"  >Continue Playing</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ng-template>
+    <!-- /** Instant Model **/ -->

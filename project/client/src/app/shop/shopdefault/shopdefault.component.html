@@ -1,0 +1,104 @@
+<div class="container-fluid bg-main">
+  <div class="container">
+    <div class="row mt-5 py-4">
+      <div class="col-md-4">
+        <h1>Shop</h1>
+        <h5 class="mt-4">Purchase NFT Item in Shop</h5>
+        <button class="btn btn-primary" (click)="web3Service.AddTokenInWallet()">Add Token</button>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-3">
+            <input type="text" class="form-control color-black"
+              [value]="buyLpltAmount"
+              (input)="buyLpltAmount = $event.target.value">
+          </div>
+          <div class="col-7 lineheight-38">
+            {{buyLpltAmount}}(BNB) * {{buyDexRate}} = {{calculatePrice(buyLpltAmount, buyDexRate, true )}}(LPLT)
+          </div>
+          <div class="col-2">
+            <button class="btn btn-primary" (click)="buyLPLT(buyLpltAmount)">Buy LPLT</button>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-3">
+            <input type="text" class="form-control color-black"
+              [value]="sellLpltAmount"
+              (input)="sellLpltAmount = $event.target.value">
+          </div>
+          <div class="col-7 lineheight-38">
+            {{sellLpltAmount}}(LPLT) / {{sellDexRate}} = {{calculatePrice(sellLpltAmount, sellDexRate, false )}}(BNB)
+          </div>
+          <div class="col-2">
+            <button class="btn btn-primary" (click)="sellLPLT(sellLpltAmount)">Sell LPLT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row hide">
+    <div
+      class="col-md-3 mt-4"
+      *ngFor="let item of inventItems"
+      (click)="SelectDetails(item.mrId)"
+    >
+      <div class="card p-2 b-r">
+        <div class="">
+          <img src="{{ item.imageURI }}" class="img-size" alt="" />
+        </div>
+        <div class="border-line">
+          <h4>{{ item.name }}</h4>
+        </div>
+        <div class="row mt-2">
+          <div class="col-3">
+            <p class="p-0 m-0 f-12">Price</p>
+          </div>
+          <div class="col-9 right">
+            <p class="p-0 m-0 f-15">
+              <svg
+                viewBox="0 0 16 16"
+                width="16px"
+                color="text"
+                xmlns="http://www.w3.org/2000/svg"
+                class="sc-bdnxRM iTcRLV"
+              >
+                <circle cx="8" cy="8" r="8" fill="#F0B90B"></circle>
+                <path
+                  d="M5.01656 8.00006L3.79256 9.23256L2.56006 8.00006L3.79256 6.76756L5.01656 8.00006ZM8.00006 5.01656L10.1081 7.12456L11.3406 5.89206L9.23256 3.79256L8.00006 2.56006L6.76756 3.79256L4.66806 5.89206L5.90056 7.12456L8.00006 5.01656ZM12.2076 6.76756L10.9836 8.00006L12.2161 9.23256L13.4401 8.00006L12.2076 6.76756ZM8.00006 10.9836L5.89206 8.87556L4.66806 10.1081L6.77606 12.2161L8.00006 13.4401L9.23256 12.2076L11.3406 10.0996L10.1081 8.87556L8.00006 10.9836ZM8.00006 9.23256L9.23256 8.00006L8.00006 6.76756L6.76756 8.00006L8.00006 9.23256Z"
+                  fill="#FFFDFA"
+                ></path>
+              </svg>
+              {{ item.price }}
+            </p>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-5">
+            <p class="p-0 m-0 f-12">Total Count</p>
+          </div>
+          <div class="col-7 right">
+            <p class="p-0 m-0 f-15">
+              {{ item.maxCount }}
+            </p>
+          </div> 
+        </div>
+        <div class="row mt-2">
+          <div class="col-5">
+            <p class="p-0 m-0 f-12">Remain Count</p>
+          </div>
+          <div class="col-7 right">
+            <p class="p-0 m-0 f-15">
+              {{ item.maxCount - item.curCount }}
+            </p>
+          </div> 
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="loader_overlap" *ngIf="isLoader">
+  <div class="loader"></div>
+</div>

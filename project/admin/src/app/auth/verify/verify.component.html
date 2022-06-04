@@ -1,0 +1,50 @@
+<div class="bg-img">
+  <div class="main-div">
+    <!-- Page content -->
+    <div class="page-content">
+
+      <!-- Main content -->
+      <div class="content-wrapper">
+        <div class="logo-fansafe justify-content-center text-center pt-3">
+          <a href="javascript:void(0)" [routerLink]="['/auth']" > <img src="assets/images/logo.png" height="60" alt=""></a>
+        </div>
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+          <!-- Password recovery form -->
+          <form  class="login-form" action="index.html">
+            <div class="card mb-0 card-opacity">
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <img src="../../../assets/images/PW Recovery.png" height="90" alt="" class="mb-3 mt-1">
+                  <h5 class="mb-0 text-dark">Verify your OTP</h5>
+                  <span class="d-block text-muted">Please enter your OTP and confirm it</span>
+                </div>
+                <div *ngIf="error !== ''" class="alert alert-danger" role="alert">
+                  {{error}}
+                </div>
+                <div class="form-row justify-content-center">
+                  <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4, allowNumbersOnly: true}"></ng-otp-input>
+                </div>
+                <p>Didn't get the code? <a class="d-inline text-primary" [ngClass]="{'disabled-link': isResendLoading}" (click)="onResendClick()" href="javascript:void(0)">Resend OTP</a></p>
+
+
+                <button type="submit" (click)="onSubmit()"   class="btn bg-blue-400 btn-block"><i
+                    class="icon-spinner11 mr-2"></i> Confirm</button>
+              </div>
+            </div>
+          </form>
+          <!-- /password recovery form -->
+
+        </div>
+        <!-- /content area -->
+
+      </div>
+      <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+  </div>
+</div>

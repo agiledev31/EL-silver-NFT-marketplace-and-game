@@ -1,0 +1,43 @@
+@import '../leaderboard-table.css';
+.load-more-button{
+  display: flex;
+  align-items: center;
+  place-content: center;
+}
+.load-more-button button{
+  height: 6vh;
+  width: 30vw;
+}
+.mobile {
+  display: none !important;
+}
+@media screen and (max-width:600px) {
+  .destop {
+    display: none !important;
+  }
+  .mobile {
+    display: contents !important;
+
+
+  }
+  .r-mobile {
+    border-radius: 8px 8px 0px 0px !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    margin: 2px;
+  }
+  .mobile-h {
+  width: 2ch !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  }
+  .mobile-body {
+    flex-wrap: inherit !important;
+    padding: 0 !important;
+  }
+   .mobile-Uname {
+     overflow: hidden !important;
+   }
+
+
+}

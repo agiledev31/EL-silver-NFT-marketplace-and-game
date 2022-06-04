@@ -1,0 +1,250 @@
+
+.card_upcoming_tour {
+    flex: initial;
+    min-height: inherit;
+    padding: .5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 0 0px 10px 10px;
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
+  }
+  .upcoming_card_area .card{
+    border: none;
+    background: inherit;
+  }
+  .upcoming_card_area .card h5{
+    margin: 0;
+    color: #fff;
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .carousel .carousel-indicators{
+    display: none!important;
+  }
+  .investment_area{
+   padding: 20px 0 0;
+  }
+  .tournament_area{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    margin: 50px 0;
+  }
+  .tournament_img{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: auto;
+    top: 0;
+  }
+  .graph_content_box ul{
+    margin: 30px 0 0;
+  }
+  strong{
+    display: block;
+  }
+  .current_rate{
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 10px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .rate_value{
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .live_videos_area h4{
+    margin: 0 0 30px;
+  }
+  .silver_area{
+    position: relative;
+  }
+  .silver_area:before{
+    position: absolute;
+    background: url('/assets/images/diamond_half.png');
+    width: 20px;
+    height: 20px;
+    display: block;
+    top: 0;
+    left: 0;
+  }
+  .amount_area{
+    position: relative;
+  }
+  .amount_area:before{
+    position: absolute;
+    background: url('/assets/images/dollar.png');
+    width: 20px;
+    height: 20px;
+    display: block;
+    top: 0;
+    left: 0;
+  }
+  .input_area input{
+    background: none;
+    border: none;
+    color: #fff;
+  }
+  .input-group-prepend{
+    padding: 5px 10px;
+  }
+  
+  
+  ::ng-deep .slicks .slick-next {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #28A5FF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  right: -50px;
+  }
+  ::ng-deep .slicks .slick-prev {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #28A5FF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  left: -60px;
+  }
+  ::ng-deep .slicks .slick-next:hover {
+  width: 35px;
+  height: 35px;
+  }
+  ::ng-deep .slicks .slick-prev:hover {
+  width: 35px;
+  height: 35px;
+  }
+  ::ng-deep .slicks .slick-prev:before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f104"; color: #28A5FF;
+  }
+  ::ng-deep .slicks .slick-next:before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f105"; color: #28A5FF;
+  
+  }
+  .slicks .card{
+  background: transparent;
+  margin-right: 20px;
+  }
+  .slick_img_area{
+   position: relative;
+  }
+  .slick_badges{
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    font-size: 12px;
+  }
+  .live_badge{
+    background-color: rgba(232, 49, 81, 1);
+    padding:5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .red_dot{
+  height: 10px;
+  width: 10px;
+  background: #E83151;
+  border-radius: 100%;
+  margin-right: 20px;
+  
+  }
+  .live_videos_area .d-flex p{
+  font-size: 20px;
+  margin-bottom: 0;
+  font-weight: 500;
+  }
+  .featured_badge{
+    background-color: rgba(255, 255, 255, 0.38);;
+    padding:5px 10px;
+    border-radius: 5px;
+  }
+  .time_left{
+  display: flex;
+  align-items: center;
+  }
+  .time_left img{
+  margin-right: 5px;
+  height: 10px;
+  width: 10px;
+  }
+  .time_left .time{
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+  }
+  .social_icon{
+  height: 20px;
+  width: 20px;
+  }
+  .social_icon img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  }
+  .white_dot{
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background: white;
+  border-radius: 100%;
+  margin-right: 5px;
+  }
+  .f-16{
+  font-size: 16px !important;
+  }
+  
+  .card_width{
+    width: 287px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  ::ng-deep .slicks .slick-track {
+    display: flex!important;
+    align-items: flex-end!important;
+  }
+  .live_videos_area h5{
+    color: #fff;
+  }
+  
+  .final{
+    color: #28A5FF;
+  }
+  
+  .slick_img_area img{
+  border-radius: 16px 16px 0px 0px;
+  }
+  
+  .Input_with_icon{
+    position: relative;
+  }
+  .Input_with_icon .form-control {
+    padding: 1.5rem .75rem;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    border: 0;
+  }
+  .Input_with_icon .form-control::placeholder {
+    color: white;
+    font-size: 14px;
+  }
+  .show_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: .875rem;
+    padding-right: .875rem;
+    line-height: calc(1.5385em + .875rem + 10px);
+    min-width: 1rem;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .heading1{
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  

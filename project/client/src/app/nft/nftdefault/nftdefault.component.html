@@ -1,0 +1,46 @@
+<div class="container-fluid bg-main">
+  <div class="container">
+    <div class="row mt-5 py-4">
+      <div class="col-md-6">
+        <h1>NFT Marketplace</h1>
+        <h5 class="mt-4">Buy NFT Item in Marketplace</h5>
+      </div>
+      <div class="col-md-6">
+        <div class="row right">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row hide">
+    <div
+      class="col-md-3 mining-item-col mt-4"
+      *ngFor="let item of nftItems"
+      (click)="SelectDetails(item.mrId)"
+    >
+      <div class="card p-2 b-r">
+        <div class="">
+          <img src="{{ item.imageURI }}" class="img-size" alt="" />
+        </div>
+        <div class="border-line mint-name">
+          <h4>{{ item.name }}</h4>
+        </div>
+        <div class="row mt-2">
+          <div class="col-5">
+            <p class="p-0 m-0 f-12">Mining Rate</p>
+          </div>
+          <div class="col-7 right">
+            <p class="p-0 m-0 f-15">
+              {{ item.rate}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader_overlap" *ngIf="isLoader">
+  <div class="loader"></div>
+</div>

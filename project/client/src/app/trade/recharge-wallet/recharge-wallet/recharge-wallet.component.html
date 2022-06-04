@@ -1,0 +1,145 @@
+<div class="buy_silver">
+  <div class="container">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/trade']">Silver Status / </span><span class="final"> Recharge wallet </span>
+    </div>
+    <h2> Add Money to Wallet</h2>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card mb-5">
+        <div class="card-body">
+          <div class="row align-items-center px-2">
+            <div class="col-lg-3">
+              <img src="assets/images/player_name_img.png" alt="Delhi Metro">
+            </div>
+            <div class="col-lg-8 player_info">
+              <h5>Playerone Name</h5>
+              <div class="row">
+                <div class="col-lg-6 silver_txt">
+                  <strong>Silver</strong>
+                  <span>454gm</span>
+                </div>
+                <div class="col-lg-6 wallet_txt">
+                  <strong>Wallet</strong>
+                  <span>$1,220.45</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="card mb-3">
+        <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div class="head_text">Recharge amount</div>
+
+            <div class="col-lg-4 input-group input_area p-0">
+              <div class="input-group-prepend">
+                <span class=""><img alt="" src="assets/images/dollar.png" /></span>
+              </div>
+              <input type="number" class="form-control px-0" placeholder="1200"
+                aria-label="Amount (to the nearest dollar)">
+            </div>
+
+          </div>
+          </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+        <div class="head_text mb-3">Select Payment Method</div>
+      </div>
+<div class="row">
+        <div class="col-lg-3 mr-5">
+        <div class="tab-buttons">
+          <ul ngbNav #nav="ngbNav" class="nav-tabs">
+            <li ngbNavItem>
+              <a ngbNavLink><img height="" class="mr-2" src="assets/images/credit_icon.png" alt="">Credit/Debit Card</a>
+              <ng-template ngbNavContent>
+
+                <form class="payment_form">
+                  <div class="form_height">
+                  <div class="form-group">
+                    <label for="inputAddress">Card number</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="eg. 4380 8000 4000 2000">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress2">Full Name</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="eg. John Doe">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label for="inputexpiry">Expiry</label>
+                      <input type="number" class="form-control" placeholder="MM/YY" id="inputexpiry">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="inputZip">CVV</label>
+                      <input type="password" class="form-control" placeholder="eg.200" id="inputZip">
+                    </div>
+                  </div>
+
+                  <div class="d-flex">
+                    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                    <label for="styled-checkbox-1" class="check-label-1"></label>
+                    <label class="check-label-1 text-grey" for="">Save this card for future use</label>
+                  </div>
+
+
+                </div>
+                  <button type="submit" class="btn btn-primary">Recharge $1200</button>
+                </form>
+
+
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink><img height="" class="mr-2" src="assets/images/chat_tab_icon.png" alt="">WeChat Pay</a>
+              <ng-template ngbNavContent>
+
+
+                <form class="payment_form">
+                  <div class="form_height">
+                <div class="form-group">
+                  <label for="inputAddress">WeChat ID</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="eg. 4380 8000 4000 2000">
+                </div>
+              </div>
+                <button type="submit" class="btn btn-primary">Recharge $1200</button>
+
+                </form>
+
+
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink><img height="" class="mr-2" src="assets/images/api_tab_icon.png" alt="">Korea Payment API</a>
+              <ng-template ngbNavContent>
+                <div class="form_height">
+                </div>
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+        </div>
+
+      <div class="col-lg-7 mb-5">
+
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+      </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+</div>
+

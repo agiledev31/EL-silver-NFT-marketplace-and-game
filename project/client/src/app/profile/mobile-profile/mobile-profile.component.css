@@ -1,0 +1,89 @@
+
+.fs-14 {
+  font-size: 14px;
+}
+.profile-img{
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+.profile-img img{
+  height: 100%;
+  width: 100%;
+}
+.row{
+  margin: 0;
+}
+.font-weight-500{
+  font-weight: 500;
+}
+
+.fs-24{
+  font-size: 24px;
+}
+
+.icon-btn{
+  border: 1px solid #28A5FF !important;
+  border-radius: 4px !important;
+  padding: 1px 8px;
+}
+
+.bg-blue{
+  background: #28A5FF;
+}
+
+.fs-15{
+  font-size: 15px;
+}
+
+.fs-18{
+  font-size: 18px;
+}
+
+.font-weight-600{
+  font-weight: 600;
+}
+
+.bg-blue .fs-15{
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 500;
+
+}
+.rgba8{
+  color: rgba(255, 255, 255, 0.87);
+
+}
+
+.profile_nav_tab{
+  background-color: inherit;
+  border: none;
+  margin: 0 0 30px;
+  justify-content: space-around;
+}
+
+.profile_nav_tab li:first-child{
+  padding-left: 0;
+}
+
+.profile_nav_tab li{
+  padding: 10px;
+}
+
+.profile_nav_tab li a{
+  padding: 0;
+  text-transform: uppercase;
+}
+.profile_nav_tab li a:hover{
+  color: #28A5FF;
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid #28A5FF;
+}
+.profile_nav_tab .nav-link.active {
+color: #28A5FF;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #28A5FF;
+}

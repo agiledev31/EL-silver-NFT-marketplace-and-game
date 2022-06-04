@@ -1,0 +1,147 @@
+.buy_silver{
+  padding: 30px 0 80px;
+  overflow: hidden;
+  width: 100%;
+}
+.buy_silver h2{
+  font-size: 35px;
+  line-height: 40px;
+  margin: 30px 0 40px;
+  display: block;
+  font-family: Barlow;
+  font-weight: bold;
+}
+.final{
+  color: #28A5FF;
+}
+
+/* Wallet Card Player Info */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 0;
+}
+.wallet_txt span{
+  display: block;
+  color: #28A5FF;
+  font-weight: bold;
+}
+.wallet_txt strong{
+  display: block;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+}
+.player_info h5{
+  margin: 0 0 5px;
+  font-size: 20px;
+  line-height: 25px;
+  display: block;
+}
+.silver_txt span{
+  display: block;
+  color: #28A5FF;
+  font-weight: bold;
+}
+.silver_txt strong{
+  display: block;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+}
+.silver_txt{
+  text-align: left;
+}
+.input_area input{
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.input_area{
+  height: calc(1.5em + .75rem + 12px);
+}
+.input_area input{
+    background: none;
+    border: none;
+    color: #fff;
+    height: calc(1.5em + .75rem + 12px);
+}
+
+form input{
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  border-radius: .5rem;
+}
+
+.input-group-prepend{
+    padding: 12px 10px;
+}
+
+
+.tab-buttons .nav-tabs{
+  background: inherit;
+  border-bottom: 0;
+}
+
+.tab-buttons .nav-tabs li:first-child a{
+  border-radius: 8px 8px 8px 0px;
+}
+
+.tab-buttons .nav-tabs li:last-child a{
+  border-radius: 0px 8px 8px 8px;
+}
+.tab-buttons .nav-tabs li a{
+  background-color: rgba(255, 255, 255, 0.12);
+  margin: 0 0 10px;
+  border-radius: 0px 8px 8px 0px;
+  color: rgba(255, 255, 255, 0.87);
+}
+.tab-buttons .nav-tabs li a{
+  padding: 15px;
+  font-size: 14px;
+  border: 0;
+
+}
+.tab-buttons .nav-tabs li a:first-child{
+  padding: 20px 15px;
+}
+.tab-buttons .nav-tabs li a:hover{
+  /* margin: 0;
+  border: 0;
+  padding: 15px;
+  font-size: 14px; */
+}
+.tab-buttons .nav-tabs li a.active{
+  background: rgba(255, 153, 51, 0.4);
+  /* border-radius: 8px; */
+  border: 0;
+  color: white;
+}
+::ng-deep .nav{
+  display: block;
+}
+.payment_form input[type=text]{
+  width:70%
+}
+.payment_form button{
+  width:100%;
+}
+.check_input_field{
+  width: auto;
+  height:auto; 
+}
+.head_text{
+  font-size: 24px;
+  line-height: 30px;
+}
+form label{
+  font-size: 18px;
+  line-height: 22px;  
+  color:rgba(255, 255, 255, 0.87);
+}
+.form_height{
+  height: 330px;
+}

@@ -1,0 +1,8 @@
+<button (click)="onClick($event)" [class]="classes" [disabled]="isLoading" [type]="type">
+  <div *ngIf="isLoading" class="d-flex align-items-center justify-content-center" >
+    <div class="spinner-border spinner-border-sm mr-3" role="status">
+    </div>
+    <span *ngIf="isLoading" class="pb-1" >Loading...</span>
+  </div>
+  <span *ngIf="!isLoading" >{{label}}</span>
+</button>

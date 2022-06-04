@@ -1,0 +1,232 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center my-2">
+      <h3 class="card-title text-blue-400">Mining Challenge</h3>
+      <hr class="hr-blue" />
+    </div>
+  </div>
+  <div class="content">
+    <div class="row">
+      <h2>New Challenge</h2>
+      <div class="col-lg-12 w-md-100">
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          class="d-flex justify-content-between align-items-center"
+        >
+          <!-- Challenge Name -->
+          <div class="form-group row text-right">
+            <label class="col-lg-5 col-form-label font-weight-semibold"
+              >Challenge Name:</label
+            >
+            <div class="col-lg-7">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                placeholder="Enter Name..."
+              />
+              <errors [control]="f.name" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <div class="form-group row text-right" style="width: 400px">
+            <label class="col-lg-3 col-form-label font-weight-semibold"
+              >Start Date:</label
+            >
+            <div class="col-lg-9 py-1">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  placeholder="Start Date (yyyy-mm-dd)"
+                  name="dp"
+                  formControlName="startDate"
+                  ngbDatepicker
+                  #d="ngbDatepicker"
+                  [positionTarget]="buttonEl"
+                />
+                <div class="input-group-append">
+                  <button
+                    #buttonEl
+                    class="btn btn-outline-secondary fas fa-calendar"
+                    (click)="d.toggle()"
+                    type="button"
+                  ></button>
+                </div>
+              </div>
+              <errors [control]="f.startDate" [isSubmit]="isSubmit"></errors>
+            </div>
+
+            <label class="col-lg-3 col-form-label font-weight-semibold"
+              >End Date:</label
+            >
+            <div class="col-lg-9">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  placeholder="End Date (yyyy-mm-dd)"
+                  name="dp1"
+                  formControlName="endDate"
+                  ngbDatepicker
+                  #d1="ngbDatepicker"
+                  [positionTarget]="buttonEl2"
+                />
+                <div class="input-group-append">
+                  <button
+                    #buttonEl2
+                    class="btn btn-outline-secondary fas fa-calendar"
+                    (click)="d1.toggle()"
+                    type="button"
+                  ></button>
+                </div>
+              </div>
+              <errors [control]="f.endDate" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <!-- Pool Prize  -->
+          <div class="form-group row text-right">
+            <label class="col-lg-5 col-form-label font-weight-semibold"
+              >Pool Prize:</label
+            >
+            <div class="col-lg-7">
+              <input
+                type="number"
+                appNumericOnly
+                class="form-control"
+                formControlName="poolprize"
+                placeholder="Pool Prize"
+                disabled
+              />
+              <errors [control]="f.poolprize" [isSubmit]="isSubmit"></errors>
+            </div>
+          </div>
+
+          <div class="form-group row text-left">
+            <i
+              (click)="onSubmit()"
+              class="fa fa-plus mr-3"
+              aria-hidden="true"
+            ></i>
+            <i (click)="cancel()" class="far fa-window-close"></i>
+          </div>
+        </form>
+
+        <div class="container-fluid">
+          <div class="row mt-3 align-items-center">
+            <div class="col-2 h6">Prize Rank Distribution:</div>
+            <div
+              class="
+                col-10 col-md-6
+                d-flex
+                justify-content-center
+
+                text-light
+                h3
+              "
+            >
+
+              <input
+                [(ngModel)]="start"
+                type="number"
+                value=""
+                class="col-2 form-control"
+                style="width: 100px"
+                placeholder="Start Range"
+              />
+              <div class="col-1"></div>
+              <input
+                [(ngModel)]="end"
+                type="number"
+                value=""
+                class="col-2 form-control"
+                style="width: 100px"
+                placeholder="End Range"
+              />
+              <div class="col-1"></div>
+              <input
+                [(ngModel)]="pool"
+                type="number"
+                value=""
+                class="col-2 form-control"
+                style="width: 300px"
+                placeholder="pool prize"
+              />
+              <div class="col-1"></div>
+
+              <button (click)="addToList()" class="btn btn-success">
+               Add Range
+              </button>
+            </div>
+          </div>
+
+          <div
+            *ngFor="let x of items; let index = index"
+            class="row"
+            style="height: 42px"
+          >
+            <div
+              class="
+                col-12 col-md-6
+                bg-success
+                d-flex
+                justify-content-center
+                align-items-center
+                text-light
+              "
+              style="height:40px"
+            >
+
+              <div class="col-3 text-light text-center">{{ x[0] }}</div>
+              <div class="col-3 text-light text-center">{{ x[1] }}</div>
+              <div class="col-3 text-light text-center">{{ x[2] }}</div>
+
+              <input
+                (click)="deleteTask(index)"
+                type="button"
+                value="Delete"
+                class="btn btn-danger"
+              />
+            </div>
+
+        </div>
+      </div>
+      <hr class="col-lg-12 hr-blue" />
+      <h2>All Challenges</h2>
+      <h4 *ngIf="miningchallenge && miningchallenge.length == 0" class="mt-5">
+        No Challenges, Please Create One
+      </h4>
+
+      <table
+        *ngIf="miningchallenge && miningchallenge.length > 0"
+        class="table custom-padding"
+      >
+        <thead>
+          <tr class="table-border-solid">
+            <th>Challenge Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Pool Prize</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let challenge of miningchallenge; let i = index">
+          <td>{{ challenge?.name }}</td>
+          <td>{{ challenge?.startDate | date: "fullDate" }}</td>
+          <td>{{ challenge?.endDate | date: "fullDate" }}</td>
+          <td>{{ challenge?.poolprize }}</td>
+          <td>
+            <div class="form-group row text-left">
+              <i (click)="editLevel(i)" class="far fa-edit mr-3"></i>
+              <i
+                (click)="deleteLevel(challenge?._id)"
+                class="far fa-trash-alt"
+              ></i>
+            </div>
+          </td>
+        </tbody>
+      </table>
+      <app-loader *ngIf="isLoader"></app-loader>
+    </div>
+  </div>
+</div>

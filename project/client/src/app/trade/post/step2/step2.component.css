@@ -1,0 +1,76 @@
+.post .p1{
+  font-size: 24px;
+  font-weight: 600;
+}
+.btn_primary{
+  background: #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 30px;
+}
+.btn_outline_primary{
+  border: 1px solid #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+}
+textarea{
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+.Input_with_icon {
+  position: relative;
+}
+
+.Input_with_icon .form-control {
+  padding: 1.3rem .75rem;
+  padding-left: 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+}
+
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.show_btn {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 6px);
+  min-width: 1rem;
+  font-size: 13px;
+  cursor: pointer;
+}
+.form-group{
+  margin-bottom: 0rem;
+}
+.label{
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+select{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  font-size: 15px;
+  padding: 10px;
+  padding-left: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+}

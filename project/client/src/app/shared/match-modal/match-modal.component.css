@@ -1,0 +1,225 @@
+/** Victory Area **/
+::ng-deep .modal-content{
+  border-radius: 8px;
+  border: 0;
+  background: black;
+}
+.modal-body{
+  background: radial-gradient(50% 128% at 0% 0%, rgba(17, 17, 17, 0.87) 0%, #111111 100%);
+  padding: 0;
+  border-radius: 8px;
+}
+.card{
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 8px;
+}
+.card_header{
+  padding: 20px;
+}
+.form-group{
+  padding: 0px 20px;
+  margin-bottom: 0;
+}
+.Input_with_icon{
+  position: relative;
+}
+.Input_with_icon .form-control {
+  padding-left: 3.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  height: calc(1.5em + .75rem + 10px);
+}
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.Input_with_icon i {
+  position: absolute;
+  top: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+}
+.online{
+  height: 9px;
+  width: 9px;
+  border-radius: 100%;
+  background: #40F99B;
+  margin-right: 10px;
+}
+.toggle_heading{
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 20px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.87);
+}
+.search_able{
+  padding: 20px 0;
+}
+.search_able .teams ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.search_able .teams li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  float: left;
+  margin-bottom: 1rem;
+  padding: 3px 12px;
+  cursor: pointer;
+}
+.search_able .teams .checked {
+  background: rgba(96, 175, 255, 0.1) !important;
+}
+.check_box{
+  display: none;
+}
+.checked .check_box{
+  display: block;
+}
+
+.search_able .teams .friends_img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.search_able .teams .friends_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.search_able .teams .friends_name{
+  color: white;
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.search_able .teams .online_status {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  font-size: 14px;
+}
+
+.friends_info {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+label{
+  margin-bottom: 0;
+}
+.styled-checkbox:checked+label:after {
+  top: 8px;
+}
+.height{
+  height: 375px;
+  overflow-y: auto;
+}
+.bottom_btn{
+  background: #363636;
+  border-radius: 0px 0px 8px 8px;
+  padding: 15px;
+  text-align: center;
+
+}
+.bottom_btn .primary-btn{
+  padding: 8px 15px;
+}
+
+.height::-webkit-scrollbar-track
+{
+  background-color: transparent;
+}
+
+.height::-webkit-scrollbar
+{
+	width: 8px;
+	background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+
+.height::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+.selectmap ul{
+  margin-bottom: 0;
+
+}
+.selectmap li{
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.selectmap .active{
+  background: rgba(96, 175, 255, 0.2);
+}
+.selectmap .selectmap_img{
+  background: rgba(255, 255, 255, 0.14);
+border-radius: 8px;
+display: block;
+height: 55px;
+width: 120px;
+margin-right: 20px;
+}
+.selectmap .selectmap_img img{
+  height: 100%;
+  width: 100%;
+}
+.selectmap .selectmap_name{
+  color: rgba(255, 255, 255, 0.87);
+}
+.liquid ul{
+	list-style: none;
+  padding: 0;
+  display: flex;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+	width: 100%
+}
+
+.liquid ul li{
+  width: 5.3em;
+  height: auto;
+  margin: 0em .3em 0em 0em;
+  border-radius: 8px;
+  position: relative;
+}
+.liquid ul .active{
+  background: rgba(96, 175, 255, 0.2);
+
+}
+.liquid .header_img .img_name{
+  text-transform: capitalize;
+  font-size: 11px;
+
+}
+.liquid .header_img{
+  text-align: center;
+  padding: .5rem 1rem;
+}
+
+.liquid .icons{
+  height: 30px;
+  margin-bottom: 15px;
+}

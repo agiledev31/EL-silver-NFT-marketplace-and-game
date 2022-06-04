@@ -1,0 +1,202 @@
+.investment_area > div {
+  padding: 70px 0;
+}
+h5 {
+  color: #fff;
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+a.swap-outline {
+  background-image: url(/assets/images/swap-outline.png);
+  width: 40px;
+  height: 25px;
+  background-repeat: no-repeat;
+  margin: 0 10px;
+}
+.graph_content_box {
+  border-radius: 0 0 5px 5px;
+  /* padding: 25px; */
+}
+.p-s {
+  padding: 0 15px;
+}
+.p-sr {
+  padding: 0px 25px;
+}
+.img-size {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px 15px 0px 0px;
+}
+h4 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 46px;
+  text-transform: uppercase;
+}
+.rate_value {
+  font-weight: 500;
+}
+.card_upcoming_tour {
+  flex: initial;
+  min-height: inherit;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0 0px 10px 10px;
+  /* display: flex;
+    justify-content: space-between; */
+  align-items: center;
+}
+.upcoming_card_area .card {
+  border: none;
+  background: inherit;
+}
+.upcoming_card_area .card h5 {
+  margin: 0;
+  color: #fff;
+  font-size: 17px;
+  line-height: 22px;
+}
+.carousel .carousel-indicators {
+  display: none !important;
+}
+.investment_area {
+  padding: 60px 0 0;
+}
+.tournament_area {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  margin: 50px 0;
+}
+.tournament_img {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: auto;
+  top: 0;
+}
+.graph_content_box ul {
+  width: 70%;
+  margin: 4px 0 0;
+}
+strong {
+  display: block;
+}
+.current_rate {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.rate_value {
+  font-size: 36px;
+  line-height: 40px;
+}
+.live_videos_area h4 {
+  margin: 0 0 30px;
+}
+.silver_area {
+  position: relative;
+}
+.silver_area:before {
+  position: absolute;
+  background: url("/assets/images/diamond_half.png");
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.amount_area {
+  position: relative;
+}
+.amount_area:before {
+  position: absolute;
+  background: url("/assets/images/dollar.png");
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.input_area input {
+  background: none;
+  border: none;
+  color: #fff;
+}
+.input-group-prepend {
+  padding: 5px 10px;
+}
+
+::ng-deep .slicks .slick-next {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #28a5ff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  right: -50px;
+}
+::ng-deep .slicks .slick-prev {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #28a5ff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  left: -60px;
+}
+::ng-deep .slicks .slick-next:hover {
+  width: 35px;
+  height: 35px;
+}
+::ng-deep .slicks .slick-prev:hover {
+  width: 35px;
+  height: 35px;
+}
+::ng-deep .slicks .slick-prev:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f104";
+  color: #28a5ff;
+}
+::ng-deep .slicks .slick-next:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
+  color: #28a5ff;
+}
+.graph_box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px 16px 0px 0px;
+}
+.graph_card {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+}
+.graph_card_footer_text {
+  color: #fff;
+  margin-left: 1.6rem;
+}
+
+.f-16 {
+  font-size: 16px !important;
+}
+
+::ng-deep .slicks .slick-track {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+.live_videos_area h5 {
+  color: #fff;
+}
+
+.text-box p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 24px 0;
+}

@@ -1,0 +1,32 @@
+.card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    height: 100%;
+}
+.left-container, .right-container{
+  width: 50%;
+}
+.challenge_links .activity-block{
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 50px 10px 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.challenge_links .activity-block span{
+  display: block;
+}
+
+.challenge_links .activity-block strong{
+  display: block;
+}
+
+.mr-15{
+  margin-right: 15px !important;
+}
+ .history-link{
+   padding: 1.25rem 1.25rem 1.75rem 1.25rem;
+ }

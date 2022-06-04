@@ -1,0 +1,271 @@
+.top_heading h1{
+    font-weight: 600;
+    margin-top: 10px;
+}
+.top_heading p{
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+.team_a .teams{
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+.team_vs .teams{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.team_b .teams{
+  text-align: right;
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-style: italic;
+
+}
+.friends {
+  margin-top: 30px;
+}
+
+.friends p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.friends li {
+  background: rgba(255, 255, 255, 0.08);
+border-radius: 45px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  padding: 10px;
+}
+
+.friends .friends_img {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  padding: 2px;
+  background: black;
+}
+
+.friends .friends_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.friends .friends_name {
+  color: white;
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.friends .online_status {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  font-size: 14px;
+}
+
+.friends_info {
+  line-height: 1;
+}
+
+.player_1{
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  margin-top: -30px;
+}
+.inner_name{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px 10px 2px 0px;
+}
+.top{
+  font-size: 15px;
+}
+.ready_logo{
+  color: #40F99B;
+  font-style: italic;
+}
+.team_b .friends .player_1{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.team_b .friends .inner_name{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.team_b .friends .top{
+  font-size: 15px;
+}
+.team_b .friends li .ready_logo{
+  padding-right: 10px;
+  text-align: end;
+}
+.team_b .friends li .inner_name .ml-auto{
+  margin-right: auto;
+  margin-left: 0 !important;
+}
+.team_b .friends li .inner_name .online_status{
+  text-align: right;
+}
+.waiting_player .inner_name{
+ padding: 42px 10px 15px 0px;
+ font-style: italic;
+}
+.vs_card{
+  padding: 20px;
+}
+.top_content .p1{
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.87);
+}
+.top_content h1{
+  font-weight: 600;
+  text-align: center;
+}
+.gold_progress{
+  background: #FF9933;
+}
+.progress{
+  background: inherit;
+  height: .3rem;
+  width: 100%;
+  background: rgba(255, 153, 51, 0.4);
+border-radius: 12px;
+}
+.mid_content{
+  margin-top: 20px;
+}
+.mid_content .p1{
+  color: rgba(255, 255, 255, 0.87);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.mid_content .inner_card{
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.mid_content .inner_card .name,.mid_content .inner_card .password{
+  width: 50%;
+  text-align: center;
+}
+.mid_content .inner_card .name p,.mid_content .inner_card .password p{
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 24px;
+  font-weight: 500;
+}
+.mid_content .inner_card .name h6,.mid_content .inner_card .password h6{
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+
+}
+.bottom_content{
+  text-align: center;
+  margin-top: 20px;
+}
+.bottom_content .btn{
+  display: block;
+  width: 225px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.bottom_content .btn-active{
+  background: #28A5FF;
+  color: white;
+}
+.bottom_content .btn-disabled{
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.38);
+}
+.bottom_content .btn-outline{
+  border: 2px solid #28A5FF;
+  color: white;
+}
+#footer {
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2d2d2d;
+  padding: 10px 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
+  width: 22%;
+}
+
+.Input_with_icon {
+  position: relative;
+}
+
+.Input_with_icon .form-control {
+  padding: 1.3rem .75rem;
+  padding-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+}
+
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.show_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 6px);
+  min-width: 1rem;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.Input_with_icon i {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 10px);
+  min-width: 1rem;
+}
+
+.footer_button {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 5px 15px 10px 15px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}

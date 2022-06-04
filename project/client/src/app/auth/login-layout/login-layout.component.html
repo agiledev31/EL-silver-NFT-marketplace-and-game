@@ -1,0 +1,20 @@
+<div class="flexbox">
+  <div class="login_card">
+    <h3>Welcome back!</h3>
+    <ul ngbNav [(activeId)]="activeId"  #nav="ngbNav" class="nav-tabs">
+      <li ngbNavItem [ngbNavItem]="1">
+        <a ngbNavLink class="text-capitalize">LOG IN WITH EMAIL</a>
+        <ng-template ngbNavContent>
+          <app-login-email></app-login-email>
+        </ng-template>
+      </li>
+      <!-- <li ngbNavItem [ngbNavItem]="2">
+        <a ngbNavLink>LOG IN WITH PHONE</a>
+        <ng-template ngbNavContent>
+          <app-login-phone></app-login-phone>
+        </ng-template>
+      </li> -->
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+  </div>
+</div>

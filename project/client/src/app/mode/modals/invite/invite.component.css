@@ -1,0 +1,25 @@
+::ng-deep .modal-content{
+  border-radius: 8px;
+  border: 0;
+}
+.modal-body{
+  background: #292929;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.buy_transaction_area .p1{
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+.buy_transaction_area{
+    overflow: hidden;
+    background: #292929;
+    padding: 30px 15px;
+    border-radius: 8px;
+}
+

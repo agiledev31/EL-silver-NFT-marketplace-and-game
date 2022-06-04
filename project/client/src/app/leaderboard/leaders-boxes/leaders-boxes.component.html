@@ -1,0 +1,29 @@
+<div class="leader_list">
+    <ul class="leaderboards">
+      <li *ngFor="let country of countries ; index as i" class="leaders_boxes pointer" routerLink="topPlayerChallenges"
+          [queryParams]="{id: country._id,name:country.fullName}">
+        <sup>{{ i + 1 }}</sup>
+        <div class="leaders_boxes_area">
+          <img width="40px" [src]="country.image ? country.image : 'assets/images/profile_img.png'" class="mr-3">
+          <div class="players_content">
+            <h4>{{ country.fullName }}</h4>
+            <div class="card-text"><strong>{{ country.totalLaplataEarned }}</strong></div>
+            <div class="progress_area d-flex justify-content-between align-items-center">
+              <div class="progress">
+                <div class="progress-bar progress-bar-success low_progress" role="progressbar"
+                     [ngStyle]="{width: country.statistics ? country.statistics.winRatio.toFixed(0) + '%' : '0%'}">
+                  <span>win</span>
+                </div>
+                <div class="progress-bar progress-bar-warning high_progress" role="progressbar"
+                     [ngStyle]="{width: country.statistics ? (100 - country.statistics.winRatio).toFixed(0) + '%' : '100%'}" >
+                  <span>lose</span>
+                </div>
+              </div>
+              <span>{{ country.statistics ? country.statistics.winRatio.toFixed(0) + '%' : '0%'}}</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+</div>
+ 

@@ -1,0 +1,229 @@
+<div class="container-fluid bg-main">
+  <div class="container">
+    <div class="row mt-5 py-4">
+      <div class="col-md-6">
+        <h1>Your NFTs</h1>
+        <h5 class="mt-4">. . .</h5>
+      </div>
+      <div class="col-md-6">
+        <div class="row right">
+          <div class="col-md-5 mt-4">
+            <!-- <input type="search" placeholder="search address" class="search" /> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div class="card card-cs">
+        <div class="row p-4">
+          <div class="col-8">
+            <h5>
+              <span class="mr-3"
+                ><i class="fa fa-cog" aria-hidden="true"></i
+              ></span>
+              Manange Yours
+            </h5>
+          </div>
+          <div class="col-4 right">
+            <button class="btn btn-down" (click)="show1()">
+              <i
+                *ngIf="!manageYours"
+                class="fa fa-chevron-down"
+                aria-hidden="true"
+              ></i>
+              <i
+                *ngIf="manageYours"
+                class="fa fa-chevron-up"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+        </div>
+        <div class="row m-1 p-3 center" *ngIf="manageYours">
+          <div class="col-12">
+            <p>Total Mining Rate : {{ total_mining_rate }}%</p>
+            <p>{{inventories.length}} owned tokens </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 mt-3">
+      <div class="card card-cs">
+        <div class="row p-4">
+          <div class="col-8">
+            <h5>
+              <span class="mr-3"
+                ><i class="fa fa-shopping-basket" aria-hidden="true"></i
+              ></span>
+              For Cart
+            </h5>
+          </div>
+          <div class="col-4 right">
+            <button class="btn btn-down" (click)="show2()">
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 2nd row -->
+        <div class="row center m-1 p-1">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-3">
+                <p>Item <span class="ml-3"></span></p>
+              </div>
+              <div class="col-3">
+                <p>Mining Rate <span class="ml-3"></span></p>
+              </div>
+              <div class="col-3">
+                <p>Selling State <span class="ml-3"></span></p>
+              </div>
+              <div class="col-3">
+                <p>Action <span class="ml-3"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div  *ngIf="forCart">
+          <div class="row center m-1 p-3" *ngFor="let item of showInventItems">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-3">
+                  <p class="p-0 m-0">
+                    <span class="mr-2">
+                      <img src="{{ item.imageURI }}" class="item-image" />
+                    </span>
+                  </p>
+                </div>
+                <div class="col-3">
+                  <p class="p-0 m-0">
+                    <span class="mr-2 item-rate"> {{ item.rate }}% </span>
+                  </p>
+                </div>
+                <div class="col-3">
+                  <p class="p-0 m-0">
+                    <span class="mr-2 item-state"
+                      >{{ item.tokenSellState == 1 ? "On" : "Off" }}
+                    </span>
+                  </p>
+                </div>
+                <div class="col-3">
+                  <p class="p-0 m-0">
+                    <button
+                      class="btn btn-buys item-buy"
+                      (click)="SelectDetails(item.tokenId)"
+                    >
+                      Detail
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <span class="ml-3">
+                <i
+                  class="fa fa-arrow-left cursor-pointer"
+                  aria-hidden="true"
+                  (click)="changePage(-1)" style="cursor: pointer;"
+                ></i>
+                <span class="page-number mr-2 ml-2">{{now_page}} of {{total_page}}</span>
+                <i
+                  class="fa fa-arrow-right cursor-pointer"
+                  aria-hidden="true"
+                  (click)="changePage(1)" style="cursor: pointer;"
+                ></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ist model  -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: display }">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content main-model">
+      <div class="modal-body px-3 sa">
+        <div class="row bg-one p-4">
+          <div class="col-6">
+            <h5>Inventory</h5>
+          </div>
+          <div class="col-6 right">
+            <button class="btn btn-cross" (click)="onCloseHandled()">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 2nd row  -->
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="{{ inventItem.imageURI }}"
+                  class="img-sizes2"
+                  alt=""
+                />
+              </div>
+              <div class="col-8">
+                <h5>{{ inventItem.name }}</h5>
+                <p>{{ inventItem.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3rd part  -->
+        <div class="row centers">
+          <div class="card p-4 card-cs">
+            <div class="row">
+              <div class="col-6">
+                <p>Price(BNB)</p>
+              </div>
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <input
+                      type="text"
+                      class="buy-count-input"
+                      [value]="sellItemPrice"
+                      (input)="sellItemPrice = $event.target.value"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3 center p-3">
+          <div class="col-10 mt-3">
+            <button
+              class="btn btn-primary form-control"
+              (click)="clickInvAction()"
+            >
+              {{ inventItem.tokenSellState == "1" ? "Not Sell" : "Sell" }}
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader_overlap" *ngIf="isLoader">
+  <div class="loader"></div>
+</div>

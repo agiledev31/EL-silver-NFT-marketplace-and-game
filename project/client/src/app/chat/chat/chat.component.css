@@ -1,0 +1,18 @@
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+
+.messaging {
+  padding: 0 100px 50px 100px;
+}
+.inbox_msg {
+  /* border: 1px solid #c4c4c4; */
+  clear: both;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 0;
+
+}

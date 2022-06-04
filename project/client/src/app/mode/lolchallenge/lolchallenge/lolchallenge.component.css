@@ -1,0 +1,285 @@
+form{
+  margin-bottom: 45px;
+}
+.form-group{
+  margin-bottom: 1.3rem;
+}
+.form-group label{
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 13px;
+}
+.Input_with_icon{
+  position: relative;
+}
+.Input_with_icon .form-control {
+  padding-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 0;
+}
+.Input_with_icon .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.Input_with_icon i {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: .875rem;
+  padding-right: .875rem;
+  line-height: calc(1.5385em + .875rem + 2px);
+  min-width: 1rem;
+}
+
+.btn{
+  font-weight: 500;
+}
+
+.lolchallenge_page .card{
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.final{
+  color: #28A5FF;
+}
+
+.final svg{
+  fill: #28A5FF;
+}
+
+.defeat{
+  color: #FF9933;
+}
+.complete{
+  color: rgb(215, 120, 67);
+}
+
+.k {
+width: 700px;
+}
+
+.timer{
+  color: #FF9933;
+  font-weight: 400;
+}
+
+.reward_card{
+  color: #FF9933;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.game_scrore{
+  font-family: "RIFT";
+  font-size: 22px;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* Select area */
+.selectors_area{
+  margin-right: 15px;
+}
+
+::ng-deep ng-select{
+  width: auto;
+}
+
+::ng-deep .ng-select-container{
+  border-radius: 7px!important;
+  background: rgba(255, 255, 255, 0.09)!important;
+  color: #fff!important;
+  border: none!important;
+  padding: 0 10px!important;
+}
+
+::ng-deep .ng-arrow{
+  border: none!important;
+}
+
+::ng-deep .ng-arrow-wrapper{
+  padding: 0!important;
+}
+
+::ng-deep .ng-clear-wrapper{
+display: none!important;
+}
+::ng-deep .ng-arrow:before{
+  position: absolute;
+  background: url(/assets/images/drop_down.png);
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 10px;
+  content: "";
+  background-repeat: no-repeat;
+  transform: translate(-50%, -80%);
+}
+.selectors_area img{
+  border-radius: 4px !important;
+  margin-right: 10px;
+}
+
+.font-size-18{
+  font-size: 18px;
+}
+.font-size-20{
+  font-size: 20px;
+}
+.font-size-35{
+  font-size: 35px;
+}
+.w-90{
+  width: 90% !important;
+}
+
+/** New Accordion */
+
+::ng-deep .btn-link:hover {
+  text-decoration: none;
+}
+
+::ng-deep .btn {
+  text-align: left;
+  padding: 0;
+}
+
+::ng-deep .card-header button {
+  width: 100%;
+  border: 0;
+}
+
+::ng-deep .accordion>.card {
+  background-color: inherit;
+  border: 0;
+}
+
+::ng-deep .accordion>.card {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px !important;
+  margin-bottom: 5px;
+  padding: 0;
+  border: 0;
+}
+
+::ng-deep .accordion>.card>.card-header {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  margin: 0px;
+  padding: 0;
+}
+
+::ng-deep .accordion>.card>.card-body {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+}
+
+.custom-table .head {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+  color: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.custom-table .custom-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 255, 0.09);
+  padding: 15px !important;
+  border-radius: 8px;
+  margin: 7px;
+}
+
+.custom-table .body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.custom-table .custom-td {
+  padding: 0 1rem;
+}
+
+.custom-table .body .custom-td {
+  padding: .5rem 1rem;
+}
+
+.reward_card svg{
+  width: 25px;
+  height: 25px;
+}
+
+progress{
+  background: #28A5FF;
+}
+.progress{
+  background: inherit;
+  height: .3rem;
+  width: 100%;
+  background: rgba(40, 165, 255, 0.4);
+  border-radius: 12px;
+  transform: rotate(180dgeg);
+}
+
+.reward-section svg{
+  width: 30px;
+  height: 30px;
+}
+
+.f-13{
+font-size: 13px;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  border: 3px solid #28A5FF;
+  border-color: #28A5FF transparent #28A5FF transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width:600px) {
+  .mobile-li {
+    display: contents !important;
+  }
+}

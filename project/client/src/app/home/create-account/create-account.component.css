@@ -1,0 +1,19 @@
+.create-account-area{
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 99px 0;
+}
+
+.create-account-area h4{
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 40px;
+}
+
+.create-account-area p{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 39px 0;
+}

@@ -1,0 +1,4 @@
+Sitemap: https://elsilver.net/sitemap.xml
+
+User-agent: *
+Allow: /

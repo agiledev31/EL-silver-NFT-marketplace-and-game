@@ -1,0 +1,68 @@
+<div class="lolchallenge_layout_page">
+  <div class="container">
+    <div>
+      <div style="color: white;
+      border-color: white;
+      border: 1px solid #212529;
+      margin: 12px;
+      padding-left: 36px;
+      background-color: #212529;
+      font-size: 25px;" *ngIf="announcments && !hideNotifications">
+        <div style="display: flex;" class="col-md-12">
+          <div class="col-md-11" style="display: flex;">
+            <i class="fas fa-bullhorn" style="color: #E29649;margin: 10px;"></i>
+            <p style="padding-left: 5px;padding-top: 5px;font-weight: 400">
+              {{announcments}} <span *ngIf="announcmentsDescription"
+                style="color: #E29649; cursor: pointer; font-size: 25px; font-weight: 500;padding-left: 1px;"
+                (click)="OnViewClick(announcmentsDescription,descriptionPopup)">View
+                More ></span>
+
+            </p>
+          </div>
+          <div class="col-md-1" style="display: flex;">
+            <p style="padding-right: 1px;padding-top: 5px;font-weight: 400; cursor: pointer;"
+              (click)="hideAnnoucements()">
+              x</p>
+          </div>
+        </div>
+      </div>
+      <div class="bread_crumb">
+        <span class="pointer" [routerLink]="['/mode']">Game Modes / </span><span class="final"> LOL Challenge </span>
+      </div>
+      <h2>LOL Challenge</h2>
+      <div class="text-gray font-weight-normal">Maximize LPLT mining by winning for elaborated data offering to LAPLATA
+      </div>
+      <ul ngbNav #nav="ngbNav" class="nav-tabs challenge_nav_tab mt-4">
+        <li ngbNavItem class="mobile-li">
+          <a ngbNavLink>Try The Challenge</a>
+          <ng-template ngbNavContent>
+            <app-lolchallenge [mylaplatasettings]="mylaplatasettings"></app-lolchallenge>
+          </ng-template>
+        </li>
+        <li ngbNavItem class="mobile-li">
+          <a ngbNavLink>Challenge History</a>
+          <ng-template ngbNavContent>
+            <app-lolchallengehistory [statistics]="statistics" (parentFun)="parentFun()"></app-lolchallengehistory>
+          </ng-template>
+        </li>
+        <li ngbNavItem class="mobile-li">
+          <a ngbNavLink>Minings</a>
+          <ng-template ngbNavContent>
+            <app-lolchallenge-earnings [statistics]="statistics" [mylaplatasettings]="mylaplatasettings"
+              (parentFun)="parentFun()"></app-lolchallenge-earnings>
+          </ng-template>
+        </li>
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+    </div>
+    <ng-template #descriptionPopup let-modal>
+      <div class="modal-header">
+        <h3 style="color: black;">Description</h3>
+      </div>
+      <div class="modal-body">
+        <div class="Input_with_icon" style="word-wrap: break-word;">
+          <p style="color: black; font-size: bold;">{{description}}</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>

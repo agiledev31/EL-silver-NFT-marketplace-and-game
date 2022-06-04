@@ -1,0 +1,435 @@
+/* Accordion */
+
+::ng-deep .btn-link:hover{
+    text-decoration: none;
+}
+::ng-deep .btn{
+    text-align: left;
+    padding: 0;
+}
+.tour_col{
+    text-align: left;
+}
+th{
+    text-align: center;
+    padding: 0 6px;
+}
+.upcoming{
+    background-color: rgba(255, 153, 51, 0.3);
+}
+.finished{
+    background: rgba(255, 255, 255, 0.16);
+}
+.enroll_now{
+    padding: 10px;
+    border: none;
+}
+.status_badge{
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff!important;
+}
+.teams_ranked strong{
+    color: rgba(40, 165, 255, 1);
+}
+table{
+    color: #000;
+}
+table th span{
+    display: block;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 20px;
+}
+table strong{
+    display: block;
+    font-weight: 500;
+}
+table tr th{
+    color: #fff;
+}
+::ng-deep .card-header button{
+    width: 100%;
+}
+::ng-deep .accordion>.card{
+    background-color: inherit;
+}
+.filters .inner_filter{
+  margin: 10px 20px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 14px;
+}
+.filters .active{
+  color: #28A5FF;
+  border-bottom: 1px solid#28A5FF;
+  cursor: pointer;
+}
+
+
+/* Cards Area */
+
+.profile_rank_cards .card {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.high_progress {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.low_progress {
+  background: rgba(40, 165, 255, 1);
+}
+
+.progress {
+  background: inherit;
+  height: 1.2rem;
+  width: 85%;
+}
+
+.card-body .row {
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+/* Table Scroll */
+
+.leaders_boxes img {
+  width: 88px;
+}
+
+/* .high_progress{
+    background: rgba(232, 49, 81, 1);
+} */
+
+.low_progress {
+  background: rgba(40, 165, 255, 1);
+}
+
+.progress {
+  background: inherit;
+  height: 1.2rem;
+  width: 85%;
+}
+
+.table td, .table th {
+  /* border: 1px solid #dee2e6; */
+  border-top: none;
+  vertical-align: middle;
+  border-right: 3px solid #000;
+}
+
+.table td:last-child, .table th:last-child {
+  border-right: none;
+}
+
+.table {
+  color: #212529;
+  border-radius: 16px;
+  background: #232323;
+}
+
+.table thead th {
+  border-bottom: 3px solid #000;
+}
+
+.leaderboards li:first-child {
+  background: rgba(255, 153, 51, 0.2);
+  border: 2px solid #FF9933;
+}
+
+.leaderboards li:nth-child(2) {
+  background: rgba(40, 165, 255, 0.2);
+}
+
+.leaderboards_points_table {
+  margin: 0 0 50px;
+}
+
+
+
+/* Accordion */
+
+::ng-deep .btn-link:hover {
+  text-decoration: none;
+}
+
+::ng-deep .btn {
+  text-align: left;
+  padding: 0;
+}
+
+.tour_col {
+  text-align: left;
+}
+
+th {
+  text-align: center;
+  padding: 0 6px;
+}
+
+.upcoming {
+  background-color: rgba(255, 153, 51, 0.3);
+}
+
+.finished {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.enroll_now {
+  padding: 10px;
+  border: none;
+}
+
+.status_badge {
+  text-align: center;
+  padding: 3px 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #fff!important;
+}
+
+.teams_ranked strong {
+  color: rgba(40, 165, 255, 1);
+}
+
+table {
+  color: #000;
+}
+
+table th span {
+  display: block;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+table strong {
+  display: block;
+  font-weight: 500;
+}
+
+table tr th {
+  color: #fff;
+}
+
+::ng-deep .card-header button {
+  width: 100%;
+}
+
+::ng-deep .accordion>.card {
+  background-color: inherit;
+}
+
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  /* even columns width , fix width of table too*/
+}
+
+.tab-buttons .nav-tabs {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border-bottom: 0;
+}
+
+.tab-buttons .nav-tabs li {
+  margin: 0;
+}
+
+.tab-buttons .nav-tabs li a {
+  padding: 7px 20px;
+  font-size: 14px;
+  border: 0;
+}
+
+.tab-buttons .nav-tabs li a:hover {
+  margin: 0;
+  border: 0;
+  padding: 7px 20px;
+  font-size: 14px;
+}
+
+.tab-buttons .nav-tabs li a.active {
+  background: rgba(255, 153, 51, 0.4);
+  border-radius: 8px;
+  border: 0;
+  color: white;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.t-body {
+  margin-top: 10px;
+  display: block;
+  height: 335px;
+  overflow-y: auto;
+}
+
+.t-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.t-body::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+
+.t-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+}
+
+.f-16 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.custom-table .head {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem .1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+  color: rgba(255, 255, 255, 0.87);
+  /* background: rgba(255, 255, 255, 0.09); */
+}
+
+.custom-table .body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem .1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+  /* background: rgba(255, 255, 255, 0.05); */
+}
+
+.custom-table .body:hover {
+  background: rgba(40, 165, 255, 0.3);
+}
+
+.custom-table .active {
+  background: rgba(40, 165, 255, 0.3);
+}
+
+.custom-table .custom-td {
+  padding: 0 .2rem;
+}
+
+.custom-table .body .custom-td {
+  padding: .2rem .2rem;
+}
+
+::ng-deep .accord>.card .card-header button {
+  width: 100%;
+  border: 0 !important;
+}
+
+::ng-deep .accord>.card {
+  border-radius: 8px !important;
+  margin-bottom: 5px;
+  padding: 0;
+  border: 0 !important;
+}
+
+::ng-deep .accord>.card>.card-header {
+  border-radius: 8px;
+  margin: 0px;
+  padding: 0;
+  border: 0 !important;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+::ng-deep .accord>.card>.card-body {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.filters .inner_filter {
+  margin: 10px 20px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 14px;
+}
+
+.filters .active {
+  color: #28A5FF;
+  border-bottom: 1px solid#28A5FF;
+  cursor: pointer;
+}
+
+
+.toggle-heading{
+  display: flex;
+  align-items: center;
+  padding: 2px 20px;
+  background: rgba(255, 255, 255, 0.16);
+}
+.toggle-heading .ml-auto{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.card-bg{
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+
+.french-blue {
+  color: #28A5FF;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-radius: 6px !important;
+
+}
+
+.rgba6{
+  color: rgba(255, 255, 255, .6);
+}
+
+.rgba8{
+  color: rgba(255, 255, 255, 0.87);
+
+}
+
+.icon-img{
+  width: 16px;
+  height: 16px;
+}
+
+.fs-16{
+  font-size: 16px;
+}
+
+.victory, .defeat {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+  text-transform: uppercase !important;
+  text-align: right !important;
+}
+
+.victory {
+  color: #28A5FF !important;
+}
+
+.defeat {
+  color: #FF9933 !important;
+}

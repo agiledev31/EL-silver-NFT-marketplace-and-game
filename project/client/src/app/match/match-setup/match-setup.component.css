@@ -1,0 +1,262 @@
+.heading {
+  border-radius: 16px;
+  padding: 20px 0;
+}
+
+.heading h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+.img_name{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+.heading p {
+  margin: 0;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.liquid_card ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  height: 20em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.liquid_card ul li {
+  /* float: left; */
+  width: 13em;
+  height: 19em;
+  margin-top: 1rem;
+  /* padding: 1em; */
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  position: relative;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+}
+
+.liquid_card ul li:hover {
+  border: 1px solid #28A5FF;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  /* transform: scale(1.1, 1.1); */
+  width: 14em;
+  height: 21em;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.liquid_card ul li.active {
+  border: 1px solid #28A5FF;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  width: 14em;
+  height: 21em;
+}
+
+.header_img {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.header_img .text-blue{
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 8px;
+}
+
+.bottom_icon {
+  position: absolute;
+  bottom: 15%;
+}
+
+.round {
+  display: none;
+}
+
+.main-round .round, .main-round1 .round {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.38);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+  align-items: center;
+  z-index: 3;
+
+}
+/* .push-left {
+  left: 60px !important;
+} */
+
+.bottom_icon1 {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.09);
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.bottom_icon1 i {
+  line-height: 3;
+}
+
+.random {
+  display: flex;
+  justify-content: center;
+}
+
+.icon1 {
+  display: none;
+  position: absolute;
+  left: -17px;
+}
+
+.icon2 {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 5px;
+}
+
+.icon3 {
+  display: none;
+  position: absolute;
+  top: -16px;
+}
+
+.icon4 {
+  display: none;
+  position: absolute;
+  right: 4px;
+  top: 7px;
+}
+
+.icon5 {
+  display: none;
+  position: absolute;
+  right: -17px;
+}
+
+.round .icon1, .round .icon2, .round .icon3, .round .icon4, .round .icon5 {
+  display: block;
+  height: 32px;
+  width: 32px;
+}
+.round .icon1 img, .round .icon2 img, .round .icon3 img, .round .icon4 img, .round .icon5 img {
+  height: 100%;
+  width: 100%;
+}
+
+/* .main-icon{
+      position: absolute;
+    left: 16px;
+    top: -50px;
+}
+ .main-icon1{
+  position: absolute;
+    top: -50px;
+    left: 23px;
+} */
+
+.wrapper {
+  position: absolute;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-round {
+  position: absolute;
+  top: -52px;
+  left: -120px;
+
+}
+
+.main-round1 {
+  position: absolute;
+  top: -52px;
+  left: 16px;
+
+}
+
+.coming_soon{
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coming_soon h4{
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  color: #FFFFFF;
+}
+
+.coming_soon p{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.coming_soon button {
+  width: 30%;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.coming_soon div{
+  width: 66%;
+}
+
+::ng-deep .rounded_img{
+  margin-right: unset !important;
+}
+
+@media only screen and (max-width:1600px) {
+  .liquid_card ul li {
+    width: 10em;
+    height: 16em;
+    margin: 1em 1em 0em 0em;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    position: relative;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .liquid_card ul li:hover {
+    border: 1px solid #28A5FF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    /* transform: scale(1.1,1.1); */
+    width: 11em;
+    height: 18em;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .liquid_card ul li.active {
+    border: 1px solid #28A5FF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    width: 11em;
+    height: 18em;
+  }
+}
+

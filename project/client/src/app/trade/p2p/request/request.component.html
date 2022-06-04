@@ -1,0 +1,313 @@
+<div class="buy_silver">
+  <div class="container">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/trade']">Silver Status / </span><span class="final">P2P {{p2pType == 1 ?
+        'Buy': 'Sell'}} </span>
+    </div>
+    <h2 class="head_title_area"> Trade Details </h2>
+    <div *ngIf="!isLoader && trade" class="row">
+      <div class="col-md-10">
+        <div class="card mb-4">
+          <div *ngIf="request && request.status === 2" class="card_alert">
+            <div class="d-flex align-items-center">
+              <img class="mr-4" src="assets/images/green-tick.svg" alt="">
+              <div class="w-75 text-grey">
+                Your trade with {{request.user.fullName}} has been opened! Make sure to make the payment within the
+                stipulated payment
+                window.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="request.status >= 4" class="col-md-10">
+        <div class="card mb-4">
+          <div class="card_alert">
+            <div (click)="goToList()" class="d-flex align-items-start">
+              <img class="mr-4" src="assets/images/green-tick.svg" alt="">
+              <div class="w-75 text-grey">
+                Hooray! The silver has been transferred to your wallet. This trade is now completed.
+                Please take a moment to rate the {{p2pType == 1? 'seller': 'buyer'}}.
+                <div class="stars mt-3">
+                  <div class="my-1">
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span class="ml-3 text-grey font-weight-normal">Response time</span>
+                  </div>
+                  <div class="my-1">
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span class="ml-3 text-grey font-weight-normal">Communication</span>
+                  </div>
+                  <div class="my-1">
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span><img src="assets/images/Star 7.svg" alt=""></span>
+                    <span class="ml-3 text-grey font-weight-normal">Whould trade again</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card_trade">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="heading">Trade #{{trade._id}}</div>
+                <ul class="left_ul">
+                  <li>
+                    <div class="p1">{{trade.type == 1 ?'Seller': 'Buyer' }}</div>
+                    <div class="p2">@{{request.user.fullName}}</div>
+                  </li>
+                  <li *ngIf="status === 2">
+                    <div class="p1">Opened on</div>
+                    <div class="p2">{{request.openedOn | date: 'd MMMM, y'}}</div>
+                  </li>
+                  <li>
+                    <div class="p1">Payment method</div>
+                    <div class="p2">{{trade.paymentMethod | paymentType}}</div>
+                  </li>
+                  <li>
+                    <div class="p1">Status</div>
+                    <div class="p2"><span class="text-gold"> {{getStatus}} </span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="right_ul">
+                  <li>
+                    <div class="p1">Trade amount</div>
+                    <div class="p2">{{request.silver | silverPrice : 1}}</div>
+                  </li>
+                  <!-- <li>
+                    <div class="p1">Price</div>
+                    <div class="p2">512, 600 krw</div>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="row align-items-center mt-3">
+              <div class="col-md-7">
+                <div class="p3">Payment window</div>
+              </div>
+              <div class="col-md-5">
+                <div class="top_content">
+                  <div class="p1">2h 10m 34s left</div>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success green_progress" role="progressbar" style="width:70%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="card mb-2">
+          <div class="card_step1">
+            <div class="w-75 mx-auto text-center">
+              <img class="mb-2" src="assets/images/Trade icon.svg" alt="">
+              <div class="text-blue text-uppercase mb-2">step 1</div>
+              <div *ngIf="request.status == 2">
+                <div class="text-blue text-uppercase font-weight-600 f-18 mb-2">
+
+                  <span *ngIf="isMeSeller"> complete payment</span>
+                  <span *ngIf="!isMeSeller">buyer completes payment</span>
+
+                </div>
+                <div class="text-gray mb-4">
+                  {{
+                  isMeSeller ?
+                  'Chat with the buyer in the Trade Chat panel to sort out any difficulties. When the payment is
+                  completed, click on ‘Payment completed’.'
+                  : 'The buyer will complete the payment soon. Chat with them in the Trade Chat panel to sort out any
+                  difficulties.'
+                  }}
+
+                </div>
+                <div *ngIf="isMeSeller" class="d-flex justify-content-center w-75 mx-auto">
+                  <input class="styled-checkbox" id="styled-checkbox-1" checked type="checkbox" value="value1">
+                  <label for="styled-checkbox-1" class="check-label-1"></label>
+                  <label class="check-label-1 text-grey" for="">I have accepted the seller’s terms of
+                    the trade and completed the payment.</label>
+                </div>
+                <div *ngIf="isMeSeller" class="w-50 mx-auto my-4">
+                  <a (click)="onChangeStatus(3)" href="javascript:void(0)" class="btn primary-btn w-100">I have
+                    paid!</a>
+                </div>
+              </div>
+              <div *ngIf="request.status > 2" class="text-white text-uppercase font-weight-600 f-18 mb-2">
+                payment completed
+              </div>
+              <div *ngIf="request.status < 2" class="text-white text-uppercase font-weight-600 f-18 mb-2">
+                Request Confirmation pending
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div *ngIf="request.status < 3" class="card mb-2" >
+          <div class="card_step2">
+            <div class="w-75 mx-auto text-center">
+              <img class="mb-2" src="assets/images/eva_clock-fill.svg" alt="">
+              <div class="text-gray1 text-uppercase font-weight-600 f-18 mb-2">
+                {{isMeSeller ? 'seller confirms the payment' : 'confirm the payment'}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="request.status === 3" class="card mb-2">
+          <div class="card_step2">
+            <div class="w-75 mx-auto text-center">
+              <img class="mb-2" src="assets/images/eva_clock-fill-blue.svg" alt="">
+              <div class="text-blue text-uppercase mb-2">step 2</div>
+
+              <div *ngIf="isMeSeller" class="text-gray">
+                Hang tight! Waiting for the seller to confirm the payment.
+              </div>
+
+              <div *ngIf="!isMeSeller" class="text-gray">
+                Verify that the payment is completed by the buyer. If everything looks good, click on ‘Payment
+                received’! In case of any issue, chat with the buyer in the Trade Chat before confirming.
+              </div>
+              <div *ngIf="!isMeSeller" class="w-50 mx-auto my-4">
+                <a (click)="onChangeStatus(4)"  href="javascript:void(0)" class="btn primary-btn w-100">Payment
+                  received</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="request.status > 3" class="card mb-2" >
+          <div class="card_step2">
+            <div class="w-75 mx-auto text-center">
+              <img class="mb-2" src="assets/images/eva_clock-fill-white.svg" alt="">
+              <div class="text-white text-uppercase mb-2">step 2</div>
+              <div class="text-white text-uppercase font-weight-600 f-18 mb-2">PAYMENT CONFIRMED BY SELLER</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="request.status < 4" class="card mb-2" >
+          <div class="card_step3">
+            <div class="w-75 mx-auto text-center">
+              <img class="mb-2" src="assets/images/fa-solid_handshake.svg" alt="">
+              <div class="text-gray1 text-uppercase font-weight-600 f-18 mb-2">Silver released and added to wallet</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="request.status >= 4" class="card mb-2" >
+          <div class="card_step3">
+            <div class="w-75 mx-auto text-center">
+              <img class="mb-2" src="assets/images/shakehand-white.svg" alt="">
+              <div class="text-white text-uppercase mb-2">step 3</div>
+              <div class="text-white text-uppercase font-weight-600 f-18 mb-2">Silver added to wallet</div>
+              <div class="w-50 mx-auto my-4">
+                <div class="silver-box">
+                  <div>
+                    <img class="mr-4" src="assets/images/diamond_half.png" alt="">
+                  </div>
+                  <div>
+                    <div class="text-uppercase text-green">{{currentUser.silver | silverPrice : 1}} silver</div>
+                    <div class="text-grey font-weight-normal f-15">Silver closing balance</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-gray f-15 font-weight-normal">
+                Silver not reflected in the wallet? <a href="javascript:void(0)" class="text-gold font-weight-600">Click here</a> for assistance from the LoL Silver team.
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card_aside">
+            <div class="p1">Terms of trade <span><img src="assets/images/eva_question-mark-circle-fill.svg"
+                  alt=""></span></div>
+            <div class="p2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem sagittis, odio quis aliquet elit
+                porttitor
+                massa rhoncus ultrices. In nunc sit amet enim ullamcorper faucibus et sit. Porta eget velit et quis
+                rhoncus,
+                odio ut dapibus dolor. In tempor donec malesuada vitae donec. Sed eget dictum risus lectus mi. Mi quam
+                orci. Mi quam orci.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card_chat">
+            <div class="chat_header">
+              <div class="p1">Chat with the seller</div>
+              <div class="d-flex align-items-center p2">
+                <div class="user_img mr-3">
+                  <img src="assets/images/Ellipse 24.png" alt="">
+                </div>
+                <div class="user_info">
+                  <div class="d-flex align-items-center text-grey font-weight-normal">@abhipaundet <div
+                      class="green_dot mx-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_box">
+              <div class="chat">
+                <div class="message-row">
+                  <div class="message message-recieved">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <div class="message-row">
+                  <div class="message message-sent">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <div class="message-row">
+                  <div class="message message-recieved">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <div class="message-row">
+                  <div class="message message-sent">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sent-button">
+                <div class="form-group">
+                  <div class="Input_with_icon">
+                    <input type="text" placeholder="Type your message here" class="form-control">
+                    <i><img src="assets/images/ic_baseline-attach-file.svg" alt=""></i>
+                    <div class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

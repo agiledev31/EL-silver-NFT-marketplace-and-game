@@ -1,0 +1,53 @@
+<div class="participate_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="font-weight-600">Participating teams</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Tortor montes purus platea bibendum
+                    neque elementum.
+                </p>
+            </div>
+            <div class="col-md-12 p-md-0">
+                <div class="liquid_card">
+                    <ul>
+                        <li *ngFor="let team of teams" [ngClass]="{'d-flex flex-column justify-content-center': !team}" >
+                          <div *ngIf="team; else noTeam">
+                          <div class="header_img">
+                                <img class="icons mr-3" src="assets/images/Ellipse 24.png" alt="">
+                                <p class="text-capitalize">{{team.teamName}}</p>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <div class="text-center mx-1">
+                                    <p class="p1">21</p>
+                                    <p class="p2">Games</p>
+                                </div>
+                                <div class="text-center mx-1">
+                                    <p class="p1">76%</p>
+                                    <p class="p2">Win rate</p>
+                                </div>
+                                <div class="text-center mx-1">
+                                    <p class="p1"><img src="assets/images/indian_flag.png" alt=""></p>
+                                    <p class="p2">Region</p>
+                                </div>
+                            </div>
+                            <div class="text-center text-gray">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+
+                          </div>
+                            <ng-template #noTeam>
+                              <div class="text-center py-5">
+                                <p class="p3">Waiting for a team to join!</p>
+                                <a *ngIf="!isMeAlreadyJoined" href="javascript:void(0)" (click)="onJoinClick()" class="btn btn-gold">Enroll Now</a>
+                            </div>
+                            </ng-template>
+
+                          </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

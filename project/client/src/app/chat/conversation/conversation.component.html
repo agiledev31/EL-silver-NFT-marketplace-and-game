@@ -1,0 +1,36 @@
+<div *ngIf="!isLoader" class="mesgs">
+  <div class="msg_history" #scrollMe>
+    <div *ngIf="chat.length > 0">
+      <div *ngFor="let c of chat" >
+        <div *ngIf="c.createdBy !== currentUser._id" class="incoming_msg">
+          <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>{{c.message}}</p>
+              <span class="time_date"> {{c.fromNow}}</span>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="c.createdBy === currentUser._id" class="outgoing_msg">
+          <div class="sent_msg">
+            <p>{{c.message}}</p>
+            <span class="time_date"> {{c.fromNow}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div *ngIf="chat.length == 0" class="text-center">
+      <p>Conversation with this user is Empty</p>
+    </div>
+
+  </div>
+
+  <div class="type_msg">
+    <div class="input_msg_write">
+      <input type="text" [(ngModel)]="message" class="write_msg" placeholder="Type a message" (keyup.enter)="sendMessage()" />
+      <button *ngIf="message !== ''" (click)="sendMessage()" class="msg_send_btn" type="button"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+<app-loader *ngIf="isLoader"></app-loader>

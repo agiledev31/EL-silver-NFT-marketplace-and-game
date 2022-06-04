@@ -1,0 +1,36 @@
+<div class="container mb-5">
+  <div class="row">
+    <h3 class="pl-4">Latest Release</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mt-4" *ngFor="let item of releaseArray" (click)="gotoDetails(item.id)">
+      <div class="card card-cs" >
+        <div class="apx">
+          <img src="{{item.Img}}" class="img-size" alt="">
+          <div class="link-div">
+            <span class="bg-link ml-3"  *ngFor="let link of item.links">{{link}}</span>
+
+          </div>
+        </div>
+        <div class="">
+          <h5 class="heading p-4">{{item.key}}</h5>
+        </div>
+        <div class="row mt-5 px-4">
+          <div class="col-4">
+            <button class="btn btn-beginner"> <div class="d-flex">
+              <div class="dot "></div>
+              <span>{{item.level}}</span>
+            </div>  </button>
+          </div>
+          <div class="col-4">
+            <p>{{item.date}}</p><span class="dot"></span>
+          </div>
+          <div class="col-4">
+            <i class="fas fa-clock"></i><span class="ml-2">{{item.time}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

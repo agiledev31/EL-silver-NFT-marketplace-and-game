@@ -1,0 +1,97 @@
+<div class="bg-img">
+  <div class="main-div">
+    <!-- Page content -->
+    <div class="page-content">
+
+      <!-- Main content -->
+      <div class="content-wrapper">
+        <div class="logo-fansafe justify-content-center text-center pt-3">
+          <a href="javascript:void(0)" [routerLink]="['/auth']" > <img src="assets/images/logo.png" height="60" alt=""></a>
+        </div>
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+
+          <!-- Login card -->
+          <form class="login-form form-validate"  [formGroup]="form" (ngSubmit)="onSubmit()" >
+            <div class="card mb-0 card-opacity">
+              <div class="card-body">
+                <div class="text-center mb-2">
+                  <i
+                    class="icon-reading icon-2x text-blue-400 border-blue-400 border-3 rounded-round p-3 mb-2 mt-1"></i>
+                  <h5 class="text-dark">Login to your account</h5>
+                  <span class="d-block text-muted">Your credentials</span>
+                </div>
+                <div *ngIf="error == 1" class="alert alert-danger" role="alert">
+                  E-mail or Password is invalid
+                </div>
+                <div class="form-group form-group-feedback form-group-feedback-left">
+                  <input type="text" class="form-control" name="email" formControlName="email" placeholder="Email" required="">
+                  <div class="form-control-feedback">
+                    <i class="icon-user text-muted"></i>
+                  </div>
+                   <errors [control]="f.email" [isSubmit]="isSubmit"></errors>
+                </div>
+
+                <div class="form-group form-group-feedback form-group-feedback-left">
+                  <input type="password" class="form-control" name="password" formControlName="password" placeholder="Password" required="">
+                  <div class="form-control-feedback">
+                    <i class="icon-lock2 text-muted"></i>
+                  </div>
+                   <errors [control]="f.password" [isSubmit]="isSubmit"></errors>
+                </div>
+
+                <div class="form-group d-flex align-items-center">
+                  <div class="custom-control custom-checkbox mb-0">
+                    <input type="checkbox" class="custom-control-input" id="custom_checkbox_stacked_unchecked"
+                      checked="">
+                    <label class="custom-control-label text-dark"
+                      for="custom_checkbox_stacked_unchecked">Remember</label>
+                  </div>
+
+                  <a href="javascript:void(0)"
+                  [routerLink]="['/auth/forgot-password']"  class="ml-auto">Forgot password?</a>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit"  class="btn btn-primary btn-block">Sign in
+                    <i class="icon-circle-right2 ml-2"></i></button>
+                </div>
+
+
+
+
+
+              </div>
+            </div>
+          </form>
+          <!-- /login card -->
+
+        </div>
+        <!-- /content area -->
+
+      </div>
+      <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+  </div>
+
+
+</div>
+
+<ng-template #content let-modal p>
+  <div class="modal-header bg-blue justify-content-center">
+    <h3 class="modal-title m-0"><i class="fas fa-exclamation-circle fa-lg"></i> Oops, your Account is disabled </h3>
+  </div>
+  <div class="modal-body justify-content-center  text-center px-md-4">
+   <span class="font-weight-semibold">We are sorry, that we could not log you in. </span><br>
+   <span  class="font-weight-semibold">We figured out that you have problem with you account.</span><br>
+   <span  class="font-weight-semibold">Please contact out Support Team!</span>
+   <h6 class="text-blue-400 mb-0 mt-3">Support Hotline: 0800 1234567</h6>
+   <h6 class="text-blue-400">Email: support@lolsilver.com</h6>
+  </div>
+  <div class="modal-footer justify-content-center">
+    <button type="button" aria-label="Close" class="btn btn-dark px-md-4"
+      (click)="modal.dismiss('Cross click')">Close</button>
+  </div>
+</ng-template>

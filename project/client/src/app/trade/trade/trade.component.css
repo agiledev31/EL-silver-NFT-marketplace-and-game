@@ -1,0 +1,249 @@
+/* Tournament Details */
+
+.featured_img {
+  position: relative;
+  margin: 0 0 60px;
+}
+.featured_img img{
+  width: 100%;
+}
+
+.featured_content {
+  position: absolute;
+  bottom: 30%;
+  left: 40%;
+  z-index: 10;
+  padding-top: 20px;
+  color: #fff;
+  transform: translate(0%, 0%);
+  text-align: center;
+}
+
+.input_area input {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+.input_area {
+  background: #555;
+}
+
+.input-group-prepend {
+  padding: 5px 10px;
+}
+
+.works_area {
+  font-size: 15px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.works_area strong {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 15px;
+  display: block;
+}
+
+.featured_content h2 {
+  font-size: 48px;
+  line-height: 60px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 0;
+}
+
+.drop_items_list {
+  margin: 0 0 15px;
+}
+
+.drop_items_list span {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 5px;
+}
+
+.stats_content {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 20px;
+}
+
+.stats_content h4 {
+  font-size: 25px;
+  line-height: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.stats img {
+  margin: 0 0 30px;
+}
+
+.stats_content p {
+  margin: 0;
+}
+
+.silver_txt {
+  text-align: center;
+}
+
+.silver_txt span {
+  display: block;
+  color: #28A5FF;
+  font-weight: bold;
+}
+
+.wallet_txt strong {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.works_content p {
+  font-size: 15px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+
+.wallet_txt span {
+  display: block;
+  color: #28A5FF;
+  font-weight: bold;
+}
+
+.wallet_txt strong {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.player_info h5 {
+  margin: 0;
+}
+
+.player_info span {
+  color: #FF9933;
+}
+
+.trade_area strong {
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 600;
+  margin: 0 0 25px;
+  display: block;
+}
+
+.voucher_area {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.voucher_area strong {
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 600;
+  margin: 0 0 5px;
+  display: block;
+}
+
+.silver_links {
+  margin-top: 20px;
+}
+
+.silver_links li {
+  margin: 0 0 15px;
+}
+
+.silver_links li a {
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.silver_links li a:hover {
+  color: #FF9933;
+  text-decoration: none;
+}
+
+.silver_links li a.active {
+  color: #FF9933;
+}
+
+i {
+  padding: 0px 10px;
+  vertical-align: baseline;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.trade_rate {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.trade_rate li {
+  margin-right: 20px;
+}
+
+.heading1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tab-buttons .nav-tabs {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border-bottom: 0;
+}
+
+.tab-buttons .nav-tabs li {
+  margin: 0;
+}
+
+.tab-buttons .nav-tabs li a {
+  padding: 10px 30px;
+  font-size: 14px;
+  border: 0;
+}
+
+.tab-buttons .nav-tabs li a:hover {
+  background: rgba(255, 255, 255, 0.09);
+  margin: 0;
+  border: 0;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+
+.tab-buttons .nav-tabs li a.active {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  border: 0;
+  padding: 10px 30px;
+  color: white;
+  font-size: 14px;
+
+}
+@media (max-width:768px){
+  .r-c{
+    flex-direction: column-reverse;
+  }
+}

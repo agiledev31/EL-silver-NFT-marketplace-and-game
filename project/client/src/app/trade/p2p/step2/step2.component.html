@@ -1,0 +1,176 @@
+<div class="row">
+  <div class="col-md-4 pr-md-4">
+    <div class="card mb-4">
+      <div class="card_header">
+        <p>About this trade</p>
+      </div>
+      <div class="card_content">
+        <ul>
+          <li>
+            <div class="p1">Price</div>
+            <div class="p2">17,502,754.48 <span class="text-gray">KRW / Silver</span> </div>
+          </li>
+          <li>
+            <div class="p1">Limits</div>
+            <div class="p2">300,000 - 25,865,769 KRW</div>
+          </li>
+          <li>
+            <div class="p1">Payment method</div>
+            <div class="p2">National Bank Transfer</div>
+          </li>
+          <li>
+            <div class="p1">Payment window <span><img src="assets/images/eva_question-mark-circle-fill.svg" alt=""></span></div>
+            <div class="p2">2 hours</div>
+          </li>
+          <li>
+            <div class="p1">Opening hours</div>
+            <div class="p2">Mon: 00:00-24:00</div>
+            <div class="p2">Wed: 00:00-24:00</div>
+            <div class="p2">Fri: 00:00-24:00</div>
+            <div class="p1 mb-0">(GMT -04:00) USA,Boston - 10:27 AM)</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card_header">
+        <p>About the seller</p>
+      </div>
+      <div class="card_content">
+        <ul>
+          <li>
+            <div class="p1">User</div>
+            <div class="d-flex align-items-center p2">
+              <div class="user_img mr-3">
+                <img src="assets/images/Ellipse 24.png" alt="">
+              </div>
+              <div class="user_info">
+                <div class="d-flex align-items-center p2">Abhishek Padhee <div class="green_dot mx-2"></div> <span
+                    class="p1 text-green">online</span> </div>
+                <u class="p1">@abhipaundet</u>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="p1">Location</div>
+            <div class="p2">3Seoul, South Korea</div>
+          </li>
+          <li>
+            <div class="d-flex">
+              <div class="mr-5">
+                <div class="p1">First trade</div>
+                <div class="p2">dec 16</div>
+              </div>
+              <div class="">
+                <div class="p1">Last recent trade</div>
+                <div class="p2">4 days ago</div>
+              </div>
+            </div>
+
+          </li>
+          <li>
+            <div class="p1">Trust score</div>
+            <div class="p2">100+ trades • 99% feedback score</div>
+          </li>
+          <li>
+            <div class="p1">Typical response time</div>
+            <div class="p2">1 hour</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 pl-md-4">
+    <div class="card mb-5">
+      <div class="card_silver">
+        <p>How much silver do you wish to {{p2pType == 1 ? 'buy': 'sell'}}?</p>
+        <!-- buy/sell converter -->
+        <form class="form-inline my-4">
+          <div class="input-group input_area p-0">
+            <div class="input-group-prepend">
+              <span class=""><img alt="" src="assets/images/dollar.png" /></span>
+            </div>
+            <input type="text" class="form-control px-0" placeholder="Amount"
+              aria-label="Amount (to the nearest dollar)">
+          </div>
+          <a class="swap-outline" href="javascript:void(0)"></a>
+          <div class="input-group input_area p-0">
+            <div class="input-group-prepend">
+              <span class=""><img alt="" src="assets/images/diamond_half.png" /></span>
+            </div>
+            <input type="text" class="form-control px-0" placeholder="Silver"
+              aria-label="Amount (to the nearest dollar)">
+          </div>
+        </form>
+        <!-- buy/sell converter end -->
+        <div class="p1">Add a message</div>
+        <textarea rows="2">Any other information that you wish to tell the seller.</textarea>
+        <div class="p1">Terms of trade <span><img src="assets/images/eva_question-mark-circle-fill.svg" alt=""></span></div>
+        <div class="inner_card1">
+          <div class="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem sagittis, odio quis aliquet
+            elit porttitor massa rhoncus ultrices. In nunc sit amet enim ullamcorper faucibus et sit. Porta eget velit
+            et quis rhoncus, odio ut dapibus dolor. In tempor donec malesuada vitae donec. Sed eget dictum risus lectus
+            mi. Mi quam orci, bibendum tristique sit duis suspendisse non lectus. Convallis at cum sit nulla. Fringilla
+            nunc tellus viverra quis nisl tincidunt. Tortor libero semper dui venenatis, elit. Non sit scelerisque nunc
+            amet habitasse sagittis, ornare velit vestibulum. Adipiscing ornare odio nunc urna vulputate. Cursus
+            phasellus nunc sed libero facilisis porttitor nulla.
+            Lorem cum at lectus neque at. Tellus risus aliquam quis id quam venenatis placerat.</div>
+        </div>
+        <div class="w-75 mx-auto mt-5">
+          <div class="d-flex justify-content-center">
+            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+            <label for="styled-checkbox-1" class="check-label-1"></label>
+            <label class="check-label-1 text-grey" for="">I have read and accept the seller’s terms of the
+              trade.</label>
+          </div>
+          <div class="w-50 mx-auto my-4">
+            <a href="javascript:void(o)" (click)="openTrade()"   class="btn primary-btn w-100">Open a trade</a>
+          </div>
+          <div class="text-gray">
+           <span class="text-grey font-weight-600">Note:</span> Make sure you are ready to make the payment within the mentioned payment window time after clicking on
+            ‘Open a trade’. If the payment is not made within the payment window, the transaction will be considered
+            null.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card_steps">
+        <ul>
+          <li>
+            <div class="d-flex">
+              <div class="step_img"></div>
+              <div class="p1">Steps</div>
+            </div>
+          </li>
+          <li>
+            <div class="d-flex">
+              <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+              <div class="p2">Read the trade details carefully. If any of the terms are not favourable, it is advisable
+                to go back and find a trade that you are comfortable with.</div>
+            </div>
+          </li>
+          <li>
+            <div class="d-flex">
+              <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+              <div class="p2">Enter the amount of Silver or the price worth of silver that you would like to purchase
+                from the seller and optionally add a message.</div>
+            </div>
+          </li>
+          <li>
+            <div class="d-flex">
+              <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+              <div class="p2">Read the full terms of trade set by the seller before opening a trade.</div>
+            </div>
+          </li>
+          <li>
+            <div class="d-flex">
+              <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+              <div class="p2">When you’re ready, click on open a trade!</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

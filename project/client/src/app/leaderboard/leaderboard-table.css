@@ -1,0 +1,277 @@
+/* Filter By */
+
+.filters_area {
+    padding: 0 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.filter_by > button {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 43px 10px 19px;
+    color: #fff;
+    position: relative;
+    margin: 0 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+}
+
+.filter_by > span {
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.filter_by > button::after {
+    margin: 0;
+    content: "";
+    background: url(/assets/images/drop_down.png);
+    position: absolute;
+    right: 5px;
+    width: 15px;
+    height: 10px;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translate(0px, -40%);
+    border: none;
+    margin-right: 13px;
+}
+
+.sort_by {
+    position: relative;
+    padding: 10px 20px 10px 40px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 7px;
+}
+
+.sort_by:before {
+    position: absolute;
+    background: url(/assets/images/search_icon.png);
+    width: 50px;
+    height: 30px;
+    content: "";
+    background-repeat: no-repeat;
+    left: 0;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+
+.sort_by>button {
+    color: #fff;
+    padding: 7px 5px 10px 3px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.sort_by>button::after {
+    margin: 0;
+    content: "";
+    background: url(/assets/images/drop_down.png);
+    position: absolute;
+    right: 10px;
+    width: 15px;
+    height: 10px;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translate(0px, -40%);
+    border: none;
+}
+
+/** New Accordion */
+
+::ng-deep .btn-link:hover {
+    text-decoration: none;
+}
+
+::ng-deep .btn {
+    text-align: left;
+    padding: 0;
+}
+
+::ng-deep .card-header button {
+    width: 100%;
+    border: 0;
+}
+
+::ng-deep .accordion>.card {
+    background-color: inherit;
+    border: 0;
+}
+
+::ng-deep .accordion>.card {
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 8px !important;
+    margin-bottom: 5px;
+    padding: 0;
+    border: 0;
+}
+
+::ng-deep .accordion>.card>.card-header {
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    margin: 0px;
+    padding: 0;
+}
+
+::ng-deep .accordion>.card>.card-body {
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+}
+
+.custom-table .head {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .3rem 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px 8px 0px 0px;
+    color: rgba(255, 255, 255, 0.87);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.custom-table .body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .3rem 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.custom-table .custom-td {
+    padding: 0 1rem;
+}
+
+.custom-table .body .custom-td {
+    padding: .5rem 1rem;
+}
+.pro-img{
+    height: 60px;
+    width: 60px;
+}
+.pro-img img{
+    height: 100%;
+    width: 100%;
+}
+.w-10{
+    width: 10%;
+}
+.w-15{
+    width: 15%;
+}
+.w-30{
+    width: 30%;
+}
+.w-20{
+  width: 20%;
+ }
+.w-24{
+  width: 25%;
+}
+.w-35{
+    width: 35%;
+}
+.text-align-left{
+  text-align: left;
+}
+.Input_with_icon{
+    position: relative;
+}
+.Input_with_icon .form-control {
+    padding-left: 3rem;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 7px;
+    color: rgba(255, 255, 255, 0.6);
+    border: 0;
+}
+.Input_with_icon .form-control::placeholder {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+.Input_with_icon img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: .875rem;
+    padding-right: .875rem;
+    line-height: calc(1.5385em + .875rem + 2px);
+    width: 48px;
+}
+
+.high_progress {
+    background: rgba(232, 49, 81, 1);
+}
+
+.low_progress {
+    background: rgba(40, 165, 255, 1);
+}
+
+.low_progress span{
+    text-align: left;
+    margin-left: 5px;
+}
+
+.high_progress span{
+    text-align: right;
+    margin-right: 5px;
+}
+
+.progress {
+    background: inherit;
+    height: 1.2rem;
+    width: 85%;
+}
+
+@media (max-width:768px){
+    .leader_list {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .leaderboards li {
+        display: block;
+        margin: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .leaders_boxes img {
+        width: 65px;
+    }
+    .w-35{
+        display: none;
+        width: 0;
+    }
+    .pxx-0{
+        padding: 0;
+    }
+    .w-10{
+        width: 15% !important;
+    }
+    .w-24{
+        width: 25% !important;
+    }
+    .w-30{
+        width: 40%;
+    }
+    .w-15{
+        width: 20%;
+    }
+    .custom-table .custom-td{
+        padding: 7px .2rem !important;
+        font-size: 12px;
+
+    }
+}

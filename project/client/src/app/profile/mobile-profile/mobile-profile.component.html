@@ -1,0 +1,52 @@
+<div class="container pt-5">
+  <div class="row">
+      <div class="profile-img">
+          <img *ngIf="currentUser" alt="" class="pointer rounded-circle" [src]="currentUser.image | image" />
+      </div>
+  </div>
+  <div class="text-center" *ngIf="currentUser">
+      <p class="fs-24 text-white mt-3 rgba8 mb-2" *ngIf="currentUser">@ {{currentUser.username}} </p>
+      <div class="d-flex justify-content-center" *ngIf="currentUser">
+          <p class="fs-16 rgba8 mb-2">{{currentUser.fullName}}</p>
+      </div>
+
+  </div>
+</div>
+<div class="bg-blue text-white mt-5">
+  <div class="row py-2">
+      <div class="col-4 text-center">
+          <p class="fs-15">Rank</p>
+          <p class="fs-18 font-weight-600 mb-2">{{rank}}</p>
+      </div>
+      <div class="col-4 text-center">
+          <p class="fs-15">LPLT</p>
+          <p class="fs-18 font-weight-600 mb-2">{{totalLaplataEarned}}</p>
+      </div>
+      <div class="col-4 text-center">
+          <p class="fs-15">Silver</p>
+          <p class="fs-18 font-weight-600 mb-2">{{currentUser?currentUser.silver:0 }}g</p>
+      </div>
+  </div>
+</div>
+  <ul ngbNav #nav="ngbNav" class="nav-tabs profile_nav_tab mt-4">
+    <li ngbNavItem>
+      <a ngbNavLink>stats</a>
+      <ng-template ngbNavContent>
+        <app-profile></app-profile>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>games</a>
+      <ng-template ngbNavContent>
+        <app-recent></app-recent>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>Friends</a>
+      <ng-template ngbNavContent>
+        <app-friends></app-friends>
+
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>

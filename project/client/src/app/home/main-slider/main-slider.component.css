@@ -1,0 +1,220 @@
+.mineslider{
+  padding-top: 168px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-image: url('/assets/images/main-slider1.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mineslider .heading{
+  font-family: Rift;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 72px;
+  text-transform: capitalize;
+  text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.14);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.mineslider .heading span{
+  color: #FF9933;
+}
+
+.mineslider .subheading{
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 40px;
+}
+
+.mineslider button {
+  background: #28A5FF;
+  border-radius: 8px;
+  padding: 8px 46px;
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-bottom: 56px;
+}
+
+.mineslider .banner{
+  background: linear-gradient(270deg, rgba(255, 153, 51, 0.3) 0%, rgba(255, 255, 255, 0.072) 100%);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1016px;
+}
+
+.mineslider .banner2{
+  background: linear-gradient(270deg,rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.0) 100%);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1016px;
+  padding:65px;
+}
+
+.mineslider .banner2  h2 {
+  font-family: Rift;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+
+.mineslider .banner2 {
+  font-family: Barlow;
+  font-style: normal;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mineslider .banner .content{
+  padding: 24px 45px;
+  background-image: url('../../../assets/images/Mask-Group.svg');
+  background-size: auto 100%;
+  background-position: right top;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mineslider .banner .left_part {
+  max-width: 620px;
+  padding: 10px;
+}
+
+.mineslider .banner .left_part h2 {
+  font-family: Rift;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-bottom: 17px;
+}
+
+.mineslider .banner .left_part p {
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 17px;
+}
+
+.mineslider .banner .left_part a {
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #28A5FF;
+  text-decoration: none;
+}
+
+.mineslider .banner .left_part a>img{
+  margin-left: 12px;
+}
+
+.mineslider .banner .right_part {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.mineslider .banner .right_part .earn_upto {
+  padding: 4px 9px;
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(50px);
+  font-family: Barlow;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.mineslider .banner .right_part .LAPLATA {
+  padding: 2px 9px;
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(50px);
+  font-family: Rift;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+  width: 163px;
+}
+
+.mineslider .banner .right_part .LAPLATA img {
+  margin-right: 12px;
+}
+
+.mineslider .banner .right_part .per_day_in_Rewards {
+  padding: 4px 9px;
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(50px);
+  font-family: Barlow;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+@media(max-width:680px){
+  .mineslider .banner .content {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .mineslider .banner2 .content {
+    flex-direction: column;
+  }
+
+  .mineslider .banner2{
+    padding:65px 0px;
+  }
+
+  .mineslider .banner .right_part .LAPLATA {
+    width: 100%;
+  }
+
+  .mineslider .banner .right_part .earn_upto {
+    width: 100%;
+  }
+
+  .mineslider .banner .right_part .per_day_in_Rewards {
+    width: 100%;
+  }
+}

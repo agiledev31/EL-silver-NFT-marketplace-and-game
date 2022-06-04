@@ -1,0 +1,193 @@
+<div class="lolchallenge_page" style="margin-bottom: 100px;">
+  <form [formGroup]="form" (ngSubmit)="onstart()">
+
+    <div class="mb-5 d-flex mobile-li k justify-content-around" style="background-color: #2e2e2e; border-radius:5px">
+    <div>
+     LPLT Rate :
+    <span style="color:rgb(14, 203, 129)">{{totalMiningRate}}%, {{mylaplatasettings.perDayDistribution?mylaplatasettings.perDayDistribution:0}} LPLT</span>
+    </div>
+    <div >
+     Winning Incentive Rate :
+    <span style="color:rgb(14, 203, 129)">{{mylaplatasettings.incentive?mylaplatasettings.incentive:0}}%</span>
+    </div>
+    <div >
+     Last Updated :
+    <span class="complete">{{formatTime(mylaplatasettings.updatedAt)}}...</span>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="name">LOL Username</label>
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input type="text"  placeholder="LolGamer37" class="form-control" formControlName="clientId">
+            <i class="fas fa-user"></i>
+            <errors [control]="f.clientId" [isSubmit]="isSubmit"></errors>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="name">Region / Location</label>
+        <div class="selectors_area form-group">
+          <ng-select [items]="constant.regions" class="white"  [searchable]="false" formControlName="country"  bindLabel="name" bindValue="id" placeholder="Select Region">
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+             {{item.name}}
+            </ng-template>
+          </ng-select>
+          <errors [control]="f.country" [isSubmit]="isSubmit"></errors>
+        </div>
+      </div>
+    </div>
+    <br>
+   <!-- <div class="font-weight-normal" *ngIf="nextChallengeRemainingTime">You can participate in another challenge after <span class="timer">{{nextChallengeRemainingTime}}</span>
+    </div> -->
+    <div class="row">
+      <div class="col-md-3" *ngIf="!isChallengeStarted && !rewardAvailable">
+        <submit [isLoading]="isLoading" *ngIf="currentUser" [label]="'Start Challenge!'"  classes="btn primary-btn w-100" [remainingTime]="remainingTime"></submit>
+        <submit *ngIf="!currentUser" [isLoading]="isLoading"  [label]="'LOGIN To Start Challenge!'" classes="btn primary-btn w-100" routerLink="/auth/login">PLEASE LOGIN TO VIEW MORE DETAILS</submit>
+      </div>
+    </div>
+  </form>
+  <div class="container" *ngIf="rewardAvailable" >
+    <div class="row" >
+      <div class="card works_area">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="py-2 px-3 ml-auto">
+                <span class="reward_card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="566" viewBox="0 0 566 566">
+                  <g id="Group_8414" data-name="Group 8414" transform="translate(22003 13471)">
+                    <g id="Rectangle_4069" data-name="Rectangle 4069" transform="translate(-22003 -13471)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+                      <rect width="566" height="566" stroke="none"/>
+                      <rect x="0.5" y="0.5" width="565" height="565" fill="none"/>
+                    </g>
+                    <g id="fire" transform="translate(-21915.85 -13435.5)">
+                      <g id="Group_8412" data-name="Group 8412" transform="translate(0)">
+                        <path id="Path_5579" data-name="Path 5579" d="M139.615,154.2c88.176-53.646,46.827-129.364,45.052-132.512A14.472,14.472,0,0,1,197.215,0C242.6,0,278.147,12.9,302.855,38.331c42.221,43.461,40.262,111.1,39.426,139.989-.093,3.2-.173,5.965-.173,8.018,0,21.447-3.441,41.246-6.477,58.715-1.957,11.257-3.646,20.979-3.946,28.622-.321,8.182,1.172,10.058,1.236,10.133.213.253,1.989,1.2,6.789,1.2a16.23,16.23,0,0,0,13.086-5.8c13.967-15.661,14.933-58.425,12.262-81.69a14.471,14.471,0,0,1,14.375-16.144c37.576,0,65.654,61.449,65.654,116.391a191.027,191.027,0,0,1-15.44,75.2,199.6,199.6,0,0,1-41.982,62.422C350.275,473.183,300.979,494,248.854,494A196.752,196.752,0,0,1,52.611,297.762C52.612,231.263,104.642,175.471,139.615,154.2ZM248.854,465.055c90.679,0,167.287-76.61,167.287-167.292,0-22.053-5.262-45.2-14.437-63.511a87.294,87.294,0,0,0-6.512-11.038c-.242,23.877-4.024,56.426-20.769,75.231a45.282,45.282,0,0,1-34.714,15.505c-12.777,0-22.515-3.873-28.938-11.511-12.01-14.278-8.324-35.489-3.658-62.343,2.836-16.316,6.05-34.809,6.05-53.758,0-2.473.086-5.43.184-8.856.792-27.361,2.441-84.3-31.254-118.981-15.126-15.572-36.244-25.048-62.961-28.291a132.169,132.169,0,0,1,5.717,36.964c.222,31.365-11.775,76.212-70.19,111.751-28.263,17.194-73.1,64.662-73.1,118.839C81.557,390.008,156.606,465.055,248.854,465.055Z" transform="translate(-52.611 0)" fill="#f93"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                YOUR REWARDS:</span>  <span>&nbsp; {{rewardedLaplata}} </span> </div>
+            </div>
+            <div>
+              <button (click)="claimReward()" [disabled]="!rewardAvailable" class="btn primary-btn py-2 px-3 ml-auto"> Claim Reward </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+  <div class="container mt-3" *ngIf="isChallengeStarted">
+    <div class="row">
+      <div class="card works_area">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <strong class="font-weight-500 text-white font-size-20"> <span class="final"
+                  *ngIf="currentUser.fullName">{{currentUser.fullName}}'s</span> Challenge </strong>
+              <div class="text-gray font-weight-normal">{{moment(now).format('MMMM Do YYYY')}}</div>
+            </div>
+            <div class="final" style="cursor: pointer; " (click)='refreshGame()' *ngIf="isChallengeStarted">
+              <div class="row" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20">
+                  <path
+                    d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z" />
+                </svg>
+                <span style="font-size:20px">Update</span>
+                <div *ngIf="refreshLoader" class="lds-dual-ring"></div>
+              </div>
+              <div class="row" style="padding-bottom: 15px;">
+                  <span class="text-gray font-weight-light" style="font-size: 16;">Last Updated: {{  time_ago(lastRefreshTime) }}</span>
+              </div>
+            </div>
+            <div>
+              <button (click)='onend()' [disabled]="!isChallengeStarted" class="btn primary-btn py-2 px-3 ml-auto">
+                End Challenge
+              </button>
+            </div>
+          </div>
+
+          <div class="row  mt-4">
+            <div class="col-lg-6">
+              <span *ngIf="gameStatistics.total">  Game History</span>
+             <span *ngIf="!gameStatistics.total">  PLAYER STATS</span>
+            </div>
+            <div class="col-lg-6">
+              <span class="text-right" style="float: right;">
+              Challenge Ends in
+            </span>
+            </div>
+
+            <div class="row"></div>
+
+          </div>
+          <div class="row  mt-1">
+            <div class="col-lg-2">
+              <div class="text-gray font-size-18">Total Games </div>
+              <div class="game_scrore"> {{gameStatistics.total || '-'}} </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="text-gray font-size-18"> Average KDA </div>
+              <div class="game_scrore"> {{gameStatistics.averageKDA?gameStatistics.averageKDA.toFixed(2):'-'}} </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="text-gray font-size-18"> Victories </div>
+              <div class="game_scrore"> {{gameStatistics.victories || '-'}} </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="text-gray font-size-18"> Defeats </div>
+              <div class="game_scrore"> {{gameStatistics.defeats || '-'}} </div>
+            </div>
+            <div class="ml-auto text-right col-lg-4 game_scrore " *ngIf="remainingTime">
+              <h1>{{remainingTime}}</h1>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar"
+                  [style.width.%]="playTime < 100 ? playTime : 100">
+                </div>
+              </div>
+            </div>
+          </div>
+          <strong  *ngIf="!gameStatistics.total" class="text-gray font-weight-500 text-white mt-4"> No game history to show yet. </strong>
+
+          <div class="mb-5 mt-5 ml-auto mr-auto w-110 align-items-center" *ngIf="gameData?.length > 0">
+            <div class="custom-table">
+              <ng-container *ngFor="let game of gameData; let i = index ">
+                <div class="custom-body">
+                  <div class="col-lg-2 custom-td">
+                    <div class="align-items-center">
+                      <span>{{game.GameType}}</span><br />
+                      <span class="text-gray font-weight-semibold f-13 ml-auto"> {{game.GameLength}}</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 custom-td">
+                  <span class="align-items-center defeat " *ngIf="game.result == 'Defeat'; " style="text-transform: uppercase ">{{game.result }}</span>
+                  <span class="align-items-center final " *ngIf="game.result == 'Victory';" style="text-transform: uppercase ">{{game.result }}</span>
+                  </div>
+                  <div class="col-lg-2 custom-td ">
+                  <span class="align-items-center text-gray font-weight-normal ml-2">{{game.KDA}} KDA </span>
+                  </div>
+                  <div class="col-lg-2 custom-td">
+                    <span class="align-items-center text-gray font-weight-normal ml-2"> Champion </span> <br />
+                    <span>{{game.champion}}</span>
+                  </div>
+                  <div class="col-lg-2 custom-td">
+                    <span class="align-items-center text-gray font-weight-normal ml-2"> Date </span> <br />
+                    <span class="align-items-center">{{game.date | date: "dd/MM/yyyy" }}</span>
+                  </div>
+                  <div class="col-lg-2 custom-td">
+                    <span class="align-items-center text-gray font-weight-normal ml-2"> Time </span> <br />
+                    <span class="align-items-center">{{game.time}}</span>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-claim-reward #contents [reward]="rewardedLaplata" (rewardClaimed)="rewardClaimed($event)" ></app-claim-reward>
+</div>

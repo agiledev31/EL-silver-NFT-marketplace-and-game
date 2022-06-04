@@ -1,0 +1,14 @@
+<div id="google_translate_element"  >
+    <div style="color:red; margin-bottom:-20px;">
+      </div>
+</div>
+<div class="abx">
+  <div class="dropdown mx-4 ">
+    <button class="dropbtn"> <img src="/assets/images/f.png" alt=""></button>
+    <div class="dropdown-content">
+      <a *ngFor="let item of languages" href="#" class="flag_link" data-lang="{{item.code}}" (click)="SelectValue(item.code)">{{item.name}}</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

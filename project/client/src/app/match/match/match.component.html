@@ -1,0 +1,315 @@
+<div class="p-md-4 mb-30">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="top_heading">
+        <div class="text-blue">Best of 1 game</div>
+        <h1 *ngIf="matchType == 1">ranked solo match</h1>
+        <h1 *ngIf="matchType == 2">5V5 match</h1>
+        <h1 *ngIf="matchType == 3">ESPORTS TOURNAMENT</h1>
+        <p>Summoner’s Rift</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="team_a">
+        <p class="teams">Team A</p>
+        <ul *ngIf="!isLoader" class="friends">
+          <li *ngFor="let p of this.match?.teamA">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <!-- <span class="friends_img"><img src="assets/images/profile_img.png" alt=""></span> -->
+                <rounded-image [src]="p?.player?.image | image"></rounded-image>
+
+              </div>
+              <div class="friends_info w-100">
+                <div class="ready_logo">Ready</div>
+                <div class="inner_name">
+                  <div>
+                    <span class="friends_name">@ {{ p?.player?.username}}</span>
+                    <span class="online_status">Level 42</span>
+                  </div>
+                  <div class="ml-auto top"> {{p?.playerType |PlayerType}} </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul *ngIf="isLoader" class="friends">
+
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="team_vs">
+        <p class="teams">VS.</p>
+        <div class="vs_card">
+          <div class="top_content">
+            <p class="p1" *ngIf="step === 4">Who won the game?</p>
+            <div *ngIf="step === 1 || step === 2 ">
+              <p class="p1">time to connect</p>
+              <h1> {{timer*1000 | date : 'mm:ss'}} </h1>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success gold_progress" role="progressbar"
+                  [style.width.%]="100 - timer">
+                </div>
+              </div>
+            </div>
+            <div *ngIf="step === 3">
+              <p class="p1">Gameplay time</p>
+              <h1>{{playTime*1000 | date : 'mm:ss'}}</h1>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success gold_progress" role="progressbar"
+                  [style.width.%]="playTime > 100 ? 100 : playTime">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mid_content">
+            <p class="p1" *ngIf="step == 1">Create a custom room on LoL using these credentials then click on ‘Room is
+              Ready’.</p>
+            <p class="p1" *ngIf="step == 2">The Lol room is ready!</p>
+            <p class="p1" *ngIf="step == 3">The LoL match has begun!</p>
+            <p class="p1" *ngIf="step == 4">Answering incorrectly may lead to you being fined in silver or restricted
+              from future games.</p>
+            <div *ngIf="step === 4" class="d-flex flex-row justify-content-center">
+              <div class="bottom_content">
+                <a href="javascript:void(0)" (click)='changeWinnerTeam(1)'
+                  [ngClass]="(winner == 1)?'btn btn-active':'btn btn-disabled'">Team A</a>
+                <a href="javascript:void(0)" (click)='changeWinnerTeam(2)'
+                  [ngClass]="(winner == 2)?'btn btn-active':'btn btn-disabled'">Team B</a>
+              </div>
+            </div>
+
+            <div *ngIf="step == 1 || step == 2 " class="inner_card">
+              <div class="name">
+                <p> {{match?.roomName}} </p>
+                <h6>Room name</h6>
+              </div>
+              <div class="password">
+                <p> {{match?.roomPassword}} </p>
+                <h6>password</h6>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="bottom_content">
+              <button *ngIf="step === 4" (click)='submitWinner()' class="btn btn-active">Submit</button>
+              <button *ngIf="step === 1" (click)="stepChange(2)" [disabled]="isLoader" class="btn btn-active">Room is
+                Ready</button>
+              <button *ngIf="step === 2 || step === 3" [disabled]="step == 2" class="btn btn-disabled">Report
+                User</button>
+              <button *ngIf="step === 3 && !isMatchStarted" (click)='playTimer();isMatchStarted = true'
+                class="btn btn-active">Start</button>
+              <button *ngIf="step === 3" (click)="stepChange(4)" class="btn btn-outline">End Game</button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="team_b">
+        <p class="teams">Team B</p>
+        <ul *ngIf="!isLoader" class="friends">
+
+          <li *ngFor="let p of this.match?.teamB">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <rounded-image [src]="p?.player?.image | image"></rounded-image>
+                <!-- <span class="friends_img"><img src="assets/images/profile_img.png" alt=""></span> -->
+              </div>
+              <div class="friends_info w-100">
+                <div class="ready_logo">Ready</div>
+                <div class="inner_name">
+                  <div>
+                    <span class="friends_name">@{{ p?.player?.username}}</span>
+                    <span class="online_status">Level 42</span>
+                  </div>
+                  <div class="ml-auto top"> {{p?.playerType |PlayerType}} </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul *ngIf="isLoader" class="friends">
+
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="waiting_player">
+            <div class="player_1">
+              <div class="w-25 mr-2 text-center">
+                <span class="friends_img"><img src="assets/images/player_icon_empty.png" alt=""></span>
+              </div>
+              <div class="friends_info w-100">
+                <div class="inner_name">
+                  <div>
+                    <span class="online_status">Waiting for player...</span>
+                  </div>
+                  <div class="ml-auto top">TOP</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="footer">
+  <div class="d-flex align-items-center">
+    <div class="form-group">
+      <div class="Input_with_icon">
+        <input type="text" placeholder="Type your message here" class="form-control">
+        <i class="fas fa-comment-alt"></i>
+        <div class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+      </div>
+    </div>
+    <div class="footer-btn ml-auto">
+      <a href="javascript:void(0)" class="footer_button mr-3"><img class="mr-3" src="assets/images/game_rule.png"
+          alt=""> Game Rules</a>
+      <a href="javascript:void(0)" (click)="exit()" class="footer_button"><img class="mr-3"
+          src="assets/images/exit_icon.png" alt="">
+        Exit Lobby</a>
+    </div>
+  </div>
+</div>
+<app-match-results (home)="goToHome()" (playAgain)="goToMode()"></app-match-results>

@@ -1,0 +1,46 @@
+.post .p1{
+  font-size: 24px;
+  font-weight: 600;
+}
+.btn_primary{
+  background: #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 30px;
+}
+.btn_outline_primary{
+  border: 1px solid #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+}
+.card{
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  border: 0;
+}
+.alert_card{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.card_steps .step_img{
+  height: 30px;
+  width: 20px;
+  margin-right: 20px;
+}
+.card_steps ul li{
+  margin-bottom: 15px;
+}
+.card_steps ul li .p1{
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.card_steps ul li .p2{
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 300;
+  font-size: 18px;
+}

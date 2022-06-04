@@ -1,0 +1,25 @@
+<div><span class="font-weight-600">SILVER</span><span class="small text-gray"> | Main Market</span></div>
+<div class="d-flex my-2">
+  <span *ngIf="silver; else loader" class="heading1 text-gold"> {{(silver.price/32.151).toFixed(3)}} </span>
+  <ng-template #loader>
+    <app-spinner #loader [sizeClass]="'spinner-border-sm'"></app-spinner>
+  </ng-template>
+  &nbsp;
+  <span class="text-blue small font-weight-600">
+    <!-- <span><i class="fas fa-arrow-up"></i> +1.02% (5232)</span> -->
+    <span>$ per gm</span>
+  </span>
+</div>
+<ul class="trade_rate mb-0">
+  <li class="text-gray">High
+    <span *ngIf="silver; else high_price" class="text-green"> {{(silver.high_price/32.151).toFixed(3)}} $</span> <ng-template #high_price > <app-spinner [color]="'text-green'" [sizeClass]="'spinner-border-sm'"></app-spinner> </ng-template>
+  </li>
+  <li class="text-gray">Low
+    <span *ngIf="silver; else low_price" class="text-red"> {{(silver.low_price/32.151).toFixed(3)}} $</span> <ng-template #low_price > <app-spinner [color]="'text-red'" [sizeClass]="'spinner-border-sm'"></app-spinner> </ng-template>
+  </li>
+  <li class="text-gray">Close
+    <span *ngIf="silver; else prev_close_price" class="text-white"> {{(silver.prev_close_price/32.151).toFixed(3)}} $</span> <ng-template #prev_close_price > <app-spinner [color]="'text-white'" [sizeClass]="'spinner-border-sm'"></app-spinner> </ng-template>
+  </li>
+  <!-- <li class="text-gray">Vol<span class="text-white"> 54,027ETH</span></li>
+  <li class="text-gray">Vol<span class="text-white"> 27.14BKRW</span></li> -->
+</ul>

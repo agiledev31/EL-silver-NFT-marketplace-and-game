@@ -1,0 +1,171 @@
+<div class="accordion_area mb-5">
+  <div class="container">
+    <div class="challenge_line">
+      <ul class="d-flex  mobile-li challenge_links mt-4 mb-4">
+        <li class="mobile-item">
+          <span class="text-gray">Challenges Played</span>
+          <span>{{
+            this.statistics?.challengesPlayed == null
+            ? 0
+            : this.statistics?.challengesPlayed
+            }}</span>
+        </li>
+        <li class="mobile-item">
+          <span class="text-gray">Total Games Played </span>
+          <span>{{
+            this.statistics?.gamesPlayed == null
+            ? 0
+            : this.statistics?.gamesPlayed
+            }}</span>
+        </li>
+        <li class="mobile-item">
+          <span class="text-gray">Total LAPLATA Mined</span>
+          <span>{{
+            this.statistics?.totalLaplataEarned.toFixed(4) == null
+            ? 0
+            : this.statistics?.totalLaplataEarned.toFixed(4)
+            }}
+            LPLT</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="custom-table">
+      <div class="head">
+        <div class="col-lg-1 custom-td"><span>Date</span></div>
+        <div class="col-lg-2 custom-td">Time</div>
+        <div class="col-lg-1 custom-td">Duration</div>
+        <div class="col-lg-2 custom-td">Avg. KDA</div>
+        <div class="col-lg-2 custom-td">Total games</div>
+        <div class="col-lg-1 custom-td">Victories</div>
+        <div class="col-lg-1 custom-td">Defeats</div>
+        <div class="col-lg-2 custom-td">LAPLATA</div>
+      </div>
+      <div class="history__not__Found-msg my-5"
+           *ngIf="!this.statistics?.challengesPlayed">
+        <span *ngIf="currentUser"
+              class="history__not__Found-msg">PLAY GAMES TO LOAD HISTORY</span>
+        <button *ngIf="!currentUser"
+                class="btn primary-btn mb-4"
+                routerLink="/auth/login">
+          PLEASE LOGIN TO VIEW MORE DETAILS
+        </button>
+      </div>
+    </div>
+    <ngb-accordion [closeOthers]="true">
+      <ngb-panel *ngFor="let x of history; let indexOfElement = index"
+                 id="static-{{ indexOfElement }}">
+        <ng-template ngbPanelTitle>
+          <div class="custom-table">
+            <div class="body">
+              <div class="col-lg-1 custom-td">
+                <span class="align-items-center">{{
+                  x.createdAt | date: "shortDate"
+                  }}</span>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center">{{
+                  x.createdAt | date: "shortTime"
+                  }}</span>
+              </div>
+              <div class="col-lg-1 custom-td">
+                <span class="align-items-center">{{ avgGameLength(x) }}</span>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center text-gray font-weight-normal ml-2">
+                  {{ x.gameStatistics?.averageKDA | number: "1.2-2" }}
+                </span>
+                <!--  <br /> <span class="align-items-center">6 / 4 / 12</span> -->
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center">{{
+                  x.gameStatistics?.total
+                  }}</span>
+              </div>
+              <div class="col-lg-1 custom-td">
+                <span class="align-items-center">{{
+                  x.gameStatistics?.victories
+                  }}</span>
+              </div>
+              <div class="col-lg-1 custom-td">
+                <span class="align-items-center">{{
+                  x.gameStatistics?.defeats
+                  }}</span>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <div class="d-flex">
+                  <div class="d-flex ml-auto align-items-center">
+                    <span class="align-items-center">{{ x.rewardedLaplata }} LPLT</span>
+                  </div>
+                  <div class="ml-auto">
+                    <img alt=""
+                         src="assets/images/drop_down.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div class="custom-table">
+            <div class="custom-body"
+                 *ngFor="let g of x.games">
+              <div class="col-lg-2 custom-td">
+                <div class="align-items-center">
+                  <span>{{ g.gameType }}</span>
+                </div>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <div class="align-items-center">
+                  <span class="text-gray font-weight-normal small ml-2">{{
+                    g.gameDuration
+                    }}</span>
+                </div>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center final"
+                      *ngIf="g.result == 'Victory'">{{ g.result }}</span>
+                <span class="align-items-center defeat"
+                      *ngIf="g.result == 'Defeat'">{{ g.result }}</span>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center text-gray font-weight-normal ml-2">
+                  {{ g.KDA }} KDA
+                </span>
+                <br />
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center text-gray font-weight-normal ml-2">
+                  Champion
+                </span>
+                <br />
+                <span>{{ g.champion }}</span>
+              </div>
+              <div class="col-lg-2 custom-td">
+                <span class="align-items-center text-gray font-weight-normal ml-2">
+                  Time
+                </span>
+                <br />
+                <span class="align-items-center">{{
+                  formatTime(g.gameTimeStamp)
+                  }}</span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+  <div class="row mx-auto">
+    <div class="col-md-12">
+      <ngb-pagination class="d-flex justify-content-center"
+                      style="margin-top: 1rem"
+                      [collectionSize]="totalDocs"
+                      [pageSize]="limit"
+                      [(page)]="page"
+                      (pageChange)="onPageChange($event)">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>

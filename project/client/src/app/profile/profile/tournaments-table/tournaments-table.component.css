@@ -1,0 +1,155 @@
+::ng-deep .tournaments_accordion .card {
+    border: unset;
+}
+
+.tournaments_accordion .status_badge{
+    width: 100px;
+}
+
+.orange_text {
+    color: #FF9933 !important;
+}
+
+.enroll_now {
+    width: 90px;
+    padding: 10px !important;
+    border: none;
+}
+
+.teams_ranked strong {
+    color: rgba(40, 165, 255, 1);
+}
+
+.blue_text {
+    color: rgba(40, 165, 255, 1) !important;
+}
+
+table {
+color: #000;
+}
+
+table th span {
+    display: block;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+table strong {
+    display: block;
+    font-weight: 600;
+}
+
+table tr th {
+    color: #fff;
+}
+
+.upcoming {
+    background-color: rgba(255, 153, 51, 0.3);
+}
+
+.finished {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.status_badge {
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff!important;
+}
+
+.f-20 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.filters .inner_filter {
+    margin: 10px 20px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 14px;
+}
+
+.filters .active {
+    color: #28A5FF;
+    border-bottom: 1px solid#28A5FF;
+    cursor: pointer;
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /* even columns width , fix width of table too*/
+}
+
+.tournaments_nav_tab{
+    background-color: inherit;
+    border: none;
+    margin: 0 0 30px;
+    justify-content: flex-end !important;
+}
+
+.tournaments_nav_tab li:last-child{
+    padding-right: 0;
+}
+
+.tournaments_nav_tab li{
+    padding: 10px 50px;
+}
+
+.tournaments_nav_tab li a{
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.tournaments_nav_tab li a:hover{
+    color: #28A5FF;
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid #28A5FF;
+}
+
+.tournaments_nav_tab .nav-link.active {
+    color: #28A5FF;
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid #28A5FF;
+}
+
+.no-record-found {
+  margin: 0 0 10px;
+  border-radius: 5px;
+  padding: .75rem .5rem;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  place-content: center;
+  font-size: 25px;
+}
+@media screen and (max-width:600px) {
+  .not-flex {
+    display: contents !important;
+  }
+   .mobile-li {
+     padding: 10px 22px !important;
+   }
+   .mobile-h {
+    text-align: center;
+    margin-top: 2rem;
+
+   }
+}

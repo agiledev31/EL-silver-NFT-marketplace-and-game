@@ -1,0 +1,46 @@
+<div>
+  <div class="mineslider">
+    <h1 class="heading">play as usual, <span>mine lplt</span></h1>
+    <p class="subheading">
+      Becoming The LAPLATA'S Contributor By Offering Your Game Stats Only.<Br />
+      All Users Can Become A Professional Gamer In This Matchmaking Colosseum For
+      E-Sports!
+    </p>
+    <button *ngIf="!currentUser" class="btn" routerLink="/auth/signup">
+      Sign Up
+    </button>
+    <button *ngIf="currentUser" class="btn" routerLink="/auth/signup">
+      DASHBOARD
+    </button>
+    <div class="banner">
+      <div class="content">
+        <div class="left_part">
+          <h2>Try out the LOL Challenge!</h2>
+          <p>
+            Mine LAPLATA while playing League of Legends.<br />
+            Just Start Lol Challenge During Your Gameplay. Be LPLT's Contributors easily!
+          </p>
+          <a href="/mode/lolchallenge"
+            >Go to LOL Challenges<img src="../../../assets/images/next.svg"
+          /></a>
+        </div>
+        <div class="right_part">
+          <div class="earn_upto">Let's Mine</div>
+          <div class="LAPLATA">
+            <img src="../../../assets/images/fire.svg" />LAPLATA
+          </div>
+          <div class="per_day_in_Rewards">The most joyful mining</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner2 content">
+          <div class="d-flex justify-content-between">
+          <div class=" text-center"><h2>{{statistics.totalminers}}</h2>Total Miners</div>
+          <div class=" text-center"><h2>{{statistics.totalGamesPlayed}}</h2>Total Games Played</div>
+          <div class=" text-center"><h2>{{statistics.releasedLaplata.toFixed(4)}}</h2>Total Mined Laplata</div>
+          <div class=" text-center"><h2>{{laplataSettings.perDayDistribution}}</h2>LPLT Rate</div>
+          <div class=" text-center"><h2>{{laplataSettings.incentive}}%</h2>Winning Incentive</div>
+          </div>
+        </div>
+  </div>
+</div>

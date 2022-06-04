@@ -1,0 +1,75 @@
+/** Victory Area **/
+::ng-deep .modal-content{
+  border-radius: 8px;
+  border: 0;
+}
+.modal-body{
+  background: radial-gradient(50% 128% at 0% 0%, rgba(17, 17, 17, 0.87) 0%, #111111 100%);
+  padding: 0;
+  border-radius: 8px;
+}
+.card-body{
+  background: inherit;
+}
+.game_mode_area h2{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color:white;
+}
+.game_mode_area{
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 50px 0;
+}
+.modal_icon{
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+}
+.modal_icon img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.game_mode_area span{
+    display: block;
+    margin: 0 0 30px;
+    color: #FF9933;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.modes_player{
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.balance{
+  color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 50px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.game_mode_area .card-title{
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.btn_outline_primary{
+  border: 1px solid #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+}
+.p-3 {
+  padding: 1rem !important;
+}
+.vertical_line {
+  height: 125px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.38);
+  margin: 0 auto;
+}

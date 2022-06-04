@@ -1,0 +1,105 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <div class="Input_with_icon">
+      <input
+        type="text"
+        placeholder="john Doe"
+        class="form-control"
+        formControlName="fullName"
+      />
+      <i class="fas fa-user"></i>
+      <errors [control]="f.fullName" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <div class="Input_with_icon">
+      <input
+        type="text"
+        placeholder="someone@something.com"
+        appNoSpace
+        class="form-control invalid"
+        formControlName="email"
+        autocomplete="email"
+      />
+      <i class="fas fa-envelope"></i>
+      <errors [control]="f.email" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="username">username</label>
+    <div class="Input_with_icon">
+      <input
+        type="text"
+        placeholder="Username"
+        appUsername
+        appNoSpace
+        class="form-control"
+        formControlName="username"
+        autocomplete="username"
+
+      />
+      <i class="fas fa-user"></i>
+      <errors [control]="f.username" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <div class="Input_with_icon">
+      <input
+        [type]="isPasswordShow ? 'text' : 'password'"
+        placeholder="......"
+        class="form-control"
+        formControlName="password"
+        autocomplete="new-password"
+        appNoSpace
+      />
+      <i class="fas fa-lock"></i>
+      <div class="show_btn" (click)="onPasswordShowHideClick()">
+        {{ isPasswordShow ? "Hide" : "Show" }}
+      </div>
+      <errors [control]="f.password" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">confirm password</label>
+    <div class="Input_with_icon">
+      <input
+        [type]="isPasswordShow ? 'text' : 'password'"
+        placeholder="......"
+        class="form-control"
+        formControlName="confirmpassword"
+        autocomplete="new-password"
+        appNoSpace
+      />
+      <i class="fas fa-lock"></i>
+      <div class="show_btn" (click)="onPasswordShowHideClick()">
+        {{ isPasswordShow ? "Hide" : "Show" }}
+      </div>
+      <errors [control]="f.confirmpassword" [isSubmit]="isSubmit"></errors>
+    </div>
+  </div>
+  <div>
+    <submit
+      [isLoading]="isLoading"
+      [label]="'Start Playing!'"
+      classes="btn primary-btn w-100 mt-2"
+    ></submit>
+  </div>
+  <ul class="navbar-nav justify-content-between">
+    <li class="nav-item">
+      <a class="nav-link my-2 text-center" href="javascript:void(0)"
+        >Already have an account?</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link primary_btn_outline"
+        href="javascript:void(0)"
+        routerLink="/auth/login"
+        >Log In</a
+      >
+    </li>
+  </ul>
+</form>

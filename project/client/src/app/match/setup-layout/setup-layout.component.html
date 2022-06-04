@@ -1,0 +1,239 @@
+<div class="layout">
+  <div id="header">
+    <div class="left_aside">
+      <div class="row align-items-center">
+        <div class="col-md-9">
+          <div class="d-flex">
+            <span [routerLink]="['/mode']"  class="logo">LOGO</span>
+            <div class="heading">
+              <h2 *ngIf="matchType === 1">Ranked Solo Mode</h2>
+              <h2 *ngIf="matchType === 2">5v5 Mode</h2>
+              <h2 *ngIf="matchType === 3">Esports Tournament</h2>
+
+              <p>Summoner’s Rift <i *ngIf="matchType !== 3" class="fas fa-chevron-down"></i> <span class="mx-3" *ngIf="matchType === 3"><img src="assets/images/profile_img.png" height="15"  alt=""></span> <span *ngIf="matchType === 3" class="text-gold">Playing against FlyQuest</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="btns text-right">
+            <h6 *ngIf="matchType === 1 || matchType === 2" routerLink="/mode">CHANGE GAME MODE</h6>
+            <h6 *ngIf="matchType === 3">Quarter-Final 3</h6>
+            <input *ngIf="matchType === 1" type="text" class="lol_nickname" placeholder="Enter LoL nickname">
+            <a *ngIf="matchType === 2 || matchType === 3 " href="javascript:void(0)" class="gold-btn">Share <i class="fas fa-share"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right_aside">
+      <div class="d-flex align-items-center justify-content-end">
+        <div class="profile_info">
+          <h6>{{currentUser.fullName}}</h6>
+          <div>
+            <span class="mr-3"><img class="mr-2" src="assets/images/quantity_icon.png" alt="">{{currentUser.silver | silverPrice : 1}}</span>
+            <span>
+              <!-- <img class="mr-2" src="assets/images/bi_bar-chart-fill.png" alt=""> -->
+              {{currentUser.balance | currency}}</span>
+          </div>
+        </div>
+        <div class="profile_img">
+         <rounded-image [src]="currentUser.image" ></rounded-image>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main">
+   <router-outlet></router-outlet>
+  </div>
+  <div id="sidebar-right">
+    <div *ngIf="timeLeft > 0" class="card-body card-1 mb-3" style="border-radius: 16px 0px 0px 16px;">
+      <div class="d-flex">
+        <h5 class="font-weight-600 text-gray">finding match</h5>
+        <div class="icons ml-auto">
+          <a href="javascript:void(0)"><img class="" src="assets/images/Cancel.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="d-flex">
+        <img class="mr-3" src="assets/images/bi_clock-fill.svg" alt="">
+        <div class="icons-1">
+          <p class="font-weight-600">0:03</p>
+          <div class="text-blue">Estimated: 1:37</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body card-1">
+      <div class="d-flex">
+        <h5 class="font-weight-600">social</h5>
+        <div class="icons ml-auto">
+          <a href="javascript:void(0)"><img class="mr-3" src="assets/images/bi_search.png" alt=""></a>
+          <a href="javascript:void(0)"><img class="mr-3" src="assets/images/user-add.png" alt=""></a>
+        </div>
+      </div>
+      <div class="scroll-1">
+        <ul class="friends">
+          <p class="font-weight-600 text-gray">Team Name</p>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="offline_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+        </ul>
+        <ul class="friends">
+          <p class="font-weight-600 text-gray">Friends</p>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="offline_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="offline_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+          <li>
+            <span class="friends_img"><img src="assets/images/profile_img.png" alt="">
+              <div class="online_dot"></div>
+            </span>
+            <div class="friends_info">
+              <span class="friends_name">abisheikh padhee</span>
+              <span class="online_status">Away</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div id="footer">
+    <div class="d-flex align-items-center position-relative">
+      <div class="main-chat">
+        <div *ngIf="isMenuCollapsed" class="card chat_card" >
+          <div class="card_chat">
+            <div class="chat_header">
+              <div class="p1">Chat with friends</div>
+              <div class="ml-auto">
+                <span><i (click)="isCollapsed = !isCollapsed" class="pointer fas fa-minus f-14 text-grey mr-3"></i>
+                  <i (click)="isMenuCollapsed = !isMenuCollapsed" class="pointer fas fa-times text-grey f-14"></i></span>
+              </div>
+            </div>
+            <div class="chat_box"*ngIf="isCollapsed">
+              <div class="chat">
+                <div class="message-row">
+                  <div class="message message-recieved">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <div class="message-row">
+                  <div class="message message-sent">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <div class="message-row">
+                  <div class="message message-recieved">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <div class="message-row">
+                  <div class="message message-sent">
+                    <div class="message-bubble">
+                      <div class="date">Dec 12th, 16:40 PM</div>
+                      Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input type="text" (focus)="onChatFocus()" placeholder="Type your message here" class="form-control">
+            <i class="fas fa-comment-alt"></i>
+            <div class="show_btn"><img src="assets/images/email_sign.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-btn ml-auto">
+        <a href="javascript:void(0)" class="footer_button mr-3"><img class="mr-3" src="assets/images/game_rule.png"
+            alt=""> Game Rules</a>
+        <a href="javascript:void(0)" class="footer_button"><img class="mr-3" src="assets/images/exit_icon.png" alt="">
+          Exit Lobby</a>
+      </div>
+    </div>
+  </div>
+</div>

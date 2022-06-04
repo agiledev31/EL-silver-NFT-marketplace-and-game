@@ -1,0 +1,42 @@
+<div class="flexbox">
+  <div class="login_card">
+    <div *ngIf="error !== ''" class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+    <h3>Enter Verification Code</h3>
+    <p>Please enter verification code sent to {{ sentTo }}</p>
+    <a *ngIf="type === 2" (click)="onChangeClick()" href="javascript:void(0)"
+      >Change number</a
+    >
+    <a *ngIf="type === 1" (click)="onChangeClick()" href="javascript:void(0)"
+      >Change email</a
+    >
+    <form>
+      <div class="form-row mb-md-5 justify-content-center">
+        <ng-otp-input
+          (onInputChange)="onOtpChange($event)"
+          [config]="{ length: 4, allowNumbersOnly: true }"
+        ></ng-otp-input>
+      </div>
+      <p>
+        Didn't get the code?
+        <a
+          class="d-inline text-primary"
+          [ngClass]="{ 'disabled-link': isResendLoading }"
+          (click)="onResendClick()"
+          href="javascript:void(0)"
+          >Resend OTP</a
+        >
+      </p>
+
+      <div>
+        <submit
+          [isLoading]="isLoading"
+          (click)="onSubmit()"
+          [label]="verifyType > 3 ? 'Verify' : 'Start Playing !'"
+          classes="btn primary-btn w-100 mt-2"
+        ></submit>
+      </div>
+    </form>
+  </div>
+</div>

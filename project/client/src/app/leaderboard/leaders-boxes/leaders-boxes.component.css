@@ -1,0 +1,93 @@
+.leader_list li:first-child sup {
+    background: #FF9933;
+}
+
+.leader_list li:nth-child(2) sup {
+    background: #28A5FF;
+}
+
+.leader_list li:last-child sup {
+    background: #555;
+}
+
+.leader_list li:first-child{
+    background: rgba(255, 153, 51, 0.2);
+    border: 2px solid #FF9933;
+}
+.leader_list li:nth-child(2){
+    background: rgba(40, 165, 255, 0.2);
+}
+
+.leader_list {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.leader_list li:first-child {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+td.summoner_img {
+    text-align: left;
+}
+
+.leaders_boxes {
+    display: inline-block;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    width: 49%;
+    margin: 0 15px 20px 0px;
+    border-radius: 10px;
+    align-items: flex-end;
+    padding: 15px 20px 25px;
+    box-sizing: border-box;
+}
+
+.players_content {
+    width: 100%;
+    text-align: left;
+}
+
+.leaders_boxes sup {
+    background: red;
+    float: left;
+    padding: 13px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 5px;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.leaders_boxes:last-child {
+    margin-right: 0;
+}
+
+.leaders_boxes span {
+    float: left;
+}
+
+.leaders_boxes_area {
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+}
+
+  .leaders_boxes img {
+    width: 88px;
+}
+
+.high_progress {
+    background: rgba(232, 49, 81, 1);
+}
+
+.low_progress {
+    background: rgba(40, 165, 255, 1);
+}
+
+.progress {
+    background: inherit;
+    height: 1.2rem;
+    width: 85%;
+}

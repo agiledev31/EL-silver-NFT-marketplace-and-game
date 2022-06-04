@@ -1,0 +1,110 @@
+<div class="container">
+<div class="heading">Total Prize Pool: {{this.data?.poolprize}}</div>
+<div class="heading">Total Active Participants: {{this.totalDocs}}</div>
+  <div class="accordion_area mt-3">
+    <div class="container">
+      <div class="custom-table">
+        <div class="head py-2">
+          <div class="col-lg-1 custom-td">Rank</div>
+          <div class="col-lg-2 custom-td">SUMMONERS</div>
+          <div class="col-lg-2 custom-td">Laplata Mined</div>
+          <div class="col-lg-2 custom-td">Games Played</div>
+          <div class="col-lg-1 custom-td">Victory</div>
+          <div class="col-lg-1 custom-td ml-4">Defeat</div>
+          <div class="col-lg-2 custom-td">Pool Prize (BUSD)</div>
+        </div>
+        <div class="history__not__Found-msg my-5" *ngIf="!leaderBoardData">
+          <span class="history__not__Found-msg">Challenge LeaderBoard not published yet</span>
+        </div>
+      </div>
+
+      <ngb-accordion [closeOthers]="true" class="w-100">
+        <ngb-panel
+          *ngFor="let player of leaderBoardData; let playerIndex = index"
+          id="static-{{ playerIndex }}"
+          [disabled]="true"
+        >
+          <ng-template ngbPanelTitle >
+            <div class="custom-table">
+              <div class="body">
+                <div class="col-lg-1 custom-td">
+                <span>{{ page==1?(playerIndex + 1): (100*(page-1)+(playerIndex + 1)) }}</span>
+                </div>
+                <div class="col-lg-2 custom-td ml-3">
+                  <div class="d-flex align-items-center">
+                    <img
+                      width="36px"
+                      class="
+                        mr-3
+                        d-md-inline-block d-none
+                        player-img
+                        rounded-circle
+                      "
+                      alt=""
+                      [src]="
+                        player.image
+                          ? player.image
+                          : 'assets/images/profile_img.png'
+                      "
+                    />
+                    <span>{{
+                      player.username
+                    }}</span>
+                  </div>
+                </div>
+                 <div class="col-lg-2 custom-td">
+                <span>{{ player.minings?player.minings.toFixed(4):"0" }}</span>
+                </div>
+                <div class="col-lg-2 custom-td">
+                <span>{{
+                  player.statistics ? player.statistics.totalGames : "0"
+                }}</span>                </div>
+                <div class="col-lg-1 custom-td">
+                  <span>{{
+                  player.statistics ? player.statistics.totalVictories : "0"
+                }}</span>
+                </div>
+                <div class="col-lg-1 custom-td ml-4 mr-2">
+                 <span> {{ player.statistics ? player.statistics.totalDefeats : "0" }}</span>
+                </div>
+                <div class="col-lg-2 custom-td">
+                <span>{{myfun(page==1?(playerIndex + 1): (100*(page-1)+(playerIndex + 1)))}}</span>
+                <!-- <span *ngIf="playerIndex+1==1">1000 BUSD</span>
+                <span *ngIf="playerIndex+1==2">500 BUSD</span>
+                <span *ngIf="playerIndex+1==3">300 BUSD</span>
+                <span *ngIf="playerIndex+1==4">200 BUSD</span>
+                <span *ngIf="playerIndex+1==5">150 BUSD</span>
+                <span *ngIf="playerIndex+1==6">100 BUSD</span>
+                <span *ngIf="playerIndex+1==7">90 BUSD</span>
+                <span *ngIf="playerIndex+1==8">80 BUSD</span>
+                <span *ngIf="playerIndex+1==9">70 BUSD</span>
+                <span *ngIf="playerIndex+1==10">60 BUSD</span>
+                <span *ngIf="playerIndex+1>10 && playerIndex+1<=20">50 BUSD</span>
+                <span *ngIf="playerIndex+1>20 && playerIndex+1<=30">30 BUSD</span>
+                <span *ngIf="playerIndex+1>30">No Prize</span> -->
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+
+  <div class="row mx-auto mt-3">
+    <div class="col-md-12">
+      <ngb-pagination
+        class="d-flex justify-content-center"
+        style="margin-top: 1rem"
+        [maxSize]="7"
+        [rotate]="true"
+        [ellipses]="false"
+        [boundaryLinks]="true"
+        [collectionSize]="totalDocs"
+        [pageSize]="limit"
+        [(page)]="page"
+        (pageChange)="onPageChange($event, page)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

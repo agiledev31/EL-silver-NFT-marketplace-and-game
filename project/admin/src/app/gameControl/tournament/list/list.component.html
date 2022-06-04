@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center my-2">
+      <h3 class="card-title text-blue-400">Tournament List</h3>
+      <hr class="hr-blue">
+
+    </div>
+    <div class="col-lg-3">
+      <label class="text-blue-400 font-weight-bold" for="">Text search <a href="javascript:void(0)" placement="right"
+          triggers="mouseenter:mouseleave" ngbPopover="You can search for
+             - Tournament name
+             " class="ml-1 text-blue-400"><i class="icon-info22"></i></a></label>
+
+      <div class="form-group form-group-feedback form-group-feedback-right">
+        <input type="text" class="form-control" [(ngModel)]="query.searchQuery" (keyup)="onFilterChange()"
+          placeholder="Search For">
+        <div class="form-control-feedback form-control-feedback-lg">
+          <i class="icon-search4 text-muted"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <label class="text-blue-400 font-weight-bold" for="">Status</label>
+      <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+        [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+      </ng-select>
+
+    </div>
+    <!-- <div class="col-lg-3">
+      <label class="text-blue-400 font-weight-bold" for="">Account type</label>
+      <ng-select [items]="types" bindLabel="name" bindValue="id" [clearable]="false" [(ngModel)]="filter.type"
+        (change)="onFilterChange()">
+      </ng-select>
+
+    </div> -->
+
+
+
+  </div>
+
+
+  <div class="row mt-2">
+    <div class="col-lg-12">
+      <div class="card">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+          <div class="datatable-header">
+            <div id="DataTables_Table_0_filter" class="dataTables_filter">
+              <a href="javascript:void(0)" class="btn btn-primary" [routerLink]="['/control/tournament/add']">Create
+                Tournament</a>
+            </div>
+            <!-- <div class="dt-buttons">
+              <button class="btn btn-light buttons-copy buttons-html5" tabindex="0" aria-controls="DataTables_Table_0"
+                type="button"><span>Excel</span></button>
+              <button class="btn btn-light buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0"
+                type="button"><span>CSV</span></button>
+              <button class="btn btn-light buttons-print" tabindex="0" aria-controls="DataTables_Table_0"
+                type="button"><span>PDF</span></button>
+            </div> -->
+
+            <div class="dataTables_length" id="DataTables_Table_0_length"><label><span>Show:</span>
+                <ng-select [items]="LIMITS" [clearable]="false" [(ngModel)]="limit" (change)="onFilterChange()">
+                </ng-select>
+
+              </label></div>
+          </div>
+          <div *ngIf="!isLoader &&  result " class="datatable-scroll-wrap">
+            <div class="table-responsive ">
+              <table class="table custom-padding">
+                <thead>
+                  <tr class="table-border-solid">
+                    <th>Tournament Name</th>
+                    <th>Status </th>
+                    <th>No. of teams</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Entry Fee</th>
+                    <th>GTD prize pool</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let torn of result.docs; let i = index;">
+                    <td class="d-flex justify-content-start align-items-center">
+                      <div scope="col" style="margin-right:15px"><img width="50px" alt=""
+                          [src]="torn?.coverImage | image:'1'" />
+                      </div>
+
+                      <div scope="col">{{torn?.name}} </div>
+                    </td>
+                    <td>
+                      <span [ngClass]="{'badge-secondary': torn.status === 1, 'badge-success' : torn.status === 2,
+                        'badge-primary' : torn.status === 3, 'badge-danger' : torn.status ===4 }"
+                        class="badge py-1  d-block">{{torn?.status | tournamentStatus}}
+                      </span>
+                    </td>
+                    <td>{{torn?.maxTeams}}</td>
+                    <td>{{torn?.startDate|date: 'dd.MM.yy'}}</td>
+                    <td>{{!torn?.endDate ? '--' :torn.endDate |date: 'dd.MM.yy'}}</td>
+                    <td>{{torn?.entryFee}}g </td>
+                    <td> {{torn?.prize}}g </td>
+                    <td></td>
+                    <td class="p-0">
+                      <!-- <button class="btn p-1 bg-blue-400" [routerLink]="['/users/detail']">Show
+                              Details</button> -->
+                      <div ngbDropdown container="body" class="d-inline-block">
+                        <a href="javascript:void(0)" ngbDropdownToggle> </a>
+
+                        <!-- 
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button *ngIf="user.status === 2" (click)="onStatusAction(1, user, i)"
+                            ngbDropdownItem>Active</button>
+                          <button *ngIf="user.status === 1" (click)="onStatusAction(2, user, i)"
+                            ngbDropdownItem>Inactive</button>
+                        </div> -->
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row mx-auto">
+            <div class="col-md-12">
+              <ngb-pagination class="d-flex justify-content-center" *ngIf="result && result?.totalDocs > limit"
+                [collectionSize]="result?.totalDocs" [pageSize]="limit" [(page)]="page"
+                (pageChange)="onPageChange($event)">
+              </ngb-pagination>
+            </div>
+          </div>
+          <app-loader *ngIf="isLoader"></app-loader>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

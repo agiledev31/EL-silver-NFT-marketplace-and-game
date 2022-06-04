@@ -1,0 +1,122 @@
+<div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <p class="f-20">Win rate</p>
+        <div class="ml-auto">
+          <div class="tab-buttons">
+            <ul ngbNav #nav="ngbNav" class="nav-tabs">
+              <li ngbNavItem>
+                <a ngbNavLink>All</a>
+                <ng-template ngbNavContent>
+                  <div class="text-center">
+                    <div class="chart-container d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-gray">LOST</p>
+                        <p class="font-weight-600">0%</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                      <div id="chart">
+                        <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [labels]="chartOptions.labels"
+                        ></apx-chart>
+                      </div>
+                      <div>
+                        <p class="text-gray">WON</p>
+                        <p class="font-weight-600" >0%</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </li>
+              <li ngbNavItem>
+                <a ngbNavLink>Solo</a>
+                <ng-template ngbNavContent>
+                  <div class="text-center">
+                    <div class="chart-container d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-gray">LOST</p>
+                        <p class="font-weight-600">0%</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                      <div id="chart">
+                        <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [labels]="chartOptions.labels"
+                        ></apx-chart>
+                      </div>
+                      <div>
+                        <p class="text-gray">WON</p>
+                        <p class="font-weight-600" >0</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </li>
+              <li ngbNavItem>
+                <a ngbNavLink>5v5</a>
+                <ng-template ngbNavContent>
+                  <div class="text-center">
+                    <div class="chart-container d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-gray">LOST</p>
+                        <p class="font-weight-600" >0</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                      <div id="chart">
+                        <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [labels]="chartOptions.labels"
+                        ></apx-chart>
+                      </div>
+                      <div>
+                        <p class="text-gray">WON</p>
+                        <p class="font-weight-600" >0</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </li>
+              <li ngbNavItem>
+                <a ngbNavLink class="mobile-recent">Recent</a>
+                <ng-template ngbNavContent>
+                  <div class="text-center">
+                    <div class="chart-container d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="text-gray">LOST</p>
+                        <p class="font-weight-600" >0</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                      <div id="chart">
+                        <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [labels]="chartOptions.labels"
+                        ></apx-chart>
+                      </div>
+                      <div>
+                        <p class="text-gray">WON</p>
+                        <p class="font-weight-600" >0</p>
+                        <p class="text-gray">(0)</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+</div>

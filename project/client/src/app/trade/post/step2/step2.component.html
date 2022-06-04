@@ -1,0 +1,121 @@
+<div class="row">
+  <div class="col-md-12 mb-5">
+    <div class="d-flex align-items-center">
+      <div class="post">
+        <div class="p1">Information about the trade</div>
+      </div>
+      <div class="ml-auto">
+        <a  [routerLink]="['/trade/post/1']"   href="javascript:void(0)" class="btn btn_outline_primary mr-3"><img
+            src="assets/images/Left arrow.svg" alt=""> Back</a>
+        <a  (click)="onSubmit()"   href="javascript:void(0)" class="btn btn_primary px-5">Publish Trade </a>
+      </div>
+    </div>
+  </div>
+  <div [formGroup]="form" (ngSubmit)="onSubmit()" class="col-md-12 mb-4">
+    <div class="row mb-5">
+      <div class="col-md-2 label">I want to...</div>
+      <div class="col-md-4">
+        <div class="radio_button mb-3">
+          <input type="radio" formControlName="type" id="buy" [value]="1" >
+          <label class="mb-0 text-grey" for="buy">Buy silver online</label>
+        </div>
+        <div class="radio_button">
+          <input type="radio" formControlName="type" id="sell" [value]="2">
+          <label class="mb-0 text-grey" for="sell">Sell silver online</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex">
+          <div><img class="mr-2" src="assets/images/exclamation_sign.svg" alt=""></div>
+          <div class="small text-gray font-italic">If you wish to sell bitcoins make sure you have bitcoins in your
+            LocalBitcoins wallet.</div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-md-2 label">Silver amount</div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input type="text" placeholder="Max" appNumericOnly formControlName="amount" class="form-control">
+            <div class="show_btn d-flex align-items-center f-16">
+              <div class="mr-2 text-gray small">
+              </div> <span class="text-white font-weight-600">gm</span>
+            </div>
+          </div>
+          <errors [control]="f.amount" [isSubmit]="isSubmit"></errors>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-2 label">Margin</div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <input type="text" appNumericOnly placeholder="0" formControlName="margin" class="form-control">
+            <div class="show_btn d-flex align-items-center f-16">
+              <div class="mr-2 text-gray small">
+              </div> <span class="text-white font-weight-bold">%</span>
+            </div>
+          </div>
+        </div>
+        <errors [control]="f.margin" [isSubmit]="isSubmit"></errors>
+      </div>
+      <div class="col-md-4">
+        <div class="small text-gray font-italic">Margin you want over the Silver market price. Use a negative value for
+          buying or selling under the market price to attract more contacts.</div>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-md-2 label">Location</div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <select formControlName="country">
+              <option *ngFor="let country of constant.countries" [value]="country.id">{{country.name}}</option>
+            </select>
+            <div class="show_btn"><img src="assets/images/drop_down.png" height="8" alt=""></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-md-2 label">Payment Method</div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="Input_with_icon">
+            <select formControlName="paymentMethod">
+              <option *ngFor="let paymentMethod of constant.paymentMethods" [value]="paymentMethod.id">{{paymentMethod.name}}</option>
+            </select>
+            <div class="show_btn"><img src="assets/images/drop_down.png" height="8" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-2 label">Description</div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <textarea formControlName="description" rows="6">Enter terms of trade</textarea>
+          <errors [control]="f.description" [isSubmit]="isSubmit"></errors>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="small text-gray font-italic">Other information you wish to tell about your trade.
+          <br> <br>
+          <span class="font-weight-bold">Example 1:</span> This advertisement is only for bank transfers. If you want to
+          pay with credit card, contact localbitcoins.com/ad/1234.
+          <br><br>
+          <span class="font-weight-bold">Example 2:</span> Please send request only if you can complete the payment
+          within 2 hours.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

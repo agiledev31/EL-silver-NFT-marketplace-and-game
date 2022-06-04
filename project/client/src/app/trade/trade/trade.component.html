@@ -1,0 +1,257 @@
+<!-- Detail Tournament-->
+<div>
+  <div class="text-center heading1 my-5">
+    <h2 style="font-weight: 600; font-size: 40px">Trade Silver</h2>
+  </div>
+</div>
+
+<div class="mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 trade_area">
+        <div class="card mb-3" *ngIf="currentUser; else elseUser">
+          <div class="card-body">
+            <div class="row align-items-center mb-3">
+              <div class="col-lg-4 col-4">
+                <rounded-image [src]="currentUser.image" alt=""></rounded-image>
+              </div>
+              <div class="col-lg-8 col-8 player_info">
+                <h5 class="font-weight-600">{{ currentUser.fullName }}</h5>
+                <!--<a href="javascript:void(0)" [routerLink]="['/trade/recharge']" class="small">Recharge Wallet</a>-->
+                <a
+                  href="javascript:void(0)"
+                  (click)="AlertForWallet()"
+                  class="small"
+                  >Recharge Wallet</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-6 silver_txt">
+                <div class="text-gray">Silver</div>
+                <span>{{ currentUser.silver | silverPrice: 1 }}gm</span>
+              </div>
+              <div class="col-lg-6 col-6 wallet_txt">
+                <div class="text-gray">Wallet</div>
+                <span>{{ currentUser.balance | currency }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body mb-4">
+            <strong>Trade Silver</strong>
+            <div class="text-gold font-weight-600 text-uppercase small">
+              Silver Status
+            </div>
+            <ul class="nav-block silver_links">
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  (click)="
+                    isMenuCollapsed = !isMenuCollapsed; isMenuCollapsed1 = true
+                  "
+                  >Buy/Sell Silver<i class="fa fa-angle-down"></i
+                ></a>
+              </li>
+              <div [ngbCollapse]="isMenuCollapsed">
+                <div class="">
+                  <div class="drop_items_list">
+                    <span class="pointer" [routerLink]="['/trade/instant/buy']"
+                      >Buy</span
+                    >
+                    <span class="pointer" [routerLink]="['/trade/instant/sell']"
+                      >Sell</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  (click)="
+                    isMenuCollapsed1 = !isMenuCollapsed1; isMenuCollapsed = true
+                  "
+                  ><span>P2P Trade Silver</span><i class="fa fa-angle-down"></i
+                ></a>
+              </li>
+              <div [ngbCollapse]="isMenuCollapsed1">
+                <div class="">
+                  <div class="drop_items_list">
+                    <span
+                      class="pointer"
+                      [routerLink]="['/trade/p2p']"
+                      [queryParams]="{ trade: 'buy' }"
+                      >Buy</span
+                    >
+                    <span
+                      class="pointer"
+                      [routerLink]="['/trade/p2p']"
+                      [queryParams]="{ trade: 'sell' }"
+                      >Sell</span
+                    >
+                    <span
+                      class="pointer"
+                      [routerLink]="['/trade/p2p']"
+                      [queryParams]="{ trade: 'manage-buy' }"
+                      >Manage Buy</span
+                    >
+                    <span
+                      class="pointer"
+                      [routerLink]="['/trade/p2p']"
+                      [queryParams]="{ trade: 'manage-sell' }"
+                      >Manage Sell</span
+                    >
+                    <span class="pointer" [routerLink]="['/trade/post/1']"
+                      >Post a trade</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <li>
+                <a href="javascript:void(0)" [routerLink]="['/trade/send']"
+                  >Send Silver To Friends</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" [routerLink]="['/trade/history']"
+                  >Your Trading History</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ng-template #elseUser>
+          <div class="card mb-4">
+            <div class="card-body" style="height: 138.6px">
+              <button
+                *ngIf="!currentUser"
+                class="btn py-4"
+                style="font-size: 1rem; color: white"
+                routerLink="/auth/login"
+              >
+                <span style="color: #ff9933">LOGIN</span> TO MANAGE YOUR ACCOUNT
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="row mb-4 r-c">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-lg-0 mb-4">
+                    <app-silver-online></app-silver-online>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-4 r-c">
+          <div class="col-lg-12">
+            <div class="card works_area">
+              <div class="card-body">
+                <strong class="font-weight-600 text-white">How it Works</strong>
+                <p>
+                  EL SILVER offers the most accurate and efficient way to trade
+                  one of the most popular raw materials in the world. Yes, it's
+                  SILVER. Our goal is to help our customers trade all kind of
+                  precious assets, including cryptos, through our platform.
+                  SILVER can be bought directly at competitive prices. Verified
+                  users can buy silver from verified sellers using P2P method as
+                  well.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!--  <div class="col-lg-8">
+            <div class="card stats">
+              <div class="card-body">
+
+                <div class="d-flex justify-content-center">
+                    <div class="tab-buttons">
+                      <ul ngbNav #nav="ngbNav" class="nav-tabs">
+                        <li ngbNavItem>
+                          <a ngbNavLink>Silver</a>
+                          <ng-template ngbNavContent>
+                          </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                          <a ngbNavLink>Wallet</a>
+                          <ng-template ngbNavContent>
+                          </ng-template>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+                <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                <div class="stats_content">
+                  <h4>Your Stats</h4>
+                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="col-lg-12">
+            <!--<div class="card">
+              <div class="card-body">
+
+              </div>
+            </div>-->
+
+            <div class="card voucher_area">
+              <div class="card-body">
+                <strong class="font-weight-600 text-white"
+                  >Avail Voucher</strong
+                >
+                <p>Have a voucher? Enter the code here and redeem silver!</p>
+                <div class="input-group input_area p-0" style="width: 50%">
+                  <input
+                    appNoSpace
+                    (keyup.enter)="onVoucherSubmit()"
+                    [(ngModel)]="voucher"
+                    type="text"
+                    class="form-control"
+                    placeholder="Type voucher code here"
+                    aria-label="Amount (to the nearest dollar)"
+                  />
+                  <div class="input-group-prepend">
+                    <a
+                      *ngIf="!isLoader"
+                      href="javascript:void(0)"
+                      (click)="onVoucherSubmit()"
+                      ><img alt="" src="assets/images/email_sign.png"
+                    /></a>
+                    <app-spinner *ngIf="isLoader"></app-spinner>
+                  </div>
+                </div>
+                <span
+                  class="text-danger"
+                  *ngIf="voucherErr !== ''"
+                  [sizeClass]="'spinner-border-sm'"
+                >
+                  {{ voucherErr }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-success #success></app-success>
+
+<!-- end-->

@@ -1,0 +1,222 @@
+<div class="buy_silver">
+  <div class="container" *ngIf="!isLoader && trade">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/trade']">Silver Status / </span><span class="final">P2P  {{trade.type == 1 ? 'Buy': 'Sell'}}  </span>
+    </div>
+    <h2 class="head_title_area">  {{trade.type == 1 ? 'Buy': 'Sell'}} Silver through Any Payment</h2>
+    <!-- starts here -->
+    <div class="row">
+      <div class="col-md-4 pr-md-4">
+        <div class="card mb-4">
+          <div class="card_header">
+            <p>About this trade</p>
+          </div>
+          <div class="card_content">
+            <ul>
+              <li>
+                <div class="p1">Silver</div>
+                <div class="p2"> {{trade.silver}} <span class="text-gray">gm</span> </div>
+              </li>
+              <li>
+                <div class="p1">Margin</div>
+                <div class="p2"> {{trade.margin}}%</div>
+              </li>
+              <li>
+                <div class="p1">Payment method</div>
+                <div class="p2">{{trade.paymentMethod}}</div>
+              </li>
+              <li>
+                <div class="p1">Total Current Price</div>
+                <div class="p2">{{getMarginPrice(trade.silver, trade.margin)  | currency}}</div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card_header">
+            <p>About the seller</p>
+          </div>
+          <div class="card_content">
+            <ul>
+              <li>
+                <div class="p1">User</div>
+                <div class="d-flex align-items-center p2">
+                  <div class="user_img mr-3">
+                    <img src="assets/images/Ellipse 24.png" alt="">
+                  </div>
+                  <div class="user_info">
+                    <div class="d-flex align-items-center p2">{{trade.user.fullName}} <div class="green_dot mx-2"></div> <span
+                        class="p1 text-green">online</span> </div>
+                    <u class="p1">@{{trade.user.username}}</u>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="p1">Location</div>
+                <div class="p2">{{trade.country}}</div>
+              </li>
+              <li>
+                <div class="d-flex">
+                  <div class="mr-5">
+                    <div class="p1">First trade</div>
+                    <div class="p2">dec 16</div>
+                  </div>
+                  <div class="">
+                    <div class="p1">Last recent trade</div>
+                    <div class="p2">4 days ago</div>
+                  </div>
+                </div>
+
+              </li>
+              <li>
+                <div class="p1">Trust score</div>
+                <div class="p2">100+ trades • 99% feedback score</div>
+              </li>
+              <li>
+                <div class="p1">Typical response time</div>
+                <div class="p2">1 hour</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 pl-md-4">
+        <div class="card mb-5" *ngIf="!isMine">
+          <div class="card_silver">
+            <p>How much silver do you wish to {{trade.type == 1 ? 'buy': 'sell'}}?</p>
+            <!-- buy/sell converter -->
+            <div class="form-inline my-4">
+              <div class="input-group input_area p-0">
+                <div class="input-group-prepend">
+                  <span class=""><img alt="" src="assets/images/dollar.png" /></span>
+                </div>
+                <input type="text" appNoSpace [(ngModel)]="amount" (keyup)="onAmountKeyup()" class="form-control px-0" placeholder="Amount"
+                  aria-label="Amount (to the nearest dollar)">
+              </div>
+              <a class="swap-outline" href="javascript:void(0)"></a>
+              <div class="input-group input_area p-0">
+                <div class="input-group-prepend">
+                  <span class=""><img alt="" src="assets/images/diamond_half.png" /></span>
+                </div>
+                <input type="text" appNoSpace [(ngModel)]="silverAmount" (keyup)="onSilverAmountKeyup()" class="form-control px-0" placeholder="Silver"
+                  aria-label="Amount (to the nearest dollar)">
+              </div>
+            </div>
+
+            <span *ngIf="isGreater" class="text-danger"> Trade's Silver is low than Requested Silver </span>
+
+            <!-- buy/sell converter end -->
+            <div class="p1">Description</div>
+            <textarea rows="2"> {{trade.description}}</textarea>
+            <div class="p1">Terms of trade <span><img src="assets/images/eva_question-mark-circle-fill.svg" alt=""></span></div>
+            <div class="inner_card1">
+              <div class="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem sagittis, odio quis aliquet
+                elit porttitor massa rhoncus ultrices. In nunc sit amet enim ullamcorper faucibus et sit. Porta eget velit
+                et quis rhoncus, odio ut dapibus dolor. In tempor donec malesuada vitae donec. Sed eget dictum risus lectus
+                mi. Mi quam orci, bibendum tristique sit duis suspendisse non lectus. Convallis at cum sit nulla. Fringilla
+                nunc tellus viverra quis nisl tincidunt. Tortor libero semper dui venenatis, elit. Non sit scelerisque nunc
+                amet habitasse sagittis, ornare velit vestibulum. Adipiscing ornare odio nunc urna vulputate. Cursus
+                phasellus nunc sed libero facilisis porttitor nulla.
+                Lorem cum at lectus neque at. Tellus risus aliquam quis id quam venenatis placerat.</div>
+            </div>
+            <div class="w-75 mx-auto mt-5">
+              <div class="d-flex justify-content-center">
+                <input class="styled-checkbox" id="isRead" [(ngModel)]="isRead" type="checkbox" value="value1">
+                <label for="styled-checkbox-1" class="check-label-1"></label>
+                <label class="check-label-1 text-grey" for="isRead">I have read and accept the seller’s terms of the
+                  trade.</label>
+              </div>
+              <div class="w-50 mx-auto my-4">
+                <button *ngIf="!isOpenedForMe" (click)="openTrade()" [disabled]="isLoader || !isRead || amount === '' || silverAmount === '' || isGreater"  class="btn primary-btn w-100"> {{isBtnLoader? 'Opening...' : 'Open a trade'}}</button>
+                <button *ngIf="isOpenedForMe" (click)="goToRequest()"  class="btn btn-success w-100"> Go To Request </button>
+              </div>
+              <div class="text-gray">
+               <span class="text-grey font-weight-600">Note:</span> Make sure you are ready to make the payment within the mentioned payment window time after clicking on
+                ‘Open a trade’. If the payment is not made within the payment window, the transaction will be considered
+                null.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-5" *ngIf="isMine">
+          <div class="card_silver">
+            <p>User Requests</p>
+              <table *ngIf="trade.requests && trade.requests.length > 0" class="table table-borderless request-table ">
+                <thead>
+                  <tr>
+                    <th class="text-gray" scope="col">#</th>
+                    <th class="text-gray" scope="col">Name</th>
+                    <th class="text-gray" scope="col">Silver Amount</th>
+                    <th class="text-gray" scope="col">Date</th>
+                    <th class="text-gray" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let req of getActiveRequests; let i = index">
+                    <th scope="row">{{i}}</th>
+                    <td>{{req.user.fullName}}</td>
+                    <td>{{req.silver |silverPrice: 1}}</td>
+                    <td>{{req.createdAt | date: 'MMM d hh mm'}}</td>
+                    <td>
+                      <a  *ngIf="req.status > 1" [routerLink]="['/trade/p2p/', this.trade._id,'request',req._id]"  href="javascript:void(0)" class="text-success mr-3"><i class="fas fa-eye"></i></a>
+                      <a *ngIf="req.status == 1" (click)="onRequestStatusChange(req, 2)" href="javascript:void(0)" class="text-success mr-3"><i class="fas fa-check"></i></a>
+                      <a *ngIf="req.status == 1" (click)="onRequestStatusChange(req, 0)" href="javascript:void(0)" class="text-danger"><i class="fas fa-times"></i></a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <div  *ngIf="!trade.requests || trade.requests.length == 0">
+                <p class="text-center py-5">No Request Yet</p>
+              </div>
+
+         </div>
+        </div>
+
+        <div class="card">
+          <div class="card_steps">
+            <ul>
+              <li>
+                <div class="d-flex">
+                  <div class="step_img"></div>
+                  <div class="p1">Steps</div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex">
+                  <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+                  <div class="p2">Read the trade details carefully. If any of the terms are not favourable, it is advisable
+                    to go back and find a trade that you are comfortable with.</div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex">
+                  <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+                  <div class="p2">Enter the amount of Silver or the price worth of silver that you would like to purchase
+                    from the seller and optionally add a message.</div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex">
+                  <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+                  <div class="p2">Read the full terms of trade set by the seller before opening a trade.</div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex">
+                  <div class="step_img"><img src="assets/images/round-tick.svg" alt=""></div>
+                  <div class="p2">When you’re ready, click on open a trade!</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end here -->
+</div>
+<app-loader *ngIf="isLoader"></app-loader>
+<div *ngIf="!isLoader && !trade"> wWhoops! Some thing is Wrong  </div>
+</div>

@@ -1,0 +1,26 @@
+<ng-template #content let-modal>
+
+  <div *ngIf="!isLoader" class="modal-body">
+    <div class="buy_transaction_area text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <p *ngIf="!isMeInTeam" class="p1">{{user.fullName}} has invited you to a 5V5 Match! :&nbsp; <img src="assets/images/right-arrow.png" alt=""></p>
+            <p *ngIf="isMeInTeam" class="p1">You are already in Team :&nbsp; <img src="assets/images/right-arrow.png" alt=""></p>
+            <p *ngIf="isTeamFull" class="p1">You are Late. Lobby is already Full. &nbsp; <img src="assets/images/right-arrow.png" alt=""></p>
+
+
+          </div>
+          <div *ngIf="!isTeamFull" class="col-md-4">
+            <button (click)="onLobbyClick()"  class="btn primary-btn mb-2">Go to Lobby</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<app-loader *ngIf="isLoader"></app-loader>
+</ng-template>
+

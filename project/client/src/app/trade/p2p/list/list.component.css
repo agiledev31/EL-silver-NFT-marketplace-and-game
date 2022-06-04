@@ -1,0 +1,350 @@
+.buy_silver{
+  padding: 30px 0 80px;
+  overflow: hidden;
+  width: 100%;
+}
+h2.head_title_area{
+  margin-bottom: 10px!important;
+}
+/* .buy_silver h2{
+  font-size: 35px;
+  line-height: 40px;
+  margin: 30px 0 40px;
+  display: block;
+  font-family: Barlow;
+  font-weight: bold;
+} */
+.final{
+  color: #28A5FF;
+}
+/* Filter By */
+
+.filters_area {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.filter_by>button {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 25px 5px 10px;
+  color: #fff;
+  position: relative;
+  margin: 0 10px;
+}
+
+.filter_by>button::after {
+  margin: 0;
+  content: "";
+  background: url(/assets/images/drop_down.png);
+  position: absolute;
+  right: 5px;
+  width: 15px;
+  height: 10px;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translate(0px, -40%);
+  border: none;
+}
+
+.sort_by {
+  position: relative;
+  padding: 10px 20px 10px 40px;
+}
+
+label.toggle-item{
+  margin-bottom: 0!important;
+}
+
+/* .sort_by:before {
+  position: absolute;
+  background: url(/assets/images/search_icon.png);
+  width: 50px;
+  height: 30px;
+  content: "";
+  background-repeat: no-repeat;
+  left: 0;
+  top: 50%;
+  transform: translate(0px, -50%);
+}
+ */
+.sort_by>button {
+  color: #fff;
+  padding: 7px 5px 10px 3px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.sort_by>button::after {
+  margin: 0;
+  content: "";
+  background: url(/assets/images/drop_down.png);
+  position: absolute;
+  right: 10px;
+  width: 15px;
+  height: 10px;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translate(0px, -40%);
+  border: none;
+}
+.btn_outline_primary{
+  border: 1px solid #28A5FF;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+}
+.post_trade p{
+  color: rgba(255, 255, 255, 0.87);
+}
+.post_trade button{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+}
+/* tABLES */
+
+/** New Accordion */
+.body-wrap {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 5px !important;
+  margin-bottom: 5px;
+  padding: 0;
+  border: 0;
+}
+
+.body-wrap:nth-child(2) {
+  border-radius: 0px 0 5px 5px !important;
+}
+
+
+.custom-table .head {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+  color: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 255, 0.14);
+  text-align: left;
+}
+
+.custom-table .body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.custom-table .custom-td {
+  padding: 0 1rem;
+}
+
+.custom-table .body .custom-td {
+  padding: .5rem 1rem;
+}
+
+
+.price_content span{
+  display: block;
+}
+.price_content strong{
+  display: block;
+}
+
+/* Tab Buttons */
+
+.tab-buttons .nav-tabs {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border-bottom: 0;
+}
+
+.tab-buttons .nav-tabs li {
+  margin: 0;
+}
+
+.tab-buttons .nav-tabs li a {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 0;
+}
+
+.tab-buttons .nav-tabs li a:hover {
+  background: rgba(255, 255, 255, 0.09);
+  margin: 0;
+  border: 0;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.tab-buttons .nav-tabs li a.active {
+  background: rgba(255, 153, 51, 0.4);
+  border-radius: 8px;
+  border: 0;
+  padding: 10px 15px;
+  color: white;
+  font-size: 14px;
+
+}
+
+.amount_area{
+  position: relative;
+}
+.amount_area:before{
+  position: absolute;
+  background: url('/assets/images/dollar.png');
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.input_area input{
+  background: none;
+  border: none;
+  color: #fff;
+}
+.input-group-prepend{
+  padding: 5px 10px;
+}
+
+
+.person_form_filter button {
+background: #28A5FF !important;
+padding: .4rem 2rem !important;
+color: #fff !important;
+border-radius: 8px !important;
+text-align: center !important;
+}
+.seller_name{
+text-align: left;
+}
+.trade_score{
+color: rgba(255, 255, 255, 0.6);
+font-size: 14px;
+line-height: 20px;
+font-weight: 300;
+}
+.payment_method p{
+color: rgba(255, 255, 255, 0.6);
+font-size: 14px;
+line-height: 20px;
+font-weight: 300;
+margin: 0;
+}
+.price_content span em{
+color: rgba(255, 255, 255, 0.6);
+font-style: normal;
+}
+.price_content strong{
+color: rgba(255, 255, 255, 0.6);
+font-size: 14px;
+line-height: 20px;
+font-weight: 300;
+margin: 0;
+}
+.buy_btn{
+background: #28A5FF !important;
+padding: 5px 25px !important;
+color: #fff !important;
+border-radius: 8px !important;
+text-align: center !important;
+font-size: 18px;
+line-height: 25px;
+}
+
+/* pagination */
+
+.pagination_area{
+justify-content: center;
+display: flex;
+}
+::ng-deep .pagination_area li.page-item {
+margin: 0 5px;
+padding: 0;
+box-sizing: border-box;
+}
+::ng-deep .pagination_area li.page-item .page-link {
+position: relative;
+display: block;
+padding: .2rem .7rem;
+margin-left: -1px;
+line-height: 1.25;
+color: #fff;
+background-color: transparent;
+border: 2px solid rgba(40, 165, 255, 0.3);
+border-radius: 5px;
+}
+::ng-deep .pagination_area li.page-item .page-link:hover{
+ border: 2px solid  #28A5FF;
+}
+
+/* Select area */
+
+.selectors_area{
+width:20%;
+margin-right: 15px;
+}
+/* .selectors_area_right{
+
+} */
+.sort_by span{
+float: left;
+width: 25%;
+}
+.sort_by .selectors_area_right{
+float: right;
+width: 70%;
+text-align: left;
+}
+::ng-deep ng-select{
+width: auto;
+}
+.filter_by span{
+margin-right: 15px;
+}
+.selectors_area_right ::ng-deep .ng-select-container{
+background-color: inherit!important;
+}
+::ng-deep .ng-select-container{
+border-radius: 20px!important;
+background: rgba(255, 255, 255, 0.09)!important;
+color: #fff!important;
+border: none!important;
+padding: 0 10px!important;
+}
+
+::ng-deep .ng-arrow{
+border: none!important;
+}
+::ng-deep .ng-arrow-wrapper{
+padding: 0!important;
+/* width:16px!important;
+height: 10px!important; */
+}
+::ng-deep .ng-clear-wrapper{
+display: none!important;
+}
+::ng-deep .ng-arrow:before{
+position: absolute;
+background: url(/assets/images/drop_down.png);
+left: 50%;
+top: 50%;
+width: 16px;
+height: 10px;
+content: "";
+background-repeat: no-repeat;
+transform: translate(-50%, -80%);
+}

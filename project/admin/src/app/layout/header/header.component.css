@@ -1,0 +1,15 @@
+.navbar-brand img {
+  height: 2.7rem;
+  /* width: 69%; */
+  /* display: block; */
+}
+.navbar-dark{
+  background: #273237 !important;
+}
+@media only screen and (max-width:767px) {
+  .navbar-brand img {
+    height: 2rem;
+    width: auto;
+    display: block;
+  }
+}

@@ -1,0 +1,340 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-lg-12 text-left my-2">
+            <h3 class="card-title font-weight-500">LOL Challenge</h3>
+            <h4 class="text-gray font-weight-500">Challenge History for user - Abhishek Padhee</h4>
+            <span class="text-gray font-italic font-weight-400">The user's challenge details and scrapped game
+                history.</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label class="text-blue-400 font-weight-bold" for="">All Time History</label>
+            <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+                [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+            </ng-select>
+        </div>
+        <div class="col-lg-2">
+            <label class="text-blue-400 font-weight-bold" for="">Filter</label>
+            <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+                [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+            </ng-select>
+        </div>
+        <div class="col-lg-2">
+            <label class="text-blue-400 font-weight-bold" for="">Sort</label>
+            <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+                [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+            </ng-select>
+        </div>
+    </div>
+    <div class="custom-table user-detail">
+        <div class="head">
+            <div class="col-lg-2 custom-td">User</div>
+            <div class="col-lg-1 custom-td">Region</div>
+            <div class="col-lg-2 custom-td">Total Challenges</div>
+            <div class="col-lg-1 custom-td">Avg. KDA</div>
+            <div class="col-lg-2 custom-td">Total games</div>
+            <div class="col-lg-1 custom-td">Victories</div>
+            <div class="col-lg-1 custom-td">Defeats</div>
+            <div class="col-lg-2 custom-td">TOTAL LAPLATA</div>
+        </div>
+        <div class="body">
+            <div class="col-lg-2 custom-td"><span>Abhishek Padhee</span><br><span class="text-gray">Abhipadet</span>
+            </div>
+            <div class="col-lg-1 custom-td"><span class="text-gray">Asia</span></div>
+            <div class="col-lg-2 custom-td"><span>3</span></div>
+            <div class="col-lg-1 custom-td"> <span class="align-items-center text-gray font-weight-500 ml-2">
+                    2.08 </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+            <div class="col-lg-2 custom-td"><span>3</span></div>
+            <div class="col-lg-1 custom-td"><span>2</span></div>
+            <div class="col-lg-1 custom-td"><span>1</span></div>
+            <div class="col-lg-2 custom-td">
+                <span>900</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="accordion_area">
+
+        <div class="row">
+
+            <div class="col-lg-6 text-left">
+                <h4 class="card-title font-weight-400">CHALLENGE HISTORY</h4>
+            </div>
+            <div class="col-lg-6 text-right">
+                <span class="total-record f-14">132 entries</span>
+            </div>
+
+            <ngb-accordion [closeOthers]="true" class="w-100" activeIds="static-0">
+
+                <ngb-panel id="static-1">
+                    <ng-template ngbPanelTitle>
+                        <div class="custom-table">
+                            <div class="head">
+                                <div class="col-lg-1 custom-td"><span>Date</span></div>
+                                <div class="col-lg-1 custom-td">Time</div>
+                                <div class="col-lg-1 custom-td">Duration</div>
+                                <div class="col-lg-1 custom-td">Region</div>
+                                <div class="col-lg-2 custom-td">Avg. KDA</div>
+                                <div class="col-lg-2 custom-td">Games played</div>
+                                <div class="col-lg-1 custom-td">Victories</div>
+                                <div class="col-lg-1 custom-td">Defeats</div>
+                                <div class="col-lg-2 custom-td">LAPLATA Received</div>
+                            </div>
+                            <div class="body">
+                                <div class="col-lg-1 custom-td"><span>04/10/21</span></div>
+                                <div class="col-lg-1 custom-td"><span>16:17 UTC</span></div>
+                                <div class="col-lg-1 custom-td"><span>6h 30m</span></div>
+                                <div class="col-lg-1 custom-td"><span class="text-gray">Asia</span></div>
+                                <div class="col-lg-2 custom-td"> <span
+                                        class="align-items-center text-gray font-weight-500 ml-2">
+                                        2.08 </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td"><span>3</span></div>
+                                <div class="col-lg-1 custom-td"><span>2</span></div>
+                                <div class="col-lg-1 custom-td"><span>1</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <div class="d-flex">
+                                        <div class="d-flex ml-auto align-items-center">
+                                            <span>900</span>
+                                        </div>
+                                        <div class="ml-auto svg-dropdown">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrow-ios-downward">
+                                                        <rect width="24" height="24" opacity="0" />
+                                                        <path
+                                                            d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <div class="custom-table">
+                            <div class="custom-body">
+                                <div class="col-lg-2 custom-td">
+                                    <div class="align-items-center">
+                                        <span class="font-weight-500">Ranked Solo</span>
+                                        <span class="text-gray font-weight-500 ml-2"> 33m </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 custom-td"><span class="align-items-center defeat">DEFEAT</span>
+                                </div>
+                                <div class="col-lg-2 custom-td "> <span
+                                        class="align-items-center text-gray font-weight-normal ">
+                                        2.08 KDA </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Champion </span>
+                                    <br />
+                                    <span>Graves</span>
+                                </div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Time </span> <br />
+                                    <span class="align-items-center">3m ago</span>
+                                </div>
+                            </div>
+
+                            <div class="custom-body">
+                                <div class="col-lg-2 custom-td">
+                                    <div class="align-items-center">
+                                        <span class="font-weight-500">Ranked Solo</span>
+                                        <span class="text-gray font-weight-500 ml-2"> 33m </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 custom-td"><span class="align-items-center final">VICTORY</span>
+                                </div>
+                                <div class="col-lg-2 custom-td "> <span
+                                        class="align-items-center text-gray font-weight-normal ">
+                                        2.08 KDA </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Champion </span>
+                                    <br />
+                                    <span>Graves</span>
+                                </div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Time </span> <br />
+                                    <span class="align-items-center">3m ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel id="static-2">
+                    <ng-template ngbPanelTitle>
+                        <div class="custom-table">
+                            <div class="body">
+                                <div class="col-lg-1 custom-td"><span>04/10/21</span></div>
+                                <div class="col-lg-1 custom-td"><span>16:17 UTC</span></div>
+                                <div class="col-lg-1 custom-td"><span>6h 30m</span></div>
+                                <div class="col-lg-1 custom-td"><span class="text-gray">Asia</span></div>
+                                <div class="col-lg-2 custom-td"> <span
+                                        class="align-items-center text-gray font-weight-500 ml-2">
+                                        2.08 </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td"><span>3</span></div>
+                                <div class="col-lg-1 custom-td"><span>2</span></div>
+                                <div class="col-lg-1 custom-td"><span>1</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <div class="d-flex">
+                                        <div class="d-flex ml-auto align-items-center">
+                                            <span>900</span>
+                                        </div>
+                                        <div class="ml-auto svg-dropdown">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrow-ios-downward">
+                                                        <rect width="24" height="24" opacity="0" />
+                                                        <path
+                                                            d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <div class="custom-table">
+                            <div class="custom-body">
+                                <div class="col-lg-2 custom-td">
+                                    <div class="align-items-center">
+                                        <span class="font-weight-500">Ranked Solo</span>
+                                        <span class="text-gray font-weight-500 ml-2"> 33m </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 custom-td"><span class="align-items-center defeat">DEFEAT</span>
+                                </div>
+                                <div class="col-lg-2 custom-td "> <span
+                                        class="align-items-center text-gray font-weight-normal ">
+                                        2.08 KDA </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Champion </span>
+                                    <br />
+                                    <span>Graves</span>
+                                </div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Time </span> <br />
+                                    <span class="align-items-center">3m ago</span>
+                                </div>
+                            </div>
+
+                            <div class="custom-body">
+                                <div class="col-lg-2 custom-td">
+                                    <div class="align-items-center">
+                                        <span class="font-weight-500">Ranked Solo</span>
+                                        <span class="text-gray font-weight-500 ml-2"> 33m </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 custom-td"><span class="align-items-center final">VICTORY</span>
+                                </div>
+                                <div class="col-lg-2 custom-td "> <span
+                                        class="align-items-center text-gray font-weight-normal ">
+                                        2.08 KDA </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Champion </span>
+                                    <br />
+                                    <span>Graves</span>
+                                </div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Time </span> <br />
+                                    <span class="align-items-center">3m ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel id="static-3">
+                    <ng-template ngbPanelTitle>
+                        <div class="custom-table">
+                            <div class="body">
+                                <div class="col-lg-1 custom-td"><span>04/10/21</span></div>
+                                <div class="col-lg-1 custom-td"><span>16:17 UTC</span></div>
+                                <div class="col-lg-1 custom-td"><span>6h 30m</span></div>
+                                <div class="col-lg-1 custom-td"><span class="text-gray">Asia</span></div>
+                                <div class="col-lg-2 custom-td"> <span
+                                        class="align-items-center text-gray font-weight-500 ml-2">
+                                        2.08 </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td"><span>3</span></div>
+                                <div class="col-lg-1 custom-td"><span>2</span></div>
+                                <div class="col-lg-1 custom-td"><span>1</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <div class="d-flex">
+                                        <div class="d-flex ml-auto align-items-center">
+                                            <span>900</span>
+                                        </div>
+                                        <div class="ml-auto svg-dropdown">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrow-ios-downward">
+                                                        <rect width="24" height="24" opacity="0" />
+                                                        <path
+                                                            d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <div class="custom-table">
+                            <div class="custom-body">
+                                <div class="col-lg-2 custom-td">
+                                    <div class="align-items-center">
+                                        <span class="font-weight-500">Ranked Solo</span>
+                                        <span class="text-gray font-weight-500 ml-2"> 33m </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 custom-td"><span class="align-items-center defeat">DEFEAT</span>
+                                </div>
+                                <div class="col-lg-2 custom-td "> <span
+                                        class="align-items-center text-gray font-weight-normal ">
+                                        2.08 KDA </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Champion </span>
+                                    <br />
+                                    <span>Graves</span>
+                                </div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Time </span> <br />
+                                    <span class="align-items-center">3m ago</span>
+                                </div>
+                            </div>
+
+                            <div class="custom-body">
+                                <div class="col-lg-2 custom-td">
+                                    <div class="align-items-center">
+                                        <span class="font-weight-500">Ranked Solo</span>
+                                        <span class="text-gray font-weight-500 ml-2"> 33m </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 custom-td"><span class="align-items-center final">VICTORY</span>
+                                </div>
+                                <div class="col-lg-2 custom-td "> <span
+                                        class="align-items-center text-gray font-weight-normal ">
+                                        2.08 KDA </span> <br /> <span class="align-items-center">6 / 4 / 12</span></div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Champion </span>
+                                    <br />
+                                    <span>Graves</span>
+                                </div>
+                                <div class="col-lg-2 custom-td">
+                                    <span class="align-items-center text-gray font-weight-normal "> Time </span> <br />
+                                    <span class="align-items-center">3m ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+</div>

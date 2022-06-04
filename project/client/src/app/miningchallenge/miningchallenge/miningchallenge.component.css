@@ -1,0 +1,23 @@
+.sidebar{
+  padding-top: 50px;
+  height: 100vh;
+  background-color: rgba(135, 207, 235, 0.347);
+  font-size: 2rem !important;
+  font-family: "RIFT";
+  text-transform: uppercase;
+}
+
+.sidebar a:hover{
+  text-decoration: none;
+  color:#FF9933;
+}
+
+.main{
+  height: 100vh;
+  overflow: auto;
+  padding-top: 50px;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}

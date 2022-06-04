@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 text-left my-2">
+      <h3 class="card-title font-weight-500">LOL Challenge</h3>
+      <h3 class="card-title font-weight-500">Challenge History for User - </h3>
+      <span class="text-gray font-italic font-weight-400">Log of LOL Challenges tracking place daily, weekly, monthly
+        etc.</span>
+    </div>
+    <div class="col-lg-3">
+      <div class="ml-auto form-group form-group-feedback form-group-feedback-right">
+        <input type="text" class="form-control" [(ngModel)]="query.searchQuery" (keyup)="onFilterChange()"
+               placeholder="Search by username,level...">
+        <div click="onFilterChange()" class="form-control-feedback form-control-feedback-lg">
+          <i class="icon-search4 text-muted"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+      <label class="text-blue-400 font-weight-bold">Past Day</label>
+      <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+                 [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+      </ng-select>
+    </div>
+    <div class="col-lg-2">
+      <label class="text-blue-400 font-weight-bold">Filter</label>
+      <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+                 [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+      </ng-select>
+    </div>
+    <div class="col-lg-2">
+      <label class="text-blue-400 font-weight-bold">Sort</label>
+      <ng-select [searchable]="false" bindLabel="name" bindValue="id" [items]="tournamentStatus"
+                 [(ngModel)]="query.status" (change)="onFilterChange()" class="custom-ng" placeholder="Select Status">
+      </ng-select>
+    </div>
+    <div class="col-lg-6 text-right">
+      <span class="total-record f-14">28 entries</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="custom-table w-100 mt-5">
+      <div class="head">
+        <div class="col-lg-2 custom-td"><span>User</span></div>
+        <div class="col-lg-1 custom-td">Region</div>
+        <div class="col-lg-2 custom-td">Total Challenges</div>
+        <div class="col-lg-1 custom-td">Avg. KDA</div>
+        <div class="col-lg-2 custom-td">Total Games</div>
+        <div class="col-lg-1 custom-td">Victories</div>
+        <div class="col-lg-1 custom-td">Defeats</div>
+        <div class="col-lg-2 custom-td">Total LAPLATA</div>
+      </div>
+      <div class="body" *ngFor="let w of userChallengeHistory; let i=index">
+        <div class="col-lg-2 custom-td"><span>{{w.user.fullName ? w.user.fullName : 'N/A'}}</span></div>
+        <div class="col-lg-1 custom-td">{{w.region ? w.region : 'N/A'}}</div>
+        <div class="col-lg-2 custom-td">{{w.user ? w.user.fullName : 'N/A'}}</div>
+        <div class="col-lg-1 custom-td">{{w.gameStatistics.averageKDA ? w.user.gameStatistics.averageKDA : 'N/A'}}</div>
+        <div class="col-lg-2 custom-td">{{w.gameStatistics.total ? w.gameStatistics.total : 'N/A'}}</div>
+        <div class="col-lg-1 custom-td">{{w.gameStatistics.victories ? w.gameStatistics.victories : 'N/A'}}</div>
+        <div class="col-lg-1 custom-td">{{w.gameStatistics.defeats ? w.gameStatistics.defeats : 'N/A'}}</div>
+        <div class="col-lg-2 custom-td">{{w.user.balance ? w.user.balance : 'N/A'}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <label class="text-blue-400 font-weight-bold">Challenge History</label>
+    <div class="custom-table w-100">
+      <div class="head">
+        <div class="col-lg-1 custom-td"><span>Date</span></div>
+        <div class="col-lg-1 custom-td">Time</div>
+        <div class="col-lg-1 custom-td">Duration</div>
+        <div class="col-lg-1 custom-td">Region</div>
+        <div class="col-lg-1 custom-td">Avg. KDA</div>
+        <div class="col-lg-2 custom-td">Games Played</div>
+        <div class="col-lg-1 custom-td">Victories</div>
+        <div class="col-lg-1 custom-td">Defeats</div>
+        <div class="col-lg-2 custom-td">LAPLATA Received</div>
+      </div>
+      <div class="body" *ngFor="let w of userChallengeHistory; let i=index">
+        <div class="col-lg-1 custom-td"><span>{{w.createdAt | date: 'shortDate'}}</span></div>
+        <div class="col-lg-1 custom-td">{{w.createdAt | date:'HH:MM' : 'UTC'}}</div>
+        <div class="col-lg-1 custom-td">{{w.games.gameDuration ? w.games.gameDuration : 'N/A'}}</div>
+        <div class="col-lg-1 custom-td">{{w.region ? w.region : 'N/A"}}</div>
+        <div class="col-lg-1 custom-td">{{w.gameStatistics.averageKDA ? w.gameStatistics.averageKDA : 'N/A'}}</div>
+        <div class="col-lg-2 custom-td">{{w.gameStatistics.total ? w.gameStatistics.total : 'N/A'}}</div>
+        <div class="col-lg-1 custom-td">{{w.gameStatistics.victories ? w.gameStatistics.victories : 'N/A'}}</div>
+        <div class="col-lg-2 custom-td">{{w.gameStatistics.defeats ? w.gameStatistics.defeats : 'N/A'}}</div>
+        <div class="col-lg-2 custom-td">{{w.rewardedLaplata ? w.rewardedLaplata : 'N/A'}}</div>
+      </div><div class="row mx-auto">
+      <div class="col-md-12">
+        <ngb-pagination class="d-flex justify-content-center" [collectionSize]="totalDocs" [pageSize]="limit" [(page)]="page"
+                        (pageChange)="onPageChange($event)">
+        </ngb-pagination>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

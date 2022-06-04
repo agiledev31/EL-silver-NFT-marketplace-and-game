@@ -1,0 +1,78 @@
+<div class="top-player-challenge-container">
+  <div class="container">
+    <div class="bread_crumb">
+      <span class="pointer" [routerLink]="['/leaderboard']">Leaderboard / </span><span class="final"> {{ userFullName }} </span>
+    </div>
+    <h2> LOL Challenge Of {{ userFullName }}</h2>
+    <hr color="white">
+    <div class="container">
+      <ngb-accordion [closeOthers]="true">
+
+        <!--  -->
+        <ngb-panel *ngFor="let x of history;let indexOfElement=index;"  id="static-{{indexOfElement}}">
+          <ng-template ngbPanelTitle>
+            <div class="custom-table">
+              <div class="head">
+                <div class="col-lg-2 custom-td"><span>Date</span></div>
+                <div class="col-lg-1 custom-td">Time</div>
+                <div class="col-lg-1 custom-td">Duration</div>
+                <div class="col-lg-2 custom-td">Avg. KDA</div>
+                <div class="col-lg-2 custom-td">Total games</div>
+                <div class="col-lg-1 custom-td">Victories</div>
+                <div class="col-lg-1 custom-td">Defeats</div>
+                <div class="col-lg-2 custom-td">LAPLATA</div>
+              </div>
+              <div class="body">
+                <div class="col-lg-2 custom-td"><span>{{x.createdAt | date:'dd/MM/yyyy' : 'UTC'}}</span></div>
+                <div class="col-lg-1 custom-td"><span>{{x.createdAt | date:'HH:MM' : 'UTC'}}</span></div>
+                <div class="col-lg-1 custom-td"><span>{{avgGameLength(x)}}s</span></div>
+                <div class="col-lg-2 custom-td"> <span class="align-items-center text-gray font-weight-normal ml-2">
+                  {{x.gameStatistics?.averageKDA | number: '1.2-2'}} </span>
+                  <!--  <br /> <span class="align-items-center">6 / 4 / 12</span> -->
+                </div>
+                <div class="col-lg-2 custom-td"><span>{{x.gameStatistics?.total}}</span></div>
+                <div class="col-lg-1 custom-td"><span>{{x.gameStatistics?.victories}}</span></div>
+                <div class="col-lg-1 custom-td"><span>{{x.gameStatistics?.defeats}}</span></div>
+                <div class="col-lg-2 custom-td">
+                  <div class="d-flex">
+                    <div class="d-flex ml-auto align-items-center">
+                      <span>{{x.rewardedLaplata}}</span>
+                    </div>
+                    <div class="ml-auto">
+                      <img alt="" src="assets/images/drop_down.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="custom-table">
+              <div class="custom-body" *ngFor="let g of x.games;">
+                <div class="col-lg-2 custom-td">
+                  <div class="align-items-center">
+                    <span>{{g.gameType}}</span>
+                    <span class="text-gray font-weight-normal small ml-2">{{g.gameDuration}}</span>
+                  </div>
+                </div>
+                <div class="col-lg-2 custom-td"><span class="align-items-center final">{{g.result}}</span></div>
+                <div class="col-lg-2 custom-td "> <span class="align-items-center text-gray font-weight-normal ml-2">
+                    {{g.KDA}} KDA </span> <br /></div>
+                <div class="col-lg-2 custom-td">
+                  <span class="align-items-center text-gray font-weight-normal ml-2"> Champion </span> <br />
+                  <span>{{g.champion}}</span>
+                </div>
+                <div class="col-lg-2 custom-td">
+                  <span class="align-items-center text-gray font-weight-normal ml-2"> Time </span> <br />
+                  <span class="align-items-center">{{formatTime(g.gameTimeStamp)}}</span>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+      </ngb-accordion>
+    </div>
+    <div class="no-record-found" *ngIf="history.length === 0 ">No Record Found</div>
+  </div>
+</div>

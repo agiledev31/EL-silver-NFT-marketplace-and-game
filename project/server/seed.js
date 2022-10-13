@@ -15,10 +15,10 @@ mongoose.connect('mongodb://localhost:27017/lolSilver', {
     console.log("connected to db in development environment");
   });;
 
-
 // User.collection.drop();
 require('./models/User');
 require('./models/SiteSettings');
+
 const users = require('./seeder/users');
 const {defaultSettings,
   systemBalanceAsset,

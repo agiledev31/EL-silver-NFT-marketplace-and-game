@@ -4,7 +4,6 @@ import { NftComponent } from './nft/nft.component';
 import { NftRoutingModule } from './nft-routing.module';
 @NgModule({
   declarations: [NftComponent],
-
   imports: [
     CommonModule,
     NftRoutingModule

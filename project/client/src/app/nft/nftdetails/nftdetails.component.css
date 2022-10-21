@@ -3,7 +3,6 @@
   border-radius: 16px;
 }
 .img-size {
-  /* height: 100%; */
   width: 100%;
   border-radius: 16px;
 }
@@ -48,7 +47,6 @@
   font-size: 11px;
 }
 .img-sizes {
-  /* height: 32px; */
   width: 32px;
   border-radius: 50%;
 }
@@ -75,7 +73,6 @@
   border-radius: 30px 30px 0px 0px;
 }
 .img-sixe2 {
-  /* height: 100px; */
   width: 100%;
 }
 .p-btn {
